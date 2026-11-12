@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, follow">
+<title>Goldpreis-Widget – dergoldrechner.de</title>
+<style>
+  /* Embeddable price box (iframe). Self-contained: no external fonts, no cookies, no tracking. */
+  :root { --ink: #1f1a12; --muted: #6b6253; --gold: #a8802f; --line: #e4ded1; --bg: #fffdf8; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .box { border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  .head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+  .head b { font-size: 1rem; }
+  .live { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: .85rem; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: #2f9e5b; }
+  .row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 6px 0; border-top: 1px solid var(--line); }
+  .row span:last-child { font-variant-numeric: tabular-nums; font-weight: 600; }
+  .foot { margin-top: 8px; font-size: .8rem; color: var(--muted); }
+  .foot a { color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="head"><b>Goldpreis heute</b><span class="live" id="live" hidden><span class="dot"></span>Live</span></div>
+  <div class="row"><span>Gold je Gramm</span><span id="g">–</span></div>
+  <div class="row"><span>Gold je Unze</span><span id="oz">–</span></div>
+  <div class="row"><span>Silber je Gramm</span><span id="s">–</span></div>
+  <div class="foot">Kursstand <span id="t">–</span> · <a href="https://dergoldrechner.de/" target="_blank" rel="noopener">Goldwert berechnen</a></div>
+</div>
+<script>
+(function () {
+  var eur = function (x) { return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(x); };
+  fetch('/api/price.php', { cache: 'no-store' }).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (p) {
+    if (!(p.gold > 0) || p.demo) return;
+    document.getElementById('g').textContent = eur(p.gold);
+    document.getElementById('oz').textContent = eur(p.gold * 31.1034768);
+    document.getElementById('s').textContent = eur(p.silver);
+    var d = new Date(p.updated);
+    document.getElementById('t').textContent = isNaN(d) ? '' : d.toLocaleString('de-DE', { dateStyle: 'short', timeStyle: 'short' });
+    // live = quote at most 26 h old; over the weekend (Sat–Mon) markets are closed, allow up to 74 h
+    var day = new Date().getDay(), maxH = (day === 0 || day === 1 || day === 6) ? 74 : 26;
+    if (!isNaN(d) && Date.now() - d.getTime() < maxH * 3600 * 1000) document.getElementById('live').hidden = false;
+  }).catch(function () {});
+})();
+</script>
+</body>
+</html>

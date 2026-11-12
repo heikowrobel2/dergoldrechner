@@ -20,6 +20,11 @@
     goldMid: { min: 0.78, max: 0.93 },   // 585/750
     goldHigh: { min: 0.85, max: 0.96 },  // 900 and above
     goldCoin: { min: 0.92, max: 0.97 },
+    goldBullion: { min: 0.95, max: 0.99 }, // 1 oz bullion coins (Krügerrand, Maple, Philharmoniker …): ~97–99 % at big dealers
+    goldBullionSmall: { min: 0.92, max: 0.98 }, // fractional bullion coins (1/2 oz and smaller)
+    goldBarSmall: { min: 0.90, max: 0.97 },// bars up to 10 g
+    goldBar: { min: 0.94, max: 0.98 },     // bars 20–50 g / 1 oz
+    goldBarLarge: { min: 0.97, max: 0.995 },// bars from 100 g
     dental: { min: 0.72, max: 0.88 },
     silverScrap: { min: 0.55, max: 0.80 },
     silverCoin: { min: 0.65, max: 0.85 },
@@ -91,26 +96,37 @@
     { id: 'unbekannt', label: 'Weiß ich nicht', min: 0.40, max: 0.80 }
   ];
 
+  // Gold bars 999.9 by gross weight in grams.
+  var GOLD_BARS = [1, 2, 2.5, 5, 10, 20, 31.1035, 50, 100, 250, 500, 1000].map(function (g) {
+    var id = g === 31.1035 ? 'bar-1oz' : g === 1000 ? 'bar-1kg' : 'bar-' + String(g).replace('.', '_');
+    var label = g === 31.1035 ? 'Goldbarren 1 Unze (31,1 g)' : g === 1000 ? 'Goldbarren 1 kg' : 'Goldbarren ' + String(g).replace('.', ',') + ' g';
+    // dealers treat the nominal weight of a 999.9 bar as fine gold
+    return { id: id, label: label, grams: g, fineG: g, payout: g <= 10 ? 'goldBarSmall' : g < 100 ? 'goldBar' : 'goldBarLarge' };
+  });
+
   // Fine gold content per coin in grams (nominal values).
   var COINS = [
-    { id: 'kruegerrand', label: 'Krügerrand 1 oz', fineG: 31.103 },
-    { id: 'kruegerrand-12', label: 'Krügerrand 1/2 oz', fineG: 15.552 },
-    { id: 'kruegerrand-14', label: 'Krügerrand 1/4 oz', fineG: 7.776 },
-    { id: 'kruegerrand-110', label: 'Krügerrand 1/10 oz', fineG: 3.110 },
-    { id: 'maple', label: 'Maple Leaf 1 oz', fineG: 31.103 },
-    { id: 'philharmoniker', label: 'Wiener Philharmoniker 1 oz', fineG: 31.103 },
-    { id: 'kaenguru', label: 'Känguru (Nugget) 1 oz', fineG: 31.103 },
-    { id: 'eagle', label: 'American Eagle 1 oz', fineG: 31.103 },
-    { id: 'britannia', label: 'Britannia 1 oz', fineG: 31.103 },
-    { id: 'halbunze', label: 'Bullionmünze 1/2 oz (z. B. 100 Euro)', fineG: 15.552 },
-    { id: 'viertelunze', label: 'Bullionmünze 1/4 oz', fineG: 7.776 },
-    { id: 'zehntelunze', label: 'Bullionmünze 1/10 oz', fineG: 3.110 },
+    { id: 'kruegerrand', label: 'Krügerrand 1 oz', fineG: 31.103, payout: 'goldBullion' },
+    { id: 'kruegerrand-12', label: 'Krügerrand 1/2 oz', fineG: 15.552, payout: 'goldBullionSmall' },
+    { id: 'kruegerrand-14', label: 'Krügerrand 1/4 oz', fineG: 7.776, payout: 'goldBullionSmall' },
+    { id: 'kruegerrand-110', label: 'Krügerrand 1/10 oz', fineG: 3.110, payout: 'goldBullionSmall' },
+    { id: 'maple', label: 'Maple Leaf 1 oz', fineG: 31.103, payout: 'goldBullion' },
+    { id: 'philharmoniker', label: 'Wiener Philharmoniker 1 oz', fineG: 31.103, payout: 'goldBullion' },
+    { id: 'kaenguru', label: 'Känguru (Nugget) 1 oz', fineG: 31.103, payout: 'goldBullion' },
+    { id: 'eagle', label: 'American Eagle 1 oz', fineG: 31.103, payout: 'goldBullion' },
+    { id: 'britannia', label: 'Britannia 1 oz', fineG: 31.103, payout: 'goldBullion' },
+    { id: 'halbunze', label: 'Teilstück 1/2 Unze (alle Anlagemünzen)', fineG: 15.552, payout: 'goldBullionSmall' },
+    { id: 'viertelunze', label: 'Teilstück 1/4 Unze (alle Anlagemünzen)', fineG: 7.776, payout: 'goldBullionSmall' },
+    { id: 'zehntelunze', label: 'Teilstück 1/10 Unze (alle Anlagemünzen)', fineG: 3.110, payout: 'goldBullionSmall' },
+    { id: 'fuenfundzwanzigstelunze', label: 'Teilstück 1/25 Unze (z. B. Philharmoniker)', fineG: 1.244, payout: 'goldBullionSmall' },
     { id: '20mark', label: '20 Mark Kaiserreich', fineG: 7.168 },
     { id: '10mark', label: '10 Mark Kaiserreich', fineG: 3.584 },
     { id: 'vreneli', label: '20 Franken Vreneli', fineG: 5.806 },
+    { id: 'vreneli10', label: '10 Franken Vreneli', fineG: 2.903 },
     { id: 'sovereign', label: 'Sovereign (Großbritannien)', fineG: 7.322 },
+    { id: 'halfsovereign', label: 'Half Sovereign (Großbritannien)', fineG: 3.661 },
     { id: 'dukat1', label: '1 Dukat Österreich', fineG: 3.442 },
-    { id: 'dukat4', label: '4 Dukaten Österreich', fineG: 13.763 }
+    { id: 'dukat4', label: '4 Dukaten Österreich', fineG: 13.768 }
   ];
 
   /** Parses German or English number input. Returns NaN if invalid, empty, zero or negative.
@@ -220,7 +236,16 @@
     if (!c) throw new Error('Unbekannte Münze: ' + coinId);
     var n = parseNumber(count), p = parseNumber(goldPerG);
     if (!(n >= 1) || n > MAX_COUNT || Math.floor(n) !== n || !(p > 0)) return null;
-    return result(c.fineG * n, p, PAYOUT.goldCoin);
+    return result(c.fineG * n, p, PAYOUT[c.payout || 'goldCoin']);
+  }
+
+  /** Gold bars 999.9: bar id, whole number count. */
+  function bars(barId, count, goldPerG) {
+    var b = find(GOLD_BARS, barId);
+    if (!b) throw new Error('Unbekannter Barren: ' + barId);
+    var n = parseNumber(count), p = parseNumber(goldPerG);
+    if (!(n >= 1) || n > MAX_COUNT || Math.floor(n) !== n || !(p > 0)) return null;
+    return result(b.fineG * n, p, PAYOUT[b.payout]);
   }
 
   /** Silver coins: coin id, whole number count, silver price EUR per gram. */
@@ -260,6 +285,8 @@
     PAYOUT: PAYOUT,
     goldScrap: goldScrap,
     goldMix: goldMix,
+    GOLD_BARS: GOLD_BARS,
+    bars: bars,
     dental: dental,
     coins: coins,
     silverScrap: silverScrap,

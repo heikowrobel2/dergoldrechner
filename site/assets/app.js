@@ -55,6 +55,8 @@
       var g = /^g(\d{3})$/.exec(k);
       if (g) { el.textContent = eur(price.gold * Number(g[1]) / 1000) + '/g'; return; }
       if ((k === 'platinum' || k === 'palladium') && price[k]) { el.textContent = eur(price[k]) + '/g'; return; }
+      var qq = /^(gold|silver|platinum|palladium)q(\d+)$/.exec(k); // q = milligrams of fine metal
+      if (qq) { if (price[qq[1]]) el.textContent = eur(price[qq[1]] * Number(qq[2]) / 1000); return; }
       var wq = /^(gold|silver)w(\d+)$/.exec(k);
       if (wq) { el.textContent = eur(price[wq[1]] * Number(wq[2])); return; }
       var ozv = /^(gold|silver|platinum|palladium)ozv$/.exec(k);
@@ -90,7 +92,7 @@
   // Returns the name of the invalid field, or null.
   function invalidField(form) {
     var type = form.getAttribute('data-calc');
-    if (type === 'coins' || type === 'silvercoins') {
+    if (type === 'coins' || type === 'silvercoins' || type === 'bars') {
       var c = C.parseNumber(val(form, 'count'));
       return (c >= 1 && c <= C.MAX_COUNT && Math.floor(c) === c) ? null : 'count';
     }
@@ -119,6 +121,7 @@
     if (type === 'gold') return C.goldScrap(val(form, 'weight'), val(form, 'fineness'), price.gold);
     if (type === 'silver') return C.silverScrap(val(form, 'weight'), val(form, 'fineness'), price.silver);
     if (type === 'coins') return C.coins(val(form, 'coin'), val(form, 'count'), price.gold);
+    if (type === 'bars') return C.bars(val(form, 'coin'), val(form, 'count'), price.gold);
     if (type === 'silvercoins') return C.silverCoins(val(form, 'coin'), val(form, 'count'), price.silver);
     if (type === 'pgm') return C.pgmScrap(val(form, 'weight'), val(form, 'fineness'), price[val(form, 'metal')]);
     if (type === 'mix') return C.goldMix(mixItems(form), price.gold);
@@ -149,7 +152,7 @@
   function inputSummary(form) {
     var type = form.getAttribute('data-calc');
     var sel = function (n) { var el = form.elements[n]; return el ? el.options[el.selectedIndex].text : ''; };
-    if (type === 'coins' || type === 'silvercoins') return C.parseNumber(val(form, 'count')).toLocaleString('de-DE') + ' × ' + sel('coin');
+    if (type === 'coins' || type === 'silvercoins' || type === 'bars') return C.parseNumber(val(form, 'count')).toLocaleString('de-DE') + ' × ' + sel('coin');
     var w = C.parseNumber(val(form, 'weight')).toLocaleString('de-DE', { maximumFractionDigits: 2 }) + ' g';
     if (type === 'pgm') return w + ' ' + sel('metal') + ', ' + sel('fineness').split(' (')[0];
     if (type === 'mix') return '';

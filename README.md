@@ -8,22 +8,30 @@ Nur der Goldkurs wird serverseitig per PHP abgerufen.
 | Pfad | Inhalt |
 |---|---|
 | `src/pages.js` | Texte, Titel, FAQ aller Rechnerseiten (hier Inhalte ändern) |
-| `src/legal.js` | Impressum und Datenschutz (Vorlagen mit gelben Platzhaltern) |
-| `src/build.js` | erzeugt die HTML-Seiten in `site/` |
+| `src/legal.js` | Impressum und Datenschutz (ausgefüllt, noindex) |
+| `src/home.js` | Startseite (Hero, Kategorien, Linklisten) |
+| `src/build.js` | erzeugt die HTML-Seiten in `site/`, Sitemap, Release-Prüfung |
 | `src/serve.js` | lokale Vorschau auf http://localhost:8080 |
-| `site/assets/calc.js` | Rechenkern (Feingehalte, Münzen, Ankaufsspannen) |
-| `site/assets/app.js` | verbindet Formular, Kurs und Ergebnis |
-| `site/assets/partners.js` | Partnerlinks, erst nach Freigabe durch das Programm eintragen |
-| `site/api/price.php` | holt den Kurs von gold-api.com, gleicht ihn ab, Cache 6 Stunden |
-| `site/data/price.json` | letzter Kurs (am Anfang ein DEMO-Kurs) |
-| `tests/calc.test.js` | Tests des Rechenkerns |
+| `site/assets/calc.js` | Rechenkern: Feingehalte, Münzen, Barren, Altgold-Mix, Zahngold, Silber, Platin; Ankaufsspannen |
+| `site/assets/app.js` | verbindet Formular, Kurs und Ergebnis; Kurs-Platzhalter `data-price` |
+| `site/assets/partners.js` | Partnerlinks, erst nach Freigabe eintragen (Startschuss kommt vom Wochen-Check) |
+| `site/api/price.php` | Kurs von gold-api.com, stündlich, Abgleich MetalCharts + EZB, Bestätigung großer Sprünge |
+| `site/widget/` | einbettbares Goldpreis-Widget (iframe, noindex) |
+| `site/data/price.json` | lokal: DEMO-Kurs (wird beim Deploy nicht hochgeladen) |
+| `tests/` | Tests Rechenkern (`calc.test.js`) und Deploy (`deploy.test.mjs`) |
+| `scripts/deploy-ftp.mjs` | Upload per FTPS, schützt den Kurs-Cache auf dem Server |
+| `docs/` | Semrush-Themenspeicher, Ausbauplan, Linkaufbau, GSC-Wochenbericht |
+
+Seitentypen in `src/pages.js` (`calc.type`): `gold`, `mix` (mehrere Stücke), `bars`, `coins`, `silver`,
+`silvercoins`, `pgm`, `dental`; ohne `calc` = Inhaltsseite. Münzseiten tragen `group: 'muenzen'` (eigene Fußzeile).
+Wöchentlicher Search-Console-Check: geplante Aufgabe „goldrechner-traffic-check“ (montags 8 Uhr).
 
 ## Befehle
 
 ```
 node src/build.js              # Seiten neu erzeugen (warnt bei Platzhaltern/Demo-Kurs)
 node src/build.js --release    # bricht ab, solange Platzhalter oder Demo-Kurs vorhanden sind
-node --test tests/calc.test.js # Tests
+npm test                       # alle Tests
 node src/serve.js              # Vorschau
 ```
 

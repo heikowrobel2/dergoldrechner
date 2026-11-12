@@ -123,6 +123,25 @@ test('mixed lot: 900+ fineness keeps its own payout band', () => {
   assert.equal(r.payoutMax, Math.round((585 * 0.93 + 999 * 0.96) * 100) / 100);
 });
 
+test('gold bars: nominal weight = fine gold, payout band by size', () => {
+  const r = C.bars('bar-100', 1, GOLD);
+  assert.equal(r.fineGrams, 100);
+  assert.equal(r.meltValue, 10000);
+  assert.equal(r.payoutShare, C.PAYOUT.goldBarLarge);
+  assert.equal(C.bars('bar-5', 1, GOLD).payoutShare, C.PAYOUT.goldBarSmall);
+  assert.equal(C.bars('bar-20', 1, GOLD).payoutShare, C.PAYOUT.goldBar);
+  assert.equal(C.bars('bar-1kg', 2, GOLD).fineGrams, 2000);
+  assert.equal(C.bars('bar-100', '1,5', GOLD), null);
+  assert.ok(C.GOLD_BARS.length >= 10);
+});
+
+test('bullion coins buy back closer to spot than historic coins', () => {
+  assert.equal(C.coins('maple', 1, GOLD).payoutShare, C.PAYOUT.goldBullion);
+  assert.equal(C.coins('vreneli', 1, GOLD).payoutShare, C.PAYOUT.goldCoin);
+  assert.equal(C.coins('dukat4', 1, GOLD).fineGrams, 13.77);
+  assert.equal(C.coins('vreneli10', 2, GOLD).fineGrams, 5.81);
+});
+
 test('all payout ranges are sane', () => {
   for (const p of Object.values(C.PAYOUT)) {
     assert.ok(p.min > 0 && p.min < p.max && p.max <= 1);

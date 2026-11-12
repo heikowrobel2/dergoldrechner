@@ -47,6 +47,9 @@ function form(calc) {
   } else if (calc.type === 'coins') {
     fields = `<div class="field"><label for="coin">Münze</label><select id="coin" name="coin">${options(C.COINS, calc.preset || 'kruegerrand')}</select></div>
 <div class="field"><label for="count">Anzahl</label><input id="count" name="count" type="number" min="1" step="1" value="1" inputmode="numeric"></div>`;
+  } else if (calc.type === 'bars') {
+    fields = `<div class="field"><label for="coin">Barren</label><select id="coin" name="coin">${options(C.GOLD_BARS, calc.preset || 'bar-100')}</select></div>
+<div class="field"><label for="count">Anzahl</label><input id="count" name="count" type="number" min="1" step="1" value="${calc.count || 1}" inputmode="numeric"></div>`;
   } else if (calc.type === 'silvercoins') {
     fields = `<div class="field"><label for="coin">Münze oder Barren</label><select id="coin" name="coin">${options(C.SILVER_COINS, calc.preset || 'maple-ag')}</select></div>
 <div class="field"><label for="count">Anzahl</label><input id="count" name="count" type="number" min="1" step="1" value="${calc.count || 1}" inputmode="numeric"></div>`;
@@ -120,7 +123,7 @@ function faqBlock(faq, heading = true) {
 }
 
 function jsonLd(p) {
-  const graph = [{
+  const graph = p.calc === undefined && p.slug !== '' ? [] : [{
     '@type': 'WebApplication',
     name: p.h1.split(':')[0],
     url: url(p.slug),
@@ -169,7 +172,8 @@ ${p.h1 && !noindex ? jsonLd(p) : ''}
 ${home ? body : `<main class="wrap">\n${body}\n</main>`}
 <footer class="site-footer"><div class="wrap">
 ${home ? '<p class="h-wordmark">Der <em>Goldrechner</em></p>' : ''}
-<nav aria-label="Alle Rechner" class="footer-calcs">${pages.map((x) => `<a href="${href(x.slug)}">${esc(x.nav)}</a>`).join('')}</nav>
+<nav aria-label="Alle Rechner" class="footer-calcs">${pages.filter((x) => x.group !== 'muenzen').map((x) => `<a href="${href(x.slug)}">${esc(x.nav)}</a>`).join('')}</nav>
+<nav aria-label="Goldmünzen" class="footer-calcs"><span>Goldmünzen:</span>${pages.filter((x) => x.group === 'muenzen').map((x) => `<a href="${href(x.slug)}">${esc(x.nav)}</a>`).join('')}</nav>
 <nav aria-label="Rechtliches"><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></nav>
 <p class="disclaimer">Alle Ergebnisse sind unverbindliche Richtwerte auf Basis des angezeigten Edelmetallkurses. Wir kaufen kein Gold an und geben keine Anlageberatung. Links mit dem Hinweis „Anzeige“ sind Werbelinks; kommt darüber ein Geschäft zustande, erhalten wir eventuell eine Provision.</p>
 <p>© ${new Date().getFullYear()} dergoldrechner.de</p>
@@ -194,7 +198,7 @@ for (const p of pages) {
     continue;
   }
   const body = `<div class="hero"><h1>${esc(p.h1)}</h1><p>${esc(p.intro)}</p></div>
-${form(p.calc)}
+${p.calc ? form(p.calc) : ''}
 ${p.priceTable ? priceTable(p.priceTable) : ''}
 ${p.example ? exampleTable(p.example) : ''}
 ${p.coinTable ? coinTable() : ''}

@@ -44,7 +44,7 @@ module.exports = [
     nav: 'Goldpreis',
     tile: 'Aktueller Preis je Gramm',
     keywords: 'gold gramm preis 18.100 (KD 22) · goldpreis rechner 18.100 (KD 17) · goldpreis pro gramm 9.900 (KD 13) · goldpreis 100 gramm 2.400 · goldpreis berechnen 4.400 · was kosten heute 100 g gold 260 (KD 16)',
-    title: 'Goldpreis pro Gramm heute: 1 g, 100 g und 1 kg Gold',
+    title: 'Goldpreis pro Gramm heute: 1 g bis 100 g, alle Feingehalte',
     description: 'Aktueller Goldpreis pro Gramm in Euro für 333er, 585er, 750er und 999er Gold. Goldpreis berechnen mit dem Goldpreis-Rechner – inklusive Ankaufs-Richtwert.',
     h1: 'Goldpreis pro Gramm: aktueller Goldpreis für jeden Feingehalt',
     intro: 'Der Goldpreis wird an der Börse für reines Feingold angegeben. Was ein Gramm Ihres Schmucks wert ist, hängt vom Feingehalt ab – die Tabelle rechnet es für Sie um.',
@@ -58,15 +58,13 @@ module.exports = [
 <p>Schmuckgold ist fast nie rein. Für 585er Gold sind deshalb nur 58,5 % dieses Grammpreises anzusetzen, für 333er Gold ein Drittel. Genau das zeigt die Tabelle oben – automatisch mit dem aktuellen Kurs.</p>`
       },
       {
-        h: 'Was kosten 10 g, 100 g und 1 kg Gold?',
+        h: 'Was kosten 1 g, 10 g und 100 g Gold?',
         html: `<div class="table-wrap"><table><thead><tr><th>Menge Feingold (999)</th><th class="num">Materialwert heute</th></tr></thead><tbody>
 <tr><td>1 g</td><td class="num"><span data-price="goldw1">–</span></td></tr>
 <tr><td>10 g</td><td class="num"><span data-price="goldw10">–</span></td></tr>
 <tr><td>100 g</td><td class="num"><span data-price="goldw100">–</span></td></tr>
-<tr><td>1 Feinunze (31,1 g)</td><td class="num"><span data-price="goldozv">–</span></td></tr>
-<tr><td>1 kg</td><td class="num"><span data-price="goldw1000">–</span></td></tr>
 </tbody></table></div>
-<p>Das ist der reine Börsenwert des Feingolds. Barren und Münzen kosten beim Kauf etwas mehr (Prägekosten, Händlermarge), beim Verkauf von Schmuck erhalten Sie weniger – je nach Ankäufer etwa 5 bis 20 % unter dem Materialwert.</p>`
+<p>Preise je Unze und je Kilo finden Sie unter <a href="/goldpreis-pro-unze/">Goldpreis pro Unze</a>. Das ist der reine Börsenwert des Feingolds. Barren und Münzen kosten beim Kauf etwas mehr (Prägekosten, Händlermarge), beim Verkauf von Schmuck erhalten Sie weniger – je nach Ankäufer etwa 5 bis 20 % unter dem Materialwert.</p>`
       },
       {
         h: 'Goldpreis und Ankaufspreis sind zwei verschiedene Dinge',
@@ -76,10 +74,53 @@ module.exports = [
     ],
     faq: [
       ['Wie viel ist 1 Gramm Gold heute wert?', 'Ein Gramm Feingold (999,9) ist so viel wert wie der aktuelle Goldpreis pro Gramm in der Tabelle oben. Für Schmuckgold wird dieser Wert mit dem Feingehalt multipliziert, bei 585er Gold also mit 0,585.'],
-      ['Was kosten heute 100 g Gold?', '100 g Feingold sind hundertmal so viel wert wie der Goldpreis pro Gramm. Den aktuellen Betrag zeigt die Tabelle „Was kosten 10 g, 100 g und 1 kg Gold?“ auf dieser Seite.'],
+      ['Was kosten heute 100 g Gold?', '100 g Feingold sind hundertmal so viel wert wie der Goldpreis pro Gramm. Den aktuellen Betrag zeigt die Tabelle „Was kosten 1 g, 10 g und 100 g Gold?“ auf dieser Seite.'],
       ['Was kostet 1 Gramm 585er Gold?', 'Ein Gramm 585er Gold enthält 0,585 g Feingold. Sein Materialwert beträgt 58,5 % des Goldpreises pro Gramm; der aktuelle Betrag steht in der Tabelle.'],
       ['Warum ist der Goldpreis hier so viel niedriger als an der Börse?', 'Ist er nicht – er ist nur in einer anderen Einheit angegeben. Börsen und Finanzportale nennen den Preis je Feinunze (31,1035 g), wir rechnen ihn auf ein Gramm um, weil Schmuck in Gramm gewogen wird. Kostet die Unze zum Beispiel 3.500 €, ist ein Gramm Feingold rund 112,50 € wert. Oben auf der Seite stehen beide Werte nebeneinander.'],
       ['Warum unterscheidet sich der Goldpreis auf verschiedenen Seiten?', 'Manche Seiten zeigen den Verkaufspreis von Händlern inklusive Aufschlag, andere den Börsenkurs oder einen Ankaufspreis. Wir zeigen den Börsenkurs und getrennt davon einen Ankaufs-Richtwert.']
+    ]
+  },
+  {
+    slug: 'goldpreis-pro-unze',
+    nav: 'Goldpreis pro Unze',
+    inNav: false,
+    tile: 'Feinunze und Kilo',
+    keywords: 'feinunze gold preis 3.600 (KD 14) · unze gold 14.800 (KD 58) · wieviel ist eine unze gold 1.300 (KD 22) · preis von einer unze gold 880 · goldpreis pro kilo · was kostet ein kg gold in euro 110 · was kostet heute eine feinunze gold 140',
+    title: 'Goldpreis pro Unze heute: Feinunze und Kilo in Euro',
+    description: 'Was kostet eine Feinunze Gold heute? Goldpreis pro Unze und pro Kilo in Euro, Unze in Gramm umrechnen und Werte für 1/10 bis 10 Unzen – live aktualisiert.',
+    h1: 'Goldpreis pro Unze: Was kostet eine Feinunze Gold heute?',
+    intro: 'An der Börse wird Gold in Feinunzen gehandelt. Hier sehen Sie den aktuellen Goldpreis pro Unze und pro Kilo in Euro – und wie viel eine Unze in Gramm ist.',
+    calc: { type: 'gold', preset: '999', weight: '31,1035' },
+    sections: [
+      {
+        h: 'Goldpreis pro Unze und Kilo in Euro',
+        html: `<div class="table-wrap"><table><thead><tr><th>Menge Feingold</th><th class="num">Wert heute</th></tr></thead><tbody>
+<tr><td>1/10 Unze (3,11 g)</td><td class="num"><span data-price="goldq3110">–</span></td></tr>
+<tr><td>1/4 Unze (7,78 g)</td><td class="num"><span data-price="goldq7776">–</span></td></tr>
+<tr><td>1/2 Unze (15,55 g)</td><td class="num"><span data-price="goldq15552">–</span></td></tr>
+<tr><td>1 Unze (31,10 g)</td><td class="num"><span data-price="goldozv">–</span></td></tr>
+<tr><td>5 Unzen (155,5 g)</td><td class="num"><span data-price="goldq155517">–</span></td></tr>
+<tr><td>10 Unzen (311,0 g)</td><td class="num"><span data-price="goldq311035">–</span></td></tr>
+<tr><td>1 kg (32,15 Unzen)</td><td class="num"><span data-price="goldw1000">–</span></td></tr>
+</tbody></table></div>
+<p>Das ist der reine Börsenwert des Feingolds. Beim Kauf von Münzen und Barren kommt ein Aufschlag hinzu, beim Verkauf erhalten Sie etwas weniger. Den Preis je Gramm für jeden Feingehalt finden Sie unter <a href="/goldpreis-pro-gramm/">Goldpreis pro Gramm</a>.</p>`
+      },
+      {
+        h: 'Wie viel Gramm hat eine Unze Gold?',
+        html: `<p>Eine <strong>Feinunze</strong> (Troy-Unze, Kürzel oz oder ozt) wiegt <strong>31,1035 Gramm</strong>. Sie ist schwerer als die Unze aus dem Haushalt (28,35 g), die für Edelmetalle nicht verwendet wird. Ein Kilogramm entspricht rund 32,15 Feinunzen.</p>
+<p>„Fein“ bedeutet: Gemeint ist das reine Gold. Eine Anlagemünze wie der <a href="/kruegerrand-wert/">Krügerrand</a> wiegt mehr als 31,1 g, weil sie auch Kupfer enthält, enthält aber genau eine Feinunze Gold.</p>`
+      },
+      {
+        h: 'Warum wird Gold in Unzen gehandelt?',
+        html: `<p>Die Feinunze ist die internationale Handelseinheit für Edelmetalle. Börsen und Banken nennen den Goldpreis deshalb je Unze in US-Dollar. Für Schmuck rechnet man besser in Gramm – unser <a href="/">Goldrechner</a> rechnet den Unzenpreis automatisch um.</p>`
+      }
+    ],
+    faq: [
+      ['Was kostet eine Feinunze Gold heute?', 'Den aktuellen Preis in Euro zeigt die Tabelle auf dieser Seite. Er wird aus dem internationalen Börsenkurs berechnet und stündlich aktualisiert.'],
+      ['Wie viel Gramm ist eine Unze Gold?', 'Eine Feinunze (Troy-Unze) wiegt 31,1035 Gramm.'],
+      ['Wie viel ist eine Unze Gold wert?', 'Eine Feinunze Gold ist so viel wert wie der aktuelle Goldpreis pro Unze. Beim Verkauf einer Anlagemünze oder eines Barrens zahlen Händler meist etwas weniger als diesen Börsenwert.'],
+      ['Warum ist der Goldpreis auf manchen Seiten so viel niedriger als an der Börse?', 'Meist ist er nur in einer anderen Einheit angegeben: Börsen nennen den Preis je Feinunze (31,1035 g), Rechner für Schmuck je Gramm. Ein Unzenpreis von 3.500 € entspricht rund 112,50 € pro Gramm.'],
+      ['Was kostet ein Kilo Gold in Euro?', 'Ein Kilogramm Feingold entspricht rund 32,15 Feinunzen. Den aktuellen Wert sehen Sie in der Tabelle oben in der Zeile „1 kg“.']
     ]
   },
   {
@@ -394,11 +435,60 @@ module.exports = [
     ]
   },
   {
+    slug: 'goldbarren-wert',
+    nav: 'Goldbarren',
+    inNav: false,
+    tile: '1 g bis 1 kg',
+    keywords: 'goldbarren 22.200 · goldbarren kaufen 40.500 (KD 16) · goldbarren preis 6.600 · gold barren 4.400 · goldbarren 100g · goldbarren 1 kg · goldbarren 1g',
+    title: 'Goldbarren Wert: Preise für 1 g bis 1 kg Goldbarren',
+    description: 'Was ist ein Goldbarren wert? Aktueller Goldwert für Barren von 1 g bis 1 kg, was Händler beim Ankauf zahlen und worauf Sie beim Goldbarren kaufen achten.',
+    h1: 'Goldbarren Wert: Was ist mein Goldbarren heute wert?',
+    intro: 'Wählen Sie Gewicht und Anzahl Ihrer Goldbarren. Der Rechner zeigt den aktuellen Goldwert und was Händler beim Ankauf ungefähr zahlen – kleine Barren etwas weniger als große.',
+    calc: { type: 'bars', preset: 'bar-100', count: 1 },
+    sections: [
+      {
+        h: 'Goldbarren-Preise nach Gewicht',
+        html: `<div class="table-wrap"><table><thead><tr><th>Barren (999,9 Feingold)</th><th class="num">Goldwert heute</th></tr></thead><tbody>
+<tr><td>1 g</td><td class="num"><span data-price="goldq1000">–</span></td></tr>
+<tr><td>5 g</td><td class="num"><span data-price="goldq5000">–</span></td></tr>
+<tr><td>10 g</td><td class="num"><span data-price="goldq10000">–</span></td></tr>
+<tr><td>20 g</td><td class="num"><span data-price="goldq20000">–</span></td></tr>
+<tr><td>1 Unze (31,1 g)</td><td class="num"><span data-price="goldozv">–</span></td></tr>
+<tr><td>50 g</td><td class="num"><span data-price="goldq50000">–</span></td></tr>
+<tr><td>100 g</td><td class="num"><span data-price="goldq100000">–</span></td></tr>
+<tr><td>250 g</td><td class="num"><span data-price="goldq250000">–</span></td></tr>
+<tr><td>500 g</td><td class="num"><span data-price="goldq500000">–</span></td></tr>
+<tr><td>1 kg</td><td class="num"><span data-price="goldw1000">–</span></td></tr>
+</tbody></table></div>
+<p>Die Tabelle zeigt den reinen Goldwert. Was Sie beim Kauf bezahlen und beim Verkauf erhalten, weicht davon ab – siehe unten.</p>`
+      },
+      {
+        h: 'Goldbarren verkaufen: Was zahlen Händler?',
+        html: `<p>Anlagebarren aus Feingold (999,9) müssen nicht eingeschmolzen werden. Händler kaufen sie deshalb nah am Goldpreis an – deutlich näher als Schmuck oder <a href="/altgold-verkaufen/">Altgold</a>. Barren bekannter Hersteller mit Zertifikat und unbeschädigter Verpackung lassen sich am einfachsten verkaufen. Wie der Verkauf abläuft, steht unter <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>`
+      },
+      {
+        h: 'Goldbarren kaufen: worauf achten?',
+        html: `<ul>
+<li><strong>Aufschlag:</strong> Beim Kauf zahlen Sie mehr als den Goldwert, weil Herstellung und Händlermarge dazukommen. Bei kleinen Barren ist dieser Aufschlag im Verhältnis deutlich höher als bei großen.</li>
+<li><strong>Keine Mehrwertsteuer:</strong> Anlagegold ist in Deutschland und der EU von der Umsatzsteuer befreit.</li>
+<li><strong>Stückelung:</strong> Mehrere kleinere Barren kosten mehr, lassen sich später aber flexibler verkaufen als ein großer.</li>
+<li><strong>Seriöse Herkunft:</strong> Kaufen Sie bei etablierten Händlern; Barren bekannter Hersteller tragen Gewicht, Feingehalt, Hersteller und oft eine Seriennummer.</li>
+</ul>`
+      }
+    ],
+    faq: [
+      ['Was ist ein 100-g-Goldbarren wert?', 'Ein 100-g-Barren aus 999,9er Feingold wird mit 100 g Feingold gerechnet. Seinen aktuellen Goldwert zeigt die Tabelle; beim Verkauf zahlen Händler etwas weniger, beim Kauf etwas mehr.'],
+      ['Muss ich auf Goldbarren Mehrwertsteuer zahlen?', 'Nein. Anlagegold, zu dem Goldbarren mit einem Feingehalt von mindestens 995 gehören, ist in der EU von der Umsatzsteuer befreit.'],
+      ['Sind kleine Goldbarren sinnvoll?', 'Kleine Barren sind flexibel, haben aber einen höheren Aufschlag je Gramm. Bei größeren Beträgen sind größere Barren meist günstiger.'],
+      ['Wie viel bekomme ich beim Verkauf eines Goldbarrens?', 'Händler zahlen für Anlagebarren meist nah am Goldpreis. Der Rechner oben zeigt eine realistische Spanne für Ihren Barren.']
+    ]
+  },
+  {
     slug: 'goldmuenzen-wert',
     nav: 'Goldmünzen',
     tile: 'Krügerrand, 20 Mark, Vreneli …',
-    keywords: 'goldmünzen wert 1.300 (KD 12) · vreneli wert 390 (KD 18) · 20 mark gold wert 40',
-    title: 'Goldmünzen Wert berechnen: Vreneli, 20 Mark, Maple Leaf',
+    keywords: 'goldmünzen wert 1.300 (KD 12) · goldmünzen 12.100 (KD 20) · wert von goldmünzen 4.100 (Thema) · münzen aus gold 260',
+    title: 'Goldmünzen Wert berechnen: Anlagemünzen und alte Münzen',
     description: 'Was ist Ihre Goldmünze wert? Münze und Anzahl wählen und den Goldwert sehen – für Maple Leaf, Philharmoniker, Vreneli, 20 Mark, Dukaten und mehr.',
     h1: 'Goldmünzen Wert: Was ist meine Goldmünze heute wert?',
     intro: 'Wählen Sie Ihre Goldmünze und die Anzahl. Der Rechner zeigt den Goldwert nach aktuellem Kurs und einen Richtwert, was Händler beim Ankauf typischerweise zahlen.',
@@ -411,13 +501,13 @@ module.exports = [
 <p><strong>Historische Münzen</strong> wie 20 Mark aus dem Kaiserreich, Vreneli oder Dukaten haben ebenfalls einen festen Goldgehalt. Bei seltenen Jahrgängen oder sehr gutem Zustand kann der Sammlerwert aber deutlich über dem Goldwert liegen. Lassen Sie solche Münzen vor dem Verkauf von einem Münzhändler einschätzen. Was Händler beim Ankauf üblicherweise abziehen, erklärt der <a href="/goldankauf-rechner/">Goldankauf-Rechner</a>.</p>`
       },
       {
-        h: 'Vreneli Wert',
-        html: `<p>Das „Vreneli“ ist die Schweizer 20-Franken-Goldmünze mit dem Frauenkopf. Sie wiegt 6,45 g, besteht aus 900er Gold und enthält damit 5,806 g Feingold. Ihr Goldwert lässt sich oben direkt berechnen. Häufige Jahrgänge werden nah am Goldwert gehandelt, seltene Jahrgänge deutlich darüber.</p>`
+        h: 'Einzelne Goldmünzen im Detail',
+        html: `<p>Eigene Seiten mit Daten, Größen und Hinweisen zum Sammlerwert gibt es für <a href="/maple-leaf-gold-wert/">Maple Leaf</a>, <a href="/philharmoniker-gold-wert/">Wiener Philharmoniker</a>, <a href="/kruegerrand-wert/">Krügerrand</a>, <a href="/american-eagle-gold-wert/">American Eagle</a>, <a href="/britannia-gold-wert/">Britannia</a>, <a href="/kaenguru-gold-wert/">Känguru</a>, <a href="/vreneli-wert/">Vreneli</a>, <a href="/20-mark-gold-wert/">20 Mark</a>, <a href="/sovereign-gold-wert/">Sovereign</a> und <a href="/dukat-gold-wert/">Dukaten</a>.</p>`
       }
     ],
     faq: [
-      ['Wie viel Gold ist in einem Krügerrand?', 'Ein Krügerrand zu einer Unze enthält 31,1 g Feingold. Die Münze wiegt insgesamt 33,93 g, weil sie zusätzlich Kupfer enthält.'],
-      ['Was ist eine 20-Mark-Goldmünze wert?', 'Eine 20-Mark-Münze aus dem Kaiserreich enthält rund 7,17 g Feingold. Ihr Goldwert ergibt sich aus diesem Gehalt und dem aktuellen Kurs; seltene Prägungen können mehr wert sein.'],
+      ['Wie viel Gold ist in einem Krügerrand?', 'Ein Krügerrand zu einer Unze enthält 31,1 g Feingold. Alle Größen und Daten finden Sie auf der Seite Krügerrand Wert.'],
+      ['Welche Goldmünzen werden am besten angekauft?', 'Bekannte Anlagemünzen wie Krügerrand, Maple Leaf oder Wiener Philharmoniker werden am nächsten am Goldpreis angekauft. Historische Münzen wie 20 Mark oder Vreneli liegen meist etwas darunter, sofern sie keinen Sammlerwert haben.'],
       ['Warum zahlen Händler bei Münzen mehr als bei Altgold?', 'Anlagemünzen müssen nicht eingeschmolzen werden, sondern können direkt weiterverkauft werden. Deshalb ist der Abschlag kleiner.']
     ]
   },
@@ -425,6 +515,7 @@ module.exports = [
     slug: 'kruegerrand-wert',
     nav: 'Krügerrand',
     inNav: false,
+    group: 'muenzen',
     tile: 'Die bekannteste Goldmünze',
     keywords: 'krügerrand wert 22.200 (KD 27)',
     title: 'Krügerrand Wert heute – was ist ein Krügerrand wert?',
@@ -453,6 +544,186 @@ module.exports = [
       ['Wie schwer ist ein Krügerrand?', 'Ein Krügerrand zu einer Unze wiegt 33,93 g und enthält 31,1035 g Feingold.'],
       ['Ist der Krügerrand aus reinem Gold?', 'Nein. Er besteht zu 91,67 % aus Gold und zu einem Rest aus Kupfer. Die Gesamtmenge an Feingold beträgt trotzdem genau eine Unze.']
     ]
+  },
+  {
+    slug: 'maple-leaf-gold-wert',
+    nav: 'Maple Leaf',
+    inNav: false,
+    group: 'muenzen',
+    keywords: 'maple leaf gold wert · maple leaf goldmünze wert · maple leaf 1 oz gold · maple leaf 1/10 unze',
+    title: 'Maple Leaf Gold Wert heute: Goldwert und Ankauf',
+    description: 'Was ist ein Maple Leaf aus Gold wert? Aktueller Goldwert für 1 Unze und Teilstücke, Daten zur kanadischen Münze und was Händler beim Ankauf zahlen.',
+    h1: 'Maple Leaf Gold: Was ist die Münze heute wert?',
+    intro: 'Der Maple Leaf aus Kanada ist eine der meistgehandelten Goldmünzen der Welt. Wählen Sie die Münze und die Anzahl – Teilstücke finden Sie in der Liste als „Teilstück 1/2 Unze“ usw. Der Rechner zeigt den aktuellen Goldwert.',
+    calc: { type: 'coins', preset: 'maple' },
+    sections: [
+      { h: 'Maple Leaf: Daten und Größen', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Kanada (Royal Canadian Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1979</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>50 Kanadische Dollar</td></tr><tr><th scope="row">Feingehalt</th><td>999,9 (seit Ende 1982, zuvor 999)</td></tr><tr><th scope="row">Gewicht</th><td>31,1035 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
+<p>Der Maple Leaf besteht aus reinem Feingold ohne Beimischung. Er zeigt auf der Rückseite das kanadische Ahornblatt, auf der Vorderseite das Porträt des Monarchen (bis 2023 Elizabeth II., seither Charles III.). Neuere Jahrgänge tragen feine Radiallinien und ein mikrograviertes Ahornblatt als Sicherheitsmerkmale.</p>
+<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldq31103">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
+      { h: 'Kratzer und Flecken beim Maple Leaf', html: `<p>Reines Feingold ist weich. Beim Maple Leaf sieht man deshalb häufig Kratzer, Kontaktspuren oder kleine Milchflecken. Am Goldgehalt ändern sie nichts – einige Händler ziehen für stark beschädigte Münzen aber etwas ab. Bewahren Sie Münzen am besten in der Originalkapsel auf.</p>` },
+      { h: 'Maple Leaf verkaufen', html: `<p>Die Münze wird nicht eingeschmolzen, sondern direkt weiterverkauft. Händler zahlen deshalb nah am Goldpreis – der Rechner oben zeigt eine realistische Spanne. Vergleichen Sie mindestens zwei Angebote am selben Tag; den Ablauf beschreibt die Seite <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>` }
+    ],
+    faq: [['Wie viel Gold ist in einem Maple Leaf?','Ein Maple Leaf zu einer Unze enthält 31,1035 g Feingold mit einem Feingehalt von 999,9.'],['Gibt es den Maple Leaf auch kleiner?','Ja, unter anderem als 1/2, 1/4 und 1/10 Unze. Den Goldwert der Teilstücke zeigt die Tabelle auf dieser Seite.'],['Ist der Maple Leaf mehrwertsteuerfrei?','Der Maple Leaf erfüllt die Voraussetzungen für Anlagegold und ist in Deutschland beim Kauf von der Mehrwertsteuer befreit; beim Verkauf durch Privatpersonen fällt ohnehin keine an.']]
+  },
+  {
+    slug: 'philharmoniker-gold-wert',
+    nav: 'Wiener Philharmoniker',
+    inNav: false,
+    group: 'muenzen',
+    keywords: 'philharmoniker gold wert · wiener philharmoniker goldmünze wert · philharmoniker 1 unze',
+    title: 'Wiener Philharmoniker Gold Wert: Goldwert und Ankauf',
+    description: 'Was ist ein Wiener Philharmoniker aus Gold wert? Aktueller Goldwert für 1 Unze und Teilstücke, Daten zur österreichischen Münze und Ankaufspreise.',
+    h1: 'Wiener Philharmoniker Gold: Was ist die Münze heute wert?',
+    intro: 'Der Wiener Philharmoniker ist eine der beliebtesten Goldmünzen in Deutschland und Österreich. Wählen Sie die Münze und die Anzahl – Teilstücke finden Sie in der Liste als „Teilstück 1/2 Unze“ usw. Der Rechner zeigt den aktuellen Goldwert.',
+    calc: { type: 'coins', preset: 'philharmoniker' },
+    sections: [
+      { h: 'Wiener Philharmoniker: Daten und Größen', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Österreich (Münze Österreich)</td></tr><tr><th scope="row">Erstausgabe</th><td>1989</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>2.000 Schilling (bis 2001), seit 2002 100 Euro</td></tr><tr><th scope="row">Feingehalt</th><td>999,9</td></tr><tr><th scope="row">Gewicht</th><td>31,1035 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
+<p>Die Vorderseite zeigt die große Orgel im Goldenen Saal des Wiener Musikvereins, die Rückseite Instrumente der Wiener Philharmoniker. Die Münze gilt als einzige Gold-Anlagemünze mit einem Nennwert in Euro.</p>
+<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldq31103">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr><tr><td>1/25 Unze (seit 2014)</td><td class="num">1,24 g</td><td class="num"><span data-price="goldq1244">–</span></td></tr></tbody></table></div>` },
+      { h: 'Schilling oder Euro – spielt das eine Rolle?', html: `<p>Für den Goldwert nicht: Ausgaben mit Schilling-Nennwert (1989–2001) enthalten genauso viel Gold wie die Euro-Ausgaben. Händler kaufen beide Varianten zum gleichen Preis an. Nur sehr gut erhaltene Stücke in Originalverpackung lassen sich manchmal etwas leichter verkaufen.</p>` },
+      { h: 'Wiener Philharmoniker verkaufen', html: `<p>Die Münze wird nicht eingeschmolzen, sondern direkt weiterverkauft. Händler zahlen deshalb nah am Goldpreis – der Rechner oben zeigt eine realistische Spanne. Vergleichen Sie mindestens zwei Angebote am selben Tag; den Ablauf beschreibt die Seite <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>` }
+    ],
+    faq: [['Wie viel Gold ist in einem Wiener Philharmoniker?','Die 1-Unzen-Münze enthält 31,1035 g Feingold mit einem Feingehalt von 999,9.'],['Ist ein Philharmoniker in Schilling weniger wert?','Nein. Der Goldgehalt ist identisch, Händler zahlen für Schilling- und Euro-Ausgaben denselben Preis.'],['Ist der Wiener Philharmoniker mehrwertsteuerfrei?','Der Wiener Philharmoniker erfüllt die Voraussetzungen für Anlagegold und ist in Deutschland beim Kauf von der Mehrwertsteuer befreit; beim Verkauf durch Privatpersonen fällt ohnehin keine an.']]
+  },
+  {
+    slug: 'american-eagle-gold-wert',
+    nav: 'American Eagle',
+    inNav: false,
+    group: 'muenzen',
+    keywords: 'american eagle gold wert · american eagle goldmünze · gold eagle 1 oz',
+    title: 'American Eagle Gold Wert heute: Goldwert und Ankauf',
+    description: 'Was ist ein American Eagle aus Gold wert? Goldwert der 22-karätigen US-Münze nach aktuellem Kurs, Daten zu Gewicht und Legierung und Ankaufspreise.',
+    h1: 'American Eagle Gold: Was ist die Münze heute wert?',
+    intro: 'Der American Eagle ist die offizielle Goldmünze der USA. Sie wiegt mehr als eine Unze, enthält aber genau eine Feinunze Gold – der Rechner zeigt den aktuellen Wert.',
+    calc: { type: 'coins', preset: 'eagle' },
+    sections: [
+      { h: 'American Eagle: Daten und Größen', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>USA (United States Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1986</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>50 US-Dollar</td></tr><tr><th scope="row">Feingehalt</th><td>916,7 (22 Karat), legiert mit Silber und Kupfer</td></tr><tr><th scope="row">Gewicht</th><td>33,93 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
+<p>Die Vorderseite zeigt Lady Liberty nach dem Entwurf von Augustus Saint-Gaudens. Die Rückseite zeigte bis 2021 eine Adlerfamilie, seit Mitte 2021 einen Adlerkopf.</p>
+<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldq31103">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
+      { h: 'Warum wiegt ein American Eagle mehr als eine Unze?', html: `<p>Die Münze besteht aus 22-karätigem Gold. Silber und Kupfer machen sie härter und kratzfester, erhöhen aber das Gewicht auf 33,93 g. Für den Wert zählt nur das Feingold: genau eine Unze, also gleich viel wie beim <a href="/maple-leaf-gold-wert/">Maple Leaf</a> oder <a href="/kruegerrand-wert/">Krügerrand</a>.</p>` },
+      { h: 'American Eagle verkaufen', html: `<p>Die Münze wird nicht eingeschmolzen, sondern direkt weiterverkauft. Händler zahlen deshalb nah am Goldpreis – der Rechner oben zeigt eine realistische Spanne. Vergleichen Sie mindestens zwei Angebote am selben Tag; den Ablauf beschreibt die Seite <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>` }
+    ],
+    faq: [['Wie viel Gold ist in einem American Eagle?','Eine 1-Unzen-Münze enthält 31,1035 g Feingold, obwohl sie insgesamt 33,93 g wiegt.'],['Ist ein American Eagle weniger wert als ein Maple Leaf?','Nein. Beide enthalten genau eine Unze Gold und werden nah am Goldpreis angekauft.'],['Ist der American Eagle mehrwertsteuerfrei?','Der American Eagle erfüllt die Voraussetzungen für Anlagegold und ist in Deutschland beim Kauf von der Mehrwertsteuer befreit; beim Verkauf durch Privatpersonen fällt ohnehin keine an.']]
+  },
+  {
+    slug: 'britannia-gold-wert',
+    nav: 'Britannia',
+    inNav: false,
+    group: 'muenzen',
+    keywords: 'britannia gold wert · britannia goldmünze · britannia 1 oz gold',
+    title: 'Britannia Gold Wert heute: Goldwert und Ankauf',
+    description: 'Was ist eine Britannia aus Gold wert? Aktueller Goldwert der britischen Anlagemünze, Unterschiede alter und neuer Jahrgänge und was Händler zahlen.',
+    h1: 'Britannia Gold: Was ist die Münze heute wert?',
+    intro: 'Die Britannia ist die Anlagemünze der britischen Royal Mint. Alte und neue Jahrgänge unterscheiden sich in der Legierung – der Goldgehalt ist gleich.',
+    calc: { type: 'coins', preset: 'britannia' },
+    sections: [
+      { h: 'Britannia: Daten und Größen', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Großbritannien (The Royal Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1987</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>100 Pfund</td></tr><tr><th scope="row">Feingehalt</th><td>999,9 seit 2013; 1987–2012: 916,7 (22 Karat)</td></tr><tr><th scope="row">Gewicht</th><td>31,1035 g (seit 2013), davor 34,05 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
+<p>Die Britannia zeigt die Personifikation Großbritanniens mit Schild und Dreizack. Seit 2021 tragen neue Jahrgänge zusätzliche Sicherheitsmerkmale gegen Fälschungen.</p>
+<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldq31103">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
+      { h: 'Alte und neue Britannia unterscheiden', html: `<p>Bis 2012 war die Britannia aus 22-karätigem Gold: 1987 bis 1989 mit Kupfer, ab 1990 mit Silber legiert. Diese Münzen wiegen 34,05 g und enthalten trotzdem genau eine Unze Gold. Seit 2013 ist die Britannia aus Feingold (999,9). Für den Goldwert ist der Jahrgang deshalb egal.</p>` },
+      { h: 'Britannia verkaufen', html: `<p>Die Münze wird nicht eingeschmolzen, sondern direkt weiterverkauft. Händler zahlen deshalb nah am Goldpreis – der Rechner oben zeigt eine realistische Spanne. Vergleichen Sie mindestens zwei Angebote am selben Tag; den Ablauf beschreibt die Seite <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>` }
+    ],
+    faq: [['Wie viel Gold ist in einer Britannia?','Jede 1-Unzen-Britannia enthält 31,1035 g Feingold – die alten 22-karätigen Jahrgänge genauso wie die neuen aus 999,9er Gold.'],['Warum wiegen alte Britannias mehr?','Weil sie bis 2012 mit Kupfer oder Silber legiert waren. Das zusätzliche Metall erhöht das Gewicht, nicht den Goldgehalt.'],['Ist die Britannia mehrwertsteuerfrei?','Die Britannia erfüllt die Voraussetzungen für Anlagegold und ist in Deutschland beim Kauf von der Mehrwertsteuer befreit; beim Verkauf durch Privatpersonen fällt ohnehin keine an.']]
+  },
+  {
+    slug: 'kaenguru-gold-wert',
+    nav: 'Känguru (Nugget)',
+    inNav: false,
+    group: 'muenzen',
+    keywords: 'känguru gold wert · nugget goldmünze wert · australian kangaroo gold · känguru 1 oz',
+    title: 'Känguru Gold (Nugget) Wert heute: Goldwert und Ankauf',
+    description: 'Was ist eine Känguru-Goldmünze aus Australien wert? Goldwert der Nugget-Münze nach aktuellem Kurs, Daten zur Perth Mint und Ankaufspreise.',
+    h1: 'Känguru Gold: Was ist die australische Goldmünze heute wert?',
+    intro: 'Die australische Goldmünze der Perth Mint ist auch als „Nugget“ bekannt. Wählen Sie die Münze und die Anzahl – Teilstücke finden Sie in der Liste als „Teilstück 1/2 Unze“ usw. Der Rechner zeigt den aktuellen Goldwert.',
+    calc: { type: 'coins', preset: 'kaenguru' },
+    sections: [
+      { h: 'Känguru-Goldmünze: Daten und Größen', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Australien (Perth Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1986, zunächst mit Nugget-Motiv</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>100 Australische Dollar</td></tr><tr><th scope="row">Feingehalt</th><td>999,9</td></tr><tr><th scope="row">Gewicht</th><td>31,1035 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
+<p>In den ersten Jahren zeigte die Münze Goldnuggets, seit 1989 ein Känguru. Das Motiv wechselt jedes Jahr – deshalb sprechen viele Händler bis heute vom „Nugget“.</p>
+<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldq31103">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
+      { h: 'Jährlich neues Motiv – spielt der Jahrgang eine Rolle?', html: `<p>Für den Goldwert nicht: Jeder Jahrgang enthält gleich viel Gold. Einzelne frühe Nugget-Jahrgänge oder limitierte Sonderausgaben werden unter Sammlern teils höher gehandelt. Prüfen lassen lohnt sich nur bei besonderen Stücken.</p>` },
+      { h: 'Känguru (Nugget) verkaufen', html: `<p>Die Münze wird nicht eingeschmolzen, sondern direkt weiterverkauft. Händler zahlen deshalb nah am Goldpreis – der Rechner oben zeigt eine realistische Spanne. Vergleichen Sie mindestens zwei Angebote am selben Tag; den Ablauf beschreibt die Seite <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>` }
+    ],
+    faq: [['Ist Känguru dasselbe wie Nugget?','Ja. Es ist dieselbe Münze der Perth Mint – bis 1988 mit Nugget-Motiv, seither mit Känguru.'],['Wie viel Gold ist in einer Känguru-Münze?','Die 1-Unzen-Münze enthält 31,1035 g Feingold mit einem Feingehalt von 999,9.'],['Ist die Känguru-Goldmünze mehrwertsteuerfrei?','Die Känguru-Goldmünze erfüllt die Voraussetzungen für Anlagegold und ist in Deutschland beim Kauf von der Mehrwertsteuer befreit; beim Verkauf durch Privatpersonen fällt ohnehin keine an.']]
+  },
+  {
+    slug: 'vreneli-wert',
+    nav: 'Vreneli',
+    inNav: false,
+    group: 'muenzen',
+    keywords: 'vreneli wert 390 (KD 18) · vreneli gold wert · 20 franken gold wert · 10 franken vreneli wert',
+    title: 'Vreneli Wert heute: Was ist ein 20-Franken-Vreneli wert?',
+    description: 'Was ist ein Vreneli wert? Goldwert für 20 und 10 Franken Vreneli nach aktuellem Kurs, Gewicht und Feingehalt sowie Hinweise zu seltenen Jahrgängen.',
+    h1: 'Vreneli Wert: Was ist ein 20-Franken-Vreneli heute wert?',
+    intro: 'Das Vreneli ist die bekannteste Schweizer Goldmünze. Wählen Sie 20 oder 10 Franken und die Anzahl – der Rechner zeigt den aktuellen Goldwert.',
+    calc: { type: 'coins', preset: 'vreneli' },
+    sections: [
+      { h: 'Vreneli: 20 und 10 Franken im Vergleich', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Schweiz</td></tr><tr><th scope="row">Prägejahre</th><td>1897 bis 1949 (nicht in jedem Jahr)</td></tr><tr><th scope="row">Feingehalt</th><td>900</td></tr><tr><th scope="row">Gewicht</th><td>6,45 g (20 Franken) · 3,226 g (10 Franken)</td></tr><tr><th scope="row">Feingold</th><td>5,806 g (20 Franken) · 2,903 g (10 Franken)</td></tr></tbody></table></div>
+<p>Die Vorderseite zeigt einen Frauenkopf vor Alpenpanorama, im Volksmund „Vreneli“ genannt. Das 10-Franken-Vreneli wurde von 1911 bis 1922 geprägt und enthält genau halb so viel Gold.</p>
+<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>20 Franken</td><td class="num">5,806 g</td><td class="num"><span data-price="goldq5806">–</span></td></tr><tr><td>10 Franken</td><td class="num">2,903 g</td><td class="num"><span data-price="goldq2903">–</span></td></tr></tbody></table></div>` },
+      { h: 'Seltene Vreneli-Jahrgänge', html: `<p>Die meisten Vreneli werden nah am Goldwert gehandelt. Einige Jahrgänge mit kleiner Auflage sind dagegen gesuchte Sammlerstücke und können ein Vielfaches wert sein. Prüfen Sie die Jahreszahl und lassen Sie auffällige Stücke von einem Münzhändler bewerten, bevor Sie verkaufen.</p>` },
+      { h: 'Vreneli verkaufen', html: `<p>Für gängige Stücke zahlen Händler einen Preis nah am Goldwert. Ausnahme sind Sammlerstücke – lassen Sie seltene Jahrgänge oder Stücke in sehr gutem Erhaltungszustand vorher von einem Münzhändler bewerten, denn dort kann der Sammlerwert deutlich über dem Goldwert liegen. Weitere historische Münzen finden Sie im <a href="/goldmuenzen-wert/">Goldmünzen-Rechner</a>.</p>` }
+    ],
+    faq: [['Wie viel Gold ist in einem Vreneli?','Ein 20-Franken-Vreneli enthält 5,806 g Feingold, ein 10-Franken-Vreneli 2,903 g.'],['Sind alle Vreneli gleich viel wert?','Beim Goldwert ja. Seltene Jahrgänge können aber einen deutlich höheren Sammlerwert haben.'],['Ist das Vreneli mehrwertsteuerfrei?','Gängige Stücke gelten als Anlagegold und sind beim Kauf mehrwertsteuerfrei. Liegt der Preis wegen eines Sammlerwerts über 180 % des Goldwerts, kann Mehrwertsteuer anfallen, meist in Form der Differenzbesteuerung. Beim Verkauf durch Privatpersonen fällt keine an.']]
+  },
+  {
+    slug: '20-mark-gold-wert',
+    nav: '20 Mark Gold',
+    inNav: false,
+    group: 'muenzen',
+    keywords: '20 mark gold wert 40 · 20 goldmark wert · 20 mark goldmünze kaiserreich · 10 mark gold wert',
+    title: '20 Mark Gold Wert: Was ist eine 20-Mark-Goldmünze wert?',
+    description: 'Was ist eine 20-Mark-Goldmünze aus dem Kaiserreich wert? Goldwert für 20 und 10 Mark nach aktuellem Kurs, Prägeländer und Hinweise zum Sammlerwert.',
+    h1: '20 Mark Gold: Was ist eine 20-Mark-Goldmünze heute wert?',
+    intro: 'Goldmünzen zu 20 und 10 Mark aus dem Deutschen Kaiserreich liegen in vielen Familien im Schrank. Der Rechner zeigt ihren aktuellen Goldwert.',
+    calc: { type: 'coins', preset: '20mark' },
+    sections: [
+      { h: '20 und 10 Mark Gold im Vergleich', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Deutsches Kaiserreich (verschiedene Länder)</td></tr><tr><th scope="row">Prägejahre</th><td>1871 bis 1915</td></tr><tr><th scope="row">Feingehalt</th><td>900</td></tr><tr><th scope="row">Gewicht</th><td>7,965 g (20 Mark) · 3,982 g (10 Mark)</td></tr><tr><th scope="row">Feingold</th><td>7,168 g (20 Mark) · 3,584 g (10 Mark)</td></tr></tbody></table></div>
+<p>Jedes Land des Kaiserreichs prägte eigene Goldmünzen mit dem Porträt seines Herrschers. Die freien Städte Hamburg, Bremen und Lübeck zeigen statt eines Porträts ihr Wappen. Die Rückseite trägt immer den Reichsadler.</p>
+<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>20 Mark</td><td class="num">7,168 g</td><td class="num"><span data-price="goldq7168">–</span></td></tr><tr><td>10 Mark</td><td class="num">3,584 g</td><td class="num"><span data-price="goldq3584">–</span></td></tr></tbody></table></div>` },
+      { h: 'Prägeland und Münzzeichen', html: `<p>Häufige Prägungen, etwa aus Preußen mit Wilhelm II., werden nah am Goldwert gehandelt. Münzen kleiner Länder oder seltener Jahrgänge haben dagegen oft einen Sammlerwert über dem Goldwert. Das Münzzeichen (ein Buchstabe unter dem Porträt oder Adler) verrät die Prägestätte, etwa A für Berlin.</p>` },
+      { h: '20 Mark Gold verkaufen', html: `<p>Für gängige Stücke zahlen Händler einen Preis nah am Goldwert. Ausnahme sind Sammlerstücke – lassen Sie seltene Jahrgänge oder Stücke in sehr gutem Erhaltungszustand vorher von einem Münzhändler bewerten, denn dort kann der Sammlerwert deutlich über dem Goldwert liegen. Weitere historische Münzen finden Sie im <a href="/goldmuenzen-wert/">Goldmünzen-Rechner</a>.</p>` }
+    ],
+    faq: [['Wie viel Gold ist in einer 20-Mark-Münze?','Eine 20-Mark-Goldmünze enthält 7,168 g Feingold, eine 10-Mark-Münze 3,584 g.'],['Sind 20-Mark-Goldmünzen mehr wert als ihr Gold?','Gängige Stücke werden nah am Goldwert gehandelt. Seltene Länder, Jahrgänge oder sehr gut erhaltene Münzen können mehr wert sein.'],['Ist die 20-Mark-Goldmünze mehrwertsteuerfrei?','Gängige Stücke gelten als Anlagegold und sind beim Kauf mehrwertsteuerfrei. Liegt der Preis wegen eines Sammlerwerts über 180 % des Goldwerts, kann Mehrwertsteuer anfallen, meist in Form der Differenzbesteuerung. Beim Verkauf durch Privatpersonen fällt keine an.']]
+  },
+  {
+    slug: 'sovereign-gold-wert',
+    nav: 'Sovereign',
+    inNav: false,
+    group: 'muenzen',
+    keywords: 'sovereign gold wert · sovereign goldmünze · half sovereign wert',
+    title: 'Sovereign Gold Wert heute: Goldwert und Ankauf',
+    description: 'Was ist ein Sovereign aus Gold wert? Goldwert für Sovereign und Half Sovereign nach aktuellem Kurs, Daten der Royal Mint und was Händler zahlen.',
+    h1: 'Sovereign Gold: Was ist ein Sovereign heute wert?',
+    intro: 'Der Sovereign ist eine der ältesten noch geprägten Goldmünzen. Wählen Sie Sovereign oder Half Sovereign und die Anzahl – der Rechner zeigt den aktuellen Goldwert.',
+    calc: { type: 'coins', preset: 'sovereign' },
+    sections: [
+      { h: 'Sovereign und Half Sovereign im Vergleich', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Großbritannien (The Royal Mint)</td></tr><tr><th scope="row">Erstausgabe (moderner Sovereign)</th><td>1817</td></tr><tr><th scope="row">Nennwert</th><td>1 Pfund</td></tr><tr><th scope="row">Feingehalt</th><td>916,7 (22 Karat)</td></tr><tr><th scope="row">Gewicht</th><td>7,988 g (Sovereign) · 3,994 g (Half Sovereign)</td></tr><tr><th scope="row">Feingold</th><td>7,322 g (Sovereign) · 3,661 g (Half Sovereign)</td></tr></tbody></table></div>
+<p>Die Rückseite zeigt den heiligen Georg im Kampf mit dem Drachen nach einem Entwurf von Benedetto Pistrucci, die Vorderseite den jeweiligen britischen Monarchen. Größe und Goldgehalt sind seit über 200 Jahren nahezu unverändert.</p>
+<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>Sovereign</td><td class="num">7,322 g</td><td class="num"><span data-price="goldq7322">–</span></td></tr><tr><td>Half Sovereign</td><td class="num">3,661 g</td><td class="num"><span data-price="goldq3661">–</span></td></tr></tbody></table></div>` },
+      { h: 'Alte und neue Sovereigns', html: `<p>Sovereigns werden seit 1817 geprägt und bis heute ausgegeben. Häufige Jahrgänge werden nah am Goldwert gehandelt, ältere Stücke mit seltenem Monarchen oder Prägeort teils darüber. Für den Goldwert zählen nur die 7,322 g Feingold.</p>` },
+      { h: 'Sovereign verkaufen', html: `<p>Für gängige Stücke zahlen Händler einen Preis nah am Goldwert. Ausnahme sind Sammlerstücke – lassen Sie seltene Jahrgänge oder Stücke in sehr gutem Erhaltungszustand vorher von einem Münzhändler bewerten, denn dort kann der Sammlerwert deutlich über dem Goldwert liegen. Weitere historische Münzen finden Sie im <a href="/goldmuenzen-wert/">Goldmünzen-Rechner</a>.</p>` }
+    ],
+    faq: [['Wie viel Gold ist in einem Sovereign?','Ein Sovereign enthält 7,322 g Feingold, ein Half Sovereign 3,661 g.'],['Ist ein alter Sovereign mehr wert?','Nicht automatisch. Viele alte Jahrgänge werden nah am Goldwert gehandelt, nur seltene Stücke erzielen einen Sammlerwert.'],['Ist der Sovereign mehrwertsteuerfrei?','Gängige Stücke gelten als Anlagegold und sind beim Kauf mehrwertsteuerfrei. Liegt der Preis wegen eines Sammlerwerts über 180 % des Goldwerts, kann Mehrwertsteuer anfallen, meist in Form der Differenzbesteuerung. Beim Verkauf durch Privatpersonen fällt keine an.']]
+  },
+  {
+    slug: 'dukat-gold-wert',
+    nav: 'Dukat',
+    inNav: false,
+    group: 'muenzen',
+    keywords: 'dukat gold wert · 1 dukat wert · 4 dukaten wert · dukat 1915',
+    title: 'Dukat Gold Wert: Was sind 1 und 4 Dukaten wert?',
+    description: 'Was ist ein österreichischer Dukat wert? Goldwert für 1 und 4 Dukaten nach aktuellem Kurs und warum alle Dukaten die Jahreszahl 1915 tragen.',
+    h1: 'Dukat Gold: Was ist ein österreichischer Dukat heute wert?',
+    intro: 'Österreichische Dukaten sind beliebte Geschenkmünzen. Wählen Sie 1 oder 4 Dukaten und die Anzahl – der Rechner zeigt den aktuellen Goldwert.',
+    calc: { type: 'coins', preset: 'dukat1' },
+    sections: [
+      { h: '1 und 4 Dukaten im Vergleich', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Österreich (Münze Österreich)</td></tr><tr><th scope="row">Jahreszahl</th><td>1915 (offizielle Nachprägung)</td></tr><tr><th scope="row">Feingehalt</th><td>986 (rund 23,7 Karat)</td></tr><tr><th scope="row">Gewicht</th><td>3,491 g (1 Dukat) · 13,964 g (4 Dukaten)</td></tr><tr><th scope="row">Feingold</th><td>3,442 g (1 Dukat) · 13,768 g (4 Dukaten)</td></tr></tbody></table></div>
+<p>Das 1-Dukaten-Stück zeigt Kaiser Franz Joseph I., das 4-Dukaten-Stück zusätzlich Kaiserin Elisabeth. Mit 986er Gold sind Dukaten fast so rein wie Feingold.</p>
+<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Dukat</td><td class="num">3,442 g</td><td class="num"><span data-price="goldq3442">–</span></td></tr><tr><td>4 Dukaten</td><td class="num">13,768 g</td><td class="num"><span data-price="goldq13768">–</span></td></tr></tbody></table></div>` },
+      { h: 'Warum steht auf jedem Dukaten 1915?', html: `<p>Die Münze Österreich prägt Dukaten bis heute als offizielle Nachprägung mit der Jahreszahl 1915. Ein Dukat mit dieser Jahreszahl ist deshalb kein seltenes Stück aus dem Ersten Weltkrieg, sondern eine Anlage- und Geschenkmünze, die nah am Goldwert gehandelt wird. Echte ältere Dukaten mit anderen Jahreszahlen können einen Sammlerwert haben.</p>` },
+      { h: 'Dukat verkaufen', html: `<p>Für gängige Stücke zahlen Händler einen Preis nah am Goldwert. Ausnahme sind Sammlerstücke – lassen Sie seltene Jahrgänge oder Stücke in sehr gutem Erhaltungszustand vorher von einem Münzhändler bewerten, denn dort kann der Sammlerwert deutlich über dem Goldwert liegen. Weitere historische Münzen finden Sie im <a href="/goldmuenzen-wert/">Goldmünzen-Rechner</a>.</p>` }
+    ],
+    faq: [['Wie viel Gold ist in einem Dukaten?','Ein 1-Dukaten-Stück enthält 3,442 g Feingold, ein 4-Dukaten-Stück 13,768 g.'],['Ist ein Dukat von 1915 selten?','Nein. Alle heute geprägten Dukaten tragen die Jahreszahl 1915; es sind offizielle Nachprägungen, die nah am Goldwert gehandelt werden.'],['Ist der Dukat mehrwertsteuerfrei?','Gängige Stücke gelten als Anlagegold und sind beim Kauf mehrwertsteuerfrei. Liegt der Preis wegen eines Sammlerwerts über 180 % des Goldwerts, kann Mehrwertsteuer anfallen, meist in Form der Differenzbesteuerung. Beim Verkauf durch Privatpersonen fällt keine an.']]
   },
   {
     slug: 'silberrechner',
@@ -639,17 +910,17 @@ module.exports = [
     nav: 'Platin & Palladium',
     inNav: false,
     tile: 'Platin- und Palladium-Rechner',
-    keywords: 'platin verkaufen 1.000 (KD 22) · platin ankauf 480 (KD 10) · palladium verkaufen 260 (KD 9) · platinschmuck wert – · palladium preis 14.800 (KD 35)',
-    title: 'Platin & Palladium verkaufen – Preis pro Gramm & Rechner',
-    description: 'Platin verkaufen: Wert von Platinschmuck, Platinbarren und Palladium berechnen – mit aktuellem Platin- und Palladiumpreis pro Gramm und Ankaufs-Richtwert.',
+    keywords: 'platin verkaufen 1.000 (KD 22) · platin ankauf 480 (KD 10) · palladium verkaufen 260 (KD 9) · platinschmuck wert',
+    title: 'Platin & Palladium verkaufen: Wert berechnen und Ankauf',
+    description: 'Platin verkaufen: Wert von Platinschmuck, Platinbarren und Palladium berechnen, Platinschmuck erkennen und den richtigen Ankäufer finden.',
     h1: 'Platin und Palladium verkaufen: Was ist mein Platin wert?',
     intro: 'Platinschmuck, Palladium oder Barren: Wählen Sie Metall, Gewicht und Stempel – der Rechner zeigt den Materialwert nach aktuellem Kurs und was der Platinankauf erfahrungsgemäß zahlt.',
     calc: { type: 'pgm', preset: 'platinum', weight: 10, fineness: '950' },
-    priceTable: 'pgm',
     sections: [
       {
         h: 'Platinschmuck erkennen',
-        html: `<p>Platinschmuck ist in Deutschland meist mit <strong>950</strong> gestempelt, oft zusammen mit <strong>Pt</strong> oder „Plat“. Er besteht also zu 95 % aus Platin. Platin ist grau-weiß, schwerer als Gold und muss im Gegensatz zu Weißgold nicht rhodiniert werden. Verwechslungsgefahr besteht mit <a href="/750-gold-wert/">Weißgold</a> – der Stempel schafft Klarheit.</p>`
+        html: `<p>Den aktuellen Kurs je Gramm und je Unze finden Sie unter <a href="/platinpreis-pro-gramm/">Platinpreis pro Gramm</a>.</p>
+<p>Platinschmuck ist in Deutschland meist mit <strong>950</strong> gestempelt, oft zusammen mit <strong>Pt</strong> oder „Plat“. Er besteht also zu 95 % aus Platin. Platin ist grau-weiß, schwerer als Gold und muss im Gegensatz zu Weißgold nicht rhodiniert werden. Verwechslungsgefahr besteht mit <a href="/750-gold-wert/">Weißgold</a> – der Stempel schafft Klarheit.</p>`
       },
       {
         h: 'Palladium verkaufen',
@@ -666,9 +937,69 @@ module.exports = [
       }
     ],
     faq: [
-      ['Wie viel ist 1 Gramm Platin wert?', 'Ein Gramm reines Platin ist so viel wert wie der aktuelle Platinpreis pro Gramm in der Tabelle oben. Für 950er Platinschmuck multiplizieren Sie diesen Wert mit 0,95.'],
+      ['Wer kauft Platinschmuck an?', 'Am besten Scheideanstalten und Edelmetallhändler, die Platin ausdrücklich ankaufen. Viele reine Goldankäufer nehmen Platin nicht an oder zahlen wenig dafür. Den aktuellen Preis je Gramm finden Sie unter Platinpreis pro Gramm.'],
       ['Ist Platin mehr wert als Gold?', 'Lange Zeit war Platin teurer als Gold. Seit etwa 2015 ist es jedoch deutlich günstiger. Die Tabelle oben zeigt den aktuellen Stand.'],
       ['Woran erkenne ich Platinschmuck?', 'Am Stempel 950, oft mit „Pt“. Platin ist grau-weiß und spürbar schwerer als ein gleich großes Schmuckstück aus Gold oder Silber.']
+    ]
+  },
+  {
+    slug: 'platinpreis-pro-gramm',
+    nav: 'Platinpreis',
+    inNav: false,
+    tile: 'Platin & Palladium je Gramm',
+    keywords: 'platin preis gramm 2.400 (KD 53) · palladium preis 14.800 (KD 35) · platinpreis pro gramm · palladium preis gramm · platinpreis aktuell',
+    title: 'Platinpreis pro Gramm heute – auch Palladiumpreis',
+    description: 'Aktueller Platinpreis und Palladiumpreis pro Gramm und pro Unze in Euro, dazu Werte für Platinschmuck 950 und 999 – stündlich aktualisiert.',
+    h1: 'Platinpreis und Palladiumpreis pro Gramm heute',
+    intro: 'Platin und Palladium gehören wie Gold zu den Edelmetallen. Hier sehen Sie die aktuellen Preise je Gramm und je Unze in Euro.',
+    calc: { type: 'pgm', preset: 'platinum', weight: 1, fineness: '999' },
+    priceTable: 'pgm',
+    sections: [
+      {
+        h: 'Platin und Palladium je Unze',
+        html: `<div class="table-wrap"><table><thead><tr><th>Metall</th><th class="num">1 Gramm</th><th class="num">1 Feinunze</th></tr></thead><tbody>
+<tr><td>Platin</td><td class="num"><span data-price="platinum">–</span></td><td class="num"><span data-price="platinumozv">–</span></td></tr>
+<tr><td>Palladium</td><td class="num"><span data-price="palladium">–</span></td><td class="num"><span data-price="palladiumozv">–</span></td></tr>
+</tbody></table></div>
+<p>Platin und Palladium werden vor allem in der Industrie verwendet, etwa in Abgaskatalysatoren. Ihr Preis schwankt deshalb oft stärker als der Goldpreis.</p>`
+      },
+      {
+        h: 'Platinschmuck und Zahngold bewerten',
+        html: `<p>Platinschmuck ist meist mit <strong>950</strong> gestempelt, enthält also 95 % Platin. Was Ankäufer dafür zahlen, zeigt der Rechner unter <a href="/platin-verkaufen/">Platin verkaufen</a>. Auch Zahngold enthält oft Platin oder Palladium – mehr dazu beim <a href="/zahngold-wert/">Zahngold-Rechner</a>.</p>`
+      }
+    ],
+    faq: [
+      ['Wie hoch ist der Platinpreis pro Gramm?', 'Den aktuellen Preis zeigt die Tabelle auf dieser Seite. Er ergibt sich aus dem Börsenkurs je Unze geteilt durch 31,1035.'],
+      ['Ist Palladium teurer als Platin?', 'Das wechselt mit dem Markt. Den aktuellen Vergleich sehen Sie in der Tabelle oben.'],
+      ['Was ist 950er Platin wert?', '950er Platin enthält 95 % reines Platin. Sein Materialwert ist Gewicht × 0,95 × Platinpreis pro Gramm.']
+    ]
+  },
+  {
+    slug: 'goldpreis-widget',
+    nav: 'Goldpreis-Widget',
+    inNav: false,
+    keywords: 'goldpreis widget · goldkurs widget für website · goldpreis einbinden',
+    title: 'Goldpreis-Widget kostenlos für Ihre Website einbinden',
+    description: 'Kostenloses Goldpreis-Widget: aktueller Gold- und Silberpreis in Euro für Ihre Website oder Ihren Blog. Ohne Cookies, ohne Tracking, Code einfach kopieren.',
+    h1: 'Goldpreis-Widget für Ihre Website',
+    intro: 'Zeigen Sie den aktuellen Gold- und Silberpreis auf Ihrer Website – kostenlos, ohne Anmeldung, ohne Cookies und ohne Tracking.',
+    sections: [
+      {
+        h: 'So sieht das Widget aus',
+        html: `<p><iframe src="https://dergoldrechner.de/widget/" title="Goldpreis heute" width="300" height="190" style="border:0;max-width:100%" loading="lazy"></iframe></p>`
+      },
+      {
+        h: 'Code zum Einbinden',
+        html: `<p>Kopieren Sie diesen Code an die Stelle Ihrer Website, an der der Goldpreis erscheinen soll:</p>
+<pre class="code"><code>&lt;iframe src="https://dergoldrechner.de/widget/" title="Goldpreis heute" width="300" height="190" style="border:0;max-width:100%" loading="lazy"&gt;&lt;/iframe&gt;
+&lt;p style="font-size:12px"&gt;Goldpreis von &lt;a href="https://dergoldrechner.de/"&gt;dergoldrechner.de&lt;/a&gt;&lt;/p&gt;</code></pre>
+<p>Das Widget lädt den Kurs direkt von unserem Server und aktualisiert sich bei jedem Seitenaufruf. Es setzt keine Cookies und verwendet kein Tracking. Wie bei jedem eingebetteten Inhalt wird beim Laden die IP-Adresse des Besuchers an unseren Server übermittelt; sie wird nur für den technischen Betrieb in den Server-Logs verarbeitet. Breite und Höhe können Sie anpassen; der Hinweis mit dem Link unter dem Widget sollte erhalten bleiben.</p>`
+      }
+    ],
+    faq: [
+      ['Kostet das Goldpreis-Widget etwas?', 'Nein. Das Widget ist kostenlos und ohne Anmeldung nutzbar.'],
+      ['Woher stammt der Goldpreis im Widget?', 'Es ist derselbe Kurs wie auf dergoldrechner.de: der internationale Spotpreis in Euro, stündlich aktualisiert und mit einer zweiten Quelle abgeglichen.'],
+      ['Setzt das Widget Cookies?', 'Nein. Es lädt nur den aktuellen Kurs und setzt weder Cookies noch Tracking. Technisch bedingt wird beim Laden die IP-Adresse an unseren Server übermittelt.']
     ]
   }
 ];
