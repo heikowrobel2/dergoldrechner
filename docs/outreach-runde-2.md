@@ -1,6 +1,6 @@
 # Outreach Runde 2 – Entwürfe (12.11.2026)
 
-Absender kontakt@dergoldrechner.de, Signatur „Der Goldrechner“. Versand nur nach Heikos Freigabe.
+Absender kontakt@dergoldrechner.de, Signatur „Der Goldrechner“. Freigegeben und versendet am 12.11.2026. Antworten prüft die Aufgabe „goldrechner-outreach-antworten“ werktags um 9 Uhr.
 Nicht berücksichtigt: uamr.de (automatisierte Content-Seite einer US-LLC), steuerschroeder.de (eigener Goldrechner), steuertipps.de (großer Verlag, Anlagethema), business-on.de (PR-Portal, Artikel 2021); dasfinanzen.de und kuechenfibel.de (passende Artikel, aber Impressum hinter Cloudflare-Sperre – Heiko kann die Kontakt-Adresse im eigenen Browser nachsehen).
 
 ## 1. monsterdealz.de
@@ -63,7 +63,7 @@ Falls Sie das für Ihre Leserinnen und Leser hilfreich finden, würde ich mich �
 ## Status
 | # | Ziel | Versendet | Antwort |
 |---|---|---|---|
-| 1 | monsterdealz.de | – | – |
-| 2 | pandotax.de | – | – |
-| 3 | finanzwissen.de | – | – |
-| 4 | mimikama.org | – | – |
+| 1 | monsterdealz.de | 12.11.2026 | – |
+| 2 | pandotax.de | 12.11.2026 | – |
+| 3 | finanzwissen.de | 12.11.2026 | – |
+| 4 | mimikama.org | 12.11.2026 | – |
