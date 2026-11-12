@@ -1,5 +1,9 @@
 # Linkaufbau dergoldrechner.de
 
+> **Entscheidung 12.11.2026:** Keine Pressemitteilungen und keine Lokalzeitung (Heiko möchte nicht als Person im
+> Mittelpunkt stehen). Linkaufbau nur über gezielte Anfragen an Ratgeberseiten. Die Pressetexte unten und in
+> `docs/presse/` sind damit hinfällig und nur noch als Archiv da.
+
 Stand 12.11.2026. Grundlage: Backlink-Auswertung in `docs/semrush-themenspeicher.md` (Schritt 6 und Nachtrag).
 Regel: nur echte, thematisch passende Links. Keine Linknetzwerke, keine gekauften Spam-Verzeichnisse.
 Versand von Mails und Einträgen erst nach Heikos Freigabe (Absender: heiko@dergoldrechner.de).
