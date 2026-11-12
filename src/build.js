@@ -135,6 +135,41 @@ function crumbs(p) {
   return `<nav class="crumbs" aria-label="Brotkrumen">${t.map(([n, s], i) => i === t.length - 1 ? `<span aria-current="page">${esc(n)}</span>` : `<a href="${href(s)}">${esc(n)}</a>`).join('<span class="sep" aria-hidden="true">›</span>')}</nav>`;
 }
 
+// Photo band on all subpages (approved by Heiko 12.11.2026).
+const BAND_PAGES = { has: (slug) => slug !== '' };
+// [image, object-position, zoom, zoom origin, light photo that needs darkening, phone: {pos, zoom, origin}]
+// light: true = darker and warmer, 'strong' = for very light photos
+const PHONE_PLAIN = { pos: '50% 50%', zoom: 1, origin: '50% 50%' }; // narrow box: zoom would put other coins in front
+const BAND_FOCUS = {
+  'maple-leaf-gold-wert': ['muenzen-alt', '50% 72%', 2.2, '85% 54%', false, PHONE_PLAIN],
+  'kruegerrand-wert': ['muenzen-alt', '50% 46%', 2.2, '76% 46%', false, PHONE_PLAIN],
+  'philharmoniker-gold-wert': ['muenzen-alt', '50% 69%', 2.2, '66% 69%', false, PHONE_PLAIN]
+};
+function bandImage(p) {
+  if (BAND_FOCUS[p.slug]) return BAND_FOCUS[p.slug];
+  if (p.slug === 'goldmuenzen-wert') return ['muenzen-alt', '60% 50%', 1, '50% 50%', true];
+  if (p.group === 'muenzen') return ['muenzen-alt', '60% 50%', 1, '50% 50%', 'blur']; // coin not in the photo: no other coin may be legible
+  if (/silber/.test(p.slug)) return ['silber-gabeln', '50% 42%', 1, '50% 50%', 'strong'];
+  if (/platin/.test(p.slug)) return null; // no real platinum photo yet: plain dark band (recoloured gold looked fake)
+  if (/barren|unze/.test(p.slug)) return ['barren', '50% 40%', 1, '50% 50%', 'soft'];
+  if (/zahngold|altgold/.test(p.slug)) return ['altgold-tiegel', '55% 50%', 1, '50% 50%', 'bright'];
+  return ['goldschmuck', '55% 55%', 1, '50% 50%', true];
+}
+function band(p) {
+  const pick = bandImage(p);
+  const [img, pos, zoom = 1, origin = '50% 50%', light = false, m = {}] = pick || [];
+  const imgStyle = `--pos:${pos};--zoom:${zoom};--origin:${origin}` + (m.pos ? `;--mpos:${m.pos};--mzoom:${m.zoom};--morigin:${m.origin}` : '');
+  const h1 = esc(p.h1).replace(/(\d+) (Karat|Unzen?|Gramm|Franken|Mark|Dukaten)\b/g, '$1&nbsp;$2')
+    .replace(/(\d+)-(?=\p{L})/gu, '$1&#8209;'); // keep number and unit together ("14 Karat", "20-Franken")
+  return `<section class="band">
+` +
+    (pick ? `<picture class="band-bg"><source type="image/webp" srcset="/assets/img/${img}-800.webp 800w, /assets/img/${img}-1600.webp 1600w" sizes="100vw">` +
+    `<img src="/assets/img/${img}-1600.jpg" srcset="/assets/img/${img}-800.jpg 800w, /assets/img/${img}-1600.jpg 1600w" sizes="100vw" alt="" fetchpriority="high" decoding="async"${light ? ` class="${{ strong: 'tone-strong', blur: 'tone-blur', soft: 'tone-soft', bright: 'tone-bright' }[light] || 'tone'}"` : ''} style="${imgStyle}"></picture>
+` : '') +
+    `<div class="wrap band-in">${crumbs(p)}<h1>${h1}</h1><p>${esc(p.intro)}</p></div>
+</section>`;
+}
+
 function jsonLd(p) {
   const graph = p.calc === undefined && p.slug !== '' ? [] : [{
     '@type': 'WebApplication',
@@ -157,7 +192,7 @@ function jsonLd(p) {
   return `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })}</script>`;
 }
 
-function layout(p, body, { noindex = false, scripts = true, canonical = true, home = false } = {}) {
+function layout(p, body, { noindex = false, scripts = true, canonical = true, home = false, top = '' } = {}) {
   const nav = pages.filter((x) => x.inNav !== false).map((x) => `<a href="${href(x.slug)}"${x.slug === p.slug ? ' aria-current="page"' : ''}>${esc(x.nav)}</a>`).join('');
   return `<!doctype html>
 <html lang="de"${home ? ' class="no-js"' : ''}>
@@ -186,11 +221,12 @@ ${noindex ? '<meta name="robots" content="noindex, noarchive, follow">' : ''}
 ${home ? `<link rel="stylesheet" href="/assets/home.css?v=${V}">` : ''}
 ${p.h1 && !noindex ? jsonLd(p) : ''}
 </head>
-<body${home ? ' class="home"' : ''}>
+<body${home ? ' class="home"' : top ? ' class="has-band"' : ''}>
 <header class="site-header"><div class="wrap">
 <a class="logo" href="/">Der <em>Goldrechner</em></a>
 <nav class="nav" aria-label="Rechner">${nav}</nav>
 </div></header>
+${top}
 ${home ? body : `<main class="wrap">\n${body}\n</main>`}
 <footer class="site-footer"><div class="wrap">
 ${home ? '<p class="h-wordmark">Der <em>Goldrechner</em></p>' : ''}
@@ -226,8 +262,8 @@ for (const p of pages) {
     write('', layout(p, homeBody(faqBlock(p.faq, false)), { home: true }));
     continue;
   }
-  const body = `${crumbs(p)}
-<div class="hero"><h1>${esc(p.h1)}</h1><p>${esc(p.intro)}</p></div>
+  const withBand = BAND_PAGES.has(p.slug);
+  const body = `${withBand ? '' : `${crumbs(p)}\n<div class="hero"><h1>${esc(p.h1)}</h1><p>${esc(p.intro)}</p></div>`}
 ${p.calc ? form(p.calc) : ''}
 ${p.priceTable ? priceTable(p.priceTable) : ''}
 ${p.example ? exampleTable(p.example) : ''}
@@ -236,7 +272,7 @@ ${p.sections.map((s) => `<section><h2>${esc(s.h)}</h2>${s.html}</section>`).join
 ${p.tiles ? tiles() : ''}
 ${faqBlock(p.faq)}
 <p class="stand">Inhalt zuletzt aktualisiert am __LASTMOD__ · Kurse stündlich aktuell · <a href="/so-rechnen-wir/">So rechnen wir</a></p>`;
-  write(p.slug, layout(p, body));
+  write(p.slug, layout(p, body, { top: withBand ? band(p) : '' }));
 }
 
 for (const l of legal) {

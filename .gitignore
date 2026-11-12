@@ -5,3 +5,6 @@ site/data/price-state.json
 site/data/price.lock
 site/data/*.tmp
 *.log
+docs/design/*.png
+docs/design/*.jpg
+docs/design/alle/

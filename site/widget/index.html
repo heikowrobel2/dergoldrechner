@@ -9,8 +9,8 @@
   /* Embeddable price box (iframe). Self-contained: no external fonts, no cookies, no tracking. */
   :root { --ink: #1f1a12; --muted: #6b6253; --gold: #a8802f; --line: #e4ded1; --bg: #fffdf8; }
   * { box-sizing: border-box; }
-  html, body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  .box { border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  html, body { margin: 0; background: transparent; color: var(--ink); font: 15px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .box { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
   .head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
   .head b { font-size: 1rem; }
   .live { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: .85rem; }

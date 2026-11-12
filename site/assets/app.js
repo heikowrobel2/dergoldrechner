@@ -182,6 +182,7 @@
     var metal = pgmMetal ? (pgmMetal === 'palladium' ? 'Palladium' : 'Platin') : (isSilver ? 'Silber' : 'Gold');
     var unitPrice = pgmMetal ? price[pgmMetal] : (isSilver ? price.silver : price.gold);
     var summary = type === 'mix' ? r.pieces + (r.pieces === 1 ? ' Stück' : ' Stücke') + ' Altgold, zusammen ' + grams(r.items.reduce(function (a, it) { return a + it.weight; }, 0)) : inputSummary(form);
+    summary = summary.replace(/(\d+) (Karat|Unzen?|oz)\b/g, '$1 $2'); // keep number and unit on one line
     var html = '<div class="label">Unverbindlicher Ankaufs-Richtwert für ' + summary.replace(/</g, '&lt;') + '</div>' +
       '<div class="big">' + range + '</div>';
     if (type === 'dental') {
