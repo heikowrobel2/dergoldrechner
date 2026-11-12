@@ -1,0 +1,4 @@
+# Only the public price cache may be read by browsers; state, lock and temp files stay private.
+<FilesMatch "^(?!price\.json$).+$">
+  Require all denied
+</FilesMatch>

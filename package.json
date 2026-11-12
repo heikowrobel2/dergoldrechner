@@ -1,0 +1,16 @@
+{
+  "name": "dergoldrechner",
+  "private": true,
+  "description": "dergoldrechner.de – static gold/silver calculator site, PHP price endpoint",
+  "scripts": {
+    "build": "node src/build.js",
+    "release": "node src/build.js --release",
+    "test": "node --test tests/calc.test.js tests/deploy.test.mjs",
+    "serve": "node src/serve.js",
+    "deploy": "node scripts/deploy-ftp.mjs"
+  },
+  "devDependencies": {
+    "basic-ftp": "^6.2.6"
+  },
+  "engines": { "node": ">=20" }
+}

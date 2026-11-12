@@ -1,0 +1,58 @@
+# Build, test and upload dergoldrechner.de to ChemiCloud on every push to main (and on demand).
+# Secrets (GitHub repo -> Settings -> Secrets and variables -> Actions -> "New repository secret"):
+#   FTP_USER / FTP_PASSWORD  cPanel FTP account limited to the web root of dergoldrechner.de
+#   FTP_HOST                 optional, server name from cPanel (default: rs6-fra.serverhostgroup.com, like wohin-mit.de)
+#   METALCHARTS_KEY          optional, free key for the price cross-check (written to api/config.php on upload)
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency: { group: deploy, cancel-in-progress: false }
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '24' }
+      - run: npm install --no-audit --no-fund
+
+      - name: Build for release (no demo price may go live)
+        run: |
+          rm -f site/data/price.json
+          node src/build.js --release
+      - name: Test
+        run: npm test
+
+      - name: Price cross-check key
+        env: { KEY: '${{ secrets.METALCHARTS_KEY }}' }
+        run: |
+          if [ -n "$KEY" ]; then
+            printf "<?php\nreturn ['metalcharts_key' => '%s'];\n" "$(printf '%s' "$KEY" | tr -cd 'A-Za-z0-9_-')" > site/api/config.php
+            echo "api/config.php mit MetalCharts-Schlüssel erzeugt"
+          else
+            echo "Kein METALCHARTS_KEY: Kurs ohne Abgleich (läuft trotzdem)"
+          fi
+
+      - name: Upload to ChemiCloud (FTPS)
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST || 'rs6-fra.serverhostgroup.com' }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          if [ -z "$FTP_USER" ] || [ -z "$FTP_PASSWORD" ]; then echo "::error::Secrets FTP_USER/FTP_PASSWORD fehlen"; exit 1; fi
+          node scripts/deploy-ftp.mjs
+
+      - name: Smoke test live site
+        run: |
+          sleep 5
+          curl -fsS -o /dev/null -w "Startseite: %{http_code}\n" https://dergoldrechner.de/
+          curl -fsS https://dergoldrechner.de/api/price.php | head -c 300; echo
