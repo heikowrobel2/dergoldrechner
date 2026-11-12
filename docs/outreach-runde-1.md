@@ -85,7 +85,11 @@ Ergänzung. Alternativ gibt es ein kostenloses Goldpreis-Widget ohne Cookies: ht
 ## Status
 | # | Ziel | Versendet | Antwort |
 |---|---|---|---|
-| 1 | buerger-geld.org | – | – |
-| 2 | etf.capital | – | – |
-| 3 | biallo.de | – | – |
-| 4 | goldbarren-wiki.de | – | – |
+| 1 | buerger-geld.org | 12.11.2026 | – |
+| 2 | etf.capital | 12.11.2026 | – |
+| 3 | biallo.de | 12.11.2026 | – |
+| 4 | goldbarren-wiki.de | 12.11.2026 | – |
+
+Versendet am 12.11.2026, 12:22 von kontakt@dergoldrechner.de (HTML mit Signatur „Der Goldrechner“, Logo von
+https://dergoldrechner.de/assets/mail/signatur-logo.png). Antworten prüft die geplante Aufgabe
+„goldrechner-outreach-antworten“ werktags um 9 Uhr. Die vier Entwürfe in Outlook („Entwürfe“) sind Duplikate und können gelöscht werden.
