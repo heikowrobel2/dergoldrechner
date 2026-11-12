@@ -27,6 +27,12 @@ function rateLine(type) {
     `<p class="rate-live"><span class="dot"></span>Live-Kurs</p></div>`;
 }
 
+function mixRow(n, w, f) {
+  return `<div class="mix-row"><div class="field"><label for="w${n}">Stück ${n} (g)</label>
+<input id="w${n}" name="w${n}" type="text" inputmode="decimal" value="${w}" autocomplete="off" placeholder="z. B. 5"></div>
+<div class="field"><label for="f${n}">Stempel</label><select id="f${n}" name="f${n}" aria-label="Stempel Stück ${n}">${options(C.GOLD_FINENESS, f)}</select></div></div>`;
+}
+
 function form(calc) {
   const weight = (v, help) => `<div class="field"><label for="weight">Gewicht in Gramm</label>
 <input id="weight" name="weight" type="text" inputmode="decimal" value="${v}" autocomplete="off">
@@ -48,6 +54,12 @@ function form(calc) {
     fields = `<div class="field"><label for="metal">Metall</label><select id="metal" name="metal"><option value="platinum"${calc.preset !== 'palladium' ? ' selected' : ''}>Platin</option><option value="palladium"${calc.preset === 'palladium' ? ' selected' : ''}>Palladium</option></select></div>` +
       weight(calc.weight, 'Gesamtgewicht der Stücke, Steine möglichst abziehen.') +
       `<div class="field"><label for="fineness">Feingehalt (Stempel)</label><select id="fineness" name="fineness">${options(C.PGM_FINENESS, calc.fineness || '950')}</select></div>`;
+  } else if (calc.type === 'mix') {
+    // several pieces, each with weight and stamp; more rows via button (app.js), empty rows are ignored
+    const rows = (calc.rows || [['8', '585'], ['4', '333'], ['', '750']]).map(([w, f], i) => mixRow(i + 1, w, f)).join('');
+    fields = `<div class="mix" data-max="12">${rows}</div>
+<button type="button" class="mix-add">+ Weiteres Stück</button>
+<small class="mix-help">Jedes Stück mit eigenem Stempel eintragen, leere Zeilen werden ignoriert.</small>`;
   } else if (calc.type === 'dental') {
     fields = weight(calc.weight, 'Gewicht aller Kronen, Brücken und Inlays zusammen.') +
       `<div class="field"><label for="alloy">Legierung</label><select id="alloy" name="alloy">${options(C.DENTAL_ALLOYS, 'unbekannt')}</select></div>

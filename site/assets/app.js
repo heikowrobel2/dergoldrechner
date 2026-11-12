@@ -55,6 +55,10 @@
       var g = /^g(\d{3})$/.exec(k);
       if (g) { el.textContent = eur(price.gold * Number(g[1]) / 1000) + '/g'; return; }
       if ((k === 'platinum' || k === 'palladium') && price[k]) { el.textContent = eur(price[k]) + '/g'; return; }
+      var wq = /^(gold|silver)w(\d+)$/.exec(k);
+      if (wq) { el.textContent = eur(price[wq[1]] * Number(wq[2])); return; }
+      var ozv = /^(gold|silver|platinum|palladium)ozv$/.exec(k);
+      if (ozv) { if (price[ozv[1]]) el.textContent = eur(price[ozv[1]] * OZ); return; }
       var oz = /^(gold|silver|platinum|palladium)oz$/.exec(k);
       if (oz) { if (price[oz[1]]) el.textContent = eur(price[oz[1]] * OZ) + ' je Unze'; return; }
       if (el.classList.contains('rate-g')) { if (price[k]) el.textContent = eur(price[k]) + '/g'; return; }
@@ -75,12 +79,33 @@
     return n >= 0 && n <= 90 ? n / 100 : NaN;
   }
 
+  // Mixed lot: rows of weight + stamp (inputs w1.., selects f1..).
+  function mixItems(form) {
+    return $all('.mix-row', form).map(function (row) {
+      var inp = $('input', row), sel = $('select', row);
+      return { weight: inp.value, fineness: sel.value, input: inp, label: sel.options[sel.selectedIndex].text };
+    });
+  }
+
   // Returns the name of the invalid field, or null.
   function invalidField(form) {
     var type = form.getAttribute('data-calc');
     if (type === 'coins' || type === 'silvercoins') {
       var c = C.parseNumber(val(form, 'count'));
       return (c >= 1 && c <= C.MAX_COUNT && Math.floor(c) === c) ? null : 'count';
+    }
+    if (type === 'mix') {
+      var items = mixItems(form), filled = 0, bad = null;
+      items.forEach(function (it) {
+        var raw = String(it.weight).trim(); if (!raw) return; filled++;
+        var w = C.parseNumber(raw);
+        if (!bad && !(w > 0 && w <= C.MAX_WEIGHT_G)) bad = it.input.name;
+      });
+      if (!bad && filled) {
+        var sum = items.reduce(function (a, it) { var w = C.parseNumber(String(it.weight).trim()); return a + (w > 0 ? w : 0); }, 0);
+        if (sum > C.MAX_WEIGHT_G) bad = 'mixtotal';
+      }
+      return bad || (filled ? null : 'mixempty');
     }
     if (type === 'pgm' && !(price[val(form, 'metal')] > 0)) return 'pgmprice';
     var w = C.parseNumber(val(form, 'weight'));
@@ -96,12 +121,14 @@
     if (type === 'coins') return C.coins(val(form, 'coin'), val(form, 'count'), price.gold);
     if (type === 'silvercoins') return C.silverCoins(val(form, 'coin'), val(form, 'count'), price.silver);
     if (type === 'pgm') return C.pgmScrap(val(form, 'weight'), val(form, 'fineness'), price[val(form, 'metal')]);
+    if (type === 'mix') return C.goldMix(mixItems(form), price.gold);
     if (type === 'dental') return C.dental(val(form, 'weight'), ceramicShare(val(form, 'ceramic')), val(form, 'alloy'), price.gold);
     throw new Error('Unbekannter Rechner');
   }
 
   function markInvalid(form, field) {
-    ['weight', 'count', 'ceramic'].forEach(function (n) {
+    var names = ['weight', 'count', 'ceramic'].concat($all('.mix-row input', form).map(function (i) { return i.name; }));
+    names.forEach(function (n) {
       var el = form.elements[n];
       if (!el) return;
       el.setAttribute('aria-invalid', n === field ? 'true' : 'false');
@@ -114,7 +141,9 @@
     count: function () { return 'Bitte eine ganze Anzahl zwischen 1 und ' + C.MAX_COUNT.toLocaleString('de-DE') + ' eingeben.'; },
     ceramic: function () { return 'Bitte beim Keramikanteil eine Zahl zwischen 0 und 90 eingeben.'; },
     pgmprice: function () { return 'Der Kurs für dieses Metall ist gerade nicht verfügbar. Bitte versuchen Sie es später erneut.'; },
-    weight: function () { return 'Bitte das Gewicht in Gramm eingeben, z. B. 12,5. Höchstens ' + C.MAX_WEIGHT_G.toLocaleString('de-DE') + ' g.'; }
+    weight: function () { return 'Bitte das Gewicht in Gramm eingeben, z. B. 12,5. Höchstens ' + C.MAX_WEIGHT_G.toLocaleString('de-DE') + ' g.'; },
+    mixempty: function () { return 'Bitte bei mindestens einem Stück das Gewicht in Gramm eingeben.'; },
+    mixtotal: function () { return 'Zusammen höchstens ' + C.MAX_WEIGHT_G.toLocaleString('de-DE') + ' g – bitte die Gewichte prüfen.'; }
   };
 
   function inputSummary(form) {
@@ -123,6 +152,7 @@
     if (type === 'coins' || type === 'silvercoins') return C.parseNumber(val(form, 'count')).toLocaleString('de-DE') + ' × ' + sel('coin');
     var w = C.parseNumber(val(form, 'weight')).toLocaleString('de-DE', { maximumFractionDigits: 2 }) + ' g';
     if (type === 'pgm') return w + ' ' + sel('metal') + ', ' + sel('fineness').split(' (')[0];
+    if (type === 'mix') return '';
     if (type === 'dental') return w + ' Zahngold, ' + Math.round(ceramicShare(val(form, 'ceramic')) * 100) + ' % Keramik';
     return w + ' ' + sel('fineness');
   }
@@ -137,7 +167,8 @@
     if (!r && !bad) bad = 'weight';
     markInvalid(form, bad);
     if (!r) {
-      out.innerHTML = '<p class="stale" role="alert">' + MESSAGES[bad]() + '</p>';
+      var msg = MESSAGES[bad] ? MESSAGES[bad]() : 'Bitte bei ' + (form.elements[bad] && form.elements[bad].labels[0] ? form.elements[bad].labels[0].textContent.split(' (')[0] : 'diesem Stück') + ' ein gültiges Gewicht in Gramm eingeben, z. B. 4,5.';
+      out.innerHTML = '<p class="stale" role="alert">' + msg + '</p>';
       if (sticky) sticky.hidden = true;
       return;
     }
@@ -147,11 +178,19 @@
     var pgmMetal = type === 'pgm' ? val(form, 'metal') : null;
     var metal = pgmMetal ? (pgmMetal === 'palladium' ? 'Palladium' : 'Platin') : (isSilver ? 'Silber' : 'Gold');
     var unitPrice = pgmMetal ? price[pgmMetal] : (isSilver ? price.silver : price.gold);
-    var html = '<div class="label">Unverbindlicher Ankaufs-Richtwert für ' + inputSummary(form).replace(/</g, '&lt;') + '</div>' +
+    var summary = type === 'mix' ? r.pieces + (r.pieces === 1 ? ' Stück' : ' Stücke') + ' Altgold, zusammen ' + grams(r.items.reduce(function (a, it) { return a + it.weight; }, 0)) : inputSummary(form);
+    var html = '<div class="label">Unverbindlicher Ankaufs-Richtwert für ' + summary.replace(/</g, '&lt;') + '</div>' +
       '<div class="big">' + range + '</div>';
     if (type === 'dental') {
       html += '<div class="row"><span>Geschätzter Feingoldanteil</span><span>' + grams(r.fineGramsMin) + ' – ' + grams(r.fineGramsMax) + '</span></div>' +
         '<div class="row"><span>Materialwert (100 %)</span><span>' + eur(r.meltValueMin) + ' – ' + eur(r.meltValueMax) + '</span></div>';
+    } else if (type === 'mix') {
+      var nums = mixItems(form).map(function (it, i) { return String(it.weight).trim() ? i + 1 : 0; }).filter(Boolean);
+      r.items.forEach(function (it, i) {
+        html += '<div class="row"><span>Stück ' + nums[i] + ': ' + grams(it.weight) + ' ' + it.fineness + (it.fineness === '999' ? 'er Feingold' : 'er Gold') + '</span><span>' + eur(it.meltValue) + '</span></div>';
+      });
+      html += '<div class="row"><span>Reiner Goldanteil gesamt</span><span>' + grams(r.fineGrams) + '</span></div>' +
+        '<div class="row"><span>Materialwert gesamt (100 %)</span><span>' + eur(r.meltValue) + '</span></div>';
     } else {
       html += '<div class="row"><span>Reiner ' + metal + 'anteil</span><span>' + grams(r.fineGrams) + '</span></div>' +
         '<div class="row"><span>Materialwert (100 %)</span><span>' + eur(r.meltValue) + '</span></div>';
@@ -256,6 +295,19 @@
       renderExamples();
       renderPriceTables();
       if (form) {
+        var add = $('.mix-add', form), box = $('.mix', form);
+        if (add && box) add.addEventListener('click', function () {
+          var rows = $all('.mix-row', box), max = Number(box.getAttribute('data-max')) || 12;
+          if (rows.length >= max) return;
+          var n = rows.length + 1, row = rows[rows.length - 1].cloneNode(true);
+          $all('[id]', row).forEach(function (el) { el.id = el.id.replace(/\d+$/, n); el.name = el.id; el.removeAttribute('aria-invalid'); el.removeAttribute('aria-describedby'); });
+          $all('label', row).forEach(function (l) { l.htmlFor = l.htmlFor.replace(/\d+$/, n); l.textContent = l.textContent.replace(/^Stück \d+/, 'Stück ' + n); });
+          $('input', row).value = '';
+          $('select', row).setAttribute('aria-label', 'Stempel Stück ' + n);
+          box.appendChild(row);
+          $('input', row).focus();
+          if (n >= max) add.hidden = true;
+        });
         form.addEventListener('input', debounce(function () { render(form); }, 150));
         form.addEventListener('change', function () { render(form); });
         form.addEventListener('submit', function (e) { e.preventDefault(); render(form); });

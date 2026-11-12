@@ -4,7 +4,7 @@
     {
       "name": "goldwert-preview",
       "runtimeExecutable": "node",
-      "runtimeArgs": ["src/serve.js"],
+      "runtimeArgs": ["C:/Users/heiko/Claude/Goldrechner/src/serve.js"],
       "port": 8080
     }
   ]

@@ -21,13 +21,14 @@ module.exports = [
     slug: '',
     nav: 'Goldrechner',
     keywords: 'goldrechner 49.500 · gold rechner 8.100 · gold wert rechner 1.000 · goldwert rechner 880 · gold berechnen 720',
-    title: 'Goldrechner: Was ist mein Gold wert? Goldwert sofort berechnen',
-    description: 'Kostenloser Goldrechner für Altgold, Schmuck, Zahngold und Goldmünzen: Gewicht und Feingehalt eingeben und den Goldwert sofort berechnen.',
+    title: 'Goldrechner: Was ist mein Gold wert? Sofort berechnen',
+    description: 'Kostenloser Goldrechner mit aktuellen Goldpreisen: Gewicht und Feingehalt eingeben und den Goldwert von Altgold, Schmuck und Zahngold sofort sehen.',
     h1: 'Goldrechner: Was ist Ihr Gold heute wert?',
     intro: 'Gewicht eingeben, Stempel wählen – und sofort sehen, was Schmuck, Zahngold oder Münzen nach aktuellem Börsenkurs wert sind.',
     calc: { type: 'gold', preset: '585', weight: 10 },
     sections: [],
     faq: [
+      ['Wie viel ist Gold wert?', 'Das hängt von Gewicht und Feingehalt ab. Ein Gramm reines Gold (999) ist so viel wert wie der aktuelle Goldpreis pro Gramm, ein Gramm 585er Gold 58,5 % davon, 333er Gold ein Drittel. Der Goldrechner oben rechnet es für Ihr Gewicht aus.'],
       ['Wie funktioniert der Goldrechner?', 'Sie geben das Gewicht und den Feingehalt (zum Beispiel 333, 585 oder 750) ein. Der Goldrechner multipliziert beides mit dem aktuellen Goldpreis pro Gramm und zeigt den Materialwert sowie einen unverbindlichen Ankaufs-Richtwert.'],
       ['Kann ich mit dem Gold-Rechner auch Zahngold, Münzen und Silber berechnen?', 'Ja. Für Zahngold, Goldmünzen wie den Krügerrand und für Silber gibt es eigene Rechner mit passenden Einstellungen – zum Beispiel Keramikanteil bei Zahngold oder die Münze aus einer Liste. Alle Rechner finden Sie im Menü und unten auf jeder Seite.'],
       ['Wie kann ich den Goldwert berechnen, wenn kein Stempel zu sehen ist?', 'Dann ist der Feingehalt unbekannt. Rechnen Sie zur Orientierung mit 333 und 585 und vergleichen Sie beide Werte. Den genauen Gehalt kann nur eine Prüfung beim Ankäufer oder Goldschmied feststellen.'],
@@ -42,8 +43,8 @@ module.exports = [
     slug: 'goldpreis-pro-gramm',
     nav: 'Goldpreis',
     tile: 'Aktueller Preis je Gramm',
-    keywords: 'goldpreis rechner 18.100 (KD 17) · goldpreis pro gramm 9.900 (KD 13) · goldpreis berechnen 4.400 · 585 gold preis pro gramm 110',
-    title: 'Goldpreis pro Gramm heute – Goldpreis-Rechner für 333 bis 999',
+    keywords: 'gold gramm preis 18.100 (KD 22) · goldpreis rechner 18.100 (KD 17) · goldpreis pro gramm 9.900 (KD 13) · goldpreis 100 gramm 2.400 · goldpreis berechnen 4.400 · was kosten heute 100 g gold 260 (KD 16)',
+    title: 'Goldpreis pro Gramm heute: 1 g, 100 g und 1 kg Gold',
     description: 'Aktueller Goldpreis pro Gramm in Euro für 333er, 585er, 750er und 999er Gold. Goldpreis berechnen mit dem Goldpreis-Rechner – inklusive Ankaufs-Richtwert.',
     h1: 'Goldpreis pro Gramm: aktueller Goldpreis für jeden Feingehalt',
     intro: 'Der Goldpreis wird an der Börse für reines Feingold angegeben. Was ein Gramm Ihres Schmucks wert ist, hängt vom Feingehalt ab – die Tabelle rechnet es für Sie um.',
@@ -52,9 +53,20 @@ module.exports = [
     sections: [
       {
         h: 'So entsteht der Goldpreis pro Gramm',
-        html: `<p>Aktuell kostet eine Feinunze Gold <strong data-price="goldoz">–</strong>, ein Gramm Feingold <strong data-price="gold">–</strong>.</p>
+        html: `<p>Aktuell kostet eine Feinunze Gold <strong data-price="goldozv">–</strong>, ein Gramm Feingold <strong data-price="gold">–</strong>.</p>
 <p>Gold wird international in US-Dollar je Feinunze gehandelt. Eine Feinunze sind 31,1035 Gramm. Rechnet man den Preis in Euro um und teilt ihn durch 31,1035, erhält man den <strong>Goldpreis pro Gramm Feingold</strong> (999,9).</p>
 <p>Schmuckgold ist fast nie rein. Für 585er Gold sind deshalb nur 58,5 % dieses Grammpreises anzusetzen, für 333er Gold ein Drittel. Genau das zeigt die Tabelle oben – automatisch mit dem aktuellen Kurs.</p>`
+      },
+      {
+        h: 'Was kosten 10 g, 100 g und 1 kg Gold?',
+        html: `<div class="table-wrap"><table><thead><tr><th>Menge Feingold (999)</th><th class="num">Materialwert heute</th></tr></thead><tbody>
+<tr><td>1 g</td><td class="num"><span data-price="goldw1">–</span></td></tr>
+<tr><td>10 g</td><td class="num"><span data-price="goldw10">–</span></td></tr>
+<tr><td>100 g</td><td class="num"><span data-price="goldw100">–</span></td></tr>
+<tr><td>1 Feinunze (31,1 g)</td><td class="num"><span data-price="goldozv">–</span></td></tr>
+<tr><td>1 kg</td><td class="num"><span data-price="goldw1000">–</span></td></tr>
+</tbody></table></div>
+<p>Das ist der reine Börsenwert des Feingolds. Barren und Münzen kosten beim Kauf etwas mehr (Prägekosten, Händlermarge), beim Verkauf von Schmuck erhalten Sie weniger – je nach Ankäufer etwa 5 bis 20 % unter dem Materialwert.</p>`
       },
       {
         h: 'Goldpreis und Ankaufspreis sind zwei verschiedene Dinge',
@@ -64,6 +76,7 @@ module.exports = [
     ],
     faq: [
       ['Wie viel ist 1 Gramm Gold heute wert?', 'Ein Gramm Feingold (999,9) ist so viel wert wie der aktuelle Goldpreis pro Gramm in der Tabelle oben. Für Schmuckgold wird dieser Wert mit dem Feingehalt multipliziert, bei 585er Gold also mit 0,585.'],
+      ['Was kosten heute 100 g Gold?', '100 g Feingold sind hundertmal so viel wert wie der Goldpreis pro Gramm. Den aktuellen Betrag zeigt die Tabelle „Was kosten 10 g, 100 g und 1 kg Gold?“ auf dieser Seite.'],
       ['Was kostet 1 Gramm 585er Gold?', 'Ein Gramm 585er Gold enthält 0,585 g Feingold. Sein Materialwert beträgt 58,5 % des Goldpreises pro Gramm; der aktuelle Betrag steht in der Tabelle.'],
       ['Warum ist der Goldpreis hier so viel niedriger als an der Börse?', 'Ist er nicht – er ist nur in einer anderen Einheit angegeben. Börsen und Finanzportale nennen den Preis je Feinunze (31,1035 g), wir rechnen ihn auf ein Gramm um, weil Schmuck in Gramm gewogen wird. Kostet die Unze zum Beispiel 3.500 €, ist ein Gramm Feingold rund 112,50 € wert. Oben auf der Seite stehen beide Werte nebeneinander.'],
       ['Warum unterscheidet sich der Goldpreis auf verschiedenen Seiten?', 'Manche Seiten zeigen den Verkaufspreis von Händlern inklusive Aufschlag, andere den Börsenkurs oder einen Ankaufspreis. Wir zeigen den Börsenkurs und getrennt davon einen Ankaufs-Richtwert.']
@@ -74,11 +87,11 @@ module.exports = [
     nav: 'Goldankauf',
     inNav: false,
     tile: 'Was zahlt der Ankäufer?',
-    keywords: 'goldankauf rechner 9.900 (KD 14) · gold verkaufen rechner 8.100 (KD 33) · altgold rechner 480',
+    keywords: 'goldankauf rechner 9.900 (KD 14) · goldankauf preise 4.400 · goldankauf 18.100 (KD 65)',
     title: 'Goldankauf-Rechner: Was zahlt der Ankäufer für mein Gold?',
-    description: 'Goldankauf-Rechner: Was zahlen Ankäufer für Ihr Altgold? Materialwert, realistische Spanne und Tipps für einen fairen Verkaufspreis.',
+    description: 'Goldankauf-Rechner: Was zahlen Ankäufer für Ihr Gold? Materialwert, realistische Spanne und so kalkulieren Goldankäufer ihren Preis.',
     h1: 'Goldankauf-Rechner: Was zahlt der Ankäufer für mein Gold?',
-    intro: 'Bevor Sie Gold verkaufen, sollten Sie wissen, was es wert ist – und was Ankäufer davon üblicherweise auszahlen. Dieser Altgold-Rechner zeigt beides.',
+    intro: 'Bevor Sie Gold verkaufen, sollten Sie wissen, was es wert ist – und was Ankäufer davon üblicherweise auszahlen. Dieser Goldankauf-Rechner zeigt beides.',
     calc: { type: 'gold', preset: '585', weight: 20 },
     sections: [
       {
@@ -90,11 +103,12 @@ module.exports = [
 <li><strong>Versand und Versicherung</strong> beim Ankauf per Post,</li>
 <li>die eigene <strong>Marge</strong>.</li>
 </ul>
-<p>Ein Blick in die veröffentlichten Ankaufspreise zeigt: Gute Ankäufer zahlen für Altgold rund 90 % und mehr des Materialwerts, andere deutlich weniger. Für <a href="/goldmuenzen-wert/">Goldmünzen</a> und Barren liegt der Ankaufspreis meist noch näher am Goldpreis. Unser Rechner zeigt deshalb eine Spanne statt einer einzigen Zahl.</p>`
+<p>Ein Blick in die veröffentlichten Ankaufspreise zeigt: Gute Ankäufer zahlen für Altgold rund 90 % des Materialwerts, einzelne etwas mehr, andere deutlich weniger. Für <a href="/goldmuenzen-wert/">Goldmünzen</a> und Barren liegt der Ankaufspreis meist noch näher am Goldpreis. Unser Rechner zeigt deshalb eine Spanne statt einer einzigen Zahl.</p>`
       },
       {
-        h: 'Gold verkaufen: so bekommen Sie einen fairen Preis',
-        html: `<ul>
+        h: 'Tipps für den Goldankauf',
+        html: `<p>Den kompletten Ablauf mit allen Ankäufer-Arten finden Sie unter <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>
+<ul>
 <li><strong>Vorher rechnen:</strong> Mit dem Materialwert aus diesem Rechner erkennen Sie sofort, ob ein Angebot fair ist.</li>
 <li><strong>Nach Feingehalt sortieren:</strong> Legen Sie 333er, 585er und 750er Gold getrennt. Gemischte Posten werden oft zum niedrigsten Feingehalt bewertet.</li>
 <li><strong>Münzen und Barren separat anbieten:</strong> Sie werden nah am Goldwert angekauft und sollten nicht im Schmuckposten verschwinden.</li>
@@ -111,12 +125,138 @@ module.exports = [
     faq: [
       ['Wie viel Prozent vom Goldpreis zahlen Ankäufer?', 'Das ist von Händler zu Händler verschieden und hängt vom Feingehalt ab. Unser Rechner zeigt eine geschätzte Spanne und nennt die zugrunde gelegte Annahme direkt unter dem Ergebnis.'],
       ['Ist der Goldankauf-Rechner ein verbindliches Angebot?', 'Nein. Wir kaufen kein Gold an. Der Rechner hilft Ihnen, Angebote von Ankäufern einzuordnen.'],
-      ['Muss ich Steuern zahlen, wenn ich Gold verkaufe?', 'Für Privatpersonen ist der Verkauf von physischem Gold in Deutschland nach einer Haltedauer von mehr als einem Jahr steuerfrei (§ 23 EStG). Bei kürzerer Haltedauer ist ein Gewinn steuerpflichtig, sofern alle privaten Veräußerungsgewinne des Jahres die Freigrenze von 1.000 € erreichen. Geerbtes Gold übernimmt die Haltedauer des Erblassers. Im Zweifel fragen Sie eine Steuerberatung.']
+      ['Muss ich beim Goldankauf Steuern zahlen?', 'Nach mehr als einem Jahr Haltedauer ist der Verkauf für Privatpersonen in der Regel steuerfrei. Die Einzelheiten stehen unter „Gold verkaufen“.']
+    ]
+  },
+  {
+    slug: 'gold-verkaufen',
+    nav: 'Gold verkaufen',
+    tile: 'Ablauf, Preise, Tipps',
+    keywords: 'gold verkaufen 49.500 (KD 14) · gold verkaufen rechner 8.100 (KD 33) · gold verkaufen preis 8.100 (KD 47) · gold verkauf 2.400 · wo kann man gold verkaufen 720 (KD 40) · wo am besten gold verkaufen 590 (KD 38) · gold verkaufen online 1.000',
+    title: 'Gold verkaufen: so bekommen Sie einen fairen Preis',
+    description: 'Gold verkaufen ohne Verlust: Wert vorher berechnen, Ankäufer vergleichen, Fallen vermeiden. Mit Goldrechner, Ablauf in 5 Schritten und Steuer-Tipps.',
+    h1: 'Gold verkaufen: so bekommen Sie einen fairen Preis',
+    intro: 'Wer Gold verkauft, sollte vorher wissen, was es wert ist. Rechnen Sie den Materialwert aus, vergleichen Sie mehrere Angebote – und erkennen Sie so sofort, ob ein Preis fair ist.',
+    calc: { type: 'gold', preset: '750', weight: 10 },
+    sections: [
+      {
+        h: 'Gold verkaufen in 5 Schritten',
+        html: `<ol>
+<li><strong>Sortieren:</strong> Legen Sie Schmuck nach Stempel getrennt (333, 585, 750). Münzen und Barren kommen extra, Zahngold ebenfalls.</li>
+<li><strong>Wiegen:</strong> Eine Küchen- oder Briefwaage genügt. Große Steine und Uhrwerke möglichst herausrechnen.</li>
+<li><strong>Wert berechnen:</strong> Mit dem Rechner oben sehen Sie Materialwert und eine realistische Ankaufs-Spanne. Für einen gemischten Posten nutzen Sie den <a href="/altgold-verkaufen/">Altgold-Rechner für mehrere Stücke</a>.</li>
+<li><strong>Angebote vergleichen:</strong> Holen Sie mindestens zwei bis drei Angebote ein – am besten am selben Tag, weil sich der Goldpreis täglich ändert.</li>
+<li><strong>Verkaufen mit Beleg:</strong> Lassen Sie sich Gewicht, Feingehalt und Preis je Gramm schriftlich geben.</li>
+</ol>`
+      },
+      {
+        h: 'Wo kann man Gold verkaufen?',
+        html: `<div class="table-wrap"><table><thead><tr><th>Ankäufer</th><th>Vorteile</th><th>Worauf achten</th></tr></thead><tbody>
+<tr><td>Goldankauf im Ladengeschäft</td><td>Prüfung vor Ort, Geld sofort</td><td>Preis je Gramm und Feingehalt vorher erfragen</td></tr>
+<tr><td>Online-Ankauf per Post</td><td>Oft gute Preise, bequem</td><td>Versicherter Versand, kostenlose Rücksendung bei Ablehnung</td></tr>
+<tr><td>Scheideanstalt</td><td>Genaue Analyse, auch Zahngold und Platin</td><td>Für kleine Mengen manchmal Mindestgebühren</td></tr>
+<tr><td>Juwelier oder Goldschmied</td><td>Kann Schmuck- und Markenwert einschätzen</td><td>Ankaufspreise sehr unterschiedlich</td></tr>
+<tr><td>Münzhändler</td><td>Richtiger Ort für Goldmünzen und Barren</td><td>Sammlerwert seltener Münzen gesondert prüfen lassen</td></tr>
+</tbody></table></div>
+<p>Vorsicht bei Haustür-Ankäufern, „Goldpartys“ und mobilen Ankaufsständen: Dort fehlt oft die Zeit, Angebote zu vergleichen.</p>`
+      },
+      {
+        h: 'Welcher Preis ist beim Goldverkauf fair?',
+        html: `<p>Ausgangspunkt ist der <strong>Materialwert</strong>: Gewicht × Feingehalt × <a href="/goldpreis-pro-gramm/">Goldpreis pro Gramm</a>. Ankäufer zahlen davon einen Teil, weil sie das Gold prüfen, einschmelzen und scheiden lassen – die Unterschiede zwischen Anbietern sind groß. Wie Ankäufer im Detail kalkulieren und wie viel Prozent sie üblicherweise zahlen, zeigt der <a href="/goldankauf-rechner/">Goldankauf-Rechner</a>.</p>
+<p>Ein seriöses Angebot nennt den Feingehalt, das Gewicht und den Preis je Gramm. Wird nur ein Gesamtbetrag genannt, fragen Sie nach.</p>`
+      },
+      {
+        h: 'Nicht alles einschmelzen lassen',
+        html: `<p>Markenschmuck, Antikes, Schmuck mit größeren Steinen und seltene Münzen können mehr wert sein als ihr Gold. Lassen Sie solche Stücke vorher von einem Juwelier oder Münzhändler einschätzen. Mehr dazu unter <a href="/schmuck-verkaufen/">Schmuck verkaufen</a> und <a href="/goldmuenzen-wert/">Goldmünzen Wert</a>. Für Zahngold gibt es einen eigenen <a href="/zahngold-wert/">Zahngold-Rechner</a>, für Silber die Seite <a href="/silber-verkaufen/">Silber verkaufen</a>.</p>`
+      }
+    ],
+    faq: [
+      ['Wo verkaufe ich Gold am besten?', 'Dort, wo Sie den Preis je Gramm und Feingehalt vorher erfahren und mehrere Angebote vergleichen können – im Ladengeschäft oder online per Post. Für Goldmünzen und Barren ist ein Münzhändler oft die beste Wahl, für Zahngold eine Scheideanstalt.'],
+      ['Wie viel bekomme ich für 1 Gramm Gold beim Verkauf?', 'Das hängt vom Feingehalt ab. Ein Gramm 585er Gold enthält 0,585 g Feingold; Ankäufer zahlen davon einen Teil des aktuellen Goldpreises. Der Rechner oben zeigt Materialwert und eine realistische Spanne für Ihr Gewicht.'],
+      ['Muss ich Steuern zahlen, wenn ich Gold verkaufe?', 'Für Privatpersonen ist der Verkauf von physischem Gold in Deutschland nach einer Haltedauer von mehr als einem Jahr steuerfrei (§ 23 EStG). Bei kürzerer Haltedauer ist ein Gewinn steuerpflichtig, sofern alle privaten Veräußerungsgewinne des Jahres die Freigrenze von 1.000 € erreichen. Geerbtes Gold übernimmt die Haltedauer des Erblassers. Im Zweifel fragen Sie eine Steuerberatung.'],
+      ['Brauche ich beim Goldverkauf einen Ausweis?', 'Ankäufer verlangen in der Regel einen Ausweis. Bei Barzahlungen ab 2.000 € ist die Prüfung der Identität nach dem Geldwäschegesetz vorgeschrieben.'],
+      ['Ist es sicher, Gold online zu verkaufen?', 'Bei seriösen Anbietern ja: Achten Sie auf versicherten Versand, eine nachvollziehbare Prüfung im Labor, ein schriftliches Angebot vor der Auszahlung und eine kostenlose Rücksendung, wenn Sie ablehnen.']
+    ]
+  },
+  {
+    slug: 'schmuck-verkaufen',
+    nav: 'Schmuck verkaufen',
+    inNav: false,
+    tile: 'Ketten, Ringe, Armbänder',
+    keywords: 'goldschmuck verkaufen 3.600 (KD 41) · schmuck verkaufen 1.900 (KD 13) · goldkette verkaufen · goldring verkaufen · wo verkaufe ich am besten goldschmuck 590 (KD 22) · verkauf von goldschmuck preis 320',
+    title: 'Goldschmuck verkaufen: Was ist mein Schmuck wert?',
+    description: 'Goldschmuck verkaufen: Goldkette, Ring oder Armband bewerten, Steine und Markenwert richtig einschätzen und den besten Ankäufer finden – mit Goldrechner.',
+    h1: 'Goldschmuck verkaufen: Was ist mein Schmuck wert?',
+    intro: 'Ob Goldkette, Ring oder Armband: Der Rechner zeigt den Goldwert Ihres Schmucks nach Gewicht und Stempel. Darunter erfahren Sie, wann ein Stück mehr wert ist als sein Gold.',
+    calc: { type: 'gold', preset: '585', weight: 15 },
+    sections: [
+      {
+        h: 'Goldwert oder Schmuckwert?',
+        html: `<p>Beim Ankauf zählt meist nur das Gold: Der Schmuck wird eingeschmolzen, bezahlt wird der <strong>Materialwert</strong> abzüglich der Kosten des Ankäufers. Das ist für defekte, unmoderne oder einfache Stücke der realistische Preis.</p>
+<p>Anders bei <strong>Markenschmuck, Antikem und Designerstücken</strong>: Hier kann der Wiederverkaufswert deutlich über dem Goldwert liegen. Solche Stücke sollten Sie bei einem Juwelier, einem Auktionshaus oder im Gebrauchtschmuck-Handel anbieten – und nicht einschmelzen lassen.</p>`
+      },
+      {
+        h: 'Goldkette verkaufen',
+        html: `<p>Den Stempel finden Sie meist am Verschluss oder an einem kleinen Plättchen daneben. Ketten wiegen je nach Machart sehr unterschiedlich: Hohl gearbeitete Ketten sehen schwer aus, enthalten aber wenig Gold. Wiegen Sie die Kette deshalb immer und rechnen Sie mit dem tatsächlichen Gewicht.</p>`
+      },
+      {
+        h: 'Goldring verkaufen',
+        html: `<p>Bei Ringen steht der Stempel innen in der Schiene. Ein schmaler Ring wiegt oft 2 bis 4 g, ein breiter Ehering 5 bis 10 g und mehr. Was ein Ring mit 585er Gold wert ist, zeigt auch die Seite <a href="/585-gold-wert/">585 Gold Wert</a>. Sitzen Steine im Ring, ziehen Sie deren Gewicht grob ab.</p>`
+      },
+      {
+        h: 'Schmuck mit Steinen',
+        html: `<p>Kleine Steine und Zirkonia werden beim Goldankauf in der Regel nicht bezahlt. Größere Diamanten oder Farbsteine können dagegen viel wert sein – lassen Sie sie vor dem Verkauf von einem Juwelier oder Gemmologen prüfen und gegebenenfalls ausfassen.</p>`
+      },
+      {
+        h: 'Vergoldet ist nicht Gold',
+        html: `<p>Stempel wie <strong>GP</strong> (gold plated), <strong>GF</strong> (gold filled), <strong>RG</strong> (rolled gold), „vergoldet“ oder „Doublé“ bedeuten: Das Stück ist nur mit Gold überzogen – galvanisch hauchdünn (vergoldet, GP) oder als aufgewalzte Schicht (GF, RG, Doublé). Der Goldanteil ist dann sehr gering. Echtes Gold trägt in Deutschland meist einen Feingehalt wie 333, 585 oder 750.</p>
+<p>Steht auf goldfarbenem Schmuck <strong>925</strong> oder <strong>800</strong>, ist es vergoldetes Silber – bewerten Sie es mit dem <a href="/silberrechner/">Silberrechner</a>.</p>
+<p>Wie Sie beim Verkauf vorgehen und welche Ankäufer es gibt, steht unter <a href="/gold-verkaufen/">Gold verkaufen</a>. Mehrere Stücke mit unterschiedlichem Stempel rechnen Sie mit dem <a href="/altgold-verkaufen/">Altgold-Rechner</a> zusammen.</p>`
+      }
+    ],
+    faq: [
+      ['Wo verkaufe ich am besten Goldschmuck?', 'Einfachen oder defekten Goldschmuck bei einem Goldankauf im Laden oder online, nachdem Sie mehrere Angebote verglichen haben. Markenschmuck und Antikes eher beim Juwelier, Auktionshaus oder im Gebrauchtschmuck-Handel, weil dort der Schmuckwert zählt.'],
+      ['Was ist eine Goldkette wert?', 'Das ergibt sich aus Gewicht und Feingehalt. Eine 585er Kette mit 10 g enthält 5,85 g Feingold. Geben Sie Gewicht und Stempel oben ein, um den aktuellen Wert zu sehen.'],
+      ['Wie erkenne ich echten Goldschmuck?', 'Am Feingehaltsstempel wie 333, 585 oder 750. Fehlt der Stempel oder steht dort GP, GF, RG oder Doublé, ist es meist kein massives Gold. Sicher ist nur eine Prüfung beim Ankäufer oder Goldschmied.'],
+      ['Bekomme ich für die Steine im Schmuck Geld?', 'Für kleine Steine und Zirkonia meist nicht. Größere Diamanten und Farbsteine sollten Sie vor dem Verkauf gesondert schätzen lassen.']
+    ]
+  },
+  {
+    slug: 'altgold-verkaufen',
+    nav: 'Altgold verkaufen',
+    inNav: false,
+    tile: 'Rechner für mehrere Stücke',
+    keywords: 'altgold verkaufen 2.900 (KD 37) · altgold 880 (KD 22) · altgold rechner 480 · altgold ankauf · altgold schmuck verkaufen 90',
+    title: 'Altgold verkaufen: Altgold-Rechner für mehrere Stücke',
+    description: 'Altgold verkaufen: Mit dem Altgold-Rechner mehrere Stücke mit unterschiedlichem Stempel zusammenrechnen und sehen, was Ankäufer dafür zahlen.',
+    h1: 'Altgold verkaufen: Was ist mein Altgold wert?',
+    intro: 'Altgold besteht selten aus nur einem Feingehalt. Tragen Sie jedes Stück mit Gewicht und Stempel ein – der Rechner zählt alles zusammen und zeigt, was Ankäufer dafür ungefähr zahlen.',
+    calc: { type: 'mix' },
+    sections: [
+      {
+        h: 'Was zählt als Altgold?',
+        html: `<p>Altgold ist alles Gold, das nicht mehr getragen oder gebraucht wird: defekte Ketten, einzelne Ohrringe, alte Ringe, verbogene Armbänder, Bruchgold. Beim Ankauf wird es eingeschmolzen, bezahlt wird der Goldanteil. Zahngold hat einen eigenen <a href="/zahngold-wert/">Zahngold-Rechner</a>, Münzen den <a href="/goldmuenzen-wert/">Goldmünzen-Rechner</a>.</p>`
+      },
+      {
+        h: 'Altgold richtig sortieren',
+        html: `<p>Sortieren Sie Ihr Altgold vor dem Verkauf nach Stempel: 333, 585 und 750 getrennt. Wird ein gemischter Posten ungeprüft angekauft, wird er oft zum niedrigsten Feingehalt bewertet – dann verschenken Sie Geld. Stücke ohne erkennbaren Stempel legen Sie extra; der Ankäufer prüft sie, zum Beispiel per Röntgenfluoreszenz.</p>`
+      },
+      {
+        h: 'So viel zahlen Ankäufer für Altgold',
+        html: `<p>Grundlage ist der Materialwert: Gewicht × Feingehalt × <a href="/goldpreis-pro-gramm/">Goldpreis pro Gramm</a>. Ankäufer ziehen davon Kosten für Prüfung, Scheidung und ihre Marge ab, deshalb zeigt der Rechner eine Spanne. Wie die Kalkulation im Detail aussieht, erklärt der <a href="/goldankauf-rechner/">Goldankauf-Rechner</a>; den Ablauf beim Verkauf finden Sie unter <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>`
+      }
+    ],
+    faq: [
+      ['Was ist Altgold wert?', 'So viel wie das enthaltene Feingold: Gewicht × Feingehalt × Goldpreis pro Gramm. Ankäufer zahlen davon einen Teil. Tragen Sie Ihre Stücke oben ein, um den aktuellen Wert zu sehen.'],
+      ['Wie viel bekomme ich für 1 Gramm Altgold?', 'Ein Gramm 585er Altgold enthält 0,585 g Feingold, ein Gramm 333er Altgold 0,333 g. Davon zahlen Ankäufer je nach Anbieter einen Teil des aktuellen Goldpreises.'],
+      ['Lohnt es sich, kleine Mengen Altgold zu verkaufen?', 'Oft ja, schon wenige Gramm sind beim heutigen Goldpreis einiges wert. Achten Sie bei kleinen Mengen auf Mindestgebühren und Versandkosten des Ankäufers.'],
+      ['Kann ich Zahngold zusammen mit Altgold verkaufen?', 'Viele Ankäufer nehmen beides an, bewerten Zahngold aber getrennt, weil die Legierungen anders sind. Geben Sie Zahngold deshalb separat an.']
     ]
   },
   {
     slug: '333-gold-wert',
     nav: '333er Gold',
+    inNav: false,
     tile: '8 Karat · 33,3 % Gold',
     keywords: '333 gold wert 2.900 (KD 22) · goldpreis 333 pro gramm 1.000 (KD 20) · 333 gold rechner 40 · 333 gold preis pro gramm 70 · 8 karat gold wert 20',
     title: '333 Gold Wert berechnen – 8 Karat Gold mit Tageskurs',
@@ -174,8 +314,9 @@ module.exports = [
       }
     ],
     faq: [
+      ['Was ist 585 Gold wert?', '585er Gold besteht zu 58,5 % aus reinem Gold. Sein Wert ist Gewicht × 0,585 × Goldpreis pro Gramm – der Rechner oben zeigt den aktuellen Betrag für Ihr Gewicht.'],
       ['Wie viel ist 1 Gramm 585er Gold wert?', 'Ein Gramm 585er Gold enthält 0,585 g Feingold, also 58,5 % des Goldpreises pro Gramm. Die Tabelle oben zeigt den Wert mit dem aktuellen Kurs.'],
-      ['Was ist ein 585er Goldring wert?', 'Ein schmaler Ring wiegt oft 2 bis 4 g, ein breiter Ehering 5 bis 8 g. Wiegen Sie Ihren Ring und geben Sie das Gewicht oben ein – Steine sollten Sie möglichst abziehen.'],
+      ['Was ist ein 585er Goldring wert?', 'Ein schmaler Ring wiegt oft 2 bis 4 g, ein breiter Ehering 5 bis 10 g und mehr. Wiegen Sie Ihren Ring und geben Sie das Gewicht oben ein – Steine sollten Sie möglichst abziehen.'],
       ['Ist 14 Karat Gold dasselbe wie 585er Gold?', 'Ja. 14 Karat entsprechen rechnerisch 58,3 % Gold; in Deutschland wird der Feingehalt mit 585 gestempelt.']
     ]
   },
@@ -216,8 +357,8 @@ module.exports = [
     slug: 'zahngold-wert',
     nav: 'Zahngold',
     tile: 'Kronen, Brücken, Inlays',
-    keywords: 'zahngold wert 3.600 (KD 19) · zahngold verkaufen 1.600 (KD 20) · zahngold rechner 480 (KD 11)',
-    title: 'Zahngold Wert berechnen – Zahngold-Rechner & Verkauf',
+    keywords: 'zahngold wert 3.600 (KD 19) · zahngold ankauf 3.600 (CPC 4,19 $) · zahngold verkaufen 1.600 (KD 20) · zahngold rechner 480 (KD 11) · was ist zahngold wert 390 (KD 5) · wie viel ist 1 gramm zahngold wert 210 (KD 11)',
+    title: 'Zahngold Wert berechnen – Zahngold-Rechner & Ankauf',
     description: 'Was ist Zahngold wert? Mit dem Zahngold-Rechner Kronen, Brücken und Inlays bewerten – und erfahren, worauf Sie beim Zahngold verkaufen achten sollten.',
     h1: 'Zahngold Wert: Was sind alte Kronen und Brücken wert?',
     intro: 'Alte Kronen, Brücken und Inlays enthalten oft mehr Gold, als man denkt. Mit dem Zahngold-Rechner schätzen Sie den Wert in wenigen Sekunden – auch wenn Sie die genaue Legierung nicht kennen.',
@@ -228,6 +369,10 @@ module.exports = [
         html: `<p>Zahngold ist eine Legierung aus Gold und anderen Metallen wie Platin, Palladium oder Silber. Der Goldanteil schwankt je nach Legierung stark. Hochgoldhaltige Legierungen sind kräftig gelb und schwer, goldreduzierte wirken blasser.</p>
 <p>An Kronen und Brücken hängen oft noch Keramik oder Zahnreste, die nichts wert sind. Geben Sie deren geschätzten Anteil im Rechner an. Wenn Sie unsicher sind, wählen Sie bei der Legierung „Weiß ich nicht“ – dann ist die Spanne breiter.</p>
 <p>Der Rechner bewertet nur den Goldanteil. Viele Ankäufer vergüten zusätzlich Platin und Palladium, der tatsächliche Erlös kann deshalb höher sein.</p>`
+      },
+      {
+        h: 'Zahngold-Ankauf: wer kauft Zahngold?',
+        html: `<p>Zahngold kaufen vor allem <strong>Scheideanstalten</strong> und spezialisierte Edelmetall-Ankäufer an, oft auch per Post. Sie analysieren die Legierung im Labor und vergüten Gold – gute Anbieter zusätzlich Platin, Palladium und Silber. Juweliere und allgemeine Goldankäufer nehmen Zahngold teils an, zahlen aber oft nur den Goldanteil. Vergleichen Sie deshalb, ob alle Edelmetalle bezahlt werden und ob die Analyse kostenlos ist.</p>`
       },
       {
         h: 'Zahngold verkaufen: so gehen Sie vor',
@@ -241,7 +386,9 @@ module.exports = [
       }
     ],
     faq: [
-      ['Wie viel Gold ist in einer Zahnkrone?', 'Das hängt von Größe und Legierung ab. Eine Krone wiegt grob wenige Gramm, davon ist je nach Legierung etwa die Hälfte bis über drei Viertel Gold.'],
+      ['Was ist Zahngold wert?', 'So viel wie das enthaltene Gold und andere Edelmetalle. Goldfarbenes Zahngold enthält je nach Legierung etwa 40 bis über 80 % Gold, silberfarbene Legierungen oft kaum Gold, dafür Palladium oder Silber. Der Rechner oben schätzt den Goldanteil aus Gewicht, Legierung und Keramikanteil.'],
+      ['Wie viel ist 1 Gramm Zahngold wert?', 'Ein Gramm hochgoldhaltiges Zahngold enthält etwa 0,7 bis 0,85 g Gold, selten mehr; goldreduzierte Legierungen deutlich weniger. Geben Sie 1 g in den Rechner ein, um die Spanne mit dem aktuellen Goldpreis zu sehen.'],
+      ['Wie viel Gold ist in einer Zahnkrone?', 'Das hängt von Größe und Legierung ab. Eine Krone wiegt grob wenige Gramm, davon ist je nach Legierung etwa 40 % bis über drei Viertel Gold.'],
       ['Darf ich Zahngold verkaufen?', 'In aller Regel ja. Wenn Ihnen die Praxis den entfernten Zahnersatz aushändigt, können Sie ihn behalten, verkaufen oder spenden.'],
       ['Warum zeigt der Zahngold-Rechner eine so große Spanne?', 'Weil der Goldanteil von Zahngold je nach Legierung stark schwankt. Den genauen Gehalt ermittelt erst die Analyse beim Ankäufer.']
     ]
@@ -251,7 +398,7 @@ module.exports = [
     nav: 'Goldmünzen',
     tile: 'Krügerrand, 20 Mark, Vreneli …',
     keywords: 'goldmünzen wert 1.300 (KD 12) · vreneli wert 390 (KD 18) · 20 mark gold wert 40',
-    title: 'Goldmünzen Wert berechnen – Vreneli, 20 Mark, Maple Leaf & Co.',
+    title: 'Goldmünzen Wert berechnen: Vreneli, 20 Mark, Maple Leaf',
     description: 'Was ist Ihre Goldmünze wert? Münze und Anzahl wählen und den Goldwert sehen – für Maple Leaf, Philharmoniker, Vreneli, 20 Mark, Dukaten und mehr.',
     h1: 'Goldmünzen Wert: Was ist meine Goldmünze heute wert?',
     intro: 'Wählen Sie Ihre Goldmünze und die Anzahl. Der Rechner zeigt den Goldwert nach aktuellem Kurs und einen Richtwert, was Händler beim Ankauf typischerweise zahlen.',
@@ -443,6 +590,7 @@ module.exports = [
       }
     ],
     faq: [
+      ['Wie hoch ist der Silberpreis pro Gramm?', 'Der Silberpreis pro Gramm Feinsilber ergibt sich aus dem Börsenkurs je Unze geteilt durch 31,1035. Den aktuellen Wert und die Preise für 925er und 800er Silber zeigt die Tabelle auf dieser Seite.'],
       ['Wie viel ist 1 Gramm Silber heute wert?', 'Ein Gramm Feinsilber ist so viel wert wie der aktuelle Silberpreis pro Gramm in der Tabelle oben. Für Sterlingsilber multiplizieren Sie diesen Wert mit 0,925, für 800er Silber mit 0,8.'],
       ['Wie viel ist 1 kg Silber wert?', 'Ein Kilogramm Feinsilber entspricht 1.000 Gramm zum aktuellen Silberpreis. Geben Sie im Silberpreis-Rechner 1000 g und 999er Silber ein, um den Betrag zu sehen.'],
       ['Warum schwankt der Silberpreis stärker als der Goldpreis?', 'Silber wird zu einem großen Teil in der Industrie verbraucht und der Markt ist kleiner als der Goldmarkt. Deshalb reagiert der Preis oft stärker auf Konjunktur und Nachfrage.']
@@ -454,7 +602,7 @@ module.exports = [
     inNav: false,
     tile: 'Silberankauf: was wird gezahlt?',
     keywords: 'silber verkaufen 12.100 (KD 33) · silber ankauf 3.600 (KD 8) · silberbarren verkaufen 1.900 (KD 15) · silberankauf preis 1.300 (KD 22) · silberbarren 1 kg preis 390 (KD 13)',
-    title: 'Silber verkaufen – Silberankauf-Rechner für Barren und Münzen',
+    title: 'Silber verkaufen: Silberankauf-Rechner für Barren & Münzen',
     description: 'Silber verkaufen: Was zahlt der Silberankauf für Barren, Münzen und Besteck? Mit Silberankauf-Rechner und Tipps für einen fairen Preis.',
     h1: 'Silber verkaufen: Was zahlt der Silberankauf?',
     intro: 'Ob Silberbarren, Münzen oder Besteck: Bevor Sie Silber verkaufen, sollten Sie den Materialwert kennen. Der Rechner zeigt ihn – und was Ankäufer erfahrungsgemäß dafür zahlen.',

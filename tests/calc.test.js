@@ -102,6 +102,27 @@ test('silver 925: 100 g -> 92.5 g fine', () => {
   assert.equal(r.meltValue, 92.5);
 });
 
+test('mixed lot: several pieces with different finenesses are added up', () => {
+  const r = C.goldMix([{ weight: '10', fineness: '585' }, { weight: '4', fineness: '750' }, { weight: '', fineness: '333' }], GOLD);
+  assert.equal(r.fineGrams, 8.85);          // 5.85 + 3.0, empty row ignored
+  assert.equal(r.meltValue, 885);
+  assert.equal(r.pieces, 2);
+  assert.equal(r.items.length, 2);
+  assert.equal(r.payoutMin, 690.3);         // 585 * 0.78 + 300 * 0.78
+  assert.equal(r.payoutMax, 823.05);        // (585 + 300) * 0.93
+});
+
+test('mixed lot: a filled but invalid row or no row at all returns null', () => {
+  assert.equal(C.goldMix([{ weight: '10', fineness: '585' }, { weight: 'abc', fineness: '750' }], GOLD), null);
+  assert.equal(C.goldMix([{ weight: '', fineness: '585' }], GOLD), null);
+  assert.equal(C.goldMix([], GOLD), null);
+});
+
+test('mixed lot: 900+ fineness keeps its own payout band', () => {
+  const r = C.goldMix([{ weight: '10', fineness: '585' }, { weight: '10', fineness: '999' }], GOLD);
+  assert.equal(r.payoutMax, Math.round((585 * 0.93 + 999 * 0.96) * 100) / 100);
+});
+
 test('all payout ranges are sane', () => {
   for (const p of Object.values(C.PAYOUT)) {
     assert.ok(p.min > 0 && p.min < p.max && p.max <= 1);

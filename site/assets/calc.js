@@ -166,6 +166,33 @@
     return result(w * f.fine / 1000, p, PAYOUT[f.payout]);
   }
 
+  /**
+   * Mixed lot of scrap gold: items [{ weight, fineness }]. Rows with an empty weight are skipped,
+   * a filled but invalid row makes the whole result null (no silently wrong total).
+   * Each piece keeps its own payout band; the totals are summed.
+   */
+  function goldMix(items, goldPerG) {
+    var p = parseNumber(goldPerG);
+    if (!(p > 0) || !items || !items.length) return null;
+    var fine = 0, melt = 0, min = 0, max = 0, used = [];
+    for (var i = 0; i < items.length; i++) {
+      var raw = String(items[i].weight == null ? '' : items[i].weight).trim();
+      if (raw === '') continue;
+      var r = goldScrap(raw, items[i].fineness, p);
+      if (!r) return null;
+      var f = find(GOLD_FINENESS, items[i].fineness), w = parseNumber(raw), fg = w * f.fine / 1000;
+      fine += fg; melt += fg * p; min += fg * p * PAYOUT[f.payout].min; max += fg * p * PAYOUT[f.payout].max;
+      used.push({ weight: parseNumber(raw), fineness: items[i].fineness, fineGrams: r.fineGrams, meltValue: r.meltValue });
+    }
+    var total = used.reduce(function (s, u) { return s + u.weight; }, 0);
+    if (!used.length || total > MAX_WEIGHT_G) return null;
+    return {
+      fineGrams: round2(fine), meltValue: round2(melt), payoutMin: round2(min), payoutMax: round2(max),
+      payoutShare: { min: melt ? min / melt : 0, max: melt ? max / melt : 0 },
+      pieces: used.length, items: used
+    };
+  }
+
   /** Dental gold: gross weight, share of ceramic/teeth (0..0.9), alloy id. Returns a range. */
   function dental(weightG, ceramicShare, alloyId, goldPerG) {
     var a = find(DENTAL_ALLOYS, alloyId);
@@ -232,6 +259,7 @@
     pgmScrap: pgmScrap,
     PAYOUT: PAYOUT,
     goldScrap: goldScrap,
+    goldMix: goldMix,
     dental: dental,
     coins: coins,
     silverScrap: silverScrap,
