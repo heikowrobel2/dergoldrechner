@@ -1,0 +1,44 @@
+# Der Goldrechner (dergoldrechner.de)
+
+> Kostenlose, unabhängige Rechner für den Wert von Altgold, Goldschmuck, Zahngold, Goldmünzen, Goldbarren, Silber, Platin und Palladium in Euro. Kurse stündlich aus dem internationalen Spotpreis, mit zweiter Quelle abgeglichen. Die Seite kauft kein Gold an und gibt keine verbindlichen Angebote ab; Ergebnisse sind unverbindliche Richtwerte. Methodik: https://dergoldrechner.de/so-rechnen-wir/
+
+## Rechner und Ratgeber
+
+- [Goldrechner](https://dergoldrechner.de/): Kostenloser Goldrechner mit aktuellen Goldpreisen: Gewicht und Feingehalt eingeben und den Goldwert von Altgold, Schmuck und Zahngold sofort sehen.
+- [Goldpreis](https://dergoldrechner.de/goldpreis-pro-gramm/): Aktueller Goldpreis pro Gramm in Euro für 333er, 585er, 750er und 999er Gold. Goldpreis berechnen mit dem Goldpreis-Rechner – inklusive Ankaufs-Richtwert.
+- [Goldpreis pro Unze](https://dergoldrechner.de/goldpreis-pro-unze/): Was kostet eine Feinunze Gold heute? Goldpreis pro Unze und pro Kilo in Euro, Unze in Gramm umrechnen und Werte für 1/10 bis 10 Unzen – live aktualisiert.
+- [Goldankauf](https://dergoldrechner.de/goldankauf-rechner/): Goldankauf-Rechner: Was zahlen Ankäufer für Ihr Gold? Materialwert, realistische Spanne und so kalkulieren Goldankäufer ihren Preis.
+- [Gold verkaufen](https://dergoldrechner.de/gold-verkaufen/): Gold verkaufen ohne Verlust: Wert vorher berechnen, Ankäufer vergleichen, Fallen vermeiden. Mit Goldrechner, Ablauf in 5 Schritten und Steuer-Tipps.
+- [Schmuck verkaufen](https://dergoldrechner.de/schmuck-verkaufen/): Goldschmuck verkaufen: Goldkette, Ring oder Armband bewerten, Steine und Markenwert richtig einschätzen und den besten Ankäufer finden – mit Goldrechner.
+- [Altgold verkaufen](https://dergoldrechner.de/altgold-verkaufen/): Altgold verkaufen: Mit dem Altgold-Rechner mehrere Stücke mit unterschiedlichem Stempel zusammenrechnen und sehen, was Ankäufer dafür zahlen.
+- [333er Gold](https://dergoldrechner.de/333-gold-wert/): Was ist 333er Gold wert? Gewicht eingeben und den Wert von 8-Karat-Gold mit aktuellem Goldpreis sehen – inklusive Preis pro Gramm und Ankaufs-Richtwert.
+- [585er Gold](https://dergoldrechner.de/585-gold-wert/): Was ist 585er Gold (14 Karat) wert? Gewicht eingeben und den Wert mit aktuellem Goldpreis sehen – für Gelb-, Rot- und Weißgold.
+- [750er Gold](https://dergoldrechner.de/750-gold-wert/): Was ist 750er Gold (18 Karat) wert? Gewicht eingeben und den Goldwert mit aktuellem Kurs sehen – auch für 750er Weißgold, Uhren und Markenschmuck.
+- [Zahngold](https://dergoldrechner.de/zahngold-wert/): Was ist Zahngold wert? Mit dem Zahngold-Rechner Kronen, Brücken und Inlays bewerten – und erfahren, worauf Sie beim Zahngold verkaufen achten sollten.
+- [Goldbarren](https://dergoldrechner.de/goldbarren-wert/): Was ist ein Goldbarren wert? Aktueller Goldwert für Barren von 1 g bis 1 kg, was Händler beim Ankauf zahlen und worauf Sie beim Goldbarren kaufen achten.
+- [Goldmünzen](https://dergoldrechner.de/goldmuenzen-wert/): Was ist Ihre Goldmünze wert? Münze und Anzahl wählen und den Goldwert sehen – für Maple Leaf, Philharmoniker, Vreneli, 20 Mark, Dukaten und mehr.
+- [Silber](https://dergoldrechner.de/silberrechner/): Silberrechner mit aktuellem Kurs: Wert von 925er Sterlingsilber, 800er Silberbesteck und Silberschmuck berechnen – mit Materialwert und Ankaufs-Richtwert.
+- [Silberbesteck](https://dergoldrechner.de/silberbesteck-wert/): Was ist Silberbesteck wert? Gewicht und Stempel (800, 835, 925) eingeben, Silberwert sehen und erfahren, wie Sie Silberbesteck zum fairen Preis verkaufen.
+- [Silbermünzen](https://dergoldrechner.de/silbermuenzen-wert/): Was sind Ihre Silbermünzen wert? Münze wählen, Anzahl eingeben und den Silberwert sehen – für Silberunzen, 5-DM-Adler, 10-DM- und 10-Euro-Gedenkmünzen.
+- [Silberpreis](https://dergoldrechner.de/silberpreis-pro-gramm/): Aktueller Silberpreis pro Gramm und pro Kilo in Euro – für 800er, 835er, 925er und 999er Silber. Mit Silberpreis-Rechner und Ankaufs-Richtwert.
+- [Silber verkaufen](https://dergoldrechner.de/silber-verkaufen/): Silber verkaufen: Was zahlt der Silberankauf für Barren, Münzen und Besteck? Mit Silberankauf-Rechner und Tipps für einen fairen Preis.
+- [Platin & Palladium](https://dergoldrechner.de/platin-verkaufen/): Platin verkaufen: Wert von Platinschmuck, Platinbarren und Palladium berechnen, Platinschmuck erkennen und den richtigen Ankäufer finden.
+- [Platinpreis](https://dergoldrechner.de/platinpreis-pro-gramm/): Aktueller Platinpreis und Palladiumpreis pro Gramm und pro Unze in Euro, dazu Werte für Platinschmuck 950 und 999 – stündlich aktualisiert.
+- [Goldpreis-Widget](https://dergoldrechner.de/goldpreis-widget/): Kostenloses Goldpreis-Widget: aktueller Gold- und Silberpreis in Euro für Ihre Website oder Ihren Blog. Ohne Cookies, ohne Tracking, Code einfach kopieren.
+
+## Goldmünzen
+
+- [Krügerrand](https://dergoldrechner.de/kruegerrand-wert/): Krügerrand Wert heute: Goldwert einer Krügerrand-Münze mit aktuellem Goldpreis berechnen – für 1 Unze und Teilstücke, inklusive Ankaufs-Richtwert.
+- [Maple Leaf](https://dergoldrechner.de/maple-leaf-gold-wert/): Was ist ein Maple Leaf aus Gold wert? Aktueller Goldwert für 1 Unze und Teilstücke, Daten zur kanadischen Münze und was Händler beim Ankauf zahlen.
+- [Wiener Philharmoniker](https://dergoldrechner.de/philharmoniker-gold-wert/): Was ist ein Wiener Philharmoniker aus Gold wert? Aktueller Goldwert für 1 Unze und Teilstücke, Daten zur österreichischen Münze und Ankaufspreise.
+- [American Eagle](https://dergoldrechner.de/american-eagle-gold-wert/): Was ist ein American Eagle aus Gold wert? Goldwert der 22-karätigen US-Münze nach aktuellem Kurs, Daten zu Gewicht und Legierung und Ankaufspreise.
+- [Britannia](https://dergoldrechner.de/britannia-gold-wert/): Was ist eine Britannia aus Gold wert? Aktueller Goldwert der britischen Anlagemünze, Unterschiede alter und neuer Jahrgänge und was Händler zahlen.
+- [Känguru (Nugget)](https://dergoldrechner.de/kaenguru-gold-wert/): Was ist eine Känguru-Goldmünze aus Australien wert? Goldwert der Nugget-Münze nach aktuellem Kurs, Daten zur Perth Mint und Ankaufspreise.
+- [Vreneli](https://dergoldrechner.de/vreneli-wert/): Was ist ein Vreneli wert? Goldwert für 20 und 10 Franken Vreneli nach aktuellem Kurs, Gewicht und Feingehalt sowie Hinweise zu seltenen Jahrgängen.
+- [20 Mark Gold](https://dergoldrechner.de/20-mark-gold-wert/): Was ist eine 20-Mark-Goldmünze aus dem Kaiserreich wert? Goldwert für 20 und 10 Mark nach aktuellem Kurs, Prägeländer und Hinweise zum Sammlerwert.
+- [Sovereign](https://dergoldrechner.de/sovereign-gold-wert/): Was ist ein Sovereign aus Gold wert? Goldwert für Sovereign und Half Sovereign nach aktuellem Kurs, Daten der Royal Mint und was Händler zahlen.
+- [Dukat](https://dergoldrechner.de/dukat-gold-wert/): Was ist ein österreichischer Dukat wert? Goldwert für 1 und 4 Dukaten nach aktuellem Kurs und warum alle Dukaten die Jahreszahl 1915 tragen.
+
+## Über die Daten
+
+- [So rechnen wir](https://dergoldrechner.de/so-rechnen-wir/): Kursquellen, Formeln und Annahmen zu den Ankaufsspannen

@@ -24,6 +24,8 @@ RewriteRule ^ https://dergoldrechner.de%{REQUEST_URI} [L,R=301]
 
 ErrorDocument 404 /404.html
 
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .txt .xml .html .css .js .json
 AddType video/mp4 .mp4
 AddType video/webm .webm
 AddType image/webp .webp

@@ -51,6 +51,9 @@ jobs:
           if [ -z "$FTP_USER" ] || [ -z "$FTP_PASSWORD" ]; then echo "::error::Secrets FTP_USER/FTP_PASSWORD fehlen"; exit 1; fi
           node scripts/deploy-ftp.mjs
 
+      - name: Notify Bing & co. (IndexNow)
+        run: node scripts/indexnow.mjs
+
       - name: Smoke test live site
         run: |
           sleep 5

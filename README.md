@@ -21,6 +21,9 @@ Nur der Goldkurs wird serverseitig per PHP abgerufen.
 | `tests/` | Tests Rechenkern (`calc.test.js`) und Deploy (`deploy.test.mjs`) |
 | `scripts/deploy-ftp.mjs` | Upload per FTPS, schützt den Kurs-Cache auf dem Server |
 | `docs/` | Semrush-Themenspeicher, Ausbauplan, Linkaufbau, GSC-Wochenbericht |
+| `src/lastmod.json` | Änderungsdatum je Seite (Sitemap `lastmod`, Zeile „zuletzt aktualisiert“) – mit committen |
+| `scripts/indexnow.mjs` | meldet nach jedem Deploy alle URLs an Bing/IndexNow (Schlüssel `site/<key>.txt`) |
+| `site/llms.txt` | Übersicht für KI-Crawler, wird beim Build erzeugt |
 
 Seitentypen in `src/pages.js` (`calc.type`): `gold`, `mix` (mehrere Stücke), `bars`, `coins`, `silver`,
 `silvercoins`, `pgm`, `dental`; ohne `calc` = Inhaltsseite. Münzseiten tragen `group: 'muenzen'` (eigene Fußzeile).

@@ -2,6 +2,8 @@
 // Keyword mapping (Semrush DE, Nov 2026) is noted per page in `keywords` – used for review, not output.
 // inNav:false keeps a page out of the top navigation (it is still linked in the footer and in texts).
 const de = (x) => x.toLocaleString('de-DE');
+const C = require('../site/assets/calc.js');
+const band = (k) => `${Math.round(C.PAYOUT[k].min * 1000) / 10} – ${Math.round(C.PAYOUT[k].max * 1000) / 10} %`.replace(/\./g, ',');
 const howText = {
   '333': ['eine Goldkette aus 333er Gold mit 8 g', 'Bei 333er Gold landet nur ein Drittel des Gewichts als Gold in der Rechnung – deshalb wirkt der Wert im Vergleich zum Gewicht oft gering.',
     'Wie Ankäufer ihren Preis für Altgold kalkulieren und wie Sie Angebote vergleichen, zeigt der <a href="/goldankauf-rechner/">Goldankauf-Rechner</a>.'],
@@ -1000,6 +1002,57 @@ module.exports = [
       ['Kostet das Goldpreis-Widget etwas?', 'Nein. Das Widget ist kostenlos und ohne Anmeldung nutzbar.'],
       ['Woher stammt der Goldpreis im Widget?', 'Es ist derselbe Kurs wie auf dergoldrechner.de: der internationale Spotpreis in Euro, stündlich aktualisiert und mit einer zweiten Quelle abgeglichen.'],
       ['Setzt das Widget Cookies?', 'Nein. Es lädt nur den aktuellen Kurs und setzt weder Cookies noch Tracking. Technisch bedingt wird beim Laden die IP-Adresse an unseren Server übermittelt.']
+    ]
+  },
+  {
+    slug: 'so-rechnen-wir',
+    nav: 'So rechnen wir',
+    inNav: false,
+    keywords: 'methodik · kursquelle · goldpreis berechnung · ankaufspreis annahmen',
+    title: 'So rechnen wir: Kursquellen, Formeln und Annahmen',
+    description: 'Woher der Goldpreis auf dergoldrechner.de kommt, wie Materialwert und Ankaufs-Richtwert berechnet werden und welche Annahmen dahinterstehen.',
+    h1: 'So rechnen wir: Kurse, Formeln und Annahmen',
+    intro: 'Alle Rechner auf dieser Seite folgen denselben, offen gelegten Regeln. Hier steht, woher die Kurse kommen, wie gerechnet wird und wo die Grenzen der Ergebnisse liegen.',
+    sections: [
+      {
+        h: 'Woher die Kurse kommen',
+        html: `<p>Grundlage ist der internationale <strong>Spotpreis</strong> für Gold, Silber, Platin und Palladium in Euro. Unser Server ruft ihn stündlich von einem Kursdienst ab und rechnet ihn von der Feinunze (31,1035 g) auf ein Gramm um.</p>
+<p>Zur Kontrolle wird der Kurs regelmäßig mit einer <strong>zweiten, unabhängigen Kursquelle</strong> verglichen, deren Dollarkurs mit dem offiziellen Referenzkurs der Europäischen Zentralbank in Euro umgerechnet wird. Weichen beide Quellen auffällig voneinander ab, zeigt die Seite vorübergehend weiter den letzten geprüften Kurs. Große Kurssprünge werden erst angezeigt, wenn sie durch eine zweite Messung bestätigt sind. Unter jedem Ergebnis steht, von wann der Kurs ist.</p>`
+      },
+      {
+        h: 'So wird der Materialwert berechnet',
+        html: `<p><strong>Materialwert = Gewicht × Feingehalt × Kurs pro Gramm Feinmetall</strong></p>
+<p>Der Feingehalt ist der Stempel geteilt durch 1.000: 585er Gold enthält 58,5 % Gold, 925er Silber 92,5 % Silber. Bei Münzen verwenden wir den offiziellen Feingoldgehalt der jeweiligen Ausgabe, bei Anlagebarren das Nenngewicht. Beim Zahngold rechnen wir mit einer Spanne für den Goldanteil der Legierung und ziehen den angegebenen Keramikanteil ab.</p>`
+      },
+      {
+        h: 'Annahmen zum Ankaufs-Richtwert',
+        html: `<p>Ankäufer zahlen nicht den vollen Materialwert, weil sie Prüfung, Scheidung und Marge abdecken müssen. Der Richtwert ist deshalb eine <strong>Spanne</strong>. Sie beruht auf veröffentlichten Ankaufspreisen von Händlern und ist eine Schätzung, kein belegter Marktpreis:</p>
+<div class="table-wrap"><table><thead><tr><th>Art</th><th class="num">Anteil am Materialwert</th></tr></thead><tbody>
+<tr><td>Goldschmuck und Altgold (333 bis 750)</td><td class="num">${band('goldMid')}</td></tr>
+<tr><td>Gold ab 900 (z. B. Feingoldschmuck)</td><td class="num">${band('goldHigh')}</td></tr>
+<tr><td>Anlagemünzen 1 Unze (Krügerrand, Maple Leaf …)</td><td class="num">${band('goldBullion')}</td></tr>
+<tr><td>Teilstücke von Anlagemünzen</td><td class="num">${band('goldBullionSmall')}</td></tr>
+<tr><td>Historische Goldmünzen (20 Mark, Vreneli …)</td><td class="num">${band('goldCoin')}</td></tr>
+<tr><td>Goldbarren bis 10 g</td><td class="num">${band('goldBarSmall')}</td></tr>
+<tr><td>Goldbarren 20 bis 50 g und 1 Unze</td><td class="num">${band('goldBar')}</td></tr>
+<tr><td>Goldbarren ab 100 g</td><td class="num">${band('goldBarLarge')}</td></tr>
+<tr><td>Zahngold</td><td class="num">${band('dental')}</td></tr>
+<tr><td>Silberbesteck und Silberschmuck</td><td class="num">${band('silverScrap')}</td></tr>
+<tr><td>Silbermünzen (Gedenkmünzen)</td><td class="num">${band('silverCoin')}</td></tr>
+<tr><td>Silberbarren und Silber-Anlagemünzen</td><td class="num">${band('silverBar')}</td></tr>
+<tr><td>Platin- und Palladiumschmuck</td><td class="num">${band('pgmScrap')}</td></tr>
+</tbody></table></div>
+<p>Die Annahmen überprüfen wir regelmäßig anhand veröffentlichter Ankaufspreise und passen sie an, wenn sich der Markt verändert.</p>`
+      },
+      {
+        h: 'Was die Ergebnisse nicht sind',
+        html: `<p>Alle Ergebnisse sind <strong>unverbindliche Richtwerte</strong>. dergoldrechner.de kauft selbst kein Gold an, gibt keine Angebote ab und leistet keine Anlage- oder Steuerberatung. Ein verbindlicher Preis entsteht erst, wenn ein Ankäufer das Material geprüft hat. Sammlerwerte seltener Münzen, Markenschmuck und Edelsteine bilden die Rechner nicht ab.</p>
+<p>Die Rechner laufen vollständig in Ihrem Browser: Ihre Eingaben werden nicht an uns übertragen, es gibt keine Cookies und kein Tracking. Mehr dazu in der <a href="/datenschutz/">Datenschutzerklärung</a>.</p>`
+      }
+    ],
+    faq: [
+      ['Wie aktuell ist der Goldpreis auf dergoldrechner.de?', 'Der Kurs wird stündlich aktualisiert und regelmäßig mit einer zweiten, unabhängigen Quelle abgeglichen. Am Wochenende ruht der Handel, dann gilt der letzte Kurs vom Freitag.'],
+      ['Warum zeigt der Rechner eine Spanne statt eines festen Ankaufspreises?', 'Weil jeder Ankäufer anders kalkuliert. Die Spanne zeigt, was seriöse Ankäufer erfahrungsgemäß zahlen; ein verbindliches Angebot gibt es nur nach Prüfung beim Ankäufer.']
     ]
   }
 ];

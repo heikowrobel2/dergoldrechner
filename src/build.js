@@ -1,6 +1,7 @@
 // Static site generator for dergoldrechner.de. Run: node src/build.js
 // Writes HTML into site/ (assets, api and data are maintained by hand).
 const fs = require('fs');
+const crypto = require('crypto');
 const path = require('path');
 const C = require('../site/assets/calc.js');
 const pages = require('./pages.js');
@@ -122,6 +123,18 @@ function faqBlock(faq, heading = true) {
   return `<section>${heading ? '<h2>Häufige Fragen</h2>' : ''}${faq.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`).join('')}</section>`;
 }
 
+// Breadcrumb trail: Startseite › (Goldmünzen ›) page
+function trail(p) {
+  const t = [['Startseite', '']];
+  if (p.group === 'muenzen') t.push(['Goldmünzen', 'goldmuenzen-wert']);
+  t.push([p.nav, p.slug]);
+  return t;
+}
+function crumbs(p) {
+  const t = trail(p);
+  return `<nav class="crumbs" aria-label="Brotkrumen">${t.map(([n, s], i) => i === t.length - 1 ? `<span aria-current="page">${esc(n)}</span>` : `<a href="${href(s)}">${esc(n)}</a>`).join('<span class="sep" aria-hidden="true">›</span>')}</nav>`;
+}
+
 function jsonLd(p) {
   const graph = p.calc === undefined && p.slug !== '' ? [] : [{
     '@type': 'WebApplication',
@@ -137,6 +150,9 @@ function jsonLd(p) {
       '@type': 'FAQPage',
       mainEntity: p.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } }))
     });
+  }
+  if (p.slug !== '') {
+    graph.push({ '@type': 'BreadcrumbList', itemListElement: trail(p).map(([n, s], i) => ({ '@type': 'ListItem', position: i + 1, name: n, item: url(s) })) });
   }
   return `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })}</script>`;
 }
@@ -157,6 +173,12 @@ ${noindex ? '<meta name="robots" content="noindex, noarchive, follow">' : ''}
 <meta property="og:url" content="${url(p.slug)}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="Der Goldrechner">
+<meta property="og:image" content="${BASE}/assets/img/hero-ringe-1200.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Goldringe auf dunklem Grund – Der Goldrechner">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg?v=${V}" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/Fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/Inter-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -185,10 +207,17 @@ ${home ? `<script src="/assets/motion.js?v=${V}"></script>` : ''}
 `;
 }
 
+const LASTMOD_FILE = path.join(__dirname, 'lastmod.json');
+const lastmod = fs.existsSync(LASTMOD_FILE) ? JSON.parse(fs.readFileSync(LASTMOD_FILE, 'utf8')) : {};
+const TODAY = new Date().toISOString().slice(0, 10);
+const deDate = (iso) => iso.split('-').reverse().join('.');
 function write(slug, html) {
   const dir = path.join(OUT, slug);
   fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), html);
+  // the page counts as changed only if its content changed (not the asset version or the date itself)
+  const hash = crypto.createHash('sha1').update(html.replace(/\?v=\d+/g, '')).digest('hex');
+  if (!lastmod[slug] || lastmod[slug].hash !== hash) lastmod[slug] = { hash, date: TODAY };
+  fs.writeFileSync(path.join(dir, 'index.html'), html.replace('__LASTMOD__', deDate(lastmod[slug].date)));
 }
 
 const homeBody = require('./home.js');
@@ -197,14 +226,16 @@ for (const p of pages) {
     write('', layout(p, homeBody(faqBlock(p.faq, false)), { home: true }));
     continue;
   }
-  const body = `<div class="hero"><h1>${esc(p.h1)}</h1><p>${esc(p.intro)}</p></div>
+  const body = `${crumbs(p)}
+<div class="hero"><h1>${esc(p.h1)}</h1><p>${esc(p.intro)}</p></div>
 ${p.calc ? form(p.calc) : ''}
 ${p.priceTable ? priceTable(p.priceTable) : ''}
 ${p.example ? exampleTable(p.example) : ''}
 ${p.coinTable ? coinTable() : ''}
 ${p.sections.map((s) => `<section><h2>${esc(s.h)}</h2>${s.html}</section>`).join('\n')}
 ${p.tiles ? tiles() : ''}
-${faqBlock(p.faq)}`;
+${faqBlock(p.faq)}
+<p class="stand">Inhalt zuletzt aktualisiert am __LASTMOD__ · Kurse stündlich aktuell · <a href="/so-rechnen-wir/">So rechnen wir</a></p>`;
   write(p.slug, layout(p, body));
 }
 
@@ -219,7 +250,17 @@ fs.writeFileSync(path.join(OUT, '404.html'), layout(notFound,
 
 fs.writeFileSync(path.join(OUT, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  pages.map((p) => `  <url><loc>${url(p.slug)}</loc></url>`).join('\n') + '\n</urlset>\n');
+  pages.map((p) => `  <url><loc>${url(p.slug)}</loc>${lastmod[p.slug] ? `<lastmod>${lastmod[p.slug].date}</lastmod>` : ''}</url>`).join('\n') + '\n</urlset>\n');
+fs.writeFileSync(LASTMOD_FILE, JSON.stringify(lastmod, null, 1) + '\n');
+// llms.txt: short map of the site for AI crawlers (llmstxt.org format)
+const llmsGroup = (filter) => pages.filter(filter).map((p) => `- [${p.nav}](${url(p.slug)}): ${p.description}`).join('\n');
+fs.writeFileSync(path.join(OUT, 'llms.txt'), `# Der Goldrechner (dergoldrechner.de)\n\n` +
+  `> Kostenlose, unabhängige Rechner für den Wert von Altgold, Goldschmuck, Zahngold, Goldmünzen, Goldbarren, Silber, Platin und Palladium in Euro. ` +
+  `Kurse stündlich aus dem internationalen Spotpreis, mit zweiter Quelle abgeglichen. Die Seite kauft kein Gold an und gibt keine verbindlichen Angebote ab; ` +
+  `Ergebnisse sind unverbindliche Richtwerte. Methodik: ${BASE}/so-rechnen-wir/\n\n` +
+  `## Rechner und Ratgeber\n\n${llmsGroup((p) => p.group !== 'muenzen' && p.slug !== 'so-rechnen-wir')}\n\n` +
+  `## Goldmünzen\n\n${llmsGroup((p) => p.group === 'muenzen')}\n\n` +
+  `## Über die Daten\n\n- [So rechnen wir](${BASE}/so-rechnen-wir/): Kursquellen, Formeln und Annahmen zu den Ankaufsspannen\n`);
 fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${BASE}/sitemap.xml\n`);
 
 // Release check: no placeholders and no demo price may go live.
