@@ -45,6 +45,11 @@ goldankauf123.de holt ~93.000 Besuche im Monat über ~1.200 Glossar-Seiten (Mün
 Für uns: je Gold- und Silbermünze eine Wertseite mit Rechner (aus `calc.js`-Daten), je Legierung eine Seite.
 Erst nach Block 1–3 und nur mit echtem Mehrwert je Seite (keine Dünnseiten).
 
+## Block 5 – Stand 13.11.2026
+Live: /maple-leaf-silber-wert/ (maple leaf silber 8.100, KD 23), /kruegerrand-silber-wert/ (krügerrand silber 3.600, KD 16), /philharmoniker-silber-wert/ (wiener philharmoniker silber 2.400, KD 12), /100-euro-goldmuenze-wert/ (100 euro goldmünze 4.400, KD 15; dazu 20/50/200 Euro).
+Nächste Kandidaten (Semrush DE 13.11.2026): gold silber ratio 12.100 (KD 16, Ratgeber), silberpreisentwicklung euro 9.900 (KD 19, braucht Kursverlauf), 1 kg silber preis 6.600 (KD 15, Abgrenzung zu /silberpreis-pro-gramm/ klären), silber 925 wert 2.900 (KD 27, gegen /silberrechner/ prüfen), american eagle silber 390.
+Offen: echtes Foto für Silbermünzen-Seiten (derzeit dunkles Band ohne Foto).
+
 ## Backlinks (laufend, kein Spam)
 1. Launch-Pressemitteilung (pressemitteilung.ws), 2. Gold-Wikis: goldbarren-wiki.de, maple-leaf-wiki.de, 585gold.org,
 3. Gastbeiträge: spar.gold, aktienkaufempfehlungen.de, Finanzblogs, 4. Fachforen (goldseiten-forum.com) nur mit
