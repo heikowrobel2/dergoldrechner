@@ -144,12 +144,14 @@ const PHONE_PLAIN = { pos: '50% 50%', zoom: 1, origin: '50% 50%' }; // narrow bo
 const BAND_FOCUS = {
   'maple-leaf-gold-wert': ['muenzen-alt', '50% 66%', 2.6, '88% 62%', false, PHONE_PLAIN],
   'kruegerrand-wert': ['muenzen-alt', '50% 46%', 2.2, '76% 46%', false, PHONE_PLAIN],
-  'philharmoniker-gold-wert': ['muenzen-alt', '50% 69%', 2.2, '66% 69%', false, PHONE_PLAIN]
+  'philharmoniker-gold-wert': ['muenzen-alt', '50% 69%', 2.2, '66% 69%', false, PHONE_PLAIN],
+  'maple-leaf-silber-wert': ['silber-maple', '50% 50%', 1, '50% 50%', 'strong', { pos: '80% 50%', zoom: 1, origin: '50% 50%' }] // Pexels 8442431, own crop with the Maple on the right
 };
 function bandImage(p) {
   if (BAND_FOCUS[p.slug]) return BAND_FOCUS[p.slug];
   if (p.slug === 'goldmuenzen-wert') return ['muenzen-alt', '60% 50%', 1, '50% 50%', true];
-  if (p.group === 'silbermuenzen') return null; // no real silver coin photo yet: plain dark band
+  if (p.slug === 'silbermuenzen-wert') return ['silbermuenzen', '50% 50%', 1, '50% 50%', 'strong']; // silver bullion heap (Pexels 8442431)
+  if (p.group === 'silbermuenzen') return ['silbermuenzen', '50% 55%', 1, '50% 50%', 'blur']; // own coin not separable in the photo: calm blurred heap
   if (p.group === 'muenzen') return ['muenzen-alt', '60% 50%', 1, '50% 50%', 'blur']; // coin not in the photo: no other coin may be legible
   if (/silber/.test(p.slug)) return ['silber-gabeln', '50% 42%', 1, '50% 50%', 'strong'];
   if (/platin/.test(p.slug)) return ['platin-barren', '50% 50%', 1, '50% 50%', 'cool', { pos: '95% 50%', zoom: 1, origin: '50% 50%' }]; // real palladium bar (Pexels 20979925), bar sits right of the text
