@@ -200,6 +200,7 @@ pre.code { white-space: pre-wrap; word-break: break-all; background: var(--surfa
 .band-bg img.tone-strong { filter: brightness(.5) contrast(1.15); } /* very light photo (silver cutlery on white) */
 .band-bg img.tone-soft { filter: brightness(.85) saturate(1.05); } /* dark photo (gold bars): keep the shine visible */
 .band-bg img.tone-bright { filter: brightness(1.3) contrast(1.05); } /* dark crucible photo: keep the motif recognisable */
+.band-bg img.tone-cool { filter: brightness(.8) saturate(.55); } /* strong blue backdrop: calmer, so the white metal leads */
 .band-bg img.tone-blur { filter: blur(6px) brightness(.55); transform: scale(1.06); } /* coin heap as calm background, no legible coin */
 /* header joins the dark band, as on the home page */
 .has-band .site-header { background: #0e0c09; border-bottom-color: rgba(255, 255, 255, .07); }

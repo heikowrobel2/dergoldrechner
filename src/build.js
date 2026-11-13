@@ -150,7 +150,7 @@ function bandImage(p) {
   if (p.slug === 'goldmuenzen-wert') return ['muenzen-alt', '60% 50%', 1, '50% 50%', true];
   if (p.group === 'muenzen') return ['muenzen-alt', '60% 50%', 1, '50% 50%', 'blur']; // coin not in the photo: no other coin may be legible
   if (/silber/.test(p.slug)) return ['silber-gabeln', '50% 42%', 1, '50% 50%', 'strong'];
-  if (/platin/.test(p.slug)) return null; // no real platinum photo yet: plain dark band (recoloured gold looked fake)
+  if (/platin/.test(p.slug)) return ['platin-barren', '50% 50%', 1, '50% 50%', 'cool', { pos: '95% 50%', zoom: 1, origin: '50% 50%' }]; // real palladium bar (Pexels 20979925), bar sits right of the text
   if (/barren|unze/.test(p.slug)) return ['barren', '50% 40%', 1, '50% 50%', 'soft'];
   if (/zahngold|altgold/.test(p.slug)) return ['altgold-tiegel', '55% 50%', 1, '50% 50%', 'bright'];
   return ['goldschmuck', '55% 55%', 1, '50% 50%', true];
@@ -164,7 +164,7 @@ function band(p) {
   return `<section class="band">
 ` +
     (pick ? `<picture class="band-bg"><source type="image/webp" srcset="/assets/img/${img}-800.webp 800w, /assets/img/${img}-1600.webp 1600w" sizes="100vw">` +
-    `<img src="/assets/img/${img}-1600.jpg" srcset="/assets/img/${img}-800.jpg 800w, /assets/img/${img}-1600.jpg 1600w" sizes="100vw" alt="" fetchpriority="high" decoding="async"${light ? ` class="${{ strong: 'tone-strong', blur: 'tone-blur', soft: 'tone-soft', bright: 'tone-bright' }[light] || 'tone'}"` : ''} style="${imgStyle}"></picture>
+    `<img src="/assets/img/${img}-1600.jpg" srcset="/assets/img/${img}-800.jpg 800w, /assets/img/${img}-1600.jpg 1600w" sizes="100vw" alt="" fetchpriority="high" decoding="async"${light ? ` class="${{ strong: 'tone-strong', blur: 'tone-blur', soft: 'tone-soft', bright: 'tone-bright', cool: 'tone-cool' }[light] || 'tone'}"` : ''} style="${imgStyle}"></picture>
 ` : '') +
     `<div class="wrap band-in">${crumbs(p)}<h1>${h1}</h1><p>${esc(p.intro)}</p></div>
 </section>`;
