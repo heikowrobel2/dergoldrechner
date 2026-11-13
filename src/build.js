@@ -127,6 +127,7 @@ function faqBlock(faq, heading = true) {
 function trail(p) {
   const t = [['Startseite', '']];
   if (p.group === 'muenzen') t.push(['Goldmünzen', 'goldmuenzen-wert']);
+  if (p.group === 'silbermuenzen') t.push(['Silbermünzen', 'silbermuenzen-wert']);
   t.push([p.nav, p.slug]);
   return t;
 }
@@ -148,6 +149,7 @@ const BAND_FOCUS = {
 function bandImage(p) {
   if (BAND_FOCUS[p.slug]) return BAND_FOCUS[p.slug];
   if (p.slug === 'goldmuenzen-wert') return ['muenzen-alt', '60% 50%', 1, '50% 50%', true];
+  if (p.group === 'silbermuenzen') return null; // no real silver coin photo yet: plain dark band
   if (p.group === 'muenzen') return ['muenzen-alt', '60% 50%', 1, '50% 50%', 'blur']; // coin not in the photo: no other coin may be legible
   if (/silber/.test(p.slug)) return ['silber-gabeln', '50% 42%', 1, '50% 50%', 'strong'];
   if (/platin/.test(p.slug)) return ['platin-barren', '50% 50%', 1, '50% 50%', 'cool', { pos: '95% 50%', zoom: 1, origin: '50% 50%' }]; // real palladium bar (Pexels 20979925), bar sits right of the text
@@ -230,8 +232,9 @@ ${top}
 ${home ? body : `<main class="wrap">\n${body}\n</main>`}
 <footer class="site-footer"><div class="wrap">
 ${home ? '<p class="h-wordmark">Der <em>Goldrechner</em></p>' : ''}
-<nav aria-label="Alle Rechner" class="footer-calcs">${pages.filter((x) => x.group !== 'muenzen').map((x) => `<a href="${href(x.slug)}">${esc(x.nav)}</a>`).join('')}</nav>
+<nav aria-label="Alle Rechner" class="footer-calcs">${pages.filter((x) => !x.group).map((x) => `<a href="${href(x.slug)}">${esc(x.nav)}</a>`).join('')}</nav>
 <nav aria-label="Goldmünzen" class="footer-calcs"><span>Goldmünzen:</span>${pages.filter((x) => x.group === 'muenzen').map((x) => `<a href="${href(x.slug)}">${esc(x.nav)}</a>`).join('')}</nav>
+<nav aria-label="Silbermünzen" class="footer-calcs"><span>Silbermünzen:</span>${pages.filter((x) => x.group === 'silbermuenzen').map((x) => `<a href="${href(x.slug)}">${esc(x.nav)}</a>`).join('')}</nav>
 <nav aria-label="Rechtliches"><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a></nav>
 <p class="disclaimer">Alle Ergebnisse sind unverbindliche Richtwerte auf Basis des angezeigten Edelmetallkurses. Wir kaufen kein Gold an und geben keine Anlageberatung. Links mit dem Hinweis „Anzeige“ sind Werbelinks; kommt darüber ein Geschäft zustande, erhalten wir eventuell eine Provision.</p>
 <p>© ${new Date().getFullYear()} dergoldrechner.de</p>
@@ -294,8 +297,9 @@ fs.writeFileSync(path.join(OUT, 'llms.txt'), `# Der Goldrechner (dergoldrechner.
   `> Kostenlose, unabhängige Rechner für den Wert von Altgold, Goldschmuck, Zahngold, Goldmünzen, Goldbarren, Silber, Platin und Palladium in Euro. ` +
   `Kurse stündlich aus dem internationalen Spotpreis, mit zweiter Quelle abgeglichen. Die Seite kauft kein Gold an und gibt keine verbindlichen Angebote ab; ` +
   `Ergebnisse sind unverbindliche Richtwerte. Methodik: ${BASE}/so-rechnen-wir/\n\n` +
-  `## Rechner und Ratgeber\n\n${llmsGroup((p) => p.group !== 'muenzen' && p.slug !== 'so-rechnen-wir')}\n\n` +
+  `## Rechner und Ratgeber\n\n${llmsGroup((p) => !p.group && p.slug !== 'so-rechnen-wir')}\n\n` +
   `## Goldmünzen\n\n${llmsGroup((p) => p.group === 'muenzen')}\n\n` +
+  `## Silbermünzen\n\n${llmsGroup((p) => p.group === 'silbermuenzen')}\n\n` +
   `## Über die Daten\n\n- [So rechnen wir](${BASE}/so-rechnen-wir/): Kursquellen, Formeln und Annahmen zu den Ankaufsspannen\n`);
 fs.writeFileSync(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${BASE}/sitemap.xml\n`);
 

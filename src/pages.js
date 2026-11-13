@@ -504,7 +504,7 @@ module.exports = [
       },
       {
         h: 'Einzelne Goldmünzen im Detail',
-        html: `<p>Eigene Seiten mit Daten, Größen und Hinweisen zum Sammlerwert gibt es für <a href="/maple-leaf-gold-wert/">Maple Leaf</a>, <a href="/philharmoniker-gold-wert/">Wiener Philharmoniker</a>, <a href="/kruegerrand-wert/">Krügerrand</a>, <a href="/american-eagle-gold-wert/">American Eagle</a>, <a href="/britannia-gold-wert/">Britannia</a>, <a href="/kaenguru-gold-wert/">Känguru</a>, <a href="/vreneli-wert/">Vreneli</a>, <a href="/20-mark-gold-wert/">20 Mark</a>, <a href="/sovereign-gold-wert/">Sovereign</a> und <a href="/dukat-gold-wert/">Dukaten</a>.</p>`
+        html: `<p>Eigene Seiten mit Daten, Größen und Hinweisen zum Sammlerwert gibt es für <a href="/maple-leaf-gold-wert/">Maple Leaf</a>, <a href="/philharmoniker-gold-wert/">Wiener Philharmoniker</a>, <a href="/kruegerrand-wert/">Krügerrand</a>, <a href="/american-eagle-gold-wert/">American Eagle</a>, <a href="/britannia-gold-wert/">Britannia</a>, <a href="/kaenguru-gold-wert/">Känguru</a>, <a href="/vreneli-wert/">Vreneli</a>, <a href="/20-mark-gold-wert/">20 Mark</a>, <a href="/sovereign-gold-wert/">Sovereign</a>, <a href="/dukat-gold-wert/">Dukaten</a> und die deutschen <a href="/100-euro-goldmuenze-wert/">100-Euro-Goldmünzen</a>.</p>`
       }
     ],
     faq: [
@@ -538,7 +538,8 @@ module.exports = [
       },
       {
         h: 'Krügerrand verkaufen',
-        html: `<p>Bieten Sie Krügerrand-Münzen getrennt von Altgold an und vergleichen Sie die Ankaufspreise mehrerer Händler. Gut erhaltene Münzen ohne Kratzer und in Originalverpackung erzielen eher den Höchstpreis. Weitere Münzen finden Sie im <a href="/goldmuenzen-wert/">Goldmünzen-Rechner</a>.</p>`
+        html: `<p>Bieten Sie Krügerrand-Münzen getrennt von Altgold an und vergleichen Sie die Ankaufspreise mehrerer Händler. Gut erhaltene Münzen ohne Kratzer und in Originalverpackung erzielen eher den Höchstpreis. Weitere Münzen finden Sie im <a href="/goldmuenzen-wert/">Goldmünzen-Rechner</a>.</p>
+<p>Den Krügerrand aus Silber bewerten Sie unter <a href="/kruegerrand-silber-wert/">Krügerrand Silber</a>.</p>`
       }
     ],
     faq: [
@@ -561,9 +562,10 @@ module.exports = [
     sections: [
       { h: 'Maple Leaf: Daten und Größen', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Kanada (Royal Canadian Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1979</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>50 Kanadische Dollar</td></tr><tr><th scope="row">Feingehalt</th><td>999,9 (seit Ende 1982, zuvor 999)</td></tr><tr><th scope="row">Gewicht</th><td>31,1035 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
 <p>Der Maple Leaf besteht aus reinem Feingold ohne Beimischung. Er zeigt auf der Rückseite das kanadische Ahornblatt, auf der Vorderseite das Porträt des Monarchen (bis 2023 Elizabeth II., seither Charles III.). Neuere Jahrgänge tragen feine Radiallinien und ein mikrograviertes Ahornblatt als Sicherheitsmerkmale.</p>
-<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldq31103">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
+<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldozv">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
       { h: 'Kratzer und Flecken beim Maple Leaf', html: `<p>Reines Feingold ist weich. Beim Maple Leaf sieht man deshalb häufig Kratzer, Kontaktspuren oder kleine Milchflecken. Am Goldgehalt ändern sie nichts – einige Händler ziehen für stark beschädigte Münzen aber etwas ab. Bewahren Sie Münzen am besten in der Originalkapsel auf.</p>` },
-      { h: 'Maple Leaf verkaufen', html: `<p>Die Münze wird nicht eingeschmolzen, sondern direkt weiterverkauft. Händler zahlen deshalb nah am Goldpreis – der Rechner oben zeigt eine realistische Spanne. Vergleichen Sie mindestens zwei Angebote am selben Tag; den Ablauf beschreibt die Seite <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>` }
+      { h: 'Maple Leaf verkaufen', html: `<p>Die Münze wird nicht eingeschmolzen, sondern direkt weiterverkauft. Händler zahlen deshalb nah am Goldpreis – der Rechner oben zeigt eine realistische Spanne. Vergleichen Sie mindestens zwei Angebote am selben Tag; den Ablauf beschreibt die Seite <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>
+<p>Den Maple Leaf aus Silber bewerten Sie unter <a href="/maple-leaf-silber-wert/">Maple Leaf Silber</a>.</p>` }
     ],
     faq: [['Wie viel Gold ist in einem Maple Leaf?','Ein Maple Leaf zu einer Unze enthält 31,1035 g Feingold mit einem Feingehalt von 999,9.'],['Gibt es den Maple Leaf auch kleiner?','Ja, unter anderem als 1/2, 1/4 und 1/10 Unze. Den Goldwert der Teilstücke zeigt die Tabelle auf dieser Seite.'],['Ist der Maple Leaf mehrwertsteuerfrei?','Der Maple Leaf erfüllt die Voraussetzungen für Anlagegold und ist in Deutschland beim Kauf von der Mehrwertsteuer befreit; beim Verkauf durch Privatpersonen fällt ohnehin keine an.']]
   },
@@ -581,9 +583,10 @@ module.exports = [
     sections: [
       { h: 'Wiener Philharmoniker: Daten und Größen', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Österreich (Münze Österreich)</td></tr><tr><th scope="row">Erstausgabe</th><td>1989</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>2.000 Schilling (bis 2001), seit 2002 100 Euro</td></tr><tr><th scope="row">Feingehalt</th><td>999,9</td></tr><tr><th scope="row">Gewicht</th><td>31,1035 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
 <p>Die Vorderseite zeigt die große Orgel im Goldenen Saal des Wiener Musikvereins, die Rückseite Instrumente der Wiener Philharmoniker. Die Münze gilt als einzige Gold-Anlagemünze mit einem Nennwert in Euro.</p>
-<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldq31103">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr><tr><td>1/25 Unze (seit 2014)</td><td class="num">1,24 g</td><td class="num"><span data-price="goldq1244">–</span></td></tr></tbody></table></div>` },
+<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldozv">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr><tr><td>1/25 Unze (seit 2014)</td><td class="num">1,24 g</td><td class="num"><span data-price="goldq1244">–</span></td></tr></tbody></table></div>` },
       { h: 'Schilling oder Euro – spielt das eine Rolle?', html: `<p>Für den Goldwert nicht: Ausgaben mit Schilling-Nennwert (1989–2001) enthalten genauso viel Gold wie die Euro-Ausgaben. Händler kaufen beide Varianten zum gleichen Preis an. Nur sehr gut erhaltene Stücke in Originalverpackung lassen sich manchmal etwas leichter verkaufen.</p>` },
-      { h: 'Wiener Philharmoniker verkaufen', html: `<p>Die Münze wird nicht eingeschmolzen, sondern direkt weiterverkauft. Händler zahlen deshalb nah am Goldpreis – der Rechner oben zeigt eine realistische Spanne. Vergleichen Sie mindestens zwei Angebote am selben Tag; den Ablauf beschreibt die Seite <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>` }
+      { h: 'Wiener Philharmoniker verkaufen', html: `<p>Die Münze wird nicht eingeschmolzen, sondern direkt weiterverkauft. Händler zahlen deshalb nah am Goldpreis – der Rechner oben zeigt eine realistische Spanne. Vergleichen Sie mindestens zwei Angebote am selben Tag; den Ablauf beschreibt die Seite <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>
+<p>Den Philharmoniker aus Silber bewerten Sie unter <a href="/philharmoniker-silber-wert/">Wiener Philharmoniker Silber</a>.</p>` }
     ],
     faq: [['Wie viel Gold ist in einem Wiener Philharmoniker?','Die 1-Unzen-Münze enthält 31,1035 g Feingold mit einem Feingehalt von 999,9.'],['Ist ein Philharmoniker in Schilling weniger wert?','Nein. Der Goldgehalt ist identisch, Händler zahlen für Schilling- und Euro-Ausgaben denselben Preis.'],['Ist der Wiener Philharmoniker mehrwertsteuerfrei?','Der Wiener Philharmoniker erfüllt die Voraussetzungen für Anlagegold und ist in Deutschland beim Kauf von der Mehrwertsteuer befreit; beim Verkauf durch Privatpersonen fällt ohnehin keine an.']]
   },
@@ -601,7 +604,7 @@ module.exports = [
     sections: [
       { h: 'American Eagle: Daten und Größen', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>USA (United States Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1986</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>50 US-Dollar</td></tr><tr><th scope="row">Feingehalt</th><td>916,7 (22 Karat), legiert mit Silber und Kupfer</td></tr><tr><th scope="row">Gewicht</th><td>33,93 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
 <p>Die Vorderseite zeigt Lady Liberty nach dem Entwurf von Augustus Saint-Gaudens. Die Rückseite zeigte bis 2021 eine Adlerfamilie, seit Mitte 2021 einen Adlerkopf.</p>
-<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldq31103">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
+<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldozv">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
       { h: 'Warum wiegt ein American Eagle mehr als eine Unze?', html: `<p>Die Münze besteht aus 22-karätigem Gold. Silber und Kupfer machen sie härter und kratzfester, erhöhen aber das Gewicht auf 33,93 g. Für den Wert zählt nur das Feingold: genau eine Unze, also gleich viel wie beim <a href="/maple-leaf-gold-wert/">Maple Leaf</a> oder <a href="/kruegerrand-wert/">Krügerrand</a>.</p>` },
       { h: 'American Eagle verkaufen', html: `<p>Die Münze wird nicht eingeschmolzen, sondern direkt weiterverkauft. Händler zahlen deshalb nah am Goldpreis – der Rechner oben zeigt eine realistische Spanne. Vergleichen Sie mindestens zwei Angebote am selben Tag; den Ablauf beschreibt die Seite <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>` }
     ],
@@ -621,7 +624,7 @@ module.exports = [
     sections: [
       { h: 'Britannia: Daten und Größen', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Großbritannien (The Royal Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1987</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>100 Pfund</td></tr><tr><th scope="row">Feingehalt</th><td>999,9 seit 2013; 1987–2012: 916,7 (22 Karat)</td></tr><tr><th scope="row">Gewicht</th><td>31,1035 g (seit 2013), davor 34,05 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
 <p>Die Britannia zeigt die Personifikation Großbritanniens mit Schild und Dreizack. Seit 2021 tragen neue Jahrgänge zusätzliche Sicherheitsmerkmale gegen Fälschungen.</p>
-<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldq31103">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
+<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldozv">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
       { h: 'Alte und neue Britannia unterscheiden', html: `<p>Bis 2012 war die Britannia aus 22-karätigem Gold: 1987 bis 1989 mit Kupfer, ab 1990 mit Silber legiert. Diese Münzen wiegen 34,05 g und enthalten trotzdem genau eine Unze Gold. Seit 2013 ist die Britannia aus Feingold (999,9). Für den Goldwert ist der Jahrgang deshalb egal.</p>` },
       { h: 'Britannia verkaufen', html: `<p>Die Münze wird nicht eingeschmolzen, sondern direkt weiterverkauft. Händler zahlen deshalb nah am Goldpreis – der Rechner oben zeigt eine realistische Spanne. Vergleichen Sie mindestens zwei Angebote am selben Tag; den Ablauf beschreibt die Seite <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>` }
     ],
@@ -641,7 +644,7 @@ module.exports = [
     sections: [
       { h: 'Känguru-Goldmünze: Daten und Größen', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Australien (Perth Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1986, zunächst mit Nugget-Motiv</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>100 Australische Dollar</td></tr><tr><th scope="row">Feingehalt</th><td>999,9</td></tr><tr><th scope="row">Gewicht</th><td>31,1035 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
 <p>In den ersten Jahren zeigte die Münze Goldnuggets, seit 1989 ein Känguru. Das Motiv wechselt jedes Jahr – deshalb sprechen viele Händler bis heute vom „Nugget“.</p>
-<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldq31103">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
+<div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldozv">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
       { h: 'Jährlich neues Motiv – spielt der Jahrgang eine Rolle?', html: `<p>Für den Goldwert nicht: Jeder Jahrgang enthält gleich viel Gold. Einzelne frühe Nugget-Jahrgänge oder limitierte Sonderausgaben werden unter Sammlern teils höher gehandelt. Prüfen lassen lohnt sich nur bei besonderen Stücken.</p>` },
       { h: 'Känguru (Nugget) verkaufen', html: `<p>Die Münze wird nicht eingeschmolzen, sondern direkt weiterverkauft. Händler zahlen deshalb nah am Goldpreis – der Rechner oben zeigt eine realistische Spanne. Vergleichen Sie mindestens zwei Angebote am selben Tag; den Ablauf beschreibt die Seite <a href="/gold-verkaufen/">Gold verkaufen</a>.</p>` }
     ],
@@ -726,6 +729,27 @@ module.exports = [
       { h: 'Dukat verkaufen', html: `<p>Für gängige Stücke zahlen Händler einen Preis nah am Goldwert. Ausnahme sind Sammlerstücke – lassen Sie seltene Jahrgänge oder Stücke in sehr gutem Erhaltungszustand vorher von einem Münzhändler bewerten, denn dort kann der Sammlerwert deutlich über dem Goldwert liegen. Weitere historische Münzen finden Sie im <a href="/goldmuenzen-wert/">Goldmünzen-Rechner</a>.</p>` }
     ],
     faq: [['Wie viel Gold ist in einem Dukaten?','Ein 1-Dukaten-Stück enthält 3,442 g Feingold, ein 4-Dukaten-Stück 13,768 g.'],['Ist ein Dukat von 1915 selten?','Nein. Alle heute geprägten Dukaten tragen die Jahreszahl 1915; es sind offizielle Nachprägungen, die nah am Goldwert gehandelt werden.'],['Ist der Dukat mehrwertsteuerfrei?','Gängige Stücke gelten als Anlagegold und sind beim Kauf mehrwertsteuerfrei. Liegt der Preis wegen eines Sammlerwerts über 180 % des Goldwerts, kann Mehrwertsteuer anfallen, meist in Form der Differenzbesteuerung. Beim Verkauf durch Privatpersonen fällt keine an.']]
+  },
+  {
+    slug: '100-euro-goldmuenze-wert',
+    nav: '100 Euro Gold',
+    inNav: false,
+    group: 'muenzen',
+    keywords: '100 euro goldmünze 4.400 (KD 15) · 100 euro goldmünze wert 390 (KD 10) · 20 euro goldmünze 390 · 50 euro goldmünze 210',
+    title: '100 Euro Goldmünze Wert: Was ist sie heute wert?',
+    description: 'Was ist eine 100-Euro-Goldmünze wert? Goldwert der deutschen 20-, 50-, 100- und 200-Euro-Goldmünzen nach aktuellem Kurs und was Händler beim Ankauf zahlen.',
+    h1: '100-Euro-Goldmünze: Was ist sie heute wert?',
+    intro: 'Deutschland gibt jedes Jahr Goldmünzen zu 20, 50 und 100 Euro aus. Wählen Sie Ihre Münze und die Anzahl – der Rechner zeigt den aktuellen Goldwert.',
+    calc: { type: 'coins', preset: 'goldeuro100' },
+    sections: [
+      { h: 'Deutsche Euro-Goldmünzen im Vergleich', html: `<div class="table-wrap"><table><thead><tr><th>Münze</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>200 Euro (nur 2002)</td><td class="num">31,10 g (1 Unze)</td><td class="num"><span data-price="goldozv">–</span></td></tr><tr><td>100 Euro</td><td class="num">15,55 g (1/2 Unze)</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>50 Euro</td><td class="num">7,78 g (1/4 Unze)</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>20 Euro</td><td class="num">3,89 g (1/8 Unze)</td><td class="num"><span data-price="goldq3888">–</span></td></tr></tbody></table></div>
+<p>Alle Münzen bestehen aus Feingold mit einem Feingehalt von 999,9 und werden im Auftrag des Bundesministeriums der Finanzen geprägt. Die erste 100-Euro-Goldmünze erschien 2002 zur Einführung des Euro. Von 2003 bis 2019 zeigte die Serie Stätten des UNESCO-Welterbes in Deutschland, seitdem folgen weitere Themenreihen. Die 200-Euro-Münze gab es nur 2002.</p>` },
+      { h: 'Ist die 100-Euro-Goldmünze nur 100 Euro wert?', html: `<p>Nein. Die Münze ist in Deutschland zwar gesetzliches Zahlungsmittel, aber nur zu ihrem Nennwert von 100 Euro. Ihr Goldwert liegt um ein Vielfaches darüber – geben Sie sie deshalb nie als Zahlungsmittel aus. Dasselbe gilt für die 20- und 50-Euro-Goldmünzen.</p>
+<p>Der Ausgabepreis bei der Erstausgabe liegt über dem Goldwert, weil er Prägekosten und einen Sammleraufschlag enthält. Beim späteren Verkauf zahlen Händler meist einen Preis nah am Goldwert.</p>` },
+      { h: '100-Euro-Goldmünze verkaufen', html: `<p>Für gängige Jahrgänge zahlen Händler einen Preis nah am Goldwert. Jedes Motiv wird in den fünf deutschen Prägestätten geprägt, erkennbar am Buchstaben A, D, F, G oder J. Komplette Sätze aller fünf Prägestätten, Münzen in Originaletui mit Zertifikat und frühe Jahrgänge erzielen bei Sammlern teils mehr – fragen Sie in diesem Fall auch einen Münzhändler.</p>
+<p>Weitere Anlage- und Sammlermünzen finden Sie im <a href="/goldmuenzen-wert/">Goldmünzen-Rechner</a>, Silbermünzen wie die 10- und 20-Euro-Gedenkmünzen im <a href="/silbermuenzen-wert/">Silbermünzen-Rechner</a>.</p>` }
+    ],
+    faq: [['Wie viel Gold ist in einer 100-Euro-Goldmünze?', 'Eine halbe Unze, also 15,55 g Feingold mit einem Feingehalt von 999,9.'], ['Kann ich mit der 100-Euro-Goldmünze bezahlen?', 'Ja, sie ist in Deutschland gesetzliches Zahlungsmittel, aber nur zum Nennwert von 100 Euro. Ihr Goldwert liegt um ein Vielfaches höher.'], ['Ist die 100-Euro-Goldmünze mehrwertsteuerfrei?', 'Sie gilt in der Regel als Anlagegold und ist beim Kauf mehrwertsteuerfrei. Liegt der Preis wegen eines Sammlerwerts über 180 % des Goldwerts, kann Mehrwertsteuer anfallen, meist in Form der Differenzbesteuerung. Beim Verkauf durch Privatpersonen fällt keine an.']]
   },
   {
     slug: 'silberrechner',
@@ -826,7 +850,7 @@ module.exports = [
 <li><strong>Sammlerwert beachten:</strong> Seltene Jahrgänge, Prägestätten oder Spiegelglanz-Ausgaben können mehr wert sein als ihr Silber.</li>
 <li><strong>Online oder vor Ort:</strong> Silberankäufer im Internet zahlen oft transparente Preise je Unze; bei kleinen Mengen lohnt sich der Weg zum Händler vor Ort.</li>
 </ul>
-<p>Silberbarren und den Ablauf beim Silberankauf finden Sie unter <a href="/silber-verkaufen/">Silber verkaufen</a>, den aktuellen <a href="/silberpreis-pro-gramm/">Silberpreis pro Gramm</a> auf einer eigenen Seite. Goldmünzen bewerten Sie mit dem <a href="/goldmuenzen-wert/">Goldmünzen-Rechner</a>.</p>`
+<p>Eigene Seiten mit Münzdaten gibt es für <a href="/maple-leaf-silber-wert/">Maple Leaf Silber</a>, <a href="/kruegerrand-silber-wert/">Krügerrand Silber</a> und <a href="/philharmoniker-silber-wert/">Wiener Philharmoniker Silber</a>. Silberbarren und den Ablauf beim Silberankauf finden Sie unter <a href="/silber-verkaufen/">Silber verkaufen</a>, den aktuellen <a href="/silberpreis-pro-gramm/">Silberpreis pro Gramm</a> auf einer eigenen Seite. Goldmünzen bewerten Sie mit dem <a href="/goldmuenzen-wert/">Goldmünzen-Rechner</a>.</p>`
       }
     ],
     faq: [
@@ -834,6 +858,70 @@ module.exports = [
       ['Sind 10-Euro-Gedenkmünzen aus Silber?', 'Die Ausgaben von 2002 bis 2010 bestehen aus 925er Silber (16,65 g Feinsilber). Von 2011 bis 2015 ist nur die Spiegelglanz-Ausgabe aus 625er Silber (10 g Feinsilber), die Stempelglanz-Ausgabe aus Kupfernickel. Spätere 10-Euro-Münzen enthalten kein Silber; seit 2016 gibt es dafür 20-Euro-Gedenkmünzen aus 925er Silber.'],
       ['Wie viel ist eine Unze Silber wert?', 'Eine Silberunze enthält 31,1 g Feinsilber. Ihr Materialwert ergibt sich aus dem aktuellen Silberpreis; der Rechner oben zeigt ihn für Maple Leaf, Philharmoniker und andere Unzen.']
     ]
+  },
+  {
+    slug: 'maple-leaf-silber-wert',
+    nav: 'Maple Leaf Silber',
+    inNav: false,
+    group: 'silbermuenzen',
+    keywords: 'maple leaf silber 8.100 (KD 23) · silber maple leaf 1.300 (KD 15) · maple leaf silber wert 90 (KD 15)',
+    title: 'Maple Leaf Silber Wert heute: Was ist die Silberunze wert?',
+    description: 'Was ist ein Maple Leaf aus Silber wert? Silberwert der 1-Unzen-Münze nach aktuellem Kurs, Münzdaten, Echtheitsmerkmale und was Händler beim Ankauf zahlen.',
+    h1: 'Maple Leaf Silber: Was ist die Silberunze heute wert?',
+    intro: 'Der Maple Leaf aus Kanada ist eine der meistverkauften Silbermünzen der Welt. Geben Sie die Anzahl ein – der Rechner zeigt den aktuellen Silberwert.',
+    calc: { type: 'silvercoins', preset: 'maple-ag' },
+    sections: [
+      { h: 'Maple Leaf Silber: Daten im Überblick', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Kanada (Royal Canadian Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1988</td></tr><tr><th scope="row">Nennwert</th><td>5 Kanadische Dollar</td></tr><tr><th scope="row">Feingehalt</th><td>999,9</td></tr><tr><th scope="row">Feinsilber</th><td>31,10 g (1 Unze)</td></tr><tr><th scope="row">Durchmesser</th><td>38 mm</td></tr></tbody></table></div>
+<p>Die Rückseite zeigt das Ahornblatt, das Wahrzeichen Kanadas, die Vorderseite den britischen Monarchen: ältere Jahrgänge Elizabeth II., neuere Charles III. Für den Silberwert spielt der Jahrgang bei Anlagemünzen keine Rolle.</p>
+<div class="table-wrap"><table><thead><tr><th>Menge</th><th class="num">Feinsilber</th><th class="num">Silberwert heute</th></tr></thead><tbody><tr><td>1 Münze</td><td class="num">31,10 g</td><td class="num"><span data-price="silverozv">–</span></td></tr><tr><td>25 Münzen (Tube)</td><td class="num">777,6 g</td><td class="num"><span data-price="silverq777587">–</span></td></tr><tr><td>500 Münzen (Monsterbox)</td><td class="num">15,55 kg</td><td class="num"><span data-price="silverq15551738">–</span></td></tr></tbody></table></div>` },
+      { h: 'Echten Maple Leaf erkennen', html: `<p>Seit 2014 trägt der Silber-Maple feine radiale Linien im Hintergrund und ein kleines, per Laser eingraviertes Ahornblatt als Sicherheitsmerkmal. Prüfen Sie zusätzlich Gewicht und Größe: 31,1 g bei 38 mm Durchmesser. Silber ist nicht magnetisch – haftet die Münze an einem Magneten, ist sie gefälscht.</p>
+<p>Weißliche Flecken, sogenannte Milchflecken, sind bei Silber-Maples häufig. Sie entstehen bei der Herstellung und ändern nichts am Silbergehalt.</p>` },
+      { h: 'Maple Leaf Silber verkaufen', html: `<p>Händler zahlen für Silber-Maples einen Preis nah am Silberwert. Beim Kauf haben Sie allerdings mehr bezahlt: Silbermünzen werden in Deutschland mit Mehrwertsteuer verkauft, beim Maple meist differenzbesteuert, dazu kommt die Händlermarge. Beim Verkauf durch Privatpersonen fällt keine Mehrwertsteuer an. Rechnen Sie deshalb damit, dass der Ankaufspreis spürbar unter Ihrem damaligen Kaufpreis liegt, solange der Silberpreis nicht deutlich gestiegen ist.</p>
+<p>Andere Silbermünzen bewerten Sie mit dem <a href="/silbermuenzen-wert/">Silbermünzen-Rechner</a>, den Maple Leaf aus Gold unter <a href="/maple-leaf-gold-wert/">Maple Leaf Gold</a>. Den Ablauf beim Silberankauf erklärt <a href="/silber-verkaufen/">Silber verkaufen</a>.</p>` }
+    ],
+    faq: [["Wie viel Silber ist in einem Maple Leaf?","Ein Maple Leaf aus Silber enthält eine Feinunze, also 31,10 g Feinsilber mit einem Feingehalt von 999,9."],["Warum bekomme ich beim Verkauf weniger, als ich bezahlt habe?","Im Kaufpreis steckten Mehrwertsteuer und Händlermarge. Beim Verkauf zahlt der Händler einen Preis nah am Silberwert, ohne diese Aufschläge."],["Spielt der Nennwert von 5 Dollar eine Rolle?","Nein. Der Nennwert ist symbolisch, der Silberwert liegt um ein Vielfaches darüber."]]
+  },
+  {
+    slug: 'kruegerrand-silber-wert',
+    nav: 'Krügerrand Silber',
+    inNav: false,
+    group: 'silbermuenzen',
+    keywords: 'krügerrand silber 3.600 (KD 16) · krügerrand silber wert 880 (KD 11)',
+    title: 'Krügerrand Silber Wert heute: Was ist die Silberunze wert?',
+    description: 'Was ist ein Krügerrand aus Silber wert? Silberwert der 1-Unzen-Münze nach aktuellem Kurs, Münzdaten, Unterschiede zum Gold-Krügerrand und Hinweise zum Verkauf.',
+    h1: 'Krügerrand Silber: Was ist die Silberunze heute wert?',
+    intro: 'Den berühmten Krügerrand gibt es seit einigen Jahren auch in Silber. Geben Sie die Anzahl ein – der Rechner zeigt den aktuellen Silberwert.',
+    calc: { type: 'silvercoins', preset: 'kruegerrand-ag' },
+    sections: [
+      { h: 'Krügerrand Silber: Daten im Überblick', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Südafrika (South African Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>2017, zum 50. Jubiläum des Krügerrands</td></tr><tr><th scope="row">Nennwert</th><td>1 Rand</td></tr><tr><th scope="row">Feingehalt</th><td>999</td></tr><tr><th scope="row">Feinsilber</th><td>31,10 g (1 Unze)</td></tr><tr><th scope="row">Durchmesser</th><td>rund 38,7 mm</td></tr></tbody></table></div>
+<p>Das Motiv entspricht dem Gold-Krügerrand: Paul Kruger auf der Vorderseite, ein Springbock auf der Rückseite. Die Unterschiede zur Goldmünze: Der Silber-Krügerrand besteht aus Feinsilber (999) statt aus 22-karätigem Gold (916,7), ist mit rund 38,7 mm deutlich größer als der Gold-Krügerrand (32,77 mm) und trägt einen Nennwert von 1 Rand, die Goldmünze dagegen keinen.</p>
+<div class="table-wrap"><table><thead><tr><th>Menge</th><th class="num">Feinsilber</th><th class="num">Silberwert heute</th></tr></thead><tbody><tr><td>1 Münze</td><td class="num">31,10 g</td><td class="num"><span data-price="silverozv">–</span></td></tr><tr><td>25 Münzen (Tube)</td><td class="num">777,6 g</td><td class="num"><span data-price="silverq777587">–</span></td></tr><tr><td>500 Münzen (Monsterbox)</td><td class="num">15,55 kg</td><td class="num"><span data-price="silverq15551738">–</span></td></tr></tbody></table></div>` },
+
+      { h: 'Krügerrand Silber verkaufen', html: `<p>Händler zahlen für den Silber-Krügerrand einen Preis nah am Silberwert. Beim Kauf haben Sie mehr bezahlt: Silbermünzen werden in Deutschland mit Mehrwertsteuer verkauft, der Krügerrand meist differenzbesteuert. Dazu kommt die Händlermarge. Beim Verkauf durch Privatpersonen fällt keine Mehrwertsteuer an.</p>
+<p>Ausgaben in polierter Platte mit kleiner Auflage können einen Sammlerwert über dem Silberwert haben – lassen Sie solche Stücke vorher von einem Münzhändler bewerten. Den Gold-Krügerrand finden Sie unter <a href="/kruegerrand-wert/">Krügerrand Wert</a>, weitere Silbermünzen im <a href="/silbermuenzen-wert/">Silbermünzen-Rechner</a>.</p>` }
+    ],
+    faq: [["Wie viel Silber ist in einem Krügerrand Silber?","Ein Silber-Krügerrand enthält eine Feinunze, also 31,10 g Feinsilber mit einem Feingehalt von 999."],["Hat der Silber-Krügerrand einen Nennwert?","Ja, 1 Rand. Der Gold-Krügerrand hat dagegen keinen aufgeprägten Nennwert."],["Ist der Krügerrand Silber mehr wert als ein Maple Leaf?","Beim Silberwert nicht: Beide enthalten eine Unze Feinsilber. Unterschiede gibt es nur beim Kauf- und Ankaufspreis einzelner Händler."]]
+  },
+  {
+    slug: 'philharmoniker-silber-wert',
+    nav: 'Philharmoniker Silber',
+    inNav: false,
+    group: 'silbermuenzen',
+    keywords: 'wiener philharmoniker silber 2.400 (KD 12) · philharmoniker silber 320 (KD 11) · philharmoniker silber wert 20',
+    title: 'Wiener Philharmoniker Silber Wert: Was ist die Unze wert?',
+    description: 'Was ist ein Wiener Philharmoniker aus Silber wert? Silberwert der 1-Unzen-Münze nach aktuellem Kurs, Münzdaten der Münze Österreich und Hinweise zum Verkauf.',
+    h1: 'Wiener Philharmoniker Silber: Was ist die Unze heute wert?',
+    intro: 'Der Wiener Philharmoniker ist eine der bekanntesten Silbermünzen Europas. Geben Sie die Anzahl ein – der Rechner zeigt den aktuellen Silberwert.',
+    calc: { type: 'silvercoins', preset: 'philharmoniker-ag' },
+    sections: [
+      { h: 'Wiener Philharmoniker Silber: Daten im Überblick', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Österreich (Münze Österreich)</td></tr><tr><th scope="row">Erstausgabe</th><td>2008</td></tr><tr><th scope="row">Nennwert</th><td>1,50 Euro</td></tr><tr><th scope="row">Feingehalt</th><td>999</td></tr><tr><th scope="row">Feinsilber</th><td>31,10 g (1 Unze)</td></tr><tr><th scope="row">Durchmesser</th><td>37 mm</td></tr></tbody></table></div>
+<p>Die Vorderseite zeigt die große Orgel im Goldenen Saal des Wiener Musikvereins, die Rückseite Instrumente der Wiener Philharmoniker. Das Motiv ist dasselbe wie beim Philharmoniker aus Gold.</p>
+<div class="table-wrap"><table><thead><tr><th>Menge</th><th class="num">Feinsilber</th><th class="num">Silberwert heute</th></tr></thead><tbody><tr><td>1 Münze</td><td class="num">31,10 g</td><td class="num"><span data-price="silverozv">–</span></td></tr><tr><td>20 Münzen (Tube)</td><td class="num">622,1 g</td><td class="num"><span data-price="silverq622070">–</span></td></tr><tr><td>500 Münzen (Monsterbox)</td><td class="num">15,55 kg</td><td class="num"><span data-price="silverq15551738">–</span></td></tr></tbody></table></div>` },
+
+      { h: 'Wiener Philharmoniker Silber verkaufen', html: `<p>Händler zahlen für Silber-Philharmoniker einen Preis nah am Silberwert. Als Münze aus der EU wird der Philharmoniker in Deutschland meist mit 19 % Mehrwertsteuer verkauft, manche Händler bieten auch differenzbesteuerte Stücke an. Der Abstand zwischen Kauf- und Ankaufspreis ist deshalb oft größer als bei Münzen aus Kanada oder Südafrika. Beim Verkauf durch Privatpersonen fällt keine Mehrwertsteuer an.</p>
+<p>Den Philharmoniker aus Gold finden Sie unter <a href="/philharmoniker-gold-wert/">Wiener Philharmoniker Gold</a>, weitere Silbermünzen im <a href="/silbermuenzen-wert/">Silbermünzen-Rechner</a>.</p>` }
+    ],
+    faq: [["Wie viel Silber ist in einem Wiener Philharmoniker?","Ein Wiener Philharmoniker aus Silber enthält eine Feinunze, also 31,10 g Feinsilber mit einem Feingehalt von 999."],["Kann ich mit dem Philharmoniker bezahlen?","Er ist in Österreich gesetzliches Zahlungsmittel, aber nur zum Nennwert von 1,50 Euro. Sein Silberwert liegt weit darüber."],["Warum ist der Philharmoniker beim Kauf teurer als andere Silberunzen?","In Deutschland wird er meist mit 19 % Mehrwertsteuer verkauft. Münzen von außerhalb der EU wie Maple Leaf oder Krügerrand sind dagegen häufig differenzbesteuert und dadurch günstiger."]]
   },
   {
     slug: 'silberpreis-pro-gramm',

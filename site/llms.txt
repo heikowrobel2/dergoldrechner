@@ -38,6 +38,13 @@
 - [20 Mark Gold](https://dergoldrechner.de/20-mark-gold-wert/): Was ist eine 20-Mark-Goldmünze aus dem Kaiserreich wert? Goldwert für 20 und 10 Mark nach aktuellem Kurs, Prägeländer und Hinweise zum Sammlerwert.
 - [Sovereign](https://dergoldrechner.de/sovereign-gold-wert/): Was ist ein Sovereign aus Gold wert? Goldwert für Sovereign und Half Sovereign nach aktuellem Kurs, Daten der Royal Mint und was Händler zahlen.
 - [Dukat](https://dergoldrechner.de/dukat-gold-wert/): Was ist ein österreichischer Dukat wert? Goldwert für 1 und 4 Dukaten nach aktuellem Kurs und warum alle Dukaten die Jahreszahl 1915 tragen.
+- [100 Euro Gold](https://dergoldrechner.de/100-euro-goldmuenze-wert/): Was ist eine 100-Euro-Goldmünze wert? Goldwert der deutschen 20-, 50-, 100- und 200-Euro-Goldmünzen nach aktuellem Kurs und was Händler beim Ankauf zahlen.
+
+## Silbermünzen
+
+- [Maple Leaf Silber](https://dergoldrechner.de/maple-leaf-silber-wert/): Was ist ein Maple Leaf aus Silber wert? Silberwert der 1-Unzen-Münze nach aktuellem Kurs, Münzdaten, Echtheitsmerkmale und was Händler beim Ankauf zahlen.
+- [Krügerrand Silber](https://dergoldrechner.de/kruegerrand-silber-wert/): Was ist ein Krügerrand aus Silber wert? Silberwert der 1-Unzen-Münze nach aktuellem Kurs, Münzdaten, Unterschiede zum Gold-Krügerrand und Hinweise zum Verkauf.
+- [Philharmoniker Silber](https://dergoldrechner.de/philharmoniker-silber-wert/): Was ist ein Wiener Philharmoniker aus Silber wert? Silberwert der 1-Unzen-Münze nach aktuellem Kurs, Münzdaten der Münze Österreich und Hinweise zum Verkauf.
 
 ## Über die Daten
 

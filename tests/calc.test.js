@@ -64,10 +64,10 @@ test('dental gold: ceramic share above 90 % is rejected, not silently capped', (
   assert.equal(C.dental(10, 0.95, 'hoch', GOLD), null);
 });
 
-test('coins: 2 Kruegerrand = 62.206 g fine', () => {
+test('coins: 2 Kruegerrand = 62.207 g fine (1 oz = 31.1035 g, same as price bar)', () => {
   const r = C.coins('kruegerrand', 2, GOLD);
   assert.equal(r.fineGrams, 62.21);
-  assert.equal(r.meltValue, 6220.6);
+  assert.equal(r.meltValue, 6220.7);
 });
 
 test('coins: fractional or too large count is rejected', () => {
@@ -75,9 +75,9 @@ test('coins: fractional or too large count is rejected', () => {
   assert.equal(C.coins('20mark', 20000, GOLD), null);
 });
 
-test('silver coins: 10 Maple Leaf = 311.03 g fine; invalid count rejected', () => {
+test('silver coins: 10 Maple Leaf = 311.04 g fine; invalid count rejected', () => {
   const r = C.silverCoins('maple-ag', 10, SILVER);
-  assert.equal(r.fineGrams, 311.03);
+  assert.equal(r.fineGrams, 311.04);
   assert.equal(C.silverCoins('5dm-adler', '1,5', SILVER), null);
 });
 
@@ -140,6 +140,15 @@ test('bullion coins buy back closer to spot than historic coins', () => {
   assert.equal(C.coins('vreneli', 1, GOLD).payoutShare, C.PAYOUT.goldCoin);
   assert.equal(C.coins('dukat4', 1, GOLD).fineGrams, 13.77);
   assert.equal(C.coins('vreneli10', 2, GOLD).fineGrams, 5.81);
+});
+
+test('German gold euro coins: fine gold per coin and bullion-like payout', () => {
+  assert.equal(C.coins('goldeuro100', 1, GOLD).fineGrams, 15.55);
+  assert.equal(C.coins('goldeuro50', 1, GOLD).fineGrams, 7.78);
+  assert.equal(C.coins('goldeuro20', 1, GOLD).fineGrams, 3.89);
+  assert.equal(C.coins('goldeuro200', 1, GOLD).fineGrams, 31.1);
+  assert.equal(C.coins('goldeuro100', 1, GOLD).payoutShare, C.PAYOUT.goldBullionSmall);
+  assert.equal(C.coins('goldeuro200', 1, GOLD).payoutShare, C.PAYOUT.goldBullion);
 });
 
 test('all payout ranges are sane', () => {

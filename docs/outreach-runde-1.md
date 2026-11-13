@@ -87,7 +87,7 @@ Ergänzung. Alternativ gibt es ein kostenloses Goldpreis-Widget ohne Cookies: ht
 |---|---|---|---|
 | 1 | buerger-geld.org | 12.11.2026 | – |
 | 2 | etf.capital | 12.11.2026 | – |
-| 3 | biallo.de | 12.11.2026 | – |
+| 3 | biallo.de | 12.11.2026 | 12.11.2026: Absage (F. Baum, Redaktion) – Artikel wird derzeit nicht aktualisiert, freundlicher Dank. |
 | 4 | goldbarren-wiki.de | 12.11.2026 | – |
 
 Versendet am 12.11.2026, 12:22 von kontakt@dergoldrechner.de (HTML mit Signatur „Der Goldrechner“, Logo von
