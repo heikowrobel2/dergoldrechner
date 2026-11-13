@@ -216,4 +216,5 @@ pre.code { white-space: pre-wrap; word-break: break-all; background: var(--surfa
   .band p { display: none; } /* as on the home page: no intro on phones, the calculator stays close (text stays in the page) */
   .band::before { background: linear-gradient(0deg, rgba(10, 8, 6, .8), rgba(10, 8, 6, .62)); } /* even darkening behind the text */
   .band + main .calc { margin-top: 28px; }
+  .band.focus .band-bg img { filter: blur(5px) brightness(.6); transform: scale(1.06); } /* coin pages: the title fills the short band, so no half coin edges behind it */
 }
