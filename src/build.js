@@ -141,7 +141,7 @@ const BAND_PAGES = { has: (slug) => slug !== '' };
 // light: true = darker and warmer, 'strong' = for very light photos
 const PHONE_PLAIN = { pos: '50% 50%', zoom: 1, origin: '50% 50%' }; // narrow box: zoom would put other coins in front
 const BAND_FOCUS = {
-  'maple-leaf-gold-wert': ['muenzen-alt', '50% 72%', 2.2, '85% 54%', false, PHONE_PLAIN],
+  'maple-leaf-gold-wert': ['muenzen-alt', '50% 66%', 2.6, '88% 62%', false, PHONE_PLAIN],
   'kruegerrand-wert': ['muenzen-alt', '50% 46%', 2.2, '76% 46%', false, PHONE_PLAIN],
   'philharmoniker-gold-wert': ['muenzen-alt', '50% 69%', 2.2, '66% 69%', false, PHONE_PLAIN]
 };
@@ -151,7 +151,7 @@ function bandImage(p) {
   if (p.group === 'muenzen') return ['muenzen-alt', '60% 50%', 1, '50% 50%', 'blur']; // coin not in the photo: no other coin may be legible
   if (/silber/.test(p.slug)) return ['silber-gabeln', '50% 42%', 1, '50% 50%', 'strong'];
   if (/platin/.test(p.slug)) return ['platin-barren', '50% 50%', 1, '50% 50%', 'cool', { pos: '95% 50%', zoom: 1, origin: '50% 50%' }]; // real palladium bar (Pexels 20979925), bar sits right of the text
-  if (/barren|unze/.test(p.slug)) return ['barren', '50% 40%', 1, '50% 50%', 'soft'];
+  if (/barren|unze/.test(p.slug)) return ['barren-band', '50% 27%', 1, '50% 50%', 'soft'];
   if (/zahngold|altgold/.test(p.slug)) return ['altgold-tiegel', '55% 50%', 1, '50% 50%', 'bright'];
   return ['goldschmuck', '55% 55%', 1, '50% 50%', true];
 }
@@ -161,7 +161,7 @@ function band(p) {
   const imgStyle = `--pos:${pos};--zoom:${zoom};--origin:${origin}` + (m.pos ? `;--mpos:${m.pos};--mzoom:${m.zoom};--morigin:${m.origin}` : '');
   const h1 = esc(p.h1).replace(/(\d+) (Karat|Unzen?|Gramm|Franken|Mark|Dukaten)\b/g, '$1&nbsp;$2')
     .replace(/(\d+)-(?=\p{L})/gu, '$1&#8209;'); // keep number and unit together ("14 Karat", "20-Franken")
-  return `<section class="band">
+  return `<section class="band${BAND_FOCUS[p.slug] ? " focus" : ""}">
 ` +
     (pick ? `<picture class="band-bg"><source type="image/webp" srcset="/assets/img/${img}-800.webp 800w, /assets/img/${img}-1600.webp 1600w" sizes="100vw">` +
     `<img src="/assets/img/${img}-1600.jpg" srcset="/assets/img/${img}-800.jpg 800w, /assets/img/${img}-1600.jpg 1600w" sizes="100vw" alt="" fetchpriority="high" decoding="async"${light ? ` class="${{ strong: 'tone-strong', blur: 'tone-blur', soft: 'tone-soft', bright: 'tone-bright', cool: 'tone-cool' }[light] || 'tone'}"` : ''} style="${imgStyle}"></picture>

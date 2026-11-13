@@ -190,6 +190,7 @@ pre.code { white-space: pre-wrap; word-break: break-all; background: var(--surfa
   background: linear-gradient(90deg, rgba(10, 8, 6, .9) 0%, rgba(10, 8, 6, .74) 42%, rgba(10, 8, 6, .3) 75%, rgba(10, 8, 6, .4) 100%),
               linear-gradient(0deg, rgba(10, 8, 6, .5), rgba(10, 8, 6, 0) 45%); }
 .band-in { width: 100%; }
+@media (min-width: 601px) { .band.focus::before { background: linear-gradient(90deg, rgba(10, 8, 6, .97) 0%, rgba(10, 8, 6, .92) 40%, rgba(10, 8, 6, .35) 68%, rgba(10, 8, 6, .4) 100%), linear-gradient(0deg, rgba(10, 8, 6, .5), rgba(10, 8, 6, 0) 45%); } } /* zoomed coin pages: other coins on the left must not stay legible */
 .band .crumbs { margin: 0 0 18px; color: #cfc4ad; }
 .band .crumbs a { color: #cfc4ad; }
 .band .crumbs a:hover { color: #fff8ea; }
