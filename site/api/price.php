@@ -50,6 +50,7 @@ $dataDir = __DIR__ . '/../data';
 $cacheFile = $dataDir . '/price.json';
 $stateFile = $dataDir . '/price-state.json';
 $lockFile = $dataDir . '/price.lock';
+$historyFile = $dataDir . '/price-history.json'; // own daily series for price-trend pages
 
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: public, max-age=600');
@@ -335,6 +336,22 @@ $out += [
     'source' => 'gold-api.com',
 ];
 write_json($cacheFile, $out);
+// Daily history: one entry per quote day (Berlin time), the latest quote of the day wins.
+// A history file that exists but cannot be read is never overwritten (no data loss).
+$quoteTs = (int) strtotime($price['updated']) ?: $now;
+$day = (new DateTime('@' . $quoteTs))->setTimezone(new DateTimeZone('Europe/Berlin'))->format('Y-m-d');
+$history = is_file($historyFile) ? read_json($historyFile) : [];
+if ($history === null) {
+    error_log('goldwert: price-history.json unreadable, not updated');
+} else {
+    $entry = [];
+    foreach (['gold', 'silver', 'platinum', 'palladium'] as $m) {
+        if (isset($out[$m])) $entry[$m] = $out[$m];
+    }
+    $history[$day] = $entry;
+    ksort($history);
+    write_json($historyFile, $history);
+}
 unset($state['retry_at']);
 write_json($stateFile, $state);
 flock($lock, LOCK_UN);

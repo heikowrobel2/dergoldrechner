@@ -18,6 +18,7 @@ Nur der Goldkurs wird serverseitig per PHP abgerufen.
 | `site/api/price.php` | Kurs von gold-api.com, stündlich, Abgleich MetalCharts + EZB, Bestätigung großer Sprünge |
 | `site/widget/` | einbettbares Goldpreis-Widget (iframe, noindex) |
 | `site/data/price.json` | lokal: DEMO-Kurs (wird beim Deploy nicht hochgeladen) |
+| `data/price-history.json` | nur auf dem Server: Tageskurse Gold/Silber/Platin/Palladium (je Handelstag der letzte Kurs, ab 20.11.2026), von `price.php` geschrieben, vom Deploy geschützt – Grundlage für spätere Preisentwicklungs-Seiten |
 | `tests/` | Tests Rechenkern (`calc.test.js`) und Deploy (`deploy.test.mjs`) |
 | `scripts/deploy-ftp.mjs` | Upload per FTPS, schützt den Kurs-Cache auf dem Server |
 | `docs/` | Semrush-Themenspeicher, Ausbauplan, Linkaufbau, GSC-Wochenbericht |

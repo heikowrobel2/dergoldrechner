@@ -11,7 +11,7 @@ export const SRC = 'site';
 export const MANIFEST = '.deploy-manifest.json';
 // Server-side files: written by PHP or created by the host. Never uploaded, never deleted.
 export const SERVER_ONLY = [
-  /^data\/price\.json$/, /^data\/price-state\.json$/, /^data\/price\.lock$/, /^data\/.*\.tmp$/,
+  /^data\/price\.json$/, /^data\/price-state\.json$/, /^data\/price-history\.json$/, /^data\/price\.lock$/, /^data\/.*\.tmp$/,
   /^\.well-known(\/|$)/, /^cgi-bin(\/|$)/, /^\.ftpquota$/, /^\.deploy-manifest\.json$/, /^error_log$/, /(^|\/)error_log$/
 ];
 // The key file may be uploaded (written by CI from a secret), but is never deleted when absent locally.

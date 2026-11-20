@@ -4,10 +4,10 @@ import assert from 'node:assert/strict';
 import { toDelete, toUpload, isServerOnly } from '../scripts/deploy-ftp.mjs';
 
 test('live price cache and server files are never deleted or overwritten', () => {
-  for (const f of ['data/price.json', 'data/price-state.json', 'data/price.lock', 'data/price.json.ab12.tmp', '.well-known/acme', 'error_log', 'api/error_log']) {
+  for (const f of ['data/price.json', 'data/price-state.json', 'data/price-history.json', 'data/price.lock', 'data/price.json.ab12.tmp', '.well-known/acme', 'error_log', 'api/error_log']) {
     assert.ok(isServerOnly(f), f);
   }
-  const remote = ['data/price.json', 'data/price-state.json', 'api/config.php', 'old-page/index.html', 'index.html'];
+  const remote = ['data/price.json', 'data/price-state.json', 'data/price-history.json', 'api/config.php', 'old-page/index.html', 'index.html'];
   assert.deepEqual(toDelete(remote, ['index.html']), ['old-page/index.html']);
 });
 
