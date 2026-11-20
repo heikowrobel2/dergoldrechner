@@ -58,3 +58,11 @@ Nicht: Linknetzwerke (bhs-links-*.xyz), gekaufte Spam-Verzeichnisse.
 
 ## Messen
 Search Console wöchentlich (Impressionen je Seite), Rankings der Kernbegriffe monatlich; nach 8 Wochen Plan anpassen.
+
+## Prüfung und Block 6 – Stand 20.11.2026
+- Sitemap: alle Seiten aus `pages.js`/`home.js`, ohne Impressum/Datenschutz, lastmod aus `lastmod.json`; neu eingereicht.
+- Datenschutz: Impressum/Datenschutz `noindex` (Meta + X-Robots-Tag), nicht in Sitemap/llms.txt; Name/Anschrift nur dort, nicht in JSON-LD.
+- Indexierung (GSC 20.11.): 28 indexiert; nicht indexiert ohne technische Ursache (200, eigenes canonical, kein noindex, von allen Seiten verlinkt): /silberrechner/, /silber-verkaufen/, /platin-verkaufen/ (Google unbekannt), /silberpreis-pro-gramm/, /so-rechnen-wir/, /100-euro-goldmuenze-wert/ (gefunden, nicht gecrawlt).
+- Neu live: /gold-silber-ratio/ (gold silber ratio 12.100, KD 16; Ratio live aus den Kursen, `data-price="ratio"`), /silberbarren-wert/ (silberbarren kaufen 12.100, silberbarren 6.600, silber barren 2.900, 1oz silber 1.600, 1 kg silberbarren 1.000; Foto Pexels 20979927).
+- Zugeordnet statt neuer Seite: „1 kg silber preis“ (6.600) → /silberpreis-pro-gramm/ (H2), „silber 925 wert“ (2.900) → /silberrechner/.
+- Offen: silberpreisentwicklung euro (9.900) – braucht eigene Kursreihe (Idee: stündliche Kurse aus `price.php` täglich mitschreiben = eigene Daten); palladium (40.500, KD 46) nur über /platinpreis-pro-gramm/; edelmetalle kaufen (3.600); PageSpeed-API-Kontingent erschöpft (429).

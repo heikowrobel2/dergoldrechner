@@ -755,7 +755,7 @@ module.exports = [
     slug: 'silberrechner',
     nav: 'Silber',
     tile: 'Besteck, Schmuck, Barren',
-    keywords: 'silberrechner 2.400 (KD 10) · 925 silber wert 5.400 (KD 25) · 800 silber wert 140 (KD 5)',
+    keywords: 'silberrechner 2.400 (KD 10) · 925 silber wert 5.400 (KD 25) · silber 925 wert 2.900 (KD 27) · 800 silber wert 140 (KD 5)',
     title: 'Silberrechner – 925 und 800 Silber Wert berechnen',
     description: 'Silberrechner mit aktuellem Kurs: Wert von 925er Sterlingsilber, 800er Silberbesteck und Silberschmuck berechnen – mit Materialwert und Ankaufs-Richtwert.',
     h1: 'Silberrechner: Was ist mein Silber wert?',
@@ -928,7 +928,7 @@ module.exports = [
     nav: 'Silberpreis',
     inNav: false,
     tile: 'Aktueller Silberpreis je Gramm',
-    keywords: 'silberpreis pro gramm 5.400 (KD 30) · silberpreis rechner 2.900 (KD 11) · silberpreis pro kilo 320 · silber preis pro kg 2.900 (KD 47)',
+    keywords: 'silberpreis pro gramm 5.400 (KD 30) · silberpreis rechner 2.900 (KD 11) · 1 kg silber preis 6.600 (KD 15) · silberpreis pro kilo 320 · silber preis pro kg 2.900 (KD 47)',
     title: 'Silberpreis pro Gramm heute – Silberpreis-Rechner',
     description: 'Aktueller Silberpreis pro Gramm und pro Kilo in Euro – für 800er, 835er, 925er und 999er Silber. Mit Silberpreis-Rechner und Ankaufs-Richtwert.',
     h1: 'Silberpreis pro Gramm: aktueller Silberpreis für jeden Feingehalt',
@@ -942,7 +942,7 @@ module.exports = [
 <p>Für Silberschmuck und Besteck zählt nur der enthaltene Silberanteil: Bei <a href="/silberrechner/">925er Sterlingsilber</a> sind es 92,5 %, bei <a href="/silberbesteck-wert/">800er Besteck</a> 80 %.</p>`
       },
       {
-        h: 'Silberpreis pro Kilo',
+        h: '1 kg Silber Preis: Silberpreis pro Kilo',
         html: `<p>Ein Kilogramm Feinsilber ist aktuell als Material <strong data-price="silverkg">–</strong> wert. Für ein Kilo 925er Silber sind es 92,5 % davon, für ein Kilo 800er Besteck 80 %. Was Ankäufer für einen 1-kg-Silberbarren zahlen, zeigt der Rechner unter <a href="/silber-verkaufen/">Silber verkaufen</a>.</p>`
       },
       {
@@ -954,7 +954,110 @@ module.exports = [
       ['Wie hoch ist der Silberpreis pro Gramm?', 'Der Silberpreis pro Gramm Feinsilber ergibt sich aus dem Börsenkurs je Unze geteilt durch 31,1035. Den aktuellen Wert und die Preise für 925er und 800er Silber zeigt die Tabelle auf dieser Seite.'],
       ['Wie viel ist 1 Gramm Silber heute wert?', 'Ein Gramm Feinsilber ist so viel wert wie der aktuelle Silberpreis pro Gramm in der Tabelle oben. Für Sterlingsilber multiplizieren Sie diesen Wert mit 0,925, für 800er Silber mit 0,8.'],
       ['Wie viel ist 1 kg Silber wert?', 'Ein Kilogramm Feinsilber entspricht 1.000 Gramm zum aktuellen Silberpreis. Geben Sie im Silberpreis-Rechner 1000 g und 999er Silber ein, um den Betrag zu sehen.'],
-      ['Warum schwankt der Silberpreis stärker als der Goldpreis?', 'Silber wird zu einem großen Teil in der Industrie verbraucht und der Markt ist kleiner als der Goldmarkt. Deshalb reagiert der Preis oft stärker auf Konjunktur und Nachfrage.']
+      ['Warum schwankt der Silberpreis stärker als der Goldpreis?', 'Silber wird zu einem großen Teil in der Industrie verbraucht und der Markt ist kleiner als der Goldmarkt. Deshalb reagiert der Preis oft stärker auf Konjunktur und Nachfrage. Wie sich das Verhältnis beider Preise entwickelt, zeigt die <a href="/gold-silber-ratio/">Gold-Silber-Ratio</a>.']
+    ]
+  },
+  {
+    slug: 'gold-silber-ratio',
+    nav: 'Gold-Silber-Ratio',
+    inNav: false,
+    tile: 'Verhältnis Gold zu Silber',
+    keywords: 'gold silber ratio 12.100 (KD 16)',
+    title: 'Gold-Silber-Ratio aktuell: Verhältnis von Gold zu Silber',
+    description: 'Gold-Silber-Ratio heute: Wie viele Unzen Silber kostet eine Unze Gold? Aktueller Wert, historische Spannen und was die Kennzahl für Anleger bedeutet.',
+    h1: 'Gold-Silber-Ratio: Wie viel Silber kostet eine Unze Gold?',
+    intro: 'Die Gold-Silber-Ratio zeigt, wie viele Unzen Silber man für eine Unze Gold bekommt. Hier sehen Sie den aktuellen Wert aus den Live-Kursen und wie er sich historisch einordnet.',
+    sections: [
+      {
+        h: 'Gold-Silber-Ratio aktuell',
+        html: `<div class="table-wrap"><table><thead><tr><th>Kennzahl</th><th class="num">Wert heute</th></tr></thead><tbody>
+<tr><td>Gold-Silber-Ratio</td><td class="num"><strong data-price="ratio">–</strong></td></tr>
+<tr><td>1 Feinunze Gold</td><td class="num"><span data-price="goldozv">–</span></td></tr>
+<tr><td>1 Feinunze Silber</td><td class="num"><span data-price="silverozv">–</span></td></tr>
+<tr><td>1 kg Gold</td><td class="num"><span data-price="goldw1000">–</span></td></tr>
+<tr><td>1 kg Silber</td><td class="num"><span data-price="silverw1000">–</span></td></tr>
+</tbody></table></div>
+<p>Die Ratio ist der Goldpreis geteilt durch den Silberpreis, jeweils für reines Metall in derselben Einheit. Ob Sie Unzen, Gramm oder Kilo vergleichen, spielt keine Rolle: Bei einer Ratio von 80 kostet eine Unze Gold so viel wie 80 Unzen Silber – und ein Kilo Gold so viel wie 80 Kilo Silber. Die Kurse werden stündlich aktualisiert.</p>`
+      },
+      {
+        h: 'So berechnen Sie die Gold-Silber-Ratio',
+        html: `<p><strong>Gold-Silber-Ratio = Goldpreis ÷ Silberpreis</strong></p>
+<p>Beispiel: Kostet eine Feinunze Gold 3.600 € und eine Feinunze Silber 45 €, liegt die Ratio bei 3.600 ÷ 45 = 80. Die Währung spielt keine Rolle, solange beide Preise in derselben Währung und derselben Gewichtseinheit angegeben sind. Die aktuellen Einzelpreise finden Sie unter <a href="/goldpreis-pro-unze/">Goldpreis pro Unze</a> und <a href="/silberpreis-pro-gramm/">Silberpreis pro Gramm</a>.</p>`
+      },
+      {
+        h: 'Historische Entwicklung der Gold-Silber-Ratio',
+        html: `<p>Über Jahrhunderte war das Verhältnis gesetzlich festgelegt: Die USA legten 1792 ein Verhältnis von 15 : 1 fest, Frankreich 1803 von 15,5 : 1. Seit dem Ende fester Wechselkurse und der Freigabe der Edelmetallpreise in den 1970er-Jahren bildet sich die Ratio frei am Markt und schwankt stark:</p>
+<div class="table-wrap"><table><thead><tr><th>Zeitpunkt</th><th class="num">Ratio (gerundet)</th></tr></thead><tbody>
+<tr><td>Januar 1980 (Silber-Hoch der Hunt-Brüder)</td><td class="num">ca. 17</td></tr>
+<tr><td>1991 (Silber auf Tiefststand)</td><td class="num">ca. 100</td></tr>
+<tr><td>April 2011 (Silber nahe 50 US-Dollar)</td><td class="num">ca. 32</td></tr>
+<tr><td>März 2020 (Corona-Crash)</td><td class="num">über 120 (Rekord)</td></tr>
+</tbody></table></div>
+<p>Seit den 1970er-Jahren lag die Ratio meist zwischen etwa 40 und 100. Werte über 80 gelten deshalb als hoch, Werte unter 50 als niedrig.</p>`
+      },
+      {
+        h: 'Was sagt die Gold-Silber-Ratio aus?',
+        html: `<p>Eine <strong>hohe Ratio</strong> bedeutet: Silber ist im Vergleich zu Gold günstig. Manche Anleger schichten dann einen Teil von Gold in Silber um und tauschen bei einer niedrigen Ratio wieder in Gold – so vermehren sie die Menge an Metall, ohne neues Geld einzusetzen. Eine <strong>niedrige Ratio</strong> heißt umgekehrt, dass Gold relativ günstig ist.</p>
+<p>Eine verlässliche Prognose ist die Ratio nicht: Sie kann jahrelang hoch oder niedrig bleiben. Beim Kauf von Silber fallen zudem höhere Aufschläge und in Deutschland meist 19 % Mehrwertsteuer an, Anlagegold ist dagegen umsatzsteuerfrei. Ein Tausch lohnt sich deshalb nur bei deutlichen Bewegungen. Die Kennzahl ist eine Orientierung, keine Anlageberatung.</p>`
+      },
+      {
+        h: 'Was ist Ihr Gold und Silber wert?',
+        html: `<p>Wer Edelmetall besitzt, kann mit der Ratio einschätzen, welches Metall gerade relativ teuer ist. Was Ihr Bestand wert ist, zeigen der <a href="/">Goldrechner</a> und der <a href="/silberrechner/">Silberrechner</a>; was Ankäufer zahlen, erfahren Sie unter <a href="/gold-verkaufen/">Gold verkaufen</a> und <a href="/silber-verkaufen/">Silber verkaufen</a>.</p>`
+      }
+    ],
+    faq: [
+      ['Was ist die Gold-Silber-Ratio?', 'Die Gold-Silber-Ratio ist der Goldpreis geteilt durch den Silberpreis. Sie gibt an, wie viele Unzen Silber man für eine Unze Gold bekommt.'],
+      ['Wie berechnet man die Gold-Silber-Ratio?', 'Man teilt den Goldpreis durch den Silberpreis, beide in derselben Währung und Gewichtseinheit. Beispiel: 3.600 € je Unze Gold geteilt durch 45 € je Unze Silber ergibt eine Ratio von 80.'],
+      ['Wie hoch ist die Gold-Silber-Ratio aktuell?', 'Den aktuellen Wert berechnen wir stündlich aus den Live-Kursen für Gold und Silber. Sie finden ihn in der Tabelle oben auf dieser Seite.'],
+      ['Was ist eine normale Gold-Silber-Ratio?', 'Seit den 1970er-Jahren lag die Ratio meist zwischen etwa 40 und 100. Früher war sie gesetzlich auf etwa 15 : 1 bis 15,5 : 1 festgelegt.'],
+      ['Was bedeutet eine hohe Gold-Silber-Ratio?', 'Eine hohe Ratio, etwa über 80, bedeutet, dass Silber im Verhältnis zu Gold günstig ist. Eine Garantie, dass die Ratio wieder sinkt, gibt es nicht.'],
+      ['Wann war die Gold-Silber-Ratio am höchsten?', 'Im März 2020, während des Corona-Crashs, stieg die Ratio auf über 120 – der höchste Wert seit Beginn der freien Preisbildung.']
+    ]
+  },
+  {
+    slug: 'silberbarren-wert',
+    nav: 'Silberbarren',
+    inNav: false,
+    tile: '1 Unze bis 1 kg',
+    keywords: 'silberbarren kaufen 12.100 (KD 24) · silberbarren 6.600 (KD 26) · silber barren kaufen 3.600 (KD 21) · silber barren 2.900 (KD 24) · 1oz silber 1.600 (KD 26) · 1 kg silberbarren 1.000 (KD 14) · 1g silberbarren 260 (KD 11) · silberbarren 1 kg preis 390 (KD 13) · silberpreis barren 210 (KD 28)',
+    title: 'Silberbarren Wert: Preise für 1 Unze bis 1 kg Silber',
+    description: 'Was ist ein Silberbarren wert? Aktueller Silberwert für Barren von 1 Unze bis 1 kg, was beim Silberbarren kaufen anfällt und was Händler beim Ankauf zahlen.',
+    h1: 'Silberbarren Wert: Was ist mein Silberbarren heute wert?',
+    intro: 'Wählen Sie Größe und Anzahl Ihrer Silberbarren. Der Rechner zeigt den aktuellen Silberwert und was Händler beim Ankauf ungefähr zahlen.',
+    calc: { type: 'silvercoins', preset: 'bar-1kg', count: 1 },
+    sections: [
+      {
+        h: 'Silberbarren-Preise nach Gewicht',
+        html: `<div class="table-wrap"><table><thead><tr><th>Barren (999 Feinsilber)</th><th class="num">Silberwert heute</th></tr></thead><tbody>
+<tr><td>1 Unze (31,1 g)</td><td class="num"><span data-price="silverq31072">–</span></td></tr>
+<tr><td>50 g</td><td class="num"><span data-price="silverq49950">–</span></td></tr>
+<tr><td>100 g</td><td class="num"><span data-price="silverq99900">–</span></td></tr>
+<tr><td>250 g</td><td class="num"><span data-price="silverq249750">–</span></td></tr>
+<tr><td>500 g</td><td class="num"><span data-price="silverq499500">–</span></td></tr>
+<tr><td>1 kg</td><td class="num"><span data-price="silverq999000">–</span></td></tr>
+<tr><td>5 kg</td><td class="num"><span data-price="silverq4995000">–</span></td></tr>
+</tbody></table></div>
+<p>Die Tabelle zeigt den reinen Silberwert bei 999er Feinsilber. Der Kaufpreis beim Händler liegt deutlich darüber, der Ankaufspreis etwas darunter – siehe unten.</p>`
+      },
+      {
+        h: 'Silberbarren kaufen: Mehrwertsteuer und Aufschlag',
+        html: `<p>Anders als Anlagegold ist Silber in Deutschland nicht von der Umsatzsteuer befreit. Auf Silberbarren fallen beim Kauf <strong>19 % Mehrwertsteuer</strong> an. Dazu kommen Herstellungskosten und die Händlermarge, die bei kleinen Barren im Verhältnis höher sind als bei großen. Ein 1-Unzen-Barren kostet deshalb je Gramm spürbar mehr als ein 1-kg-Barren.</p>
+<p>Manche Händler bieten den Kauf mit Lagerung in einem <strong>Zollfreilager</strong> an. Solange das Silber dort bleibt, fällt keine Mehrwertsteuer an; wer es sich nach Deutschland liefern lässt, zahlt sie nachträglich. Achten Sie beim Kauf auf bekannte Hersteller, eingeprägtes Gewicht und Feingehalt (999) und seriöse Händler.</p>`
+      },
+      {
+        h: 'Silberbarren oder Silbermünzen?',
+        html: `<p>Für neu importierte <a href="/silbermuenzen-wert/">Silbermünzen</a> wie Maple Leaf oder Krügerrand gilt seit 2025 ebenfalls meist der volle Steuersatz, die günstigere Differenzbesteuerung gibt es nur noch in Ausnahmefällen. Münzen sind als gesetzliches Zahlungsmittel geprägt (der Nennwert spielt für den Preis aber keine Rolle), lassen sich leichter prüfen und in kleinen Stückzahlen verkaufen. Barren bieten bei großen Mengen den geringsten Aufschlag je Gramm. Ob Silber im Verhältnis zu Gold gerade günstig ist, zeigt die <a href="/gold-silber-ratio/">Gold-Silber-Ratio</a>.</p>`
+      },
+      {
+        h: 'Was bekommen Sie beim Rückverkauf?',
+        html: `<p>Beim Verkauf erhalten Privatpersonen keine Mehrwertsteuer zurück: Händler zahlen nur einen Anteil am Silberwert. Barren bekannter Hersteller in gutem Zustand erzielen die besten Preise. Wie der Silberankauf kalkuliert und worauf Sie achten sollten, steht unter <a href="/silber-verkaufen/">Silber verkaufen</a>; den aktuellen Kurs finden Sie unter <a href="/silberpreis-pro-gramm/">Silberpreis pro Gramm</a>.</p>`
+      }
+    ],
+    faq: [
+      ['Was ist ein 1-kg-Silberbarren wert?', 'Ein 1-kg-Barren aus 999er Silber enthält 999 g Feinsilber. Seinen aktuellen Silberwert zeigt die Tabelle oben; beim Kauf kommen 19 % Mehrwertsteuer und der Händleraufschlag dazu, beim Verkauf zahlen Händler etwas weniger als den Silberwert.'],
+      ['Muss ich auf Silberbarren Mehrwertsteuer zahlen?', 'Ja. Beim Kauf von Silberbarren fallen in Deutschland 19 % Mehrwertsteuer an. Ausgenommen ist nur der Kauf mit Lagerung im Zollfreilager, solange das Silber dort bleibt.'],
+      ['Wie viel ist eine Unze Silber wert?', 'Eine Unze sind 31,1035 g. Ein 1-Unzen-Barren aus 999er Silber enthält rund 31,07 g Feinsilber; seinen aktuellen Wert zeigt die Tabelle auf dieser Seite.'],
+      ['Lohnen sich kleine Silberbarren?', 'Kleine Barren haben einen deutlich höheren Aufschlag je Gramm. Für größere Beträge sind 1-kg-Barren oder andere große Stückelungen meist günstiger.']
     ]
   },
   {
@@ -962,7 +1065,7 @@ module.exports = [
     nav: 'Silber verkaufen',
     inNav: false,
     tile: 'Silberankauf: was wird gezahlt?',
-    keywords: 'silber verkaufen 12.100 (KD 33) · silber ankauf 3.600 (KD 8) · silberbarren verkaufen 1.900 (KD 15) · silberankauf preis 1.300 (KD 22) · silberbarren 1 kg preis 390 (KD 13)',
+    keywords: 'silber verkaufen 12.100 (KD 33) · silber ankauf 3.600 (KD 8) · silberbarren verkaufen 1.900 (KD 15) · silberankauf preis 1.300 (KD 22)',
     title: 'Silber verkaufen: Silberankauf-Rechner für Barren & Münzen',
     description: 'Silber verkaufen: Was zahlt der Silberankauf für Barren, Münzen und Besteck? Mit Silberankauf-Rechner und Tipps für einen fairen Preis.',
     h1: 'Silber verkaufen: Was zahlt der Silberankauf?',

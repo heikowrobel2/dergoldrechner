@@ -64,6 +64,7 @@
       var oz = /^(gold|silver|platinum|palladium)oz$/.exec(k);
       if (oz) { if (price[oz[1]]) el.textContent = eur(price[oz[1]] * OZ) + ' je Unze'; return; }
       if (el.classList.contains('rate-g')) { if (price[k]) el.textContent = eur(price[k]) + '/g'; return; }
+      if (k === 'ratio') { if (price.gold && price.silver) el.textContent = (price.gold / price.silver).toFixed(1).replace('.', ',') + ' : 1'; return; }
       if (k === 'silverkg') { el.textContent = eur(price.silver * 1000) + '/kg'; return; }
       if (k === 'gold') el.textContent = eur(price.gold) + '/g';
       else if (k === 'silver') el.textContent = eur(price.silver) + '/g';

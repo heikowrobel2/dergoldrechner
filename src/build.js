@@ -151,6 +151,8 @@ function bandImage(p) {
   if (BAND_FOCUS[p.slug]) return BAND_FOCUS[p.slug];
   if (p.slug === 'goldmuenzen-wert') return ['muenzen-alt', '60% 50%', 1, '50% 50%', true];
   if (p.slug === 'silbermuenzen-wert') return ['silbermuenzen', '50% 50%', 1, '50% 50%', 'strong']; // silver bullion heap (Pexels 8442431)
+  if (p.slug === 'silberbarren-wert') return ['silberbarren', '50% 45%', 1, '50% 50%', 'strong', { pos: '32% 50%', zoom: 1, origin: '50% 50%' }]; // real silver bar (Pexels 20979927)
+  if (p.slug === 'gold-silber-ratio') return ['silbermuenzen', '50% 50%', 1, '50% 50%', 'strong']; // silver bullion heap, same as overview
   if (p.group === 'silbermuenzen') return ['silbermuenzen', '50% 55%', 1, '50% 50%', 'blur']; // own coin not separable in the photo: calm blurred heap
   if (p.group === 'muenzen') return ['muenzen-alt', '60% 50%', 1, '50% 50%', 'blur']; // coin not in the photo: no other coin may be legible
   if (/silber/.test(p.slug)) return ['silber-gabeln', '50% 42%', 1, '50% 50%', 'strong'];
