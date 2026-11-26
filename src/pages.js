@@ -334,8 +334,8 @@ module.exports = [
     slug: '585-gold-wert',
     nav: '585er Gold',
     tile: '14 Karat · 58,5 % Gold',
-    keywords: '585 gold wert 4.400 (KD 35) · goldpreis 585 pro gramm 1.300 (KD 28) · 14 karat gold wert 1.600 (KD 25) · 585 gold rechner 480 · 585 gold preis pro gramm 110',
-    title: '585 Gold Wert berechnen – 14 Karat Gold mit Tageskurs',
+    keywords: 'goldwert 585 5.400 (KD 30) · 14 karat gold wert 1.300 (KD 28) · 585 gold wert 4.400 (KD 35) · goldpreis 585 pro gramm 1.300 (KD 28) · 14 karat gold wert 1.600 (KD 25) · 585 gold rechner 480 · 585 gold preis pro gramm 110',
+    title: '585 Gold Wert und Preis pro Gramm heute – 14 Karat',
     description: 'Was ist 585er Gold (14 Karat) wert? Gewicht eingeben und den Wert mit aktuellem Goldpreis sehen – für Gelb-, Rot- und Weißgold.',
     h1: '585 Gold Wert: Was ist 585er Gold (14 Karat) heute wert?',
     intro: '585er Gold enthält 58,5 % reines Gold und entspricht 14 Karat. Es ist der häufigste Feingehalt bei Schmuck in Deutschland – vom Ehering bis zur Halskette.',
@@ -367,8 +367,8 @@ module.exports = [
     slug: '750-gold-wert',
     nav: '750er Gold',
     tile: '18 Karat · 75 % Gold',
-    keywords: '750 gold wert 2.400 (KD 26) · goldpreis 750 pro gramm 1.000 (KD 22) · 18 karat gold wert 480 (KD 23) · weißgold wert 480 (KD 10) · 750 gold rechner 20',
-    title: '750 Gold Wert berechnen – 18 Karat Gold und Weißgold Wert',
+    keywords: '750 gold preis 8.100 (KD 29) · goldpreis 750 3.600 (KD 20) · 750 gold wert 2.400 (KD 26) · goldpreis 750 pro gramm 1.000 (KD 22) · 18 karat gold wert 480 (KD 23) · weißgold wert 480 (KD 10) · 750 gold rechner 20',
+    title: '750 Gold Preis pro Gramm heute – 18 Karat Wert berechnen',
     description: 'Was ist 750er Gold (18 Karat) wert? Gewicht eingeben und den Goldwert mit aktuellem Kurs sehen – auch für 750er Weißgold, Uhren und Markenschmuck.',
     h1: '750 Gold Wert: Was ist 750er Gold (18 Karat) heute wert?',
     intro: '750er Gold besteht zu drei Vierteln aus reinem Gold und entspricht 18 Karat. Es ist der Feingehalt für hochwertigen Schmuck, Uhrengehäuse und viele Weißgold-Stücke.',
@@ -395,6 +395,44 @@ module.exports = [
       ['Ist 750er Gold 18 Karat?', 'Ja. 750er Gold besteht zu 75 % aus Gold, das entspricht 18 von 24 Karat.'],
       ['Ist Weißgold weniger wert als Gelbgold?', 'Nein. Bei gleichem Feingehalt enthält Weißgold genauso viel Gold. 750er Weißgold hat denselben Goldwert wie 750er Gelbgold.']
     ]
+  },
+  {
+    slug: '21-karat-gold-preis',
+    nav: '21 Karat Gold',
+    inNav: false,
+    keywords: '21 karat gold preis 3.600 (KD 21) · gold 21 karat preis 3.600 · arabisches gold 21 karat preis heute 880 · 875 gold',
+    title: '21 Karat Gold Preis heute pro Gramm – 875er Gold berechnen',
+    description: 'Was kostet 21 Karat Gold heute? Preis pro Gramm für 875er Gold nach aktuellem Kurs, Rechner für Ihr Gewicht und Hinweise zu arabischem Goldschmuck.',
+    h1: '21 Karat Gold Preis: Was ist 875er Gold heute wert?',
+    intro: '21 Karat Gold ist vor allem als arabischer und orientalischer Goldschmuck verbreitet. Gewicht eingeben – der Rechner zeigt den Wert nach aktuellem Goldkurs.',
+    calc: { type: 'gold', preset: '875', weight: 10 },
+    example: { fineness: '875', metal: 'gold', weights: '1,5,10,20,50' },
+    sections: [
+      { h: '21 Karat Gold: Preis pro Gramm', html: `<p><strong>Kurz gesagt:</strong> 1 Gramm 21 Karat Gold ist heute rund <span data-price="g875">–</span> wert (reiner Goldwert). 21 Karat bedeutet 21 von 24 Teilen Gold, also 87,5 % Feingold. Der Stempel lautet <strong>875</strong> oder <strong>21K</strong>.</p>
+<div class="table-wrap"><table><thead><tr><th>Karat</th><th>Stempel</th><th class="num">Goldanteil</th><th class="num">Wert je Gramm heute</th></tr></thead><tbody><tr><td>18&nbsp;Karat</td><td>750</td><td class="num">75,0 %</td><td class="num"><span data-price="g750">–</span></td></tr><tr><td>21&nbsp;Karat</td><td>875</td><td class="num">87,5 %</td><td class="num"><span data-price="g875">–</span></td></tr><tr><td>22&nbsp;Karat</td><td>916</td><td class="num">91,7 %</td><td class="num"><span data-price="g916">–</span></td></tr><tr><td>24&nbsp;Karat</td><td>999</td><td class="num">99,9 %</td><td class="num"><span data-price="g999">–</span></td></tr></tbody></table></div>` },
+      { h: 'Woher stammt 21 Karat Gold?', html: `<p>In Deutschland ist 21-karätiges Gold selten. Typisch ist es für Schmuck aus arabischen Ländern, Ägypten und Teilen Nordafrikas – etwa Armreifen, Ketten und Brautschmuck. Dort wird Schmuck meist nach Gewicht und Tageskurs gehandelt, zuzüglich eines Arbeitslohns. Hierzulande zählt beim Verkauf in der Regel nur der Goldgehalt.</p>` },
+      { h: '21 Karat Gold verkaufen', html: `<p>Ankäufer zahlen für 875er Gold einen Preis nah am Materialwert, weil der Goldanteil hoch ist. Prüfen Sie vorher den Stempel: Fehlt er, testet der Händler das Gold. Holen Sie mehrere Angebote ein und vergleichen Sie sie mit dem Wert aus dem Rechner. Mehr dazu unter <a href="/gold-verkaufen/">Gold verkaufen</a> und im <a href="/goldankauf-rechner/">Goldankauf-Rechner</a>. Für 22-karätigen Schmuck gibt es eine eigene Seite zum <a href="/22-karat-gold-preis/">22 Karat Gold Preis</a>.</p>` }
+    ],
+    faq: [['Wie viel Gold ist in 21 Karat?','21 Karat Gold besteht zu 87,5 % aus reinem Gold. Der Rest sind meist Silber und Kupfer.'],['Welcher Stempel steht auf 21 Karat Gold?','Üblich sind 875 oder 21K, bei arabischem Schmuck manchmal auch arabische Ziffern.'],['Ist 21 Karat mehr wert als 18 Karat?','Ja, pro Gramm. 21 Karat enthält 87,5 % Gold, 18 Karat (750) nur 75 %.']]
+  },
+  {
+    slug: '22-karat-gold-preis',
+    nav: '22 Karat Gold',
+    inNav: false,
+    keywords: '22 karat gold preis 5.400 (KD 24) · preis 22 karat gold 2.400 · 22 karat gold 1.900 · türkisches gold 22 karat preis 880 · 916 gold',
+    title: '22 Karat Gold Preis heute pro Gramm – 916er Gold berechnen',
+    description: 'Was kostet 22 Karat Gold heute? Preis pro Gramm für 916er Gold nach aktuellem Kurs und Rechner für türkischen und indischen Goldschmuck sowie Münzen.',
+    h1: '22 Karat Gold Preis: Was ist 916er Gold heute wert?',
+    intro: '22 Karat Gold steckt in türkischem und indischem Schmuck und in vielen Goldmünzen. Gewicht eingeben – der Rechner zeigt den Wert nach aktuellem Goldkurs.',
+    calc: { type: 'gold', preset: '916', weight: 10 },
+    example: { fineness: '916', metal: 'gold', weights: '1,5,10,20,50' },
+    sections: [
+      { h: '22 Karat Gold: Preis pro Gramm', html: `<p><strong>Kurz gesagt:</strong> 1 Gramm 22 Karat Gold ist heute rund <span data-price="g916">–</span> wert (reiner Goldwert). 22 Karat bedeutet 22 von 24 Teilen Gold, also rund 91,7 % Feingold. Der Stempel lautet <strong>916</strong> oder <strong>22K</strong>.</p>
+<p>Zum Vergleich: 18 Karat (750) liegt bei <span data-price="g750">–</span>, 24 Karat (999) bei <span data-price="g999">–</span> je Gramm.</p>` },
+      { h: 'Wo kommt 22 Karat Gold vor?', html: `<ul><li><strong>Türkischer Goldschmuck</strong> wie Armreifen und Ketten ist häufig 22-karätig.</li><li><strong>Indischer Schmuck</strong> wird traditionell in 22 Karat gefertigt, oft mit dem Stempel 916.</li><li><strong>Goldmünzen</strong> wie <a href="/kruegerrand-wert/">Krügerrand</a>, <a href="/sovereign-gold-wert/">Sovereign</a> und <a href="/american-eagle-gold-wert/">American Eagle</a> bestehen ebenfalls aus 22-karätigem Gold. Für Münzen rechnen Sie besser mit dem Münzrechner, weil dort das Feingewicht hinterlegt ist.</li></ul>` },
+      { h: '22 Karat Gold verkaufen', html: `<p>Wegen des hohen Goldanteils liegen Ankaufspreise für 916er Gold nah am Materialwert. Fehlt ein Stempel, prüft der Händler das Metall. Vergleichen Sie mehrere Angebote mit dem Wert aus dem Rechner – siehe <a href="/gold-verkaufen/">Gold verkaufen</a>. Arabischen Schmuck mit 875er Stempel berechnen Sie auf der Seite <a href="/21-karat-gold-preis/">21 Karat Gold Preis</a>.</p>` }
+    ],
+    faq: [['Wie viel Gold ist in 22 Karat?','22 Karat Gold enthält rund 91,7 % reines Gold, gestempelt als 916.'],['Ist 916 Gold echtes Gold?','Ja. 916 ist der Stempel für 22 Karat Gold mit rund 91,7 % Goldanteil.'],['Warum ist türkisches Gold oft 22 Karat?','In der Türkei und in Indien wird Schmuck traditionell als Wertanlage gekauft und deshalb mit hohem Goldanteil gefertigt.']]
   },
   {
     slug: 'zahngold-wert',
@@ -442,7 +480,7 @@ module.exports = [
     inNav: false,
     tile: '1 g bis 1 kg',
     keywords: 'goldbarren 22.200 · goldbarren kaufen 40.500 (KD 16) · goldbarren preis 6.600 · gold barren 4.400 · goldbarren 100g · goldbarren 1 kg · goldbarren 1g',
-    title: 'Goldbarren Wert: Preise für 1 g bis 1 kg Goldbarren',
+    title: 'Goldbarren Wert heute: 1 g bis 1 kg – was ist 1 kg Gold wert?',
     description: 'Was ist ein Goldbarren wert? Aktueller Goldwert für Barren von 1 g bis 1 kg, was Händler beim Ankauf zahlen und worauf Sie beim Goldbarren kaufen achten.',
     h1: 'Goldbarren Wert: Was ist mein Goldbarren heute wert?',
     intro: 'Wählen Sie Gewicht und Anzahl Ihrer Goldbarren. Der Rechner zeigt den aktuellen Goldwert und was Händler beim Ankauf ungefähr zahlen – kleine Barren etwas weniger als große.',
@@ -450,7 +488,8 @@ module.exports = [
     sections: [
       {
         h: 'Goldbarren-Preise nach Gewicht',
-        html: `<div class="table-wrap"><table><thead><tr><th>Barren (999,9 Feingold)</th><th class="num">Goldwert heute</th></tr></thead><tbody>
+        html: `<p><strong>Kurz gesagt:</strong> 1 kg Gold (Feingold 999,9) ist heute rund <span data-price="goldw1000">–</span> wert, ein 100-g-Barren rund <span data-price="goldw100">–</span> (reiner Goldwert ohne Händleraufschlag).</p>
+<div class="table-wrap"><table><thead><tr><th>Barren (999,9 Feingold)</th><th class="num">Goldwert heute</th></tr></thead><tbody>
 <tr><td>1 g</td><td class="num"><span data-price="goldq1000">–</span></td></tr>
 <tr><td>5 g</td><td class="num"><span data-price="goldq5000">–</span></td></tr>
 <tr><td>10 g</td><td class="num"><span data-price="goldq10000">–</span></td></tr>
@@ -596,13 +635,14 @@ module.exports = [
     inNav: false,
     group: 'muenzen',
     keywords: 'american eagle gold wert · american eagle goldmünze · gold eagle 1 oz',
-    title: 'American Eagle Gold Wert heute: Goldwert und Ankauf',
+    title: 'American Eagle Gold: Wert heute in Euro, 1 bis 1/10 Unze',
     description: 'Was ist ein American Eagle aus Gold wert? Goldwert der 22-karätigen US-Münze nach aktuellem Kurs, Daten zu Gewicht und Legierung und Ankaufspreise.',
     h1: 'American Eagle Gold: Was ist die Münze heute wert?',
     intro: 'Der American Eagle ist die offizielle Goldmünze der USA. Sie wiegt mehr als eine Unze, enthält aber genau eine Feinunze Gold – der Rechner zeigt den aktuellen Wert.',
     calc: { type: 'coins', preset: 'eagle' },
     sections: [
-      { h: 'American Eagle: Daten und Größen', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>USA (United States Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1986</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>50 US-Dollar</td></tr><tr><th scope="row">Feingehalt</th><td>916,7 (22 Karat), legiert mit Silber und Kupfer</td></tr><tr><th scope="row">Gewicht</th><td>33,93 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
+      { h: 'American Eagle: Daten und Größen', html: `<p><strong>Kurz gesagt:</strong> Ein American Eagle zu 1 Unze enthält 31,1 g Feingold und ist heute rund <span data-price="goldozv">–</span> wert (reiner Goldwert).</p>
+<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>USA (United States Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1986</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>50 US-Dollar</td></tr><tr><th scope="row">Feingehalt</th><td>916,7 (22 Karat), legiert mit Silber und Kupfer</td></tr><tr><th scope="row">Gewicht</th><td>33,93 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
 <p>Die Vorderseite zeigt Lady Liberty nach dem Entwurf von Augustus Saint-Gaudens. Die Rückseite zeigte bis 2021 eine Adlerfamilie, seit Mitte 2021 einen Adlerkopf.</p>
 <div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldozv">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
       { h: 'Warum wiegt ein American Eagle mehr als eine Unze?', html: `<p>Die Münze besteht aus 22-karätigem Gold. Silber und Kupfer machen sie härter und kratzfester, erhöhen aber das Gewicht auf 33,93 g. Für den Wert zählt nur das Feingold: genau eine Unze, also gleich viel wie beim <a href="/maple-leaf-gold-wert/">Maple Leaf</a> oder <a href="/kruegerrand-wert/">Krügerrand</a>.</p>` },
@@ -616,13 +656,14 @@ module.exports = [
     inNav: false,
     group: 'muenzen',
     keywords: 'britannia gold wert · britannia goldmünze · britannia 1 oz gold',
-    title: 'Britannia Gold Wert heute: Goldwert und Ankauf',
+    title: 'Britannia Gold: Wert heute in Euro, 1 bis 1/10 Unze',
     description: 'Was ist eine Britannia aus Gold wert? Aktueller Goldwert der britischen Anlagemünze, Unterschiede alter und neuer Jahrgänge und was Händler zahlen.',
     h1: 'Britannia Gold: Was ist die Münze heute wert?',
     intro: 'Die Britannia ist die Anlagemünze der britischen Royal Mint. Alte und neue Jahrgänge unterscheiden sich in der Legierung – der Goldgehalt ist gleich.',
     calc: { type: 'coins', preset: 'britannia' },
     sections: [
-      { h: 'Britannia: Daten und Größen', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Großbritannien (The Royal Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1987</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>100 Pfund</td></tr><tr><th scope="row">Feingehalt</th><td>999,9 seit 2013; 1987–2012: 916,7 (22 Karat)</td></tr><tr><th scope="row">Gewicht</th><td>31,1035 g (seit 2013), davor 34,05 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
+      { h: 'Britannia: Daten und Größen', html: `<p><strong>Kurz gesagt:</strong> Eine Britannia zu 1 Unze enthält 31,1 g Feingold und ist heute rund <span data-price="goldozv">–</span> wert (reiner Goldwert).</p>
+<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Großbritannien (The Royal Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1987</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>100 Pfund</td></tr><tr><th scope="row">Feingehalt</th><td>999,9 seit 2013; 1987–2012: 916,7 (22 Karat)</td></tr><tr><th scope="row">Gewicht</th><td>31,1035 g (seit 2013), davor 34,05 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
 <p>Die Britannia zeigt die Personifikation Großbritanniens mit Schild und Dreizack. Seit 2021 tragen neue Jahrgänge zusätzliche Sicherheitsmerkmale gegen Fälschungen.</p>
 <div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldozv">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
       { h: 'Alte und neue Britannia unterscheiden', html: `<p>Bis 2012 war die Britannia aus 22-karätigem Gold: 1987 bis 1989 mit Kupfer, ab 1990 mit Silber legiert. Diese Münzen wiegen 34,05 g und enthalten trotzdem genau eine Unze Gold. Seit 2013 ist die Britannia aus Feingold (999,9). Für den Goldwert ist der Jahrgang deshalb egal.</p>` },
@@ -636,13 +677,14 @@ module.exports = [
     inNav: false,
     group: 'muenzen',
     keywords: 'känguru gold wert · nugget goldmünze wert · australian kangaroo gold · känguru 1 oz',
-    title: 'Känguru Gold (Nugget) Wert heute: Goldwert und Ankauf',
+    title: 'Känguru Gold (Nugget): Wert heute in Euro, alle Größen',
     description: 'Was ist eine Känguru-Goldmünze aus Australien wert? Goldwert der Nugget-Münze nach aktuellem Kurs, Daten zur Perth Mint und Ankaufspreise.',
     h1: 'Känguru Gold: Was ist die australische Goldmünze heute wert?',
     intro: 'Die australische Goldmünze der Perth Mint ist auch als „Nugget“ bekannt. Wählen Sie die Münze und die Anzahl – Teilstücke finden Sie in der Liste als „Teilstück 1/2 Unze“ usw. Der Rechner zeigt den aktuellen Goldwert.',
     calc: { type: 'coins', preset: 'kaenguru' },
     sections: [
-      { h: 'Känguru-Goldmünze: Daten und Größen', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Australien (Perth Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1986, zunächst mit Nugget-Motiv</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>100 Australische Dollar</td></tr><tr><th scope="row">Feingehalt</th><td>999,9</td></tr><tr><th scope="row">Gewicht</th><td>31,1035 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
+      { h: 'Känguru-Goldmünze: Daten und Größen', html: `<p><strong>Kurz gesagt:</strong> Eine Känguru-Goldmünze zu 1 Unze enthält 31,1 g Feingold und ist heute rund <span data-price="goldozv">–</span> wert (reiner Goldwert).</p>
+<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Australien (Perth Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>1986, zunächst mit Nugget-Motiv</td></tr><tr><th scope="row">Nennwert (1 Unze)</th><td>100 Australische Dollar</td></tr><tr><th scope="row">Feingehalt</th><td>999,9</td></tr><tr><th scope="row">Gewicht</th><td>31,1035 g</td></tr><tr><th scope="row">Feingold</th><td>31,1035 g (1 Unze)</td></tr></tbody></table></div>
 <p>In den ersten Jahren zeigte die Münze Goldnuggets, seit 1989 ein Känguru. Das Motiv wechselt jedes Jahr – deshalb sprechen viele Händler bis heute vom „Nugget“.</p>
 <div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Unze</td><td class="num">31,10 g</td><td class="num"><span data-price="goldozv">–</span></td></tr><tr><td>1/2 Unze</td><td class="num">15,55 g</td><td class="num"><span data-price="goldq15552">–</span></td></tr><tr><td>1/4 Unze</td><td class="num">7,78 g</td><td class="num"><span data-price="goldq7776">–</span></td></tr><tr><td>1/10 Unze</td><td class="num">3,11 g</td><td class="num"><span data-price="goldq3110">–</span></td></tr></tbody></table></div>` },
       { h: 'Jährlich neues Motiv – spielt der Jahrgang eine Rolle?', html: `<p>Für den Goldwert nicht: Jeder Jahrgang enthält gleich viel Gold. Einzelne frühe Nugget-Jahrgänge oder limitierte Sonderausgaben werden unter Sammlern teils höher gehandelt. Prüfen lassen lohnt sich nur bei besonderen Stücken.</p>` },
@@ -656,13 +698,14 @@ module.exports = [
     inNav: false,
     group: 'muenzen',
     keywords: 'vreneli wert 390 (KD 18) · vreneli gold wert · 20 franken gold wert · 10 franken vreneli wert',
-    title: 'Vreneli Wert heute: Was ist ein 20-Franken-Vreneli wert?',
+    title: 'Vreneli Wert in Euro: Was ist ein 20-Franken-Vreneli wert?',
     description: 'Was ist ein Vreneli wert? Goldwert für 20 und 10 Franken Vreneli nach aktuellem Kurs, Gewicht und Feingehalt sowie Hinweise zu seltenen Jahrgängen.',
     h1: 'Vreneli Wert: Was ist ein 20-Franken-Vreneli heute wert?',
     intro: 'Das Vreneli ist die bekannteste Schweizer Goldmünze. Wählen Sie 20 oder 10 Franken und die Anzahl – der Rechner zeigt den aktuellen Goldwert.',
     calc: { type: 'coins', preset: 'vreneli' },
     sections: [
-      { h: 'Vreneli: 20 und 10 Franken im Vergleich', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Schweiz</td></tr><tr><th scope="row">Prägejahre</th><td>1897 bis 1949 (nicht in jedem Jahr)</td></tr><tr><th scope="row">Feingehalt</th><td>900</td></tr><tr><th scope="row">Gewicht</th><td>6,45 g (20 Franken) · 3,226 g (10 Franken)</td></tr><tr><th scope="row">Feingold</th><td>5,806 g (20 Franken) · 2,903 g (10 Franken)</td></tr></tbody></table></div>
+      { h: 'Vreneli: 20 und 10 Franken im Vergleich', html: `<p><strong>Kurz gesagt:</strong> Ein 20-Franken-Vreneli ist heute rund <span data-price="goldq5806">–</span> wert (reiner Goldwert), ein 10-Franken-Vreneli rund <span data-price="goldq2903">–</span>.</p>
+<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Schweiz</td></tr><tr><th scope="row">Prägejahre</th><td>1897 bis 1949 (nicht in jedem Jahr)</td></tr><tr><th scope="row">Feingehalt</th><td>900</td></tr><tr><th scope="row">Gewicht</th><td>6,45 g (20 Franken) · 3,226 g (10 Franken)</td></tr><tr><th scope="row">Feingold</th><td>5,806 g (20 Franken) · 2,903 g (10 Franken)</td></tr></tbody></table></div>
 <p>Die Vorderseite zeigt einen Frauenkopf vor Alpenpanorama, im Volksmund „Vreneli“ genannt. Das 10-Franken-Vreneli wurde von 1911 bis 1922 geprägt und enthält genau halb so viel Gold.</p>
 <div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>20 Franken</td><td class="num">5,806 g</td><td class="num"><span data-price="goldq5806">–</span></td></tr><tr><td>10 Franken</td><td class="num">2,903 g</td><td class="num"><span data-price="goldq2903">–</span></td></tr></tbody></table></div>` },
       { h: 'Seltene Vreneli-Jahrgänge', html: `<p>Die meisten Vreneli werden nah am Goldwert gehandelt. Einige Jahrgänge mit kleiner Auflage sind dagegen gesuchte Sammlerstücke und können ein Vielfaches wert sein. Prüfen Sie die Jahreszahl und lassen Sie auffällige Stücke von einem Münzhändler bewerten, bevor Sie verkaufen.</p>` },
@@ -696,13 +739,14 @@ module.exports = [
     inNav: false,
     group: 'muenzen',
     keywords: 'sovereign gold wert · sovereign goldmünze · half sovereign wert',
-    title: 'Sovereign Gold Wert heute: Goldwert und Ankauf',
+    title: 'Sovereign Gold Wert in Euro: Sovereign und Half Sovereign',
     description: 'Was ist ein Sovereign aus Gold wert? Goldwert für Sovereign und Half Sovereign nach aktuellem Kurs, Daten der Royal Mint und was Händler zahlen.',
     h1: 'Sovereign Gold: Was ist ein Sovereign heute wert?',
     intro: 'Der Sovereign ist eine der ältesten noch geprägten Goldmünzen. Wählen Sie Sovereign oder Half Sovereign und die Anzahl – der Rechner zeigt den aktuellen Goldwert.',
     calc: { type: 'coins', preset: 'sovereign' },
     sections: [
-      { h: 'Sovereign und Half Sovereign im Vergleich', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Großbritannien (The Royal Mint)</td></tr><tr><th scope="row">Erstausgabe (moderner Sovereign)</th><td>1817</td></tr><tr><th scope="row">Nennwert</th><td>1 Pfund</td></tr><tr><th scope="row">Feingehalt</th><td>916,7 (22 Karat)</td></tr><tr><th scope="row">Gewicht</th><td>7,988 g (Sovereign) · 3,994 g (Half Sovereign)</td></tr><tr><th scope="row">Feingold</th><td>7,322 g (Sovereign) · 3,661 g (Half Sovereign)</td></tr></tbody></table></div>
+      { h: 'Sovereign und Half Sovereign im Vergleich', html: `<p><strong>Kurz gesagt:</strong> Ein Sovereign (7,322 g Feingold) ist heute rund <span data-price="goldq7322">–</span> wert, ein Half Sovereign rund <span data-price="goldq3661">–</span> (reiner Goldwert).</p>
+<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Großbritannien (The Royal Mint)</td></tr><tr><th scope="row">Erstausgabe (moderner Sovereign)</th><td>1817</td></tr><tr><th scope="row">Nennwert</th><td>1 Pfund</td></tr><tr><th scope="row">Feingehalt</th><td>916,7 (22 Karat)</td></tr><tr><th scope="row">Gewicht</th><td>7,988 g (Sovereign) · 3,994 g (Half Sovereign)</td></tr><tr><th scope="row">Feingold</th><td>7,322 g (Sovereign) · 3,661 g (Half Sovereign)</td></tr></tbody></table></div>
 <p>Die Rückseite zeigt den heiligen Georg im Kampf mit dem Drachen nach einem Entwurf von Benedetto Pistrucci, die Vorderseite den jeweiligen britischen Monarchen. Größe und Goldgehalt sind seit über 200 Jahren nahezu unverändert.</p>
 <div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>Sovereign</td><td class="num">7,322 g</td><td class="num"><span data-price="goldq7322">–</span></td></tr><tr><td>Half Sovereign</td><td class="num">3,661 g</td><td class="num"><span data-price="goldq3661">–</span></td></tr></tbody></table></div>` },
       { h: 'Alte und neue Sovereigns', html: `<p>Sovereigns werden seit 1817 geprägt und bis heute ausgegeben. Häufige Jahrgänge werden nah am Goldwert gehandelt, ältere Stücke mit seltenem Monarchen oder Prägeort teils darüber. Für den Goldwert zählen nur die 7,322 g Feingold.</p>` },
@@ -722,7 +766,8 @@ module.exports = [
     intro: 'Österreichische Dukaten sind beliebte Geschenkmünzen. Wählen Sie 1 oder 4 Dukaten und die Anzahl – der Rechner zeigt den aktuellen Goldwert.',
     calc: { type: 'coins', preset: 'dukat1' },
     sections: [
-      { h: '1 und 4 Dukaten im Vergleich', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Österreich (Münze Österreich)</td></tr><tr><th scope="row">Jahreszahl</th><td>1915 (offizielle Nachprägung)</td></tr><tr><th scope="row">Feingehalt</th><td>986 (rund 23,7 Karat)</td></tr><tr><th scope="row">Gewicht</th><td>3,491 g (1 Dukat) · 13,964 g (4 Dukaten)</td></tr><tr><th scope="row">Feingold</th><td>3,442 g (1 Dukat) · 13,768 g (4 Dukaten)</td></tr></tbody></table></div>
+      { h: '1 und 4 Dukaten im Vergleich', html: `<p><strong>Kurz gesagt:</strong> Ein 1-fach Dukat (3,442 g Feingold) ist heute rund <span data-price="goldq3442">–</span> wert, ein 4-fach Dukat (13,768 g) rund <span data-price="goldq13768">–</span> (reiner Goldwert).</p>
+<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Österreich (Münze Österreich)</td></tr><tr><th scope="row">Jahreszahl</th><td>1915 (offizielle Nachprägung)</td></tr><tr><th scope="row">Feingehalt</th><td>986 (rund 23,7 Karat)</td></tr><tr><th scope="row">Gewicht</th><td>3,491 g (1 Dukat) · 13,964 g (4 Dukaten)</td></tr><tr><th scope="row">Feingold</th><td>3,442 g (1 Dukat) · 13,768 g (4 Dukaten)</td></tr></tbody></table></div>
 <p>Das 1-Dukaten-Stück zeigt Kaiser Franz Joseph I., das 4-Dukaten-Stück zusätzlich Kaiserin Elisabeth. Mit 986er Gold sind Dukaten fast so rein wie Feingold.</p>
 <div class="table-wrap"><table><thead><tr><th>Ausführung</th><th class="num">Feingold</th><th class="num">Goldwert heute</th></tr></thead><tbody><tr><td>1 Dukat</td><td class="num">3,442 g</td><td class="num"><span data-price="goldq3442">–</span></td></tr><tr><td>4 Dukaten</td><td class="num">13,768 g</td><td class="num"><span data-price="goldq13768">–</span></td></tr></tbody></table></div>` },
       { h: 'Warum steht auf jedem Dukaten 1915?', html: `<p>Die Münze Österreich prägt Dukaten bis heute als offizielle Nachprägung mit der Jahreszahl 1915. Ein Dukat mit dieser Jahreszahl ist deshalb kein seltenes Stück aus dem Ersten Weltkrieg, sondern eine Anlage- und Geschenkmünze, die nah am Goldwert gehandelt wird. Echte ältere Dukaten mit anderen Jahreszahlen können einen Sammlerwert haben.</p>` },
@@ -755,8 +800,8 @@ module.exports = [
     slug: 'silberrechner',
     nav: 'Silber',
     tile: 'Besteck, Schmuck, Barren',
-    keywords: 'silberrechner 2.400 (KD 10) · 925 silber wert 5.400 (KD 25) · silber 925 wert 2.900 (KD 27) · 800 silber wert 140 (KD 5)',
-    title: 'Silberrechner – 925 und 800 Silber Wert berechnen',
+    keywords: 'silberrechner 2.400 (KD 10) · silber wert rechner · silber berechnen (925 → /925-silber-wert/, 800 → /800-silber-wert/)',
+    title: 'Silberrechner: Silber Wert berechnen mit aktuellem Kurs',
     description: 'Silberrechner mit aktuellem Kurs: Wert von 925er Sterlingsilber, 800er Silberbesteck und Silberschmuck berechnen – mit Materialwert und Ankaufs-Richtwert.',
     h1: 'Silberrechner: Was ist mein Silber wert?',
     intro: 'Silberbesteck, Schmuck oder Münzen: Geben Sie Gewicht und Feingehalt ein und sehen Sie den Silberwert nach aktuellem Kurs.',
@@ -764,8 +809,8 @@ module.exports = [
     example: { fineness: '925', metal: 'silver', weights: '50,100,250,500,1000' },
     sections: [
       {
-        h: '925 Silber Wert',
-        html: `<p>925er Silber – auch <strong>Sterlingsilber</strong> – besteht zu 92,5 % aus reinem Silber, der Rest ist meist Kupfer. Es ist der übliche Feingehalt für Silberschmuck und viel Tafelsilber. Ein Gramm 925er Silber enthält 0,925 g Feinsilber; den aktuellen Wert zeigt die Tabelle oben.</p>`
+        h: 'Stempel 925, 835 und 800',
+        html: `<p>Die Zahl im Stempel nennt den Silberanteil in Tausendsteln: 925 (Sterlingsilber) sind 92,5 %, 835 sind 83,5 % und 800 sind 80 % reines Silber. Den aktuellen Wert je Gramm zeigt die Tabelle oben. Ausführlich je Legierung: <a href="/925-silber-wert/">925 Silber Wert</a>, <a href="/835-silber-wert/">835 Silber Wert</a> und <a href="/800-silber-wert/">800 Silber Preis</a>.</p>`
       },
       {
         h: '800 Silber und Silberbesteck',
@@ -782,6 +827,61 @@ module.exports = [
       ['Was ist versilbertes Besteck wert?', 'Sehr wenig. Die Silberschicht wiegt nur wenige Gramm pro Besteckset. Viele Ankäufer nehmen versilberte Ware gar nicht an.'],
       ['Wie viel ist 1 kg 800er Silber wert?', 'Ein Kilogramm 800er Silber enthält 800 g Feinsilber. Geben Sie 1000 g und 800er Silber in den Rechner ein, um den aktuellen Wert zu sehen.']
     ]
+  },
+  {
+    slug: '925-silber-wert',
+    nav: '925 Silber',
+    inNav: false,
+    keywords: '925 silber wert 5.400 (KD 25) · 925 silber 6.600 · 925 silber preis 4.400 · silber 925 wert 2.900 (KD 27) · sterling silber wert',
+    title: '925 Silber Wert heute: Preis pro Gramm Sterlingsilber',
+    description: 'Was ist 925er Silber wert? Preis pro Gramm für Sterlingsilber nach aktuellem Kurs, Rechner für Schmuck, Besteck und Münzen und Tipps zum Verkauf.',
+    h1: '925 Silber Wert: Was ist Sterlingsilber heute wert?',
+    intro: 'Die meisten Silberketten, Ringe und viel modernes Besteck tragen den Stempel 925. Gewicht eingeben – der Rechner zeigt den Silberwert nach aktuellem Kurs.',
+    calc: { type: 'silver', preset: '925', weight: 100 },
+    example: { fineness: '925', metal: 'silver', weights: '10,50,100,500,1000' },
+    sections: [
+      { h: '925 Silber: Preis pro Gramm', html: `<p><strong>Kurz gesagt:</strong> 1 Gramm 925er Silber ist heute rund <span data-price="silverq925">–</span> wert, 100 Gramm rund <span data-price="silverq92500">–</span> (reiner Silberwert). 925 bedeutet 92,5 % reines Silber, der Rest ist meist Kupfer. Man nennt diese Legierung Sterlingsilber.</p>` },
+      { h: 'Stempel: 925, Sterling und Löwe', html: `<p>Sterlingsilber trägt den Stempel <strong>925</strong>, oft auch <strong>Sterling</strong> oder <strong>STG</strong>. Britisches Silber zeigt einen schreitenden Löwen. Achtung bei Schmuck mit Zusatz wie „925 vergoldet“: Das Grundmetall ist trotzdem Silber, die dünne Goldschicht hat kaum Wert. Steht dagegen „versilbert“ oder „EPNS“ auf dem Stück, ist es kein massives Silber.</p>` },
+      { h: '925 Silber verkaufen', html: `<p>Für Silberschmuck zahlen Ankäufer meist deutlich unter dem Materialwert, weil Verschlüsse, Steine und das Einschmelzen abgezogen werden. Lohnend wird der Verkauf vor allem bei größeren Mengen. Schwere Stücke und Besteck bewerten Sie unter <a href="/silberbesteck-wert/">Silberbesteck Wert</a>, ältere Legierungen unter <a href="/800-silber-wert/">800 Silber</a> und <a href="/835-silber-wert/">835 Silber</a>. Den Ablauf beim Ankauf erklärt <a href="/silber-verkaufen/">Silber verkaufen</a>.</p>` }
+    ],
+    faq: [['Wie viel Silber ist in 925er Silber?','925er Silber besteht zu 92,5 % aus reinem Silber, also 925 Tausendstel.'],['Ist 925 Silber echtes Silber?','Ja. 925 ist der Stempel für Sterlingsilber, die übliche Legierung für Silberschmuck.'],['Warum läuft 925er Silber an?','Silber reagiert mit Schwefel aus der Luft zu dunklem Silbersulfid, der Kupferanteil beschleunigt das. Am Silberwert ändert das nichts.']]
+  },
+  {
+    slug: '800-silber-wert',
+    nav: '800 Silber',
+    inNav: false,
+    keywords: '800 silber preis 1.900 (KD 12) · silber 800 preis 1.600 · 800 silber 880 · 800 silber wert 140 (KD 5)',
+    title: '800 Silber Preis heute: Was ist 800er Silber pro Gramm wert?',
+    description: 'Was ist 800er Silber wert? Preis pro Gramm nach aktuellem Silberkurs, Rechner für Ihr Gewicht und woran Sie 800er Silber mit Halbmond und Krone erkennen.',
+    h1: '800 Silber Preis: Was ist 800er Silber heute wert?',
+    intro: '800er Silber ist die klassische Legierung für altes deutsches Tafelsilber und Silberwaren. Gewicht eingeben – der Rechner zeigt den Silberwert nach aktuellem Kurs.',
+    calc: { type: 'silver', preset: '800', weight: 100 },
+    example: { fineness: '800', metal: 'silver', weights: '50,100,250,500,1000' },
+    sections: [
+      { h: '800 Silber: Preis pro Gramm', html: `<p><strong>Kurz gesagt:</strong> 1 Gramm 800er Silber ist heute rund <span data-price="silverq800">–</span> wert, 1 Kilogramm rund <span data-price="silverq800000">–</span> (reiner Silberwert). 800 bedeutet 80 % reines Silber, der Rest ist Kupfer.</p>
+<div class="table-wrap"><table><thead><tr><th>Stempel</th><th class="num">Silberanteil</th><th class="num">Wert je Gramm heute</th></tr></thead><tbody><tr><td>800</td><td class="num">80,0 %</td><td class="num"><span data-price="silverq800">–</span></td></tr><tr><td>835</td><td class="num">83,5 %</td><td class="num"><span data-price="silverq835">–</span></td></tr><tr><td>925</td><td class="num">92,5 %</td><td class="num"><span data-price="silverq925">–</span></td></tr><tr><td>999</td><td class="num">99,9 %</td><td class="num"><span data-price="silverq999">–</span></td></tr></tbody></table></div>` },
+      { h: '800er Silber erkennen', html: `<p>Deutsche Silberwaren tragen seit 1888 oft die Zahl <strong>800</strong> zusammen mit <strong>Halbmond und Krone</strong>. Dazu kommt häufig eine Herstellermarke. Fehlt eine Zahl und stehen nur 90 oder 100 auf Besteck, ist es versilbert und hat kaum Silberwert. Vasen, Schalen und Leuchter können mit Füllmasse oder Holzsockel beschwert sein – wiegen Sie solche Teile nicht einfach komplett.</p>` },
+      { h: '800 Silber verkaufen', html: `<p>Ankäufer rechnen mit dem Silberanteil und ziehen ihre Kosten ab. Bei großen Mengen Tafelsilber lohnt es sich, mehrere Angebote einzuholen. Besteck mit hohlen Messergriffen bewerten Sie besser unter <a href="/silberbesteck-wert/">Silberbesteck Wert</a>. Den Ablauf erklärt <a href="/silber-verkaufen/">Silber verkaufen</a>; für Schmuck mit 925-Stempel gibt es <a href="/925-silber-wert/">925 Silber Wert</a>.</p>` }
+    ],
+    faq: [['Wie viel ist 800er Silber pro Gramm wert?','Ein Gramm 800er Silber enthält 0,8 g Feinsilber. Der aktuelle Wert steht oben auf der Seite und wird mit dem Silberkurs aktualisiert.'],['Was bedeutet Halbmond und Krone?','Das Zeichen wurde in Deutschland für Silberwaren eingeführt und steht zusammen mit der Feingehaltszahl, meist 800. Es zeigt echtes Silber an.'],['Ist 800 Silber weniger wert als 925?','Pro Gramm ja, weil es nur 80 % statt 92,5 % Silber enthält.']]
+  },
+  {
+    slug: '835-silber-wert',
+    nav: '835 Silber',
+    inNav: false,
+    keywords: '835 silber 2.900 (KD 9) · preis für 835 silber 1.000 · silber 835 1.000 · 835 silber wert · 835 gold oder silber',
+    title: '835 Silber Wert heute: Preis pro Gramm für 835er Silber',
+    description: 'Was ist 835er Silber wert? Preis pro Gramm nach aktuellem Silberkurs, Rechner für Ihr Gewicht und wo der Stempel 835 vorkommt – Besteck, Schmuck und Silberwaren.',
+    h1: '835 Silber Wert: Was ist 835er Silber heute wert?',
+    intro: 'Der Stempel 835 steht vor allem auf älterem Silberbesteck und Silberschmuck. Gewicht eingeben – der Rechner zeigt den Silberwert nach aktuellem Kurs.',
+    calc: { type: 'silver', preset: '835', weight: 100 },
+    example: { fineness: '835', metal: 'silver', weights: '50,100,250,500,1000' },
+    sections: [
+      { h: '835 Silber: Preis pro Gramm', html: `<p><strong>Kurz gesagt:</strong> 1 Gramm 835er Silber ist heute rund <span data-price="silverq835">–</span> wert, 100 Gramm rund <span data-price="silverq83500">–</span> (reiner Silberwert). 835 bedeutet 83,5 % reines Silber, der Rest ist Kupfer.</p>` },
+      { h: 'Ist 835 Gold oder Silber?', html: `<p>835 ist eine <strong>Silber</strong>-Legierung. Für Gold sind andere Stempel üblich, etwa 333, 585 oder 750. Wenn ein gelbliches Stück 835 trägt, ist es meist vergoldetes Silber. Den Wert bestimmt dann der Silberanteil. Typische Gegenstände mit 835 sind Besteck, Becher, Dosen und Schmuck, häufig aus Deutschland und den Niederlanden.</p>` },
+      { h: '835 Silber verkaufen', html: `<p>Wiegen Sie massive Teile und rechnen Sie mit dem Rechner den Silberwert aus. Ankäufer ziehen ihre Kosten ab, deshalb lohnen sich Vergleichsangebote. Für Besteck mit Messern beachten Sie die Hinweise unter <a href="/silberbesteck-wert/">Silberbesteck Wert</a>. Weitere Legierungen: <a href="/800-silber-wert/">800 Silber</a> und <a href="/925-silber-wert/">925 Silber</a>.</p>` }
+    ],
+    faq: [['Wie viel Silber ist in 835er Silber?','835er Silber enthält 83,5 % reines Silber.'],['Ist 835 echtes Silber?','Ja. 835 ist ein gängiger Feingehalt für Silberwaren und Schmuck.'],['Was ist besser, 835 oder 925?','925 enthält mehr Silber und ist pro Gramm etwas mehr wert. Für die Echtheit sind beide Stempel gleich gut.']]
   },
   {
     slug: 'silberbesteck-wert',
@@ -850,7 +950,7 @@ module.exports = [
 <li><strong>Sammlerwert beachten:</strong> Seltene Jahrgänge, Prägestätten oder Spiegelglanz-Ausgaben können mehr wert sein als ihr Silber.</li>
 <li><strong>Online oder vor Ort:</strong> Silberankäufer im Internet zahlen oft transparente Preise je Unze; bei kleinen Mengen lohnt sich der Weg zum Händler vor Ort.</li>
 </ul>
-<p>Eigene Seiten mit Münzdaten gibt es für <a href="/maple-leaf-silber-wert/">Maple Leaf Silber</a>, <a href="/kruegerrand-silber-wert/">Krügerrand Silber</a> und <a href="/philharmoniker-silber-wert/">Wiener Philharmoniker Silber</a>. Silberbarren und den Ablauf beim Silberankauf finden Sie unter <a href="/silber-verkaufen/">Silber verkaufen</a>, den aktuellen <a href="/silberpreis-pro-gramm/">Silberpreis pro Gramm</a> auf einer eigenen Seite. Goldmünzen bewerten Sie mit dem <a href="/goldmuenzen-wert/">Goldmünzen-Rechner</a>.</p>`
+<p>Eigene Seiten mit Münzdaten gibt es für <a href="/5-dm-muenzen-wert/">5 DM Münzen</a>, <a href="/10-dm-silbermuenzen-wert/">10 DM Silbermünzen</a>, <a href="/10-euro-silbermuenzen-wert/">10 Euro Silbermünzen</a>, <a href="/schilling-silbermuenzen-wert/">Schilling-Silbermünzen</a>, den <a href="/maria-theresien-taler-wert/">Maria-Theresien-Taler</a>, <a href="/maple-leaf-silber-wert/">Maple Leaf Silber</a>, <a href="/kruegerrand-silber-wert/">Krügerrand Silber</a> und <a href="/philharmoniker-silber-wert/">Wiener Philharmoniker Silber</a>. Silberbarren und den Ablauf beim Silberankauf finden Sie unter <a href="/silber-verkaufen/">Silber verkaufen</a>, den aktuellen <a href="/silberpreis-pro-gramm/">Silberpreis pro Gramm</a> auf einer eigenen Seite. Goldmünzen bewerten Sie mit dem <a href="/goldmuenzen-wert/">Goldmünzen-Rechner</a>.</p>`
       }
     ],
     faq: [
@@ -893,7 +993,8 @@ module.exports = [
     intro: 'Den berühmten Krügerrand gibt es seit einigen Jahren auch in Silber. Geben Sie die Anzahl ein – der Rechner zeigt den aktuellen Silberwert.',
     calc: { type: 'silvercoins', preset: 'kruegerrand-ag' },
     sections: [
-      { h: 'Krügerrand Silber: Daten im Überblick', html: `<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Südafrika (South African Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>2017, zum 50. Jubiläum des Krügerrands</td></tr><tr><th scope="row">Nennwert</th><td>1 Rand</td></tr><tr><th scope="row">Feingehalt</th><td>999</td></tr><tr><th scope="row">Feinsilber</th><td>31,10 g (1 Unze)</td></tr><tr><th scope="row">Durchmesser</th><td>rund 38,7 mm</td></tr></tbody></table></div>
+      { h: 'Krügerrand Silber: Daten im Überblick', html: `<p><strong>Kurz gesagt:</strong> Ein Krügerrand Silber enthält 1 Unze (31,1 g) Feinsilber und ist heute rund <span data-price="silverozv">–</span> wert (reiner Silberwert).</p>
+<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Südafrika (South African Mint)</td></tr><tr><th scope="row">Erstausgabe</th><td>2017, zum 50. Jubiläum des Krügerrands</td></tr><tr><th scope="row">Nennwert</th><td>1 Rand</td></tr><tr><th scope="row">Feingehalt</th><td>999</td></tr><tr><th scope="row">Feinsilber</th><td>31,10 g (1 Unze)</td></tr><tr><th scope="row">Durchmesser</th><td>rund 38,7 mm</td></tr></tbody></table></div>
 <p>Das Motiv entspricht dem Gold-Krügerrand: Paul Kruger auf der Vorderseite, ein Springbock auf der Rückseite. Die Unterschiede zur Goldmünze: Der Silber-Krügerrand besteht aus Feinsilber (999) statt aus 22-karätigem Gold (916,7), ist mit rund 38,7 mm deutlich größer als der Gold-Krügerrand (32,77 mm) und trägt einen Nennwert von 1 Rand, die Goldmünze dagegen keinen.</p>
 <div class="table-wrap"><table><thead><tr><th>Menge</th><th class="num">Feinsilber</th><th class="num">Silberwert heute</th></tr></thead><tbody><tr><td>1 Münze</td><td class="num">31,10 g</td><td class="num"><span data-price="silverozv">–</span></td></tr><tr><td>25 Münzen (Tube)</td><td class="num">777,6 g</td><td class="num"><span data-price="silverq777587">–</span></td></tr><tr><td>500 Münzen (Monsterbox)</td><td class="num">15,55 kg</td><td class="num"><span data-price="silverq15551738">–</span></td></tr></tbody></table></div>` },
 
@@ -901,6 +1002,101 @@ module.exports = [
 <p>Ausgaben in polierter Platte mit kleiner Auflage können einen Sammlerwert über dem Silberwert haben – lassen Sie solche Stücke vorher von einem Münzhändler bewerten. Den Gold-Krügerrand finden Sie unter <a href="/kruegerrand-wert/">Krügerrand Wert</a>, weitere Silbermünzen im <a href="/silbermuenzen-wert/">Silbermünzen-Rechner</a>.</p>` }
     ],
     faq: [["Wie viel Silber ist in einem Krügerrand Silber?","Ein Silber-Krügerrand enthält eine Feinunze, also 31,10 g Feinsilber mit einem Feingehalt von 999."],["Hat der Silber-Krügerrand einen Nennwert?","Ja, 1 Rand. Der Gold-Krügerrand hat dagegen keinen aufgeprägten Nennwert."],["Ist der Krügerrand Silber mehr wert als ein Maple Leaf?","Beim Silberwert nicht: Beide enthalten eine Unze Feinsilber. Unterschiede gibt es nur beim Kauf- und Ankaufspreis einzelner Händler."]]
+  },
+  {
+    slug: 'maria-theresien-taler-wert',
+    nav: 'Maria-Theresien-Taler',
+    inNav: false,
+    group: 'silbermuenzen',
+    keywords: 'maria theresien taler 1.300 (KD 9) · maria theresien taler wert 720 · maria theresien taler silber 720 · maria theresien taler 1780',
+    title: 'Maria-Theresien-Taler Wert heute: Silberwert in Euro',
+    description: 'Was ist ein Maria-Theresien-Taler wert? Silberwert nach aktuellem Kurs, Gewicht und Feingehalt, woran Sie Nachprägungen von 1780 erkennen und was Händler zahlen.',
+    h1: 'Maria-Theresien-Taler Wert: Was ist der Taler heute wert?',
+    intro: 'Fast jeder Maria-Theresien-Taler trägt die Jahreszahl 1780 – auch wenn er viel jünger ist. Anzahl wählen, der Rechner zeigt den Silberwert nach aktuellem Kurs.',
+    calc: { type: 'silvercoins', preset: 'mtt' },
+    sections: [
+      { h: 'Maria-Theresien-Taler: Daten', html: `<p><strong>Kurz gesagt:</strong> Ein Maria-Theresien-Taler enthält 23,389 g Feinsilber und ist heute rund <span data-price="silverq23389">–</span> wert (reiner Silberwert).</p>
+<div class="table-wrap"><table><tbody><tr><th scope="row">Ausgabeland</th><td>Österreich (heute Münze Österreich)</td></tr><tr><th scope="row">Jahreszahl</th><td>1780 (Todesjahr Maria Theresias, bei Nachprägungen beibehalten)</td></tr><tr><th scope="row">Gewicht</th><td>28,0668 g</td></tr><tr><th scope="row">Feingehalt</th><td>833,3/1000</td></tr><tr><th scope="row">Feinsilber</th><td>23,389 g</td></tr></tbody></table></div>` },
+      { h: 'Original oder Nachprägung?', html: `<p>Der Taler wurde nach 1780 millionenfach nachgeprägt, vor allem als Handelsmünze für Arabien und Ostafrika. Nachprägungen sind echte Silbermünzen mit vollem Silbergehalt und werden nah am Silberwert gehandelt. Echte Stücke aus der Regierungszeit vor 1780 tragen andere Jahreszahlen und sind selten. Lassen Sie auffällige Stücke von einem Münzhändler prüfen.</p>` },
+      { h: 'Maria-Theresien-Taler verkaufen', html: `<p>Für gängige Nachprägungen zahlen Händler einen Preis in der Nähe des Silberwerts. Mehrere Angebote zu vergleichen lohnt sich. Weitere Silbermünzen bewerten Sie im <a href="/silbermuenzen-wert/">Silbermünzen-Rechner</a>; österreichische Gedenkmünzen unter <a href="/schilling-silbermuenzen-wert/">Schilling-Silbermünzen</a>.</p>` }
+    ],
+    faq: [['Wie viel Silber hat ein Maria-Theresien-Taler?','23,389 g Feinsilber bei einem Gesamtgewicht von 28,0668 g.'],['Warum steht auf jedem Taler 1780?','1780 ist das Todesjahr Maria Theresias. Die Jahreszahl wurde bei allen späteren Prägungen beibehalten.'],['Wird der Maria-Theresien-Taler noch geprägt?','Ja, die Münze Österreich prägt ihn bis heute nach.']]
+  },
+  {
+    slug: '10-euro-silbermuenzen-wert',
+    nav: '10 Euro Silber',
+    inNav: false,
+    group: 'silbermuenzen',
+    keywords: '10 euro silbermünzen 1.300 (KD 18) · 10 euro silbermünzen wert tabelle 1.000 · wert einer 10 euro silbermünze 590 · 20 euro silbermünze wert',
+    title: '10 Euro Silbermünzen Wert: Tabelle nach Jahrgang (2002–2015)',
+    description: 'Was sind 10-Euro-Silbermünzen wert? Silberwert nach Jahrgang als Tabelle, welche Ausgaben Silber enthalten und was 20-Euro-Gedenkmünzen wert sind.',
+    h1: '10 Euro Silbermünzen Wert: Was ist meine Gedenkmünze wert?',
+    intro: 'Deutsche 10-Euro-Gedenkmünzen enthalten je nach Jahrgang 925er, 625er oder gar kein Silber. Ausgabe wählen – der Rechner zeigt den Silberwert.',
+    calc: { type: 'silvercoins', preset: '10eur-925' },
+    sections: [
+      { h: 'Wert nach Jahrgang', html: `<p><strong>Kurz gesagt:</strong> Eine 10-Euro-Silbermünze von 2002 bis 2010 ist heute rund <span data-price="silverq16650">–</span> wert (Silberwert), also mehr als ihr Nennwert.</p>
+<div class="table-wrap"><table><thead><tr><th>Ausgabe</th><th>Silber</th><th class="num">Feinsilber</th><th class="num">Silberwert heute</th></tr></thead><tbody><tr><td>10 Euro 2002–2010</td><td>925er, 18 g</td><td class="num">16,65 g</td><td class="num"><span data-price="silverq16650">–</span></td></tr><tr><td>10 Euro 2011–2015, Spiegelglanz</td><td>625er, 16 g</td><td class="num">10,0 g</td><td class="num"><span data-price="silverq10000">–</span></td></tr><tr><td>10 Euro 2011–2015, Stempelglanz</td><td>kein Silber</td><td class="num">–</td><td class="num">Nennwert</td></tr><tr><td>20 Euro ab 2016</td><td>925er, 18 g</td><td class="num">16,65 g</td><td class="num"><span data-price="silverq16650">–</span></td></tr></tbody></table></div>` },
+      { h: 'Silbermünze oder Kupfernickel?', html: `<p>Ab 2011 gab es die 10-Euro-Münzen in zwei Ausführungen: Spiegelglanz für Sammler aus Silber und Stempelglanz aus Kupfernickel. Seit 2016 erscheinen die Silber-Gedenkmünzen als 20-Euro-Stücke. Am Gewicht lassen sich nur die 925er-Münzen bis 2010 erkennen (18 g); Silber- und Kupfernickel-Ausgaben von 2011 bis 2015 wiegen beide 16 g. Spiegelglanz-Münzen haben eine spiegelnde Oberfläche mit mattem Motiv und wurden meist in einer Kapsel verkauft.</p>` },
+      { h: 'Gedenkmünzen verkaufen oder ausgeben?', html: `<p>Euro-Gedenkmünzen sind in Deutschland gesetzliches Zahlungsmittel und können bei der Bundesbank zum Nennwert eingetauscht werden. Liegt der Silberwert über dem Nennwert, ist ein Verkauf an einen Silberankäufer meist die bessere Wahl. Weitere Münzen bewerten Sie im <a href="/silbermuenzen-wert/">Silbermünzen-Rechner</a>; ältere Stücke unter <a href="/10-dm-silbermuenzen-wert/">10 DM Silbermünzen</a>.</p>` }
+    ],
+    faq: [['Welche 10-Euro-Münzen sind aus Silber?','Alle Ausgaben von 2002 bis 2010 (925er Silber) und von 2011 bis 2015 nur die Spiegelglanz-Ausgaben (625er Silber).'],['Wie viel Silber hat eine 10-Euro-Münze?','Die Ausgaben 2002–2010 enthalten 16,65 g Feinsilber, die Spiegelglanz-Münzen 2011–2015 10 g.'],['Sind 20-Euro-Münzen aus Silber?','Ja, die 20-Euro-Gedenkmünzen seit 2016 bestehen aus 925er Silber mit 16,65 g Feinsilber.']]
+  },
+  {
+    slug: '5-dm-muenzen-wert',
+    nav: '5 DM Münzen',
+    inNav: false,
+    group: 'silbermuenzen',
+    keywords: '5 dm münzen wert tabelle 3.600 (KD 14) · 5 dm münzen wert 1.300 · 5 dm münze wert 1.000 · 5 mark silber 480 · 5 dm silberadler',
+    title: '5 DM Münzen Wert: Tabelle für Silberadler und Gedenkmünzen',
+    description: 'Was sind 5-DM-Münzen wert? Tabelle mit Silberwert für Silberadler und silberne Gedenkmünzen, welche Stücke kein Silber enthalten und Hinweise zu Sammlerwerten.',
+    h1: '5 DM Münzen Wert: Was ist mein 5-Mark-Stück heute wert?',
+    intro: 'Silberadler und silberne Gedenkmünzen zu 5 DM liegen in vielen Schubladen. Ausgabe und Anzahl wählen – der Rechner zeigt den Silberwert nach aktuellem Kurs.',
+    calc: { type: 'silvercoins', preset: '5dm-adler' },
+    sections: [
+      { h: '5 DM Münzen: Wert-Tabelle', html: `<p><strong>Kurz gesagt:</strong> Ein silberner 5-DM-Adler oder eine 5-DM-Gedenkmünze aus Silber ist heute rund <span data-price="silverq7000">–</span> wert (Silberwert).</p>
+<div class="table-wrap"><table><thead><tr><th>Ausgabe</th><th>Silber</th><th class="num">Fein</th><th class="num">Wert heute</th></tr></thead><tbody><tr><td>5 DM Silberadler 1951–1974</td><td>625er, 11,2&nbsp;g</td><td class="num">7,0 g</td><td class="num"><span data-price="silverq7000">–</span></td></tr><tr><td>5 DM Gedenkmünzen 1952–1979</td><td>625er, 11,2&nbsp;g</td><td class="num">7,0 g</td><td class="num"><span data-price="silverq7000">–</span></td></tr><tr><td>5 DM Kursmünze ab 1975</td><td>keins</td><td class="num">–</td><td class="num">–</td></tr><tr><td>5 DM Gedenkmünzen ab 1979 (Otto Hahn)</td><td>keins</td><td class="num">–</td><td class="num">–</td></tr></tbody></table></div>` },
+      { h: 'Welche 5-DM-Münzen sind aus Silber?', html: `<p>Silber enthalten der 5-DM-Adler bis zum Jahrgang 1974 und die Gedenkmünzen bis 1979 – mit einer Ausnahme: Die Otto-Hahn-Münze von 1979 ist bereits aus Kupfernickel, ebenso alle späteren Stücke. Ein einfacher Test ist das Gewicht: Silberne Stücke wiegen 11,2 g, Kupfernickel-Münzen 10 g. Einige Jahrgänge und Prägestätten, etwa der Gedenkmünzen von 1952 und 1957, sind bei Sammlern deutlich mehr wert als ihr Silber.</p>` },
+      { h: '5 Mark aus dem Kaiserreich', html: `<p>Nicht verwechseln: Die 5-Mark-Stücke aus dem Kaiserreich (1871–1918) bestehen aus 900er Silber und enthalten 25 g Feinsilber, rund <span data-price="silverq25000">–</span> Silberwert. Wählen Sie diese Münze im Rechner aus der Liste. Weitere Silbermünzen finden Sie im <a href="/silbermuenzen-wert/">Silbermünzen-Rechner</a> und unter <a href="/10-dm-silbermuenzen-wert/">10 DM Silbermünzen</a>.</p>` }
+    ],
+    faq: [['Wie viel Silber ist in einem 5-DM-Stück?','Der 5-DM-Silberadler und die silbernen Gedenkmünzen bis 1979 enthalten je 7 g Feinsilber.'],['Sind alle 5-DM-Münzen aus Silber?','Nein. Die Kursmünze ab 1975 und die Gedenkmünzen ab der Otto-Hahn-Münze von 1979 bestehen aus Kupfernickel.'],['Kann man 5-DM-Münzen noch umtauschen?','Ja, die Bundesbank tauscht DM-Münzen zeitlich unbegrenzt zum Kurs von 1,95583 DM je Euro. Silberstücke sind beim Silberankauf meist mehr wert.']]
+  },
+  {
+    slug: '10-dm-silbermuenzen-wert',
+    nav: '10 DM Silber',
+    inNav: false,
+    group: 'silbermuenzen',
+    keywords: '10 dm münzen silber wert 590 (KD 12) · 10 dm silbermünzen wert 590 · 10 dm olympia 1972 wert · 10 dm gedenkmünzen wert',
+    title: '10 DM Silbermünzen Wert: Olympia 1972 und Gedenkmünzen',
+    description: 'Was sind 10-DM-Silbermünzen wert? Silberwert für Olympia-Münzen 1972 und 10-DM-Gedenkmünzen 1987–2001 als Tabelle, nach aktuellem Silberkurs.',
+    h1: '10 DM Silbermünzen Wert: Was sind Olympia- und Gedenkmünzen wert?',
+    intro: 'Alle 10-DM-Gedenkmünzen bestehen aus Silber – die Olympia-Münzen von 1972 ebenso wie die Ausgaben von 1987 bis 2001. Ausgabe wählen, der Rechner zeigt den Silberwert.',
+    calc: { type: 'silvercoins', preset: '10dm-olympia' },
+    sections: [
+      { h: '10 DM Silbermünzen: Wert-Tabelle', html: `<p><strong>Kurz gesagt:</strong> Eine 10-DM-Olympiamünze von 1972 ist heute rund <span data-price="silverq9688">–</span> wert, eine 10-DM-Gedenkmünze von 1998 bis 2001 rund <span data-price="silverq14338">–</span> (Silberwert).</p>
+<div class="table-wrap"><table><thead><tr><th>Ausgabe</th><th>Silber</th><th class="num">Fein</th><th class="num">Wert heute</th></tr></thead><tbody><tr><td>Olympia 1972 (1970–1972)</td><td>625er, 15,5&nbsp;g</td><td class="num">9,69 g</td><td class="num"><span data-price="silverq9688">–</span></td></tr><tr><td>Gedenkmünzen 1987–1997</td><td>625er, 15,5&nbsp;g</td><td class="num">9,69 g</td><td class="num"><span data-price="silverq9688">–</span></td></tr><tr><td>Gedenkmünzen 1998–2001</td><td>925er, 15,5&nbsp;g</td><td class="num">14,34 g</td><td class="num"><span data-price="silverq14338">–</span></td></tr></tbody></table></div>` },
+      { h: 'Olympia-Münzen 1972', html: `<p>Zu den Olympischen Spielen in München erschienen von 1970 bis 1972 sechs Ausgaben mit fünf Motiven, jeweils in sehr hoher Auflage. Deshalb werden sie fast immer zum Silberwert gehandelt. Mehr bringen nur einzelne Fehlprägungen und Stücke in Spiegelglanz.</p>` },
+      { h: '10 DM Silbermünzen verkaufen', html: `<p>Silberankäufer rechnen mit dem Feinsilber. Bei größeren Mengen lohnt ein Vergleich mehrerer Angebote. Ältere 5-DM-Stücke bewerten Sie unter <a href="/5-dm-muenzen-wert/">5 DM Münzen Wert</a>, Euro-Gedenkmünzen unter <a href="/10-euro-silbermuenzen-wert/">10 Euro Silbermünzen</a> und alle weiteren im <a href="/silbermuenzen-wert/">Silbermünzen-Rechner</a>.</p>` }
+    ],
+    faq: [['Sind alle 10-DM-Münzen aus Silber?','Ja. Alle 10-DM-Gedenkmünzen bestehen aus Silber, bis 1997 aus 625er, ab 1998 aus 925er Silber.'],['Wie viel Silber hat eine 10-DM-Olympiamünze?','9,69 g Feinsilber bei 15,5 g Gesamtgewicht.'],['Sind Olympia-Münzen von 1972 selten?','Nein. Sie wurden in sehr hohen Auflagen geprägt, deshalb zählt meist nur der Silberwert.']]
+  },
+  {
+    slug: 'schilling-silbermuenzen-wert',
+    nav: 'Schilling Silber',
+    inNav: false,
+    group: 'silbermuenzen',
+    keywords: 'silbermünze 100 schilling wert 390 (KD 9) · 50 schilling silbermünze wert 320 · 25 schilling silber wert 170 · 500 schilling silbermünze wert · schilling silbermünzen wert',
+    title: 'Schilling Silbermünzen Wert: 25, 50, 100 und 500 Schilling',
+    description: 'Was sind österreichische Schilling-Silbermünzen wert? Silberwert für 10, 25, 50, 100 und 500 Schilling als Tabelle nach Jahrgang und aktuellem Silberkurs.',
+    h1: 'Schilling Silbermünzen Wert: Was sind 100 und 50 Schilling wert?',
+    intro: 'Österreich gab von 1955 bis 2001 zahlreiche Gedenkmünzen aus Silber aus. Nennwert und Jahrgang wählen – der Rechner zeigt den Silberwert nach aktuellem Kurs.',
+    calc: { type: 'silvercoins', preset: 's100-640' },
+    sections: [
+      { h: 'Schilling-Silbermünzen: Wert-Tabelle', html: `<p><strong>Kurz gesagt:</strong> Eine 100-Schilling-Silbermünze ist je nach Jahrgang heute rund <span data-price="silverq15360">–</span> bis <span data-price="silverq18000">–</span> wert (Silberwert).</p>
+<div class="table-wrap"><table><thead><tr><th>Münze</th><th>Material</th><th class="num">Feinsilber</th><th class="num">Silberwert heute</th></tr></thead><tbody><tr><td>10 Schilling 1957–1973</td><td>640er, 7,5 g</td><td class="num">4,8 g</td><td class="num"><span data-price="silverq4800">–</span></td></tr><tr><td>25 Schilling 1955–1973</td><td>800er, 13 g</td><td class="num">10,4 g</td><td class="num"><span data-price="silverq10400">–</span></td></tr><tr><td>50 Schilling 1959–1973</td><td>900er, 20 g</td><td class="num">18,0 g</td><td class="num"><span data-price="silverq18000">–</span></td></tr><tr><td>50 Schilling 1974–1978</td><td>640er, 20 g</td><td class="num">12,8 g</td><td class="num"><span data-price="silverq12800">–</span></td></tr><tr><td>100 Schilling 1974–1979</td><td>640er, 24 g</td><td class="num">15,36 g</td><td class="num"><span data-price="silverq15360">–</span></td></tr><tr><td>100 Schilling ab 1980</td><td>900er, 20 g</td><td class="num">18,0 g</td><td class="num"><span data-price="silverq18000">–</span></td></tr><tr><td>500 Schilling</td><td>925er, 24 g</td><td class="num">22,2 g</td><td class="num"><span data-price="silverq22200">–</span></td></tr></tbody></table></div>` },
+      { h: 'Gedenkmünze oder Umlaufmünze?', html: `<p>Die Silbermünzen zu 25, 50, 100 und 500 Schilling sind Gedenkmünzen. Die 10-Schilling-Münze aus Silber war dagegen bis 1973 Umlaufgeld; spätere 10-Schilling-Stücke bestehen aus Kupfernickel. Gängige Gedenkmünzen werden nah am Silberwert gehandelt. Mehr bringen Stücke in Spiegelglanz mit Etui und Zertifikat oder seltene Motive.</p>` },
+      { h: 'Schilling-Münzen verkaufen', html: `<p>Die Oesterreichische Nationalbank tauscht Schilling-Münzen der letzten Serie weiterhin zum Nennwert in Euro um. Bei Silbermünzen liegt der Silberwert aber meist deutlich darüber – 100 Schilling sind umgerechnet nur rund 7,27 Euro. Ein Verkauf an einen Silberankäufer lohnt sich daher fast immer; vergleichen Sie mehrere Angebote. Den <a href="/maria-theresien-taler-wert/">Maria-Theresien-Taler</a> und weitere Münzen bewerten Sie im <a href="/silbermuenzen-wert/">Silbermünzen-Rechner</a>.</p>` }
+    ],
+    faq: [['Wie viel Silber hat eine 100-Schilling-Münze?','Die Ausgaben 1974–1979 enthalten 15,36 g Feinsilber, die Ausgaben ab 1980 18 g.'],['Sind 50-Schilling-Münzen aus Silber?','Die Gedenkmünzen von 1959 bis 1978 ja. Spätere 50-Schilling-Münzen sind aus unedlem Metall.'],['Kann man Schilling-Silbermünzen noch umtauschen?','Die Oesterreichische Nationalbank tauscht Münzen der letzten Schilling-Serie zum Nennwert um. Bei Silbermünzen ist der Silberwert meist höher, deshalb lohnt eher der Verkauf.']]
   },
   {
     slug: 'philharmoniker-silber-wert',
@@ -939,7 +1135,7 @@ module.exports = [
       {
         h: 'So entsteht der Silberpreis pro Gramm',
         html: `<p>Silber wird international in US-Dollar je Feinunze gehandelt. Eine Feinunze sind 31,1035 Gramm. In Euro umgerechnet und durch 31,1035 geteilt, ergibt sich der <strong>Silberpreis pro Gramm Feinsilber</strong> (999). Ein Kilogramm Feinsilber ist entsprechend tausendmal so viel wert.</p>
-<p>Für Silberschmuck und Besteck zählt nur der enthaltene Silberanteil: Bei <a href="/silberrechner/">925er Sterlingsilber</a> sind es 92,5 %, bei <a href="/silberbesteck-wert/">800er Besteck</a> 80 %.</p>`
+<p>Für Silberschmuck und Besteck zählt nur der enthaltene Silberanteil: Bei <a href="/925-silber-wert/">925er Sterlingsilber</a> sind es 92,5 %, bei <a href="/silberbesteck-wert/">800er Besteck</a> 80 %.</p>`
       },
       {
         h: '1 kg Silber Preis: Silberpreis pro Kilo',
@@ -1141,7 +1337,7 @@ module.exports = [
     inNav: false,
     tile: 'Platin & Palladium je Gramm',
     keywords: 'platin preis gramm 2.400 (KD 53) · palladium preis 14.800 (KD 35) · platinpreis pro gramm · palladium preis gramm · platinpreis aktuell',
-    title: 'Platinpreis pro Gramm heute – auch Palladiumpreis',
+    title: 'Platinpreis pro Gramm heute in Euro – auch Palladium',
     description: 'Aktueller Platinpreis und Palladiumpreis pro Gramm und pro Unze in Euro, dazu Werte für Platinschmuck 950 und 999 – stündlich aktualisiert.',
     h1: 'Platinpreis und Palladiumpreis pro Gramm heute',
     intro: 'Platin und Palladium gehören wie Gold zu den Edelmetallen. Hier sehen Sie die aktuellen Preise je Gramm und je Unze in Euro.',

@@ -14,10 +14,15 @@
 - [333er Gold](https://dergoldrechner.de/333-gold-wert/): Was ist 333er Gold wert? Gewicht eingeben und den Wert von 8-Karat-Gold mit aktuellem Goldpreis sehen – inklusive Preis pro Gramm und Ankaufs-Richtwert.
 - [585er Gold](https://dergoldrechner.de/585-gold-wert/): Was ist 585er Gold (14 Karat) wert? Gewicht eingeben und den Wert mit aktuellem Goldpreis sehen – für Gelb-, Rot- und Weißgold.
 - [750er Gold](https://dergoldrechner.de/750-gold-wert/): Was ist 750er Gold (18 Karat) wert? Gewicht eingeben und den Goldwert mit aktuellem Kurs sehen – auch für 750er Weißgold, Uhren und Markenschmuck.
+- [21 Karat Gold](https://dergoldrechner.de/21-karat-gold-preis/): Was kostet 21 Karat Gold heute? Preis pro Gramm für 875er Gold nach aktuellem Kurs, Rechner für Ihr Gewicht und Hinweise zu arabischem Goldschmuck.
+- [22 Karat Gold](https://dergoldrechner.de/22-karat-gold-preis/): Was kostet 22 Karat Gold heute? Preis pro Gramm für 916er Gold nach aktuellem Kurs und Rechner für türkischen und indischen Goldschmuck sowie Münzen.
 - [Zahngold](https://dergoldrechner.de/zahngold-wert/): Was ist Zahngold wert? Mit dem Zahngold-Rechner Kronen, Brücken und Inlays bewerten – und erfahren, worauf Sie beim Zahngold verkaufen achten sollten.
 - [Goldbarren](https://dergoldrechner.de/goldbarren-wert/): Was ist ein Goldbarren wert? Aktueller Goldwert für Barren von 1 g bis 1 kg, was Händler beim Ankauf zahlen und worauf Sie beim Goldbarren kaufen achten.
 - [Goldmünzen](https://dergoldrechner.de/goldmuenzen-wert/): Was ist Ihre Goldmünze wert? Münze und Anzahl wählen und den Goldwert sehen – für Maple Leaf, Philharmoniker, Vreneli, 20 Mark, Dukaten und mehr.
 - [Silber](https://dergoldrechner.de/silberrechner/): Silberrechner mit aktuellem Kurs: Wert von 925er Sterlingsilber, 800er Silberbesteck und Silberschmuck berechnen – mit Materialwert und Ankaufs-Richtwert.
+- [925 Silber](https://dergoldrechner.de/925-silber-wert/): Was ist 925er Silber wert? Preis pro Gramm für Sterlingsilber nach aktuellem Kurs, Rechner für Schmuck, Besteck und Münzen und Tipps zum Verkauf.
+- [800 Silber](https://dergoldrechner.de/800-silber-wert/): Was ist 800er Silber wert? Preis pro Gramm nach aktuellem Silberkurs, Rechner für Ihr Gewicht und woran Sie 800er Silber mit Halbmond und Krone erkennen.
+- [835 Silber](https://dergoldrechner.de/835-silber-wert/): Was ist 835er Silber wert? Preis pro Gramm nach aktuellem Silberkurs, Rechner für Ihr Gewicht und wo der Stempel 835 vorkommt – Besteck, Schmuck und Silberwaren.
 - [Silberbesteck](https://dergoldrechner.de/silberbesteck-wert/): Was ist Silberbesteck wert? Gewicht und Stempel (800, 835, 925) eingeben, Silberwert sehen und erfahren, wie Sie Silberbesteck zum fairen Preis verkaufen.
 - [Silbermünzen](https://dergoldrechner.de/silbermuenzen-wert/): Was sind Ihre Silbermünzen wert? Münze wählen, Anzahl eingeben und den Silberwert sehen – für Silberunzen, 5-DM-Adler, 10-DM- und 10-Euro-Gedenkmünzen.
 - [Silberpreis](https://dergoldrechner.de/silberpreis-pro-gramm/): Aktueller Silberpreis pro Gramm und pro Kilo in Euro – für 800er, 835er, 925er und 999er Silber. Mit Silberpreis-Rechner und Ankaufs-Richtwert.
@@ -46,6 +51,11 @@
 
 - [Maple Leaf Silber](https://dergoldrechner.de/maple-leaf-silber-wert/): Was ist ein Maple Leaf aus Silber wert? Silberwert der 1-Unzen-Münze nach aktuellem Kurs, Münzdaten, Echtheitsmerkmale und was Händler beim Ankauf zahlen.
 - [Krügerrand Silber](https://dergoldrechner.de/kruegerrand-silber-wert/): Was ist ein Krügerrand aus Silber wert? Silberwert der 1-Unzen-Münze nach aktuellem Kurs, Münzdaten, Unterschiede zum Gold-Krügerrand und Hinweise zum Verkauf.
+- [Maria-Theresien-Taler](https://dergoldrechner.de/maria-theresien-taler-wert/): Was ist ein Maria-Theresien-Taler wert? Silberwert nach aktuellem Kurs, Gewicht und Feingehalt, woran Sie Nachprägungen von 1780 erkennen und was Händler zahlen.
+- [10 Euro Silber](https://dergoldrechner.de/10-euro-silbermuenzen-wert/): Was sind 10-Euro-Silbermünzen wert? Silberwert nach Jahrgang als Tabelle, welche Ausgaben Silber enthalten und was 20-Euro-Gedenkmünzen wert sind.
+- [5 DM Münzen](https://dergoldrechner.de/5-dm-muenzen-wert/): Was sind 5-DM-Münzen wert? Tabelle mit Silberwert für Silberadler und silberne Gedenkmünzen, welche Stücke kein Silber enthalten und Hinweise zu Sammlerwerten.
+- [10 DM Silber](https://dergoldrechner.de/10-dm-silbermuenzen-wert/): Was sind 10-DM-Silbermünzen wert? Silberwert für Olympia-Münzen 1972 und 10-DM-Gedenkmünzen 1987–2001 als Tabelle, nach aktuellem Silberkurs.
+- [Schilling Silber](https://dergoldrechner.de/schilling-silbermuenzen-wert/): Was sind österreichische Schilling-Silbermünzen wert? Silberwert für 10, 25, 50, 100 und 500 Schilling als Tabelle nach Jahrgang und aktuellem Silberkurs.
 - [Philharmoniker Silber](https://dergoldrechner.de/philharmoniker-silber-wert/): Was ist ein Wiener Philharmoniker aus Silber wert? Silberwert der 1-Unzen-Münze nach aktuellem Kurs, Münzdaten der Münze Österreich und Hinweise zum Verkauf.
 
 ## Über die Daten

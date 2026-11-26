@@ -1,162 +1,202 @@
 {
  "": {
-  "hash": "2e97a00cbe02c8e12d6f26b112c736bd3dba2941",
-  "date": "2026-11-20"
+  "hash": "cf1d09439b027c0bbded4bf177e055248d7bd864",
+  "date": "2026-11-26"
  },
  "goldpreis-pro-gramm": {
-  "hash": "73f53316eb619f7eba48d171117c3ab9fe1d20b6",
+  "hash": "02597611c2b379f7291e4cd9f67990cb32643ade",
   "date": "2026-11-26"
  },
  "goldpreis-pro-unze": {
-  "hash": "030c44d9c7819c88e4d0a2060b325df41ecc6267",
-  "date": "2026-11-20"
+  "hash": "bb11ecd030e2ac270f432ebee68747fd9bdb3e44",
+  "date": "2026-11-26"
  },
  "goldankauf-rechner": {
-  "hash": "9a641f9016d3600d7e2934d02f8d361a61031855",
-  "date": "2026-11-20"
+  "hash": "d0ee8c6a061550e73c3089667d8f25d43cebee55",
+  "date": "2026-11-26"
  },
  "gold-verkaufen": {
-  "hash": "530e19fa44d81300b20850cd396fce914a7012bd",
-  "date": "2026-11-20"
+  "hash": "a07b3195d845ce7997ef4841377dacb18961e669",
+  "date": "2026-11-26"
  },
  "schmuck-verkaufen": {
-  "hash": "46bf139f2711dfd661ef2926cb8bb6a3f0c20144",
-  "date": "2026-11-20"
+  "hash": "623e9734bc9ab5e7114d4a26c308cd9e50b5be6a",
+  "date": "2026-11-26"
  },
  "altgold-verkaufen": {
-  "hash": "04c83b39438f4e6eecea006f41e89409654a3985",
-  "date": "2026-11-20"
+  "hash": "10472bfdbaf268b6456ea52bcaf76b558fd0df44",
+  "date": "2026-11-26"
  },
  "333-gold-wert": {
-  "hash": "4d07b323f025ccd8e7fb3d1507d1376e04891003",
+  "hash": "95d6873d5e348072d5755d22849d0551022c4edc",
   "date": "2026-11-26"
  },
  "585-gold-wert": {
-  "hash": "d49add2f89d7344281d5c52afb43ad6044870d63",
+  "hash": "02dcecdc3f686f3f8f6323908df6e14188a7131e",
   "date": "2026-11-26"
  },
  "750-gold-wert": {
-  "hash": "61951fdd41363ce8f0ffc3a78994ca92ff547635",
+  "hash": "7142a2ba2b3cf21e0f797bac6e7cdbe94153eb7b",
   "date": "2026-11-26"
  },
  "zahngold-wert": {
-  "hash": "1c071c0edad6ca4f222cd725ffc4d9cc035fcfee",
-  "date": "2026-11-20"
+  "hash": "6f2ede988bfbac11f94a0c2bb6589a68cabfaaee",
+  "date": "2026-11-26"
  },
  "goldbarren-wert": {
-  "hash": "3d99b29fe19bb54b9596b62c3262616b772b0120",
-  "date": "2026-11-20"
+  "hash": "f5fa366ad8311cee62bc54a846ea1210a4195266",
+  "date": "2026-11-26"
  },
  "goldmuenzen-wert": {
-  "hash": "be83f2939ba97a6017543497e98ad9914cbca7dd",
-  "date": "2026-11-20"
+  "hash": "e0d8868c6b2e520e2d92055395af1566b2b7ec14",
+  "date": "2026-11-26"
  },
  "kruegerrand-wert": {
-  "hash": "5e1b7045ef54b1c9d50b551322cd22a48d78c14c",
-  "date": "2026-11-20"
+  "hash": "824630612b02b53452c71aa535fae5ef480b13a7",
+  "date": "2026-11-26"
  },
  "maple-leaf-gold-wert": {
-  "hash": "ec907f0aae97e7e4bd495198a279cfbb114e55e5",
-  "date": "2026-11-20"
+  "hash": "aa21b6edd1c659ea7aa557fc758fdb7661e9ab3e",
+  "date": "2026-11-26"
  },
  "philharmoniker-gold-wert": {
-  "hash": "c327229d9afb00374a55604cbb88a67b14120620",
-  "date": "2026-11-20"
+  "hash": "38aa55cd716615f74cf302498c898d360e09c3c7",
+  "date": "2026-11-26"
  },
  "american-eagle-gold-wert": {
-  "hash": "7d76e5c46a079e7f68633792a359586882102701",
-  "date": "2026-11-20"
+  "hash": "6af8a411c31bacda1670fbbad6d3bd236d2f4edb",
+  "date": "2026-11-26"
  },
  "britannia-gold-wert": {
-  "hash": "57f2b5ab56392302fa855ab5be01f66e6ba0f2f5",
-  "date": "2026-11-20"
+  "hash": "5c1ac431c08ff2fd7cc3bda917de8f5ed6a12c49",
+  "date": "2026-11-26"
  },
  "kaenguru-gold-wert": {
-  "hash": "57ed911da89ab7ebf90fb00f46a44a9af1cb2af6",
-  "date": "2026-11-20"
+  "hash": "3a597eeb3a882e8100b96cfccaee7a1c6ec28e06",
+  "date": "2026-11-26"
  },
  "vreneli-wert": {
-  "hash": "19079cd50fafd7c8f2a06ba3519e0ea5b334beaa",
-  "date": "2026-11-20"
+  "hash": "bda5e1beb74a92df5f1416bc6d1b00b87e102d26",
+  "date": "2026-11-26"
  },
  "20-mark-gold-wert": {
-  "hash": "3cb13f15cc5c8906b037d38e9396cdeaad88c6ce",
-  "date": "2026-11-20"
+  "hash": "47c531a42e7b1974c9c481ec98707c41f3471efa",
+  "date": "2026-11-26"
  },
  "sovereign-gold-wert": {
-  "hash": "50372f9cc2eb3825d7fa43e9cee7c0a4660eb927",
-  "date": "2026-11-20"
+  "hash": "398c8cca332e410e12c45ee1adfd4c339770f7ae",
+  "date": "2026-11-26"
  },
  "dukat-gold-wert": {
-  "hash": "c1e5039ff8705db0b97221f57e524f4031297d97",
-  "date": "2026-11-20"
+  "hash": "b9663da779d709cd2a62a68c17e790f6b7dc2166",
+  "date": "2026-11-26"
  },
  "silberrechner": {
-  "hash": "f1bf38c9c3f4f91c260b4732447a68d81f607033",
+  "hash": "94408981bf5c9cbd05038f2020232a11e0cc4464",
   "date": "2026-11-26"
  },
  "silberbesteck-wert": {
-  "hash": "00f877093de784d47871c1e97804c3f2a63e648f",
+  "hash": "2dd3e43bfbb33cdcc24f4979a625b2c11a99786e",
   "date": "2026-11-26"
  },
  "silbermuenzen-wert": {
-  "hash": "cca8028aa656b8fed18c88cff48db09e47c3a5b5",
-  "date": "2026-11-20"
+  "hash": "aafa1d8e857cba6441598fa651ac4f3835528336",
+  "date": "2026-11-26"
  },
  "silberpreis-pro-gramm": {
-  "hash": "edc75ecf6ab59cfa1b7481eb5ec51e0e10785e6a",
+  "hash": "9f1493cf794200203d38545764b39811cb1a128c",
   "date": "2026-11-26"
  },
  "silber-verkaufen": {
-  "hash": "feba260eebc82ca2f81ccece600f0c952a7c8dc7",
-  "date": "2026-11-20"
+  "hash": "dfe0a3b4ac48ed6a8bb27318f18b3e68d908d2f0",
+  "date": "2026-11-26"
  },
  "platin-verkaufen": {
-  "hash": "c428aa46fab2a3c316e1e50f5acd3cf4546672fb",
-  "date": "2026-11-20"
+  "hash": "67c58ff1f0fe238c2d96bc2dc9202011adeea6c2",
+  "date": "2026-11-26"
  },
  "platinpreis-pro-gramm": {
-  "hash": "91fb0cfd882b1965a33b99cd3447f3dce88b21c9",
+  "hash": "087a4e93607a443fa9527b73e9168d3029695e6a",
   "date": "2026-11-26"
  },
  "goldpreis-widget": {
-  "hash": "d5f56da7b5332427b50adbab520cd8ad45b960a4",
-  "date": "2026-11-20"
+  "hash": "c950e57879c9842d37ebb2984b7df267780a4847",
+  "date": "2026-11-26"
  },
  "so-rechnen-wir": {
-  "hash": "c2acc5fbf4b9a79860f400b291262902af8d76d7",
-  "date": "2026-11-20"
+  "hash": "70cbe769278de0a6626fe2cf4f32624c1e6b31ed",
+  "date": "2026-11-26"
  },
  "impressum": {
-  "hash": "538f9297a507d61b09619ffdf81a57fd5f78d751",
-  "date": "2026-11-20"
+  "hash": "f8aa3e0a384f871b3d8eec368803e2cbb00a4532",
+  "date": "2026-11-26"
  },
  "datenschutz": {
-  "hash": "ba77f3b61a3972c1699e31541a3affa6bd66e1e4",
-  "date": "2026-11-20"
+  "hash": "227f21ff9ccd1a519e4b94350185c544d6f638a8",
+  "date": "2026-11-26"
  },
  "100-euro-goldmuenze-wert": {
-  "hash": "6427f99b32c2f96dad51437c70512669c2a8fff2",
-  "date": "2026-11-20"
+  "hash": "81bd776719130e7c610cfbfc5959da9d238c386d",
+  "date": "2026-11-26"
  },
  "maple-leaf-silber-wert": {
-  "hash": "c20e02c383da59f0b9946967d23df0e25f7f656e",
-  "date": "2026-11-20"
+  "hash": "6df1bdad46f69d9c69dd440ebff279ca5a68bfef",
+  "date": "2026-11-26"
  },
  "kruegerrand-silber-wert": {
-  "hash": "5027d1f006d095f1a92bece3bfd2d89933d3d243",
-  "date": "2026-11-20"
+  "hash": "b474e9658f1e1646ceea7cb93bd0da60af9397da",
+  "date": "2026-11-26"
  },
  "philharmoniker-silber-wert": {
-  "hash": "23227bc6dc802447a2ded92f19d0f78ca992a5ba",
-  "date": "2026-11-20"
+  "hash": "ae30d8ec3316611741afa91afe09becb9de8e40a",
+  "date": "2026-11-26"
  },
  "gold-silber-ratio": {
-  "hash": "19d7cd6fbd0f7e2369f46037c32be2309d88168c",
-  "date": "2026-11-20"
+  "hash": "4f2069469a79f6396abf213a0aeb8f53c98fa7e9",
+  "date": "2026-11-26"
  },
  "silberbarren-wert": {
-  "hash": "4497f38467d168b29b355e07c30d39eb7be53261",
-  "date": "2026-11-20"
+  "hash": "ac1f61e066efa10915891fd07bc842e0a1af1825",
+  "date": "2026-11-26"
+ },
+ "21-karat-gold-preis": {
+  "hash": "830028afa6ce9d4e0313466722228ddd7af64937",
+  "date": "2026-11-26"
+ },
+ "22-karat-gold-preis": {
+  "hash": "cd19a3c49fb7938910a478bd2af9df4efa954b8b",
+  "date": "2026-11-26"
+ },
+ "925-silber-wert": {
+  "hash": "41bf1e42984cb46489099196b9f5c824e7ad4679",
+  "date": "2026-11-26"
+ },
+ "800-silber-wert": {
+  "hash": "82ef83e39b0b90c5b6cb6c2a046adcc23b01bf4d",
+  "date": "2026-11-26"
+ },
+ "835-silber-wert": {
+  "hash": "8022d11502d57ce7f82e5948fadf94b84aa20659",
+  "date": "2026-11-26"
+ },
+ "maria-theresien-taler-wert": {
+  "hash": "d022e87610d1b03ed2f936ba6d6d8f079c0df959",
+  "date": "2026-11-26"
+ },
+ "10-euro-silbermuenzen-wert": {
+  "hash": "bdd293f2097f6f2932c98129bacf67ed01c546a4",
+  "date": "2026-11-26"
+ },
+ "5-dm-muenzen-wert": {
+  "hash": "fd87a69c868daec48ad684bf6ddfdcc358d7893a",
+  "date": "2026-11-26"
+ },
+ "10-dm-silbermuenzen-wert": {
+  "hash": "923f3997f8cff13e8a5bdaf7d8398f1da0d28e87",
+  "date": "2026-11-26"
+ },
+ "schilling-silbermuenzen-wert": {
+  "hash": "9c55fe55590e8f5492d398cb61da0796af165823",
+  "date": "2026-11-26"
  }
 }

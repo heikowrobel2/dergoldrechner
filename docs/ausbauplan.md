@@ -67,3 +67,15 @@ Search Console wöchentlich (Impressionen je Seite), Rankings der Kernbegriffe m
 - Zugeordnet statt neuer Seite: „1 kg silber preis“ (6.600) → /silberpreis-pro-gramm/ (H2), „silber 925 wert“ (2.900) → /silberrechner/.
 - Eigene Kursreihe läuft ab 20.11.2026: `data/price-history.json` (Server, alle vier Metalle, ~30 KB/Jahr, keine Kosten). Lücken möglich an Tagen ohne Seitenaufruf.
 - Offen: silberpreisentwicklung euro (9.900) und ggf. Goldpreisentwicklung (vorher Kannibalisierung prüfen) – Seiten erst, wenn einige Monate Daten vorliegen; für Jahre davor kostenlose historische Quelle suchen; palladium (40.500, KD 46) nur über /platinpreis-pro-gramm/; edelmetalle kaufen (3.600); PageSpeed-API-Kontingent erschöpft (429).
+
+## Block 7 – Nischen-Ausbau 26.11.2026 (Grundlage: docs/keyword-nischen-2026-11-26.md, docs/semrush-analyse-2026-11-26.md)
+- Neu: /21-karat-gold-preis/, /22-karat-gold-preis/, /925-silber-wert/, /800-silber-wert/, /835-silber-wert/, /maria-theresien-taler-wert/,
+  /10-euro-silbermuenzen-wert/, /5-dm-muenzen-wert/, /10-dm-silbermuenzen-wert/, /schilling-silbermuenzen-wert/ (Rechenkern: 875er Gold,
+  11 historische Silbermünzen, Tests zuerst).
+- Umgeschichtet: „925 silber wert“ und „800 silber“ von /silberrechner/ auf die neuen Legierungsseiten; Silberrechner = Oberbegriff.
+- Kannibalisierung: /750-gold-wert/ auf „750 gold preis“ (8.100), /585-gold-wert/ auf „goldwert 585“ (5.400) geschärft.
+- Quick Wins: „Kurz gesagt“ mit Live-Wert + schärfere Titel auf 9 Münz-/Barren-/Platinseiten.
+- Block 8 (nächster): /gold-dichte/ (12.200, KD 10–22, braucht Volumen-Rechner), /unze-in-gramm/ (81.800 Cluster, KD 21–37, Umrechner;
+  „wieviel ist eine unze gold“ von /goldpreis-pro-unze/ dorthin), /palladiumpreis-pro-gramm/ (21.100, KD 20–42, aus /platinpreis-pro-gramm/
+  herauslösen), /silberpreis-pro-unze/ (25.100, KD 27–54), danach 900-gold-wert, gold-verkaufen-steuer, gold-stempel-bedeutung, karat-umrechnen,
+  20-francs-gold-wert, goldpreis-pro-kilo (Entscheidung offen). Goldpreisentwicklung/-prognose, sobald Kursreihe reicht.

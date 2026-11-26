@@ -156,3 +156,17 @@ test('all payout ranges are sane', () => {
     assert.ok(p.min > 0 && p.min < p.max && p.max <= 1);
   }
 });
+
+test('21 carat gold (875) is available with mid-high payout', () => {
+  const f = C.GOLD_FINENESS.find((x) => x.id === '875');
+  assert.ok(f, '875 fineness missing');
+  assert.equal(f.fine, 875);
+});
+
+test('historic silver coins: fine silver per coin', () => {
+  const cases = { mtt: 23.39, '5mark-kaiser': 25, '5dm-gedenk': 7, '10dm-olympia': 9.69,
+    's10': 4.8, 's25': 10.4, 's50-900': 18, 's50-640': 12.8, 's100-640': 15.36, 's100-900': 18, 's500': 22.2 };
+  for (const [id, g] of Object.entries(cases)) {
+    assert.equal(C.silverCoins(id, 1, SILVER).fineGrams, g, id);
+  }
+});
