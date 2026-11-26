@@ -10,6 +10,16 @@
 .h-eyebrow, .h-kicker { font: 500 .78rem/1.5 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--gold-dark); margin: 0 0 16px; }
 @media (max-width: 600px) { .hide-sm { display: none; } }
 
+/* Tablet header (761–960 px): one row, scrollable nav, so it never wraps over the hero kicker */
+@media (min-width: 761px) and (max-width: 960px) {
+  .home .site-header .wrap { flex-wrap: nowrap; gap: 14px; }
+  .home .logo { flex: none; }
+  .home .nav { flex: 1 1 auto; min-width: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none;
+    -webkit-mask-image: linear-gradient(90deg, #000 90%, transparent); mask-image: linear-gradient(90deg, #000 90%, transparent); }
+  .home .nav::-webkit-scrollbar { display: none; }
+  .home .nav a { white-space: nowrap; }
+}
+
 /* Mobile header: one row, logo left, scrollable nav right */
 @media (max-width: 760px) {
   .home .site-header { position: sticky; }
@@ -117,7 +127,7 @@
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* Section scaffolding */
-.h-section { padding-top: clamp(72px, 10vw, 144px); }
+.h-section { padding-top: clamp(48px, 10vw, 144px); }
 .h-head { max-width: 760px; margin-bottom: clamp(28px, 4vw, 48px); }
 .h-head h2 { font: 400 clamp(2rem, 4.4vw, 3.4rem)/1.04 var(--serif); letter-spacing: -.02em; margin: 0; font-variation-settings: "opsz" 144; }
 .h-sub { color: var(--muted); margin: 14px 0 0; font-size: 1.05rem; }
@@ -178,7 +188,7 @@
   .h-film { display: block; min-height: 0; }
   .h-film-video { position: relative; display: block; height: 64vw; z-index: 0; }
   .h-film::before { display: none; }
-  .h-film-text { padding: 32px clamp(16px, 4vw, 40px) 56px; }
+  .h-film-text { padding: 32px clamp(16px, 4vw, 40px) 32px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .h-film-video { display: none; }
@@ -186,7 +196,7 @@
 
 }
 /* Fineness band */
-.h-fine { margin-top: 0; padding: clamp(72px, 10vw, 144px) 0; background: var(--surface); border-block: 1px solid var(--line); }
+.h-fine { margin-top: 0; padding: clamp(44px, 10vw, 144px) 0; background: var(--surface); border-block: 1px solid var(--line); }
 .h-fine-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 0; }
 @media (max-width: 760px) { .h-fine-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; } }
 .h-fine-item { display: block; padding-inline: 28px; color: var(--ink); text-decoration: none; }

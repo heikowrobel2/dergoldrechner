@@ -89,7 +89,7 @@ function exampleTable(ex) {
   return `<section><h2>${ex.fineness}er ${metal}: Werte nach Gewicht</h2>
 <div class="table-wrap"><table data-example="${ex.fineness}" data-metal="${ex.metal}" data-weights="${weights}">
 <caption>Kurs wird geladen …</caption>
-<thead><tr><th>Gewicht</th><th class="num col-fine">Fein${metal.toLowerCase()}</th><th class="num">Materialwert</th><th class="num">Ankaufs-Richtwert</th></tr></thead>
+<thead><tr><th>Gewicht</th><th class="num col-fine">Fein${metal.toLowerCase()}</th><th class="num">Materialwert</th><th class="num"><span class="nw">Ankaufs-Richtwert</span></th></tr></thead>
 <tbody><tr><td colspan="4">Kurs wird geladen …</td></tr></tbody></table></div></section>`;
 }
 
@@ -103,7 +103,7 @@ function priceTable(kind) {
     .map(([m, id, label]) => `<tr data-metal="${m}" data-fine="${id}"><td>${esc(label)}</td><td class="num">–</td><td class="num">–</td></tr>`).join('');
   return `<section><h2>${heading}</h2>
 <div class="table-wrap"><table data-pricetable><caption>Kurs wird geladen …</caption>
-<thead><tr><th>Feingehalt</th><th class="num">Materialwert je Gramm</th><th class="num">Ankaufs-Richtwert je Gramm</th></tr></thead>
+<thead><tr><th>Feingehalt</th><th class="num">Materialwert je Gramm</th><th class="num"><span class="nw">Ankaufs-Richtwert</span> je Gramm</th></tr></thead>
 <tbody>${rows}</tbody></table></div></section>`;
 }
 

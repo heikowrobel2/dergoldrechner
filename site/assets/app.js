@@ -10,7 +10,7 @@
   function $(sel, root) { return (root || document).querySelector(sel); }
   function $all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
   function eur(x) { return C.formatEUR(x); }
-  function grams(x) { return x.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' g'; }
+  function grams(x) { return x.toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' g'; }
   function pct(x) { return Math.round(x * 100) + ' %'; }
 
   function plausible(p) {
@@ -202,7 +202,7 @@
     }
     html += '<div class="row"><span>Börsenkurs Fein' + metal.toLowerCase() + '</span><span>' +
       eur(unitPrice) + '/g</span></div>' +
-      '<div class="row"><span>entspricht je Feinunze (31,1 g)</span><span>' + eur(unitPrice * OZ) + '</span></div>' +
+      '<div class="row"><span>entspricht je Feinunze (31,1 g)</span><span>' + eur(unitPrice * OZ) + '</span></div>' +
       '<p class="note"><strong>Annahme:</strong> Ankäufer zahlen ' + pct(r.payoutShare.min) + ' bis ' + pct(r.payoutShare.max) +
       ' des Materialwerts. Das ist eine Schätzung, kein belegter Marktpreis – Angebote können darunter oder darüber liegen.' +
       (type === 'dental' && val(form, 'alloy') === 'unbekannt' ? ' Wenn Sie die Legierung kennen, wird die Spanne deutlich enger.' : '') + '</p>' +
@@ -321,9 +321,12 @@
         // Hide the sticky bar while the result card itself is on screen.
         var sticky = $('#sticky-result'), card = $('#result');
         if (sticky && card && 'IntersectionObserver' in window) {
-          new IntersectionObserver(function (entries) {
-            sticky.classList.toggle('offscreen-only', entries[0].isIntersecting);
-          }).observe(card);
+          var cardOn = false;
+          // Keep the bar away from the top of the page, where it would cover the lowest input field.
+          var upd = function () { sticky.classList.toggle('offscreen-only', cardOn || window.scrollY < 120); };
+          new IntersectionObserver(function (entries) { cardOn = entries[0].isIntersecting; upd(); }).observe(card);
+          window.addEventListener('scroll', upd, { passive: true });
+          upd();
         }
       }
     }).catch(function () {
