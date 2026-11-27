@@ -170,3 +170,44 @@ test('historic silver coins: fine silver per coin', () => {
     assert.equal(C.silverCoins(id, 1, SILVER).fineGrams, g, id);
   }
 });
+
+test('density: volume -> weight for fine gold and silver', () => {
+  const g = C.density('volume', 10, 'gold999', GOLD);
+  assert.equal(g.weightG, 193.2);
+  assert.equal(g.volumeCm3, 10);
+  assert.equal(g.fineGrams, 193.01); // 193.2 g x 0.999
+  assert.equal(g.meltValue, 19300.68);
+  assert.equal(C.density('volume', 10, 'silber999', SILVER).weightG, 104.9);
+});
+
+test('density: weight -> volume, one troy ounce of gold is about 1.61 cm3', () => {
+  const r = C.density('weight', 31.1035, 'gold999', GOLD);
+  assert.equal(r.volumeCm3, 1.61);
+  assert.equal(r.weightG, 31.1);
+  assert.equal(C.density('weight', 193.2, 'gold999', GOLD).volumeCm3, 10);
+});
+
+test('density: alloys are lighter than fine gold, invalid input returns null', () => {
+  const a = C.density('volume', 1, 'gold750', GOLD), b = C.density('volume', 1, 'gold585', GOLD);
+  assert.ok(a.weightG < 19.32 && b.weightG < a.weightG);
+  assert.equal(C.density('volume', 0, 'gold999', GOLD), null);
+  assert.equal(C.density('volume', 'abc', 'gold999', GOLD), null);
+  assert.equal(C.density('volume', 1, 'unknown', GOLD), null);
+  assert.equal(C.density('volume', 1, 'gold999', 0), null);
+  assert.equal(C.density('x', 1, 'gold999', GOLD), null);
+});
+
+test('mass converter: troy ounce, gram, kilogram, avoirdupois ounce', () => {
+  const oz = C.convertMass('1', 'oz');
+  assert.equal(oz.grams, 31.1035);
+  assert.equal(oz.kilograms, 0.0311);
+  assert.equal(oz.troyOunces, 1);
+  assert.equal(oz.avoirdupoisOunces, 1.0971);
+  const g = C.convertMass('100', 'g');
+  assert.equal(g.troyOunces, 3.2151);
+  assert.equal(C.convertMass('1', 'kg').troyOunces, 32.1507);
+  assert.equal(C.convertMass('1', 'avoz').grams, 28.3495);
+  assert.equal(C.convertMass('1,5', 'oz').grams, 46.6552);
+  assert.equal(C.convertMass('0', 'oz'), null);
+  assert.equal(C.convertMass('1', 'lb'), null);
+});

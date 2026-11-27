@@ -6,7 +6,7 @@
 
 - [Goldrechner](https://dergoldrechner.de/): Kostenloser Goldrechner mit aktuellen Goldpreisen: Gewicht und Feingehalt eingeben und den Goldwert von Altgold, Schmuck und Zahngold sofort sehen.
 - [Goldpreis](https://dergoldrechner.de/goldpreis-pro-gramm/): Aktueller Goldpreis pro Gramm in Euro für 333er, 585er, 750er und 999er Gold. Goldpreis berechnen mit dem Goldpreis-Rechner – inklusive Ankaufs-Richtwert.
-- [Goldpreis pro Unze](https://dergoldrechner.de/goldpreis-pro-unze/): Was kostet eine Feinunze Gold heute? Goldpreis pro Unze und pro Kilo in Euro, Unze in Gramm umrechnen und Werte für 1/10 bis 10 Unzen – live aktualisiert.
+- [Goldpreis pro Unze](https://dergoldrechner.de/goldpreis-pro-unze/): Was kostet eine Feinunze Gold heute? Goldpreis pro Unze und pro Kilo in Euro, dazu Werte für 1/10 bis 10 Unzen – live aktualisiert.
 - [Goldankauf](https://dergoldrechner.de/goldankauf-rechner/): Goldankauf-Rechner: Was zahlen Ankäufer für Ihr Gold? Materialwert, realistische Spanne und so kalkulieren Goldankäufer ihren Preis.
 - [Gold verkaufen](https://dergoldrechner.de/gold-verkaufen/): Gold verkaufen ohne Verlust: Wert vorher berechnen, Ankäufer vergleichen, Fallen vermeiden. Mit Goldrechner, Ablauf in 5 Schritten und Steuer-Tipps.
 - [Schmuck verkaufen](https://dergoldrechner.de/schmuck-verkaufen/): Goldschmuck verkaufen: Goldkette, Ring oder Armband bewerten, Steine und Markenwert richtig einschätzen und den besten Ankäufer finden – mit Goldrechner.
@@ -30,7 +30,11 @@
 - [Silberbarren](https://dergoldrechner.de/silberbarren-wert/): Was ist ein Silberbarren wert? Aktueller Silberwert für Barren von 1 Unze bis 1 kg, was beim Silberbarren kaufen anfällt und was Händler beim Ankauf zahlen.
 - [Silber verkaufen](https://dergoldrechner.de/silber-verkaufen/): Silber verkaufen: Was zahlt der Silberankauf für Barren, Münzen und Besteck? Mit Silberankauf-Rechner und Tipps für einen fairen Preis.
 - [Platin & Palladium](https://dergoldrechner.de/platin-verkaufen/): Platin verkaufen: Wert von Platinschmuck, Platinbarren und Palladium berechnen, Platinschmuck erkennen und den richtigen Ankäufer finden.
-- [Platinpreis](https://dergoldrechner.de/platinpreis-pro-gramm/): Aktueller Platinpreis und Palladiumpreis pro Gramm und pro Unze in Euro, dazu Werte für Platinschmuck 950 und 999 – stündlich aktualisiert.
+- [Platinpreis](https://dergoldrechner.de/platinpreis-pro-gramm/): Aktueller Platinpreis pro Gramm und pro Unze in Euro, dazu Werte für Platinschmuck 950 und 999 – stündlich aktualisiert.
+- [Gold Dichte](https://dergoldrechner.de/gold-dichte/): Die Dichte von Gold beträgt 19,32 g/cm³. Rechner für Volumen und Gewicht, mit Dichtetabelle für 585er und 750er Gold, Silber, Platin, Palladium.
+- [Unze in Gramm](https://dergoldrechner.de/unze-in-gramm/): Unze in Gramm und Gramm in Unze umrechnen: 1 Feinunze Gold oder Silber wiegt 31,1035 g. Rechner mit Umrechnungstabelle und dem Unterschied zur Haushaltsunze.
+- [Palladiumpreis](https://dergoldrechner.de/palladiumpreis-pro-gramm/): Aktueller Palladiumpreis pro Gramm und Feinunze in Euro, stündlich aktualisiert. Mit Rechner für Palladiumschmuck und Barren.
+- [Silberpreis pro Unze](https://dergoldrechner.de/silberpreis-pro-unze/): Was kostet eine Feinunze Silber heute? Aktueller Silberpreis pro Unze in Euro, dazu Werte für 1/10 bis 10 Unzen und 1 kg – stündlich aktualisiert.
 - [Goldpreis-Widget](https://dergoldrechner.de/goldpreis-widget/): Kostenloses Goldpreis-Widget: aktueller Gold- und Silberpreis in Euro für Ihre Website oder Ihren Blog. Ohne Cookies, ohne Tracking, Code einfach kopieren.
 
 ## Goldmünzen

@@ -110,6 +110,12 @@
       }
       return bad || (filled ? null : 'mixempty');
     }
+    if (type === 'unit') return C.convertMass(val(form, 'amount'), val(form, 'unit')) ? null : 'amount';
+    if (type === 'density') {
+      var mat = matOf(form);
+      if (!mat || !(price[mat.metal] > 0)) return 'pgmprice';
+      return C.density(val(form, 'mode'), val(form, 'amount'), mat.id, price[mat.metal]) ? null : 'amount';
+    }
     if (type === 'pgm' && !(price[val(form, 'metal')] > 0)) return 'pgmprice';
     var w = C.parseNumber(val(form, 'weight'));
     if (!(w > 0 && w <= C.MAX_WEIGHT_G)) return 'weight';
@@ -117,8 +123,15 @@
     return null;
   }
 
+  function matOf(form) {
+    var id = val(form, 'material');
+    return C.MATERIALS.filter(function (m) { return m.id === id; })[0];
+  }
+
   function compute(form) {
     var type = form.getAttribute('data-calc');
+    if (type === 'unit') return C.convertMass(val(form, 'amount'), val(form, 'unit'));
+    if (type === 'density') return C.density(val(form, 'mode'), val(form, 'amount'), val(form, 'material'), price[matOf(form).metal]);
     if (type === 'gold') return C.goldScrap(val(form, 'weight'), val(form, 'fineness'), price.gold);
     if (type === 'silver') return C.silverScrap(val(form, 'weight'), val(form, 'fineness'), price.silver);
     if (type === 'coins') return C.coins(val(form, 'coin'), val(form, 'count'), price.gold);
@@ -131,7 +144,7 @@
   }
 
   function markInvalid(form, field) {
-    var names = ['weight', 'count', 'ceramic'].concat($all('.mix-row input', form).map(function (i) { return i.name; }));
+    var names = ['weight', 'count', 'ceramic', 'amount'].concat($all('.mix-row input', form).map(function (i) { return i.name; }));
     names.forEach(function (n) {
       var el = form.elements[n];
       if (!el) return;
@@ -142,6 +155,7 @@
   }
 
   var MESSAGES = {
+    amount: function () { return 'Bitte eine Zahl größer 0 eingeben, z. B. 10 oder 31,1.'; },
     count: function () { return 'Bitte eine ganze Anzahl zwischen 1 und ' + C.MAX_COUNT.toLocaleString('de-DE') + ' eingeben.'; },
     ceramic: function () { return 'Bitte beim Keramikanteil eine Zahl zwischen 0 und 90 eingeben.'; },
     pgmprice: function () { return 'Der Kurs für dieses Metall ist gerade nicht verfügbar. Bitte versuchen Sie es später erneut.'; },
@@ -161,6 +175,37 @@
     return w + ' ' + sel('fineness');
   }
 
+  function nf(x, d) { return x.toLocaleString('de-DE', { minimumFractionDigits: d, maximumFractionDigits: d }); }
+
+  // Converter and density calculator: plain result rows, no buyer payout range.
+  function renderPlain(form, type, r, out, sticky) {
+    var s = priceStamp(), html, big;
+    var stamp = '<p class="note">Kursstand: ' + (s.stale ? '<span class="stale">' + s.txt + (price.demo ? '' : ' (veraltet)') + '</span>' : s.txt) + '. Rechenwert, kein Angebot.</p>';
+    if (type === 'unit') {
+      var a = C.parseNumber(val(form, 'amount')), u = form.elements.unit;
+      big = nf(r.grams, 2) + ' g';
+      html = '<div class="label">' + nf(a, 4).replace(/,?0+$/, '') + ' ' + u.options[u.selectedIndex].text.replace(/ [(].*$/, '').replace(/</g, '&lt;') + ' entsprechen</div><div class="big">' + big + '</div>' +
+        '<div class="row"><span>Gramm</span><span>' + nf(r.grams, 4) + ' g</span></div>' +
+        '<div class="row"><span>Kilogramm</span><span>' + nf(r.kilograms, 4) + ' kg</span></div>' +
+        '<div class="row"><span>Feinunzen (Troy-Unzen)</span><span>' + nf(r.troyOunces, 4) + ' oz</span></div>' +
+        '<div class="row"><span>Haushaltsunzen</span><span>' + nf(r.avoirdupoisOunces, 4) + ' oz</span></div>' +
+        '<div class="row"><span>Wert als Feingold</span><span>' + eur(r.grams * price.gold) + '</span></div>' +
+        '<div class="row"><span>Wert als Feinsilber</span><span>' + eur(r.grams * price.silver) + '</span></div>' +
+        '<p class="note">Für Gold, Silber, Platin und Palladium gilt die Feinunze (31,1035 g). Die Haushaltsunze (28,35 g) wird für Edelmetalle nicht verwendet.</p>' + stamp;
+      big = nf(r.grams, 2) + ' g';
+    } else {
+      var m = matOf(form);
+      big = val(form, 'mode') === 'volume' ? nf(r.weightG, 2) + ' g' : nf(r.volumeCm3, 2) + ' cm³';
+      html = '<div class="label">' + (val(form, 'mode') === 'volume' ? 'Gewicht von ' + nf(r.volumeCm3, 2) + ' cm³ ' : 'Volumen von ' + nf(r.weightG, 2) + ' g ') + m.label.replace(/ [(].*$/, '').replace(/</g, '&lt;') + '</div><div class="big">' + big + '</div>' +
+        (val(form, 'mode') === 'volume' ? '<div class="row"><span>Gewicht in Kilogramm</span><span>' + nf(r.weightG / 1000, 4) + ' kg</span></div>' : '<div class="row"><span>Volumen in Litern</span><span>' + nf(r.volumeCm3 / 1000, 4) + ' l</span></div>') +
+        '<div class="row"><span>Reiner ' + (m.metal === 'gold' ? 'Gold' : m.metal === 'silver' ? 'Silber' : m.metal === 'platinum' ? 'Platin' : 'Palladium') + 'anteil</span><span>' + grams(r.fineGrams) + '</span></div>' +
+        '<div class="row"><span>Materialwert (100 %)</span><span>' + eur(r.meltValue) + '</span></div>' +
+        '<p class="note">Rechenwert nach Börsenkurs, kein Ankaufspreis. Legierungen weichen je nach Zusammensetzung von den Richtdichten ab; gerechnet wird ohne Hohlräume.</p>' + stamp;
+    }
+    out.innerHTML = html;
+    if (sticky) { sticky.innerHTML = '<span>' + (type === 'unit' ? 'Gramm' : 'Ergebnis') + '</span><strong>' + big + '</strong>'; sticky.hidden = false; }
+  }
+
   function render(form) {
     var out = $('#result');
     var sticky = $('#sticky-result');
@@ -176,6 +221,7 @@
       if (sticky) sticky.hidden = true;
       return;
     }
+    if (type === 'unit' || type === 'density') { renderPlain(form, type, r, out, sticky); return; }
     var s = priceStamp();
     var range = eur(r.payoutMin) + ' – ' + eur(r.payoutMax);
     var isSilver = type === 'silver' || type === 'silvercoins';

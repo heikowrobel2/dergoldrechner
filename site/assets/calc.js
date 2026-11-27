@@ -37,7 +37,7 @@
     { id: '500', label: '500er (z. B. Palladium-Schmuck)', fine: 500 },
     { id: '600', label: '600er', fine: 600 },
     { id: '900', label: '900er', fine: 900 },
-    { id: '950', label: '950er (üblich bei Platinschmuck)', fine: 950 },
+    { id: '950', label: '950er (üblich bei Schmuck)', fine: 950 },
     { id: '999', label: '999er (Barren, Münzen)', fine: 999 }
   ];
 
@@ -58,8 +58,8 @@
     { id: 'eagle-ag', label: 'American Eagle Silber 1 oz', fineG: 31.1035, payout: 'silverBar' },
     { id: 'britannia-ag', label: 'Britannia Silber 1 oz', fineG: 31.1035, payout: 'silverBar' },
     { id: '5dm-adler', label: '5 DM Silberadler (1951–1974)', fineG: 7.0 },
-    { id: '10dm-625', label: '10 DM Gedenkmünze (1987–1997, 625er)', fineG: 9.688 },
-    { id: '10dm-925', label: '10 DM Gedenkmünze (1998–2001, 925er)', fineG: 14.338 },
+    { id: '10dm-625', label: '10 DM (1987–1997, 625er)', fineG: 9.688 },
+    { id: '10dm-925', label: '10 DM (1998–2001, 925er)', fineG: 14.338 },
     { id: '5dm-gedenk', label: '5 DM Gedenkmünze (1952–1979, 625er)', fineG: 7.0 },
     { id: '10dm-olympia', label: '10 DM Olympia 1972 (625er)', fineG: 9.6875 },
     { id: '5mark-kaiser', label: '5 Mark Kaiserreich (900er)', fineG: 25.0 },
@@ -71,8 +71,8 @@
     { id: 's100-640', label: '100 Schilling (1974–1979, 640er)', fineG: 15.36 },
     { id: 's100-900', label: '100 Schilling (ab 1980, 900er)', fineG: 18.0 },
     { id: 's500', label: '500 Schilling (925er)', fineG: 22.2 },
-    { id: '10eur-925', label: '10 Euro Gedenkmünze (2002–2010, 925er)', fineG: 16.65 },
-    { id: '10eur-625', label: '10 Euro Gedenkmünze (2011–2015, nur Spiegelglanz, 625er)', fineG: 10.0 },
+    { id: '10eur-925', label: '10 Euro (2002–2010, 925er)', fineG: 16.65 },
+    { id: '10eur-625', label: '10 Euro (2011–2015, Spiegelglanz, 625er)', fineG: 10.0 },
     { id: '20eur-925', label: '20 Euro Gedenkmünze (ab 2016, 925er)', fineG: 16.65 },
     { id: 'bar-1kg', label: 'Silberbarren 1 kg (999)', fineG: 999, payout: 'silverBar' },
     { id: 'bar-500', label: 'Silberbarren 500 g (999)', fineG: 499.5, payout: 'silverBar' },
@@ -282,6 +282,45 @@
     return result(w * f.fine / 1000, p, PAYOUT.silverScrap);
   }
 
+  // Densities in g/cm3 (pure metals at 20 degC; alloys are typical yellow-gold / sterling values and vary with the alloy).
+  var MATERIALS = [
+    { id: 'gold999', label: 'Feingold 999 (19,32 g/cm³)', density: 19.32, metal: 'gold', fine: 999 },
+    { id: 'gold750', label: '750er Gelbgold (ca. 15,5 g/cm³)', density: 15.5, metal: 'gold', fine: 750 },
+    { id: 'gold585', label: '585er Gelbgold (ca. 13,3 g/cm³)', density: 13.3, metal: 'gold', fine: 585 },
+    { id: 'silber999', label: 'Feinsilber 999 (10,49 g/cm³)', density: 10.49, metal: 'silver', fine: 999 },
+    { id: 'silber925', label: 'Sterlingsilber 925 (10,36 g/cm³)', density: 10.36, metal: 'silver', fine: 925 },
+    { id: 'platin999', label: 'Platin (21,45 g/cm³)', density: 21.45, metal: 'platinum', fine: 999 },
+    { id: 'palladium999', label: 'Palladium (12,02 g/cm³)', density: 12.02, metal: 'palladium', fine: 999 }
+  ];
+
+  /** Volume (cm3) <-> weight (g) for a material; pricePerG = EUR per gram of the material's fine metal. */
+  function density(mode, amount, materialId, pricePerG) {
+    var m = find(MATERIALS, materialId);
+    var a = parseNumber(amount), p = parseNumber(pricePerG);
+    if (!m || (mode !== 'volume' && mode !== 'weight') || !(a > 0) || !(p > 0)) return null;
+    var weight = mode === 'volume' ? a * m.density : a;
+    var volume = mode === 'volume' ? a : a / m.density;
+    if (!validWeight(weight)) return null;
+    var fine = weight * m.fine / 1000;
+    return { weightG: round2(weight), volumeCm3: round2(volume), fineGrams: round2(fine), meltValue: round2(fine * p) };
+  }
+
+  var AVOIRDUPOIS_OUNCE_G = 28.349523125;
+  var MASS_UNITS = [
+    { id: 'oz', label: 'Feinunze (Troy-Unze, oz t)', g: TROY_OUNCE_G },
+    { id: 'g', label: 'Gramm', g: 1 },
+    { id: 'kg', label: 'Kilogramm', g: 1000 },
+    { id: 'avoz', label: 'Haushaltsunze (28,35 g)', g: AVOIRDUPOIS_OUNCE_G }
+  ];
+
+  /** Convert an amount in one mass unit to all others (4 decimals). */
+  function convertMass(amount, unitId) {
+    var u = find(MASS_UNITS, unitId), a = parseNumber(amount);
+    if (!u || !(a > 0) || a * u.g > MAX_WEIGHT_G * 1000) return null;
+    var g = a * u.g, r4 = function (x) { return Math.round(x * 10000) / 10000; };
+    return { grams: r4(g), kilograms: r4(g / 1000), troyOunces: r4(g / TROY_OUNCE_G), avoirdupoisOunces: r4(g / AVOIRDUPOIS_OUNCE_G) };
+  }
+
   function formatEUR(x) {
     return new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(x);
   }
@@ -306,6 +345,10 @@
     dental: dental,
     coins: coins,
     silverScrap: silverScrap,
+    MATERIALS: MATERIALS,
+    MASS_UNITS: MASS_UNITS,
+    density: density,
+    convertMass: convertMass,
     formatEUR: formatEUR,
     parseNumber: parseNumber
   };

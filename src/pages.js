@@ -87,11 +87,11 @@ module.exports = [
     nav: 'Goldpreis pro Unze',
     inNav: false,
     tile: 'Feinunze und Kilo',
-    keywords: 'feinunze gold preis 3.600 (KD 14) · unze gold 14.800 (KD 58) · wieviel ist eine unze gold 1.300 (KD 22) · preis von einer unze gold 880 · goldpreis pro kilo · was kostet ein kg gold in euro 110 · was kostet heute eine feinunze gold 140',
+    keywords: 'feinunze gold preis 3.600 (KD 14) · unze gold 14.800 (KD 58) · preis von einer unze gold 880 · goldpreis pro kilo · was kostet ein kg gold in euro 110 · was kostet heute eine feinunze gold 140',
     title: 'Goldpreis pro Unze heute: Feinunze und Kilo in Euro',
-    description: 'Was kostet eine Feinunze Gold heute? Goldpreis pro Unze und pro Kilo in Euro, Unze in Gramm umrechnen und Werte für 1/10 bis 10 Unzen – live aktualisiert.',
+    description: 'Was kostet eine Feinunze Gold heute? Goldpreis pro Unze und pro Kilo in Euro, dazu Werte für 1/10 bis 10 Unzen – live aktualisiert.',
     h1: 'Goldpreis pro Unze: Was kostet eine Feinunze Gold heute?',
-    intro: 'An der Börse wird Gold in Feinunzen gehandelt. Hier sehen Sie den aktuellen Goldpreis pro Unze und pro Kilo in Euro – und wie viel eine Unze in Gramm ist.',
+    intro: 'An der Börse wird Gold in Feinunzen gehandelt. Hier sehen Sie den aktuellen Goldpreis pro Unze und pro Kilo in Euro.',
     calc: { type: 'gold', preset: '999', weight: '31,1035' },
     sections: [
       {
@@ -108,9 +108,8 @@ module.exports = [
 <p>Das ist der reine Börsenwert des Feingolds. Beim Kauf von Münzen und Barren kommt ein Aufschlag hinzu, beim Verkauf erhalten Sie etwas weniger. Den Preis je Gramm für jeden Feingehalt finden Sie unter <a href="/goldpreis-pro-gramm/">Goldpreis pro Gramm</a>.</p>`
       },
       {
-        h: 'Wie viel Gramm hat eine Unze Gold?',
-        html: `<p>Eine <strong>Feinunze</strong> (Troy-Unze, Kürzel oz oder ozt) wiegt <strong>31,1035 Gramm</strong>. Sie ist schwerer als die Unze aus dem Haushalt (28,35 g), die für Edelmetalle nicht verwendet wird. Ein Kilogramm entspricht rund 32,15 Feinunzen.</p>
-<p>„Fein“ bedeutet: Gemeint ist das reine Gold. Eine Anlagemünze wie der <a href="/kruegerrand-wert/">Krügerrand</a> wiegt mehr als 31,1 g, weil sie auch Kupfer enthält, enthält aber genau eine Feinunze Gold.</p>`
+        h: 'Feinunze und Kilogramm',
+        html: `<p>Ein Kilogramm Feingold entspricht rund 32,15 Feinunzen. Wie viel Gramm eine Unze hat und wie Sie Unzen und Gramm umrechnen, zeigt der <a href="/unze-in-gramm/">Unze-in-Gramm-Rechner</a>.</p>`
       },
       {
         h: 'Warum wird Gold in Unzen gehandelt?',
@@ -119,7 +118,6 @@ module.exports = [
     ],
     faq: [
       ['Was kostet eine Feinunze Gold heute?', 'Den aktuellen Preis in Euro zeigt die Tabelle auf dieser Seite. Er wird aus dem internationalen Börsenkurs berechnet und stündlich aktualisiert.'],
-      ['Wie viel Gramm ist eine Unze Gold?', 'Eine Feinunze (Troy-Unze) wiegt 31,1035 Gramm.'],
       ['Wie viel ist eine Unze Gold wert?', 'Eine Feinunze Gold ist so viel wert wie der aktuelle Goldpreis pro Unze. Beim Verkauf einer Anlagemünze oder eines Barrens zahlen Händler meist etwas weniger als diesen Börsenwert.'],
       ['Warum ist der Goldpreis auf manchen Seiten so viel niedriger als an der Börse?', 'Meist ist er nur in einer anderen Einheit angegeben: Börsen nennen den Preis je Feinunze (31,1035 g), Rechner für Schmuck je Gramm. Ein Unzenpreis von 3.500 € entspricht rund 112,50 € pro Gramm.'],
       ['Was kostet ein Kilo Gold in Euro?', 'Ein Kilogramm Feingold entspricht rund 32,15 Feinunzen. Den aktuellen Wert sehen Sie in der Tabelle oben in der Zeile „1 kg“.']
@@ -1335,32 +1333,205 @@ module.exports = [
     slug: 'platinpreis-pro-gramm',
     nav: 'Platinpreis',
     inNav: false,
-    tile: 'Platin & Palladium je Gramm',
-    keywords: 'platin preis gramm 2.400 (KD 53) · palladium preis 14.800 (KD 35) · platinpreis pro gramm · palladium preis gramm · platinpreis aktuell',
-    title: 'Platinpreis pro Gramm heute in Euro – auch Palladium',
-    description: 'Aktueller Platinpreis und Palladiumpreis pro Gramm und pro Unze in Euro, dazu Werte für Platinschmuck 950 und 999 – stündlich aktualisiert.',
-    h1: 'Platinpreis und Palladiumpreis pro Gramm heute',
-    intro: 'Platin und Palladium gehören wie Gold zu den Edelmetallen. Hier sehen Sie die aktuellen Preise je Gramm und je Unze in Euro.',
-    calc: { type: 'pgm', preset: 'platinum', weight: 1, fineness: '999' },
-    priceTable: 'pgm',
+    tile: 'Platin je Gramm und Unze',
+    keywords: 'platin preis gramm 2.400 (KD 53) · platinpreis pro gramm · platinpreis aktuell',
+    title: 'Platinpreis pro Gramm heute in Euro – aktueller Kurs',
+    description: 'Aktueller Platinpreis pro Gramm und pro Unze in Euro, dazu Werte für Platinschmuck 950 und 999 – stündlich aktualisiert.',
+    h1: 'Platinpreis pro Gramm: aktueller Kurs in Euro',
+    intro: 'Platin gehört wie Gold zu den Edelmetallen. Hier sehen Sie den aktuellen Preis je Gramm und je Unze in Euro.',
+    calc: { type: 'pgm', preset: 'platinum', only: 'platinum', weight: 1, fineness: '999' },
+    priceTable: 'platinum',
     sections: [
       {
-        h: 'Platin und Palladium je Unze',
+        h: 'Platin je Gramm und Unze',
         html: `<div class="table-wrap"><table><thead><tr><th>Metall</th><th class="num">1 Gramm</th><th class="num">1 Feinunze</th></tr></thead><tbody>
 <tr><td>Platin</td><td class="num"><span data-price="platinum">–</span></td><td class="num"><span data-price="platinumozv">–</span></td></tr>
-<tr><td>Palladium</td><td class="num"><span data-price="palladium">–</span></td><td class="num"><span data-price="palladiumozv">–</span></td></tr>
 </tbody></table></div>
-<p>Platin und Palladium werden vor allem in der Industrie verwendet, etwa in Abgaskatalysatoren. Ihr Preis schwankt deshalb oft stärker als der Goldpreis.</p>`
+<p>Platin wird in der Industrie verwendet, etwa in Abgaskatalysatoren, aber auch in Schmuck und Anlagebarren. Sein Preis schwankt deshalb oft stärker als der Goldpreis. Den Kurs des verwandten Metalls finden Sie unter <a href="/palladiumpreis-pro-gramm/">Palladiumpreis pro Gramm</a>.</p>`
       },
       {
         h: 'Platinschmuck und Zahngold bewerten',
-        html: `<p>Platinschmuck ist meist mit <strong>950</strong> gestempelt, enthält also 95 % Platin. Was Ankäufer dafür zahlen, zeigt der Rechner unter <a href="/platin-verkaufen/">Platin verkaufen</a>. Auch Zahngold enthält oft Platin oder Palladium – mehr dazu beim <a href="/zahngold-wert/">Zahngold-Rechner</a>.</p>`
+        html: `<p>Platinschmuck ist meist mit <strong>950</strong> gestempelt, enthält also 95 % Platin. Was Ankäufer dafür zahlen, zeigt der Rechner unter <a href="/platin-verkaufen/">Platin verkaufen</a>. Auch Zahngold enthält manchmal Platin – mehr dazu beim <a href="/zahngold-wert/">Zahngold-Rechner</a>.</p>`
       }
     ],
     faq: [
       ['Wie hoch ist der Platinpreis pro Gramm?', 'Den aktuellen Preis zeigt die Tabelle auf dieser Seite. Er ergibt sich aus dem Börsenkurs je Unze geteilt durch 31,1035.'],
-      ['Ist Palladium teurer als Platin?', 'Das wechselt mit dem Markt. Den aktuellen Vergleich sehen Sie in der Tabelle oben.'],
       ['Was ist 950er Platin wert?', '950er Platin enthält 95 % reines Platin. Sein Materialwert ist Gewicht × 0,95 × Platinpreis pro Gramm.']
+    ]
+  },
+  {
+    slug: 'gold-dichte',
+    nav: 'Gold Dichte',
+    inNav: false,
+    tile: 'Gewicht aus Volumen',
+    keywords: 'gold dichte 2.900 (KD 10–22) · dichte gold 2.900 · dichte von gold 2.400 · gold gewicht berechnen',
+    title: 'Gold Dichte: 19,32 g/cm³ – Gewicht und Wert berechnen',
+    description: 'Die Dichte von Gold beträgt 19,32 g/cm³. Rechner für Volumen und Gewicht, mit Dichtetabelle für 585er und 750er Gold, Silber, Platin, Palladium.',
+    h1: 'Gold Dichte: Gewicht aus dem Volumen berechnen',
+    intro: 'Reines Gold wiegt 19,32 Gramm pro Kubikzentimeter. Geben Sie Volumen oder Gewicht ein – der Rechner zeigt das Gegenstück und den Materialwert.',
+    calc: { type: 'density', preset: 'gold999', mode: 'volume', amount: 10 },
+    sections: [
+      {
+        h: 'Dichte von Gold und anderen Edelmetallen',
+        html: `<p><strong>Kurz gesagt:</strong> Die Dichte von reinem Gold (999) liegt bei <strong>19,32 g/cm³</strong>. Ein Würfel mit 1 cm Kantenlänge wiegt also 19,32 g, ein Liter (1.000 cm³) rund 19,3 kg.</p>
+<div class="table-wrap"><table><thead><tr><th>Material</th><th class="num">Dichte in g/cm³</th></tr></thead><tbody>
+<tr><td>Feingold 999</td><td class="num">19,32</td></tr>
+<tr><td>750er Gelbgold</td><td class="num">ca. 15,5</td></tr>
+<tr><td>585er Gelbgold</td><td class="num">ca. 13,3</td></tr>
+<tr><td>Platin</td><td class="num">21,45</td></tr>
+<tr><td>Palladium</td><td class="num">12,02</td></tr>
+<tr><td>Feinsilber 999</td><td class="num">10,49</td></tr>
+<tr><td>Sterlingsilber 925</td><td class="num">ca. 10,36</td></tr>
+</tbody></table></div>
+<p>Bei Legierungen hängt die Dichte von der Zusammensetzung ab: Rotgold, Gelbgold und Weißgold mit gleichem Feingehalt wiegen unterschiedlich viel, weil Kupfer, Silber und Palladium verschieden dicht sind. Die Werte mit „ca.“ sind Richtwerte für typisches Gelbgold.</p>`
+      },
+      {
+        h: 'So berechnen Sie das Gewicht von Gold',
+        html: `<p><strong>Gewicht in g = Volumen in cm³ × Dichte in g/cm³</strong></p>
+<p>Beispiel: Ein Goldbarren mit 5 × 3 × 1 cm hat 15 cm³ Volumen und wiegt als Feingold 15 × 19,32 = 289,8 g. Umgekehrt braucht ein Kilogramm Feingold nur rund 51,8 cm³ – etwa so viel wie ein Würfel mit 3,7 cm Kantenlänge. Aus dem Gewicht ergibt sich der Wert: Feingewicht mal <a href="/goldpreis-pro-gramm/">Goldpreis pro Gramm</a>. Die Rechnung gilt für massive Stücke ohne Hohlräume und Steine.</p>`
+      },
+      {
+        h: 'Gold mit der Dichte prüfen: was der Test zeigt und was nicht',
+        html: `<p>Eine Dichtemessung (Wiegen in Luft und in Wasser, das Archimedische Prinzip) kann auf Fälschungen hinweisen: Vergoldetes Messing oder Kupfer ist deutlich leichter, als es für Gold sein müsste. Beweisen kann der Test die Echtheit nicht. Wolfram hat mit 19,25 g/cm³ fast dieselbe Dichte wie Gold, und bei Schmuck stören Steine, Hohlräume und Lötstellen die Messung. Zuverlässig sind nur Prüfverfahren des Fachmanns. Was die Stempel bedeuten, steht unter <a href="/333-gold-wert/">333er</a>, <a href="/585-gold-wert/">585er</a> und <a href="/750-gold-wert/">750er Gold</a>.</p>`
+      }
+    ],
+    faq: [
+      ['Wie hoch ist die Dichte von Gold?', 'Reines Gold hat eine Dichte von 19,32 g/cm³. Übliche Gold-Legierungen sind leichter: 750er Gelbgold wiegt etwa 15,5 g/cm³, 585er Gelbgold etwa 13,3 g/cm³.'],
+      ['Wie viel wiegt ein Kubikzentimeter Gold?', 'Ein Kubikzentimeter Feingold wiegt 19,32 Gramm.'],
+      ['Wie viel wiegt ein Liter Gold?', 'Ein Liter (1.000 cm³) Feingold wiegt rund 19,3 Kilogramm.'],
+      ['Ist Gold schwerer als Silber und Platin?', 'Gold ist fast doppelt so dicht wie Silber (10,49 g/cm³). Platin ist mit 21,45 g/cm³ noch etwas schwerer als Gold.'],
+      ['Kann man die Echtheit von Gold an der Dichte erkennen?', 'Die Dichte kann Fälschungen entlarven, die viel leichter sind. Sicher beweisen kann sie die Echtheit nicht, weil sich zum Beispiel Wolfram kaum von Gold unterscheidet. Lassen Sie Zweifelsfälle beim Fachmann prüfen.']
+    ]
+  },
+  {
+    slug: 'unze-in-gramm',
+    nav: 'Unze in Gramm',
+    inNav: false,
+    tile: 'Umrechner für Unzen und Gramm',
+    keywords: 'unze in gramm 14.800 (Cluster 81.800, KD 21–37) · 1 unze gold in gramm 9.900 · 1 unze in gramm 9.900 · unzen in gramm 4.400 · gramm in unzen 2.900 · wieviel ist eine unze gold 1.300 · 1 unze silber in gramm 1.900',
+    title: 'Unze in Gramm umrechnen: 1 Feinunze = 31,1035 g',
+    description: 'Unze in Gramm und Gramm in Unze umrechnen: 1 Feinunze Gold oder Silber wiegt 31,1035 g. Rechner mit Umrechnungstabelle und dem Unterschied zur Haushaltsunze.',
+    h1: 'Unze in Gramm umrechnen',
+    intro: 'Eine Feinunze Gold, Silber oder Platin wiegt 31,1035 Gramm. Menge und Einheit eingeben – der Rechner zeigt Gramm, Kilogramm und Unzen.',
+    calc: { type: 'unit', preset: 'oz', amount: 1 },
+    sections: [
+      {
+        h: 'Wie viel Gramm ist eine Unze Gold?',
+        html: `<p><strong>Kurz gesagt:</strong> <strong>1 Unze Gold = 31,1035 Gramm.</strong> Gemeint ist die Feinunze (auch Troy-Unze, Kürzel oz t oder ozt). Sie gilt für alle Edelmetalle: 1 Unze Silber, Platin und Palladium wiegen ebenfalls 31,1035 g.</p>
+<div class="table-wrap"><table><thead><tr><th>Unzen</th><th class="num">Gramm</th></tr></thead><tbody>
+<tr><td>1/10 Unze</td><td class="num">3,11 g</td></tr>
+<tr><td>1/4 Unze</td><td class="num">7,78 g</td></tr>
+<tr><td>1/2 Unze</td><td class="num">15,55 g</td></tr>
+<tr><td>1 Unze</td><td class="num">31,10 g</td></tr>
+<tr><td>2 Unzen</td><td class="num">62,21 g</td></tr>
+<tr><td>5 Unzen</td><td class="num">155,52 g</td></tr>
+<tr><td>10 Unzen</td><td class="num">311,03 g</td></tr>
+<tr><td>100 Unzen</td><td class="num">3.110,35 g</td></tr>
+</tbody></table></div>`
+      },
+      {
+        h: 'Gramm in Unzen umrechnen',
+        html: `<p>Gramm durch 31,1035 teilen ergibt Feinunzen. Umgekehrt: Unzen mal 31,1035 ergibt Gramm.</p>
+<div class="table-wrap"><table><thead><tr><th>Gramm</th><th class="num">Feinunzen</th></tr></thead><tbody>
+<tr><td>1 g</td><td class="num">0,0322 oz</td></tr>
+<tr><td>10 g</td><td class="num">0,3215 oz</td></tr>
+<tr><td>100 g</td><td class="num">3,2151 oz</td></tr>
+<tr><td>500 g</td><td class="num">16,0754 oz</td></tr>
+<tr><td>1 kg</td><td class="num">32,1507 oz</td></tr>
+</tbody></table></div>`
+      },
+      {
+        h: 'Feinunze oder Haushaltsunze?',
+        html: `<p>Es gibt zwei verschiedene Unzen. Die <strong>Feinunze</strong> (Troy-Unze) wiegt 31,1035 g und ist die Einheit für Edelmetalle. Die <strong>Haushaltsunze</strong> (Avoirdupois-Unze, aus dem englischen Pfund-System) wiegt nur 28,3495 g und wird bei Lebensmitteln und Paketen verwendet. Für Gold und Silber gilt immer die Feinunze.</p>
+<p>Bei vielen Anlagemünzen bezeichnet die Unze den <em>Feingehalt</em>: Der <a href="/kruegerrand-wert/">Krügerrand</a> enthält eine Feinunze Gold, wiegt insgesamt aber 33,93 g, weil er mit Kupfer legiert ist. Was eine Unze heute kostet, zeigen <a href="/goldpreis-pro-unze/">Goldpreis pro Unze</a> und <a href="/silberpreis-pro-unze/">Silberpreis pro Unze</a>.</p>`
+      }
+    ],
+    faq: [
+      ['Wie viel Gramm ist eine Unze Gold?', 'Eine Feinunze Gold wiegt 31,1035 Gramm.'],
+      ['Wie viel Gramm hat eine Unze Silber?', 'Auch eine Feinunze Silber wiegt 31,1035 Gramm. Die Feinunze gilt für alle Edelmetalle.'],
+      ['Wie rechne ich Unzen in Gramm um?', 'Multiplizieren Sie die Unzen mit 31,1035. Beispiel: 2,5 Unzen × 31,1035 = 77,76 Gramm.'],
+      ['Wie rechne ich Gramm in Unzen um?', 'Teilen Sie die Gramm durch 31,1035. Beispiel: 100 g ÷ 31,1035 = 3,2151 Unzen.'],
+      ['Was ist der Unterschied zwischen Feinunze und normaler Unze?', 'Die Feinunze (Troy-Unze) wiegt 31,1035 g, die normale Haushaltsunze nur 28,3495 g. Für Gold, Silber, Platin und Palladium wird die Feinunze verwendet.']
+    ]
+  },
+  {
+    slug: 'palladiumpreis-pro-gramm',
+    nav: 'Palladiumpreis',
+    inNav: false,
+    tile: 'Palladium je Gramm und Unze',
+    keywords: 'palladium preis 14.800 (Cluster 21.100, KD 20–42) · palladium preis gramm 480 · palladium gramm preis 480 · palladiumpreis aktuell',
+    title: 'Palladiumpreis pro Gramm heute in Euro – aktuell',
+    description: 'Aktueller Palladiumpreis pro Gramm und Feinunze in Euro, stündlich aktualisiert. Mit Rechner für Palladiumschmuck und Barren.',
+    h1: 'Palladiumpreis pro Gramm: aktueller Kurs in Euro',
+    intro: 'Palladium ist ein Platinmetall und wird vor allem in Abgaskatalysatoren verbraucht. Hier sehen Sie den aktuellen Preis je Gramm und je Unze – und was Ihr Palladium wert ist.',
+    calc: { type: 'pgm', preset: 'palladium', only: 'palladium', weight: 10, fineness: '950' },
+    priceTable: 'palladium',
+    sections: [
+      {
+        h: 'Palladium je Gramm, Kilo und Unze',
+        html: `<div class="table-wrap"><table><thead><tr><th>Menge Feinpalladium</th><th class="num">Wert heute</th></tr></thead><tbody>
+<tr><td>1 Gramm</td><td class="num"><span data-price="palladium">–</span></td></tr>
+<tr><td>10 Gramm</td><td class="num"><span data-price="palladiumq10000">–</span></td></tr>
+<tr><td>100 Gramm</td><td class="num"><span data-price="palladiumq100000">–</span></td></tr>
+<tr><td>1 Feinunze (31,10 g)</td><td class="num"><span data-price="palladiumozv">–</span></td></tr>
+<tr><td>1 Kilogramm</td><td class="num"><span data-price="palladiumq1000000">–</span></td></tr>
+</tbody></table></div>
+<p>Das ist der Börsenwert von Palladium mit 999 Feingehalt. Beim Kauf von Barren kommt ein Händleraufschlag hinzu; beim Verkauf zahlen Ankäufer weniger als den Börsenwert. Den Preis für Platin finden Sie unter <a href="/platinpreis-pro-gramm/">Platinpreis pro Gramm</a>.</p>`
+      },
+      {
+        h: 'Wovon der Palladiumpreis abhängt',
+        html: `<p>Der größte Teil des Palladiums steckt in Abgaskatalysatoren von Benzinfahrzeugen. Der Preis hängt deshalb stark von der Autoindustrie ab, etwa von der Zahl neu gebauter Verbrenner. Gefördert wird Palladium vor allem in Russland und Südafrika, häufig als Nebenprodukt der Platin- und Nickelgewinnung. Wegen dieses kleinen, vom Angebot weniger Länder abhängigen Marktes schwankt der Preis oft stärker als der Goldpreis. Dieser Rechner zeigt nur den aktuellen Kurs, keine Prognose.</p>`
+      },
+      {
+        h: 'Palladium im Schmuck und im Zahngold',
+        html: `<p>Palladium wird in Weißgold-Legierungen verwendet und dient dort als nickelfreie Alternative zu nickelhaltigem Weißgold. Auch reiner Palladiumschmuck ist üblich, meist mit dem Stempel <strong>950</strong> (95 % Palladium). Im Rechner oben rechnen Sie Gewicht und Stempel in einen Materialwert und einen Ankaufs-Richtwert um. Manche Zahnlegierungen enthalten ebenfalls Palladium; mehr dazu im <a href="/zahngold-wert/">Zahngold-Rechner</a>.</p>`
+      }
+    ],
+    faq: [
+      ['Wie hoch ist der Palladiumpreis pro Gramm?', 'Den aktuellen Preis zeigt die Tabelle auf dieser Seite. Er ergibt sich aus dem Börsenkurs je Feinunze geteilt durch 31,1035.'],
+      ['Wie viel kostet eine Unze Palladium?', 'Eine Feinunze Palladium entspricht 31,1035 Gramm. Den aktuellen Betrag in Euro sehen Sie in der Zeile „1 Feinunze“ der Tabelle.'],
+      ['Wofür wird Palladium verwendet?', 'Hauptsächlich für Abgaskatalysatoren in Autos mit Benzinmotor, außerdem in der Elektronik, im Schmuck und in der Zahntechnik.'],
+      ['Was ist 950er Palladium wert?', '950er Palladium enthält 95 % reines Palladium. Der Materialwert ist Gewicht × 0,95 × Palladiumpreis pro Gramm.']
+    ]
+  },
+  {
+    slug: 'silberpreis-pro-unze',
+    nav: 'Silberpreis pro Unze',
+    inNav: false,
+    tile: 'Feinunze Silber in Euro',
+    keywords: 'silberpreis unze 8.100 (Cluster 25.100, KD 27–54) · 1 unze silber preis 6.600 · 1 unze silber 6.600 · silber unze preis',
+    title: 'Silberpreis pro Unze heute: Feinunze Silber in Euro',
+    description: 'Was kostet eine Feinunze Silber heute? Aktueller Silberpreis pro Unze in Euro, dazu Werte für 1/10 bis 10 Unzen und 1 kg – stündlich aktualisiert.',
+    h1: 'Silberpreis pro Unze: Was kostet eine Feinunze Silber heute?',
+    intro: 'An der Börse wird Silber in Feinunzen gehandelt. Hier sehen Sie den aktuellen Silberpreis pro Unze in Euro und den Wert für andere Mengen.',
+    calc: { type: 'silver', preset: '999', weight: '31,1035' },
+    sections: [
+      {
+        h: 'Silberpreis pro Unze in Euro',
+        html: `<div class="table-wrap"><table><thead><tr><th>Menge Feinsilber</th><th class="num">Wert heute</th></tr></thead><tbody>
+<tr><td>1/10 Unze (3,11 g)</td><td class="num"><span data-price="silverq3110">–</span></td></tr>
+<tr><td>1/2 Unze (15,55 g)</td><td class="num"><span data-price="silverq15552">–</span></td></tr>
+<tr><td>1 Unze (31,10 g)</td><td class="num"><span data-price="silverozv">–</span></td></tr>
+<tr><td>5 Unzen (155,5 g)</td><td class="num"><span data-price="silverq155517">–</span></td></tr>
+<tr><td>10 Unzen (311,0 g)</td><td class="num"><span data-price="silverq311035">–</span></td></tr>
+<tr><td>1 kg (32,15 Unzen)</td><td class="num"><span data-price="silverw1000">–</span></td></tr>
+</tbody></table></div>
+<p>Das ist der reine Börsenwert von Feinsilber (999). Beim Kauf von Münzen und Barren kommen ein Händleraufschlag und in der Regel Mehrwertsteuer hinzu; beim Verkauf erhalten Sie etwas weniger. Den Preis je Gramm für 800er, 925er und andere Stempel zeigt <a href="/silberpreis-pro-gramm/">Silberpreis pro Gramm</a>.</p>`
+      },
+      {
+        h: 'Eine Unze Silber in Münzen und Barren',
+        html: `<p>Viele Silber-Anlagemünzen enthalten genau eine Feinunze Feinsilber, etwa <a href="/maple-leaf-silber-wert/">Maple Leaf</a>, <a href="/philharmoniker-silber-wert/">Wiener Philharmoniker</a> und <a href="/kruegerrand-silber-wert/">Krügerrand in Silber</a>. Was Ankäufer für Münzen und Barren zahlen, zeigen <a href="/silberbarren-wert/">Silberbarren-Wert</a> und <a href="/silbermuenzen-wert/">Silbermünzen-Wert</a>. Wie viel Gramm eine Unze hat, steht unter <a href="/unze-in-gramm/">Unze in Gramm</a>.</p>`
+      },
+      {
+        h: 'Silberpreis und Goldpreis im Vergleich',
+        html: `<p>Silber ist deutlich günstiger als Gold, schwankt aber oft stärker, weil es zu einem großen Teil in der Industrie verbraucht wird. Wie viele Unzen Silber eine Unze Gold wert ist, zeigt die <a href="/gold-silber-ratio/">Gold-Silber-Ratio</a>. Den Goldpreis finden Sie unter <a href="/goldpreis-pro-unze/">Goldpreis pro Unze</a>.</p>`
+      }
+    ],
+    faq: [
+      ['Was kostet eine Unze Silber heute?', 'Den aktuellen Preis in Euro zeigt die Tabelle auf dieser Seite. Er wird aus dem internationalen Börsenkurs berechnet und stündlich aktualisiert.'],
+      ['Wie viel ist eine Unze Silber wert?', 'Eine Feinunze Silber ist so viel wert wie der aktuelle Silberpreis pro Unze. Beim Verkauf einer Münze oder eines Barrens zahlen Händler meist etwas weniger als diesen Börsenwert.'],
+      ['Warum kostet eine Silbermünze mehr als der Silberpreis?', 'Beim Kauf kommen Prägekosten, Händlermarge und in der Regel Mehrwertsteuer zum Börsenwert des Silbers hinzu.'],
+      ['Was kostet ein Kilo Silber in Euro?', 'Ein Kilogramm Feinsilber entspricht rund 32,15 Feinunzen. Den aktuellen Wert sehen Sie in der Zeile „1 kg“ der Tabelle.']
     ]
   },
   {

@@ -75,7 +75,5 @@ Search Console wöchentlich (Impressionen je Seite), Rankings der Kernbegriffe m
 - Umgeschichtet: „925 silber wert“ und „800 silber“ von /silberrechner/ auf die neuen Legierungsseiten; Silberrechner = Oberbegriff.
 - Kannibalisierung: /750-gold-wert/ auf „750 gold preis“ (8.100), /585-gold-wert/ auf „goldwert 585“ (5.400) geschärft.
 - Quick Wins: „Kurz gesagt“ mit Live-Wert + schärfere Titel auf 9 Münz-/Barren-/Platinseiten.
-- Block 8 (nächster): /gold-dichte/ (12.200, KD 10–22, braucht Volumen-Rechner), /unze-in-gramm/ (81.800 Cluster, KD 21–37, Umrechner;
-  „wieviel ist eine unze gold“ von /goldpreis-pro-unze/ dorthin), /palladiumpreis-pro-gramm/ (21.100, KD 20–42, aus /platinpreis-pro-gramm/
-  herauslösen), /silberpreis-pro-unze/ (25.100, KD 27–54), danach 900-gold-wert, gold-verkaufen-steuer, gold-stempel-bedeutung, karat-umrechnen,
-  20-francs-gold-wert, goldpreis-pro-kilo (Entscheidung offen). Goldpreisentwicklung/-prognose, sobald Kursreihe reicht.
+- Block 8 (27.11.2026 gebaut, lokal abgenommen offen, NICHT live): /gold-dichte/ (neuer calc-Typ `density`), /unze-in-gramm/ (`unit`; „wieviel ist eine unze gold“ von /goldpreis-pro-unze/ verlagert), /palladiumpreis-pro-gramm/ (aus /platinpreis-pro-gramm/ herausgelöst), /silberpreis-pro-unze/. Auswahlfeld-Kürzung 10 Euro/10 DM am iPhone erledigt. Sonnet-Faktenprüfung und Prüfstraße eingearbeitet.
+- Danach (offen): 900-gold-wert, gold-verkaufen-steuer, gold-stempel-bedeutung, karat-umrechnen, 20-francs-gold-wert, goldpreis-pro-kilo (Entscheidung offen). Goldpreisentwicklung/-prognose, sobald Kursreihe reicht.

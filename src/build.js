@@ -20,8 +20,11 @@ function options(list, selected) {
 }
 
 // Live price of the metal this calculator is about (gold pages: gold, silver pages: silver, ...).
-function rateLine(type) {
-  const metals = type === 'pgm' ? [['platinum', 'Platin'], ['palladium', 'Palladium']]
+function rateLine(type, preset) {
+  const metals = type === 'unit' ? [['gold', 'Gold'], ['silver', 'Silber']]
+    : type === 'density' ? [['gold', 'Gold'], ['silver', 'Silber']]
+    : type === 'pgm' && (preset === 'palladium' || preset === 'platinum') ? [[preset, preset === 'palladium' ? 'Palladium' : 'Platin']]
+    : type === 'pgm' ? [['platinum', 'Platin'], ['palladium', 'Palladium']]
     : (type === 'silver' || type === 'silvercoins') ? [['silver', 'Silber']] : [['gold', 'Gold']];
   return `<div class="rate">${metals.map(([k, name]) => `<p class="rate-row"><span class="k k-${k}">${name}</span>` +
     `<span class="rate-val"><b data-price="${k}oz">–</b><span class="rate-g" data-price="${k}"></span></span></p>`).join('')}` +
@@ -55,9 +58,16 @@ function form(calc) {
     fields = `<div class="field"><label for="coin">Münze oder Barren</label><select id="coin" name="coin">${options(C.SILVER_COINS, calc.preset || 'maple-ag')}</select></div>
 <div class="field"><label for="count">Anzahl</label><input id="count" name="count" type="number" min="1" step="1" value="${calc.count || 1}" inputmode="numeric"></div>`;
   } else if (calc.type === 'pgm') {
-    fields = `<div class="field"><label for="metal">Metall</label><select id="metal" name="metal"><option value="platinum"${calc.preset !== 'palladium' ? ' selected' : ''}>Platin</option><option value="palladium"${calc.preset === 'palladium' ? ' selected' : ''}>Palladium</option></select></div>` +
+    fields = `<div class="field"><label for="metal">Metall</label><select id="metal" name="metal">${calc.only !== 'palladium' ? `<option value="platinum"${calc.preset !== 'palladium' ? ' selected' : ''}>Platin</option>` : ''}${calc.only !== 'platinum' ? `<option value="palladium"${calc.preset === 'palladium' ? ' selected' : ''}>Palladium</option>` : ''}</select></div>` +
       weight(calc.weight, 'Gesamtgewicht der Stücke, Steine möglichst abziehen.') +
       `<div class="field"><label for="fineness">Feingehalt (Stempel)</label><select id="fineness" name="fineness">${options(C.PGM_FINENESS, calc.fineness || '950')}</select></div>`;
+  } else if (calc.type === 'unit') {
+    fields = `<div class="field"><label for="amount">Menge</label><input id="amount" name="amount" type="text" inputmode="decimal" value="${calc.amount || 1}" autocomplete="off"></div>
+<div class="field"><label for="unit">Einheit</label><select id="unit" name="unit">${options(C.MASS_UNITS, calc.preset || 'oz')}</select></div>`;
+  } else if (calc.type === 'density') {
+    fields = `<div class="field"><label for="mode">Ich weiß</label><select id="mode" name="mode"><option value="volume"${calc.mode !== 'weight' ? ' selected' : ''}>das Volumen (in cm³)</option><option value="weight"${calc.mode === 'weight' ? ' selected' : ''}>das Gewicht (in g)</option></select></div>
+<div class="field"><label for="amount">Menge</label><input id="amount" name="amount" type="text" inputmode="decimal" value="${calc.amount || 10}" autocomplete="off"><small>Volumen in Kubikzentimetern oder Gewicht in Gramm, je nach Auswahl.</small></div>
+<div class="field"><label for="material">Material</label><select id="material" name="material">${options(C.MATERIALS, calc.preset || 'gold999')}</select></div>`;
   } else if (calc.type === 'mix') {
     // several pieces, each with weight and stamp; more rows via button (app.js), empty rows are ignored
     const rows = (calc.rows || [['8', '585'], ['4', '333'], ['', '750']]).map(([w, f], i) => mixRow(i + 1, w, f)).join('');
@@ -72,7 +82,7 @@ function form(calc) {
   }
   return `<div class="calc">
 <form class="card" data-calc="${calc.type}" novalidate>
-${rateLine(calc.type)}
+${rateLine(calc.type, calc.only)}
 <h2>Ihre Angaben</h2>
 ${fields}
 <noscript><p class="stale">Bitte JavaScript aktivieren, damit der Rechner funktioniert.</p></noscript>
@@ -96,9 +106,10 @@ function exampleTable(ex) {
 function priceTable(kind) {
   const pgm = (m, name) => C.PGM_FINENESS.filter((f) => ['950', '999'].includes(f.id)).map((f) => [m, f.id, `${name} ${f.id}er`]);
   const list = kind === 'silver' ? C.SILVER_FINENESS.map((f) => ['silver', f.id, f.label])
+    : kind === 'platinum' ? pgm('platinum', 'Platin') : kind === 'palladium' ? pgm('palladium', 'Palladium')
     : kind === 'pgm' ? [...pgm('platinum', 'Platin'), ...pgm('palladium', 'Palladium')]
     : [...C.GOLD_FINENESS.map((f) => ['gold', f.id, f.label]), ...C.SILVER_FINENESS.filter((f) => ['800', '925', '999'].includes(f.id)).map((f) => ['silver', f.id, f.label])];
-  const heading = kind === 'silver' ? 'Aktueller Silberpreis pro Gramm' : kind === 'pgm' ? 'Aktueller Platin- und Palladiumpreis pro Gramm' : 'Aktueller Edelmetallpreis pro Gramm';
+  const heading = kind === 'silver' ? 'Aktueller Silberpreis pro Gramm' : kind === 'platinum' ? 'Aktueller Platinpreis pro Gramm' : kind === 'palladium' ? 'Aktueller Palladiumpreis pro Gramm' : kind === 'pgm' ? 'Aktueller Platin- und Palladiumpreis pro Gramm' : 'Aktueller Edelmetallpreis pro Gramm';
   const rows = list
     .map(([m, id, label]) => `<tr data-metal="${m}" data-fine="${id}"><td>${esc(label)}</td><td class="num">–</td><td class="num">–</td></tr>`).join('');
   return `<section><h2>${heading}</h2>
